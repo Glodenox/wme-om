@@ -1,11 +1,11 @@
 ﻿// ==UserScript==
 // @name        WME OpenMaps
 // @namespace   http://www.tomputtemans.com/
-// @description Add additional layer containing maps that are released as open data to Waze Map Editor
+// @description Add an additional layer containing maps that are released as open data to Waze Map Editor
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     1.1
+// @version     1.2
 // @grant       none
 // ==/UserScript==
 
@@ -23,13 +23,32 @@
 			// Geopunt: Flanders (Belgium)
 			new OL.Layer.WMS('Geopunt GRB',
 				'https://grb.agiv.be/geodiensten/raadpleegdiensten/GRB/wms',
-				{ layers: "GRB_Basiskaart" }
+				{ layers: "GRB_Basiskaart" },
+				{ transitionEffect: "resize" }
 			)
 		];
 		Waze.map.addLayers(layers);
 		if (typeof localStorage.OM_opacity == 'undefined') {
 			localStorage.OM_opacity = 100;
 		}
+		// set up language string
+		var om_strings = {
+			en: {
+				opacity_label: "Opacity"
+			},
+			nl: {
+				opacity_label: "Doorzichtigheid"
+			},
+			fr: {
+				opacity_label: "Opacité"
+			}
+		};
+		om_strings['en_GB'] = om_strings.en;
+		I18n.availableLocales.map(function(locale) {
+			if (I18n.translations[locale]) {
+				I18n.translations[locale].openmaps = om_strings[locale];
+			}
+		});
 
 		var opacityDiv = document.createElement('div');
 		opacityDiv.className = 'WazeControlLocationInfo';
@@ -52,7 +71,7 @@
 			});
 			localStorage.OM_opacity = opacitySlider.value;
 		});
-		opacityDiv.appendChild(document.createTextNode('Opacity: '));
+		opacityDiv.appendChild(document.createTextNode(I18n.t('openmaps.opacity_label') + ': '));
 		opacityDiv.appendChild(opacitySlider);
 		document.getElementById('WazeMap').appendChild(opacityDiv);
 		layers.map(function(layer) {
