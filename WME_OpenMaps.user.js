@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     1.2
+// @version     1.3
 // @grant       none
 // ==/UserScript==
 
@@ -20,11 +20,21 @@
 		log('OM initated');
 
 		var layers = [
-			// Geopunt: Flanders (Belgium)
-			new OL.Layer.WMS('Geopunt GRB',
+			// AGIV: Vlaanderen (Belgium)
+			// <Fees>Het gebruiksrecht is te vinden op http://www.agiv.be/gis/diensten/?artid=1442</Fees>
+			// <AccessConstraints>geen</AccessConstraints>
+			new OL.Layer.WMS('AGIV GRB',
 				'https://grb.agiv.be/geodiensten/raadpleegdiensten/GRB/wms',
-				{ layers: "GRB_Basiskaart" },
-				{ transitionEffect: "resize" }
+				{ layers: "GRB_Basiskaart", format: "image/png" },
+				{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
+			),
+			// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
+			// <Fees></Fees>
+			// <AccessConstraints></AccessConstraints>
+			new OL.Layer.WMS('PICC topographie',
+				'http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
+				{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
+				{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857") }
 			)
 		];
 		Waze.map.addLayers(layers);
@@ -51,13 +61,23 @@
 		});
 
 		var opacityDiv = document.createElement('div');
-		opacityDiv.className = 'WazeControlLocationInfo';
 		opacityDiv.style.position = 'absolute';
-		opacityDiv.style.right = '20px';
-		opacityDiv.style.left = 'auto';
-		opacityDiv.style.top = '40px';
-		opacityDiv.style.zIndex = 1020;
 		opacityDiv.style.display = 'none';
+		opacityDiv.style.zIndex = 1020;
+		if (document.getElementById('topbar-container')) { // new layout
+			opacityDiv.style.top = "0";
+			opacityDiv.style.right = "0";
+			opacityDiv.style.backgroundColor = "#3d3d3d";
+			opacityDiv.style.padding = "5px";
+			opacityDiv.style.color = "#fff";
+			opacityDiv.style.fontWeight = "bold";
+			opacityDiv.style.borderBottomLeftRadius = "8px";
+		} else {
+			opacityDiv.className = 'WazeControlLocationInfo';
+			opacityDiv.style.right = '20px';
+			opacityDiv.style.left = 'auto';
+			opacityDiv.style.top = '40px';
+		}
 		var opacitySlider = document.createElement('input');
 		opacitySlider.type = 'range';
 		opacitySlider.max = 100;
