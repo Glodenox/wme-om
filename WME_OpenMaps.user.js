@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     1.3
+// @version     1.4
 // @grant       none
 // ==/UserScript==
 
@@ -19,38 +19,28 @@
 		}
 		log('OM initated');
 
-		var layers = [
-			// AGIV: Vlaanderen (Belgium)
-			// <Fees>Het gebruiksrecht is te vinden op http://www.agiv.be/gis/diensten/?artid=1442</Fees>
-			// <AccessConstraints>geen</AccessConstraints>
-			new OL.Layer.WMS('AGIV GRB',
-				'https://grb.agiv.be/geodiensten/raadpleegdiensten/GRB/wms',
-				{ layers: "GRB_Basiskaart", format: "image/png" },
-				{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
-			),
-			// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
-			// <Fees></Fees>
-			// <AccessConstraints></AccessConstraints>
-			new OL.Layer.WMS('PICC topographie',
-				'http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
-				{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
-				{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857") }
-			)
-		];
-		Waze.map.addLayers(layers);
-		if (typeof localStorage.OM_opacity == 'undefined') {
-			localStorage.OM_opacity = 100;
-		}
 		// set up language string
 		var om_strings = {
 			en: {
-				opacity_label: "Opacity"
+				opacity_label: "Opacity",
+				maptype: {
+					cadastre: "Cadastre",
+					satellite: "Satellite"
+				}
 			},
 			nl: {
-				opacity_label: "Doorzichtigheid"
+				opacity_label: "Doorzichtigheid",
+				maptype: {
+					cadastre: "Kadaster",
+					satellite: "Satelliet"
+				}
 			},
 			fr: {
-				opacity_label: "Opacité"
+				opacity_label: "Opacité",
+				maptype: {
+					cadastre: "Cadastre",
+					satellite: "Satellite"
+				}
 			}
 		};
 		om_strings['en_GB'] = om_strings.en;
@@ -59,25 +49,103 @@
 				I18n.translations[locale].openmaps = om_strings[locale];
 			}
 		});
+		
+		var maps = [
+			{
+				// AGIV: Vlaanderen (Belgium)
+				// <Fees>Het gebruiksrecht is te vinden op http://www.agiv.be/gis/diensten/?artid=1442</Fees>
+				// <AccessConstraints>geen</AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': AGIV',
+																'https://grb.agiv.be/geodiensten/raadpleegdiensten/GRB/wms',
+																{ layers: "GRB_Basiskaart", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512), attribution: "Agentschap voor Geografische Informatie Vlaanderen" }
+															 ),
+				inArea: function() {
+					var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
+					return bounds.intersectsBounds(Waze.map.getExtent());
+				}
+			}, {
+				// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
+				// <Fees></Fees>
+				// <AccessConstraints></AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': PICC',
+																'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
+																{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Région wallonne" }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'BE';
+				}
+			}, {
+				// Nationaal Wegen Bestand WMS (The Netherlands)
+				// <Fees>NONE</Fees>
+				// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': Nationaal Wegenbestand',
+																'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
+																{ layers: "wegvakken,hectopunten", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'NL';
+				}
+			}, {
+				// BAG WMS (The Netherlands)
+				// <Fees>NONE</Fees>
+				// <AccessConstraints>HotherRestrictions; Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': BAG',
+																'https://geodata.nationaalgeoregister.nl/bag/wms',
+																{ layers: "ligplaats,pand,verblijfsobject,woonplaats,standplaats", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'NL';
+				}
+			}, {
+				// Weggegevens WMS (The Netherlands)
+				// <Fees>NONE</Fees>
+				// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': Weggegevens',
+																'https://geodata.nationaalgeoregister.nl/weggeg/wms',
+																{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'NL';
+				}
+			}
+		];
+		// Initial setup based on current location
+		Waze.map.addLayers(maps
+											 .filter(function(mapObj) { return mapObj.inArea(); })
+											 .map(function(mapObj) { return mapObj.layer; })
+											);
+  	// Start listening to any event that changes the maps extent and add/remove the layers as such
+		Waze.map.events.register("moveend", null, function() {
+			maps.forEach(function(map) {
+				if (map.layer.map && !map.inArea()) {
+					Waze.map.removeLayer(map.layer);
+				} else if (!map.layer.map && map.inArea()) {
+					Waze.map.addLayer(map.layer);
+				}
+			})
+		});
+		
+		if (typeof localStorage.OM_opacity == 'undefined') {
+			localStorage.OM_opacity = 100;
+		}
 
 		var opacityDiv = document.createElement('div');
 		opacityDiv.style.position = 'absolute';
 		opacityDiv.style.display = 'none';
 		opacityDiv.style.zIndex = 1020;
-		if (document.getElementById('topbar-container')) { // new layout
-			opacityDiv.style.top = "0";
-			opacityDiv.style.right = "0";
-			opacityDiv.style.backgroundColor = "#3d3d3d";
-			opacityDiv.style.padding = "5px";
-			opacityDiv.style.color = "#fff";
-			opacityDiv.style.fontWeight = "bold";
-			opacityDiv.style.borderBottomLeftRadius = "8px";
-		} else {
-			opacityDiv.className = 'WazeControlLocationInfo';
-			opacityDiv.style.right = '20px';
-			opacityDiv.style.left = 'auto';
-			opacityDiv.style.top = '40px';
-		}
+		opacityDiv.style.top = "0";
+		opacityDiv.style.right = "0";
+		opacityDiv.style.backgroundColor = "#3d3d3d";
+		opacityDiv.style.padding = "5px";
+		opacityDiv.style.color = "#fff";
+		opacityDiv.style.fontWeight = "bold";
+		opacityDiv.style.borderBottomLeftRadius = "8px";
+		
 		var opacitySlider = document.createElement('input');
 		opacitySlider.type = 'range';
 		opacitySlider.max = 100;
@@ -86,29 +154,28 @@
 		opacitySlider.value = localStorage.OM_opacity;
 		opacitySlider.style.verticalAlign = 'middle';
 		opacitySlider.addEventListener('input', function() {
-			layers.map(function(layer) {
-				layer.setOpacity(opacitySlider.value / 100);
+			maps.map(function(map) {
+				map.layer.setOpacity(opacitySlider.value / 100);
 			});
 			localStorage.OM_opacity = opacitySlider.value;
 		});
 		opacityDiv.appendChild(document.createTextNode(I18n.t('openmaps.opacity_label') + ': '));
 		opacityDiv.appendChild(opacitySlider);
 		document.getElementById('WazeMap').appendChild(opacityDiv);
-		layers.map(function(layer) {
-			layer.events.register('visibilitychanged', null, function(e) {
-				opacityDiv.style.display = (layer.visibility ? 'block' : 'none');
+		maps.map(function(map) {
+			map.layer.events.register('visibilitychanged', null, function(e) {
+				opacityDiv.style.display = (map.layer.visibility ? 'block' : 'none');
 			});
-			layer.setOpacity(localStorage.OM_opacity / 100);
+			map.layer.setOpacity(localStorage.OM_opacity / 100);
 		});
 
 		// Necessary as the layer doesn't update when a zoom has occurred
 		Waze.map.events.register('zoomend', null, function() {
-			layers.map(function(layer) {
-				layer.redraw();
+			maps.forEach(function(map) {
+				map.layer.redraw();
 			});
 		});
 	}
-
 
 	function log(message) {
 		if (typeof message === 'string') {
