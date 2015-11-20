@@ -6,6 +6,9 @@ This userscript augments the [Waze Map Editor](https://www.waze.com/editor/) by 
 
 - AGIV (Flanders, Belgium)
 - PICC (Wallonia, Belgium)
+- Nationaal Wegen Bestand (The Netherlands)
+- BAG (The Netherlands)
+- Weggegevens (The Netherlands)
 
 ## Installation instructions
 
