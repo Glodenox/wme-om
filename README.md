@@ -9,6 +9,8 @@ This userscript augments the [Waze Map Editor](https://www.waze.com/editor/) by 
 - Nationaal Wegen Bestand (The Netherlands)
 - BAG (The Netherlands)
 - Weggegevens (The Netherlands)
+- Luchtfoto 2014 (The Netherlands)
+- BGT (The Netherlands)
 
 ## Installation instructions
 

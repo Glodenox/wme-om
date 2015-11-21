@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     1.4
+// @version     1.5
 // @grant       none
 // ==/UserScript==
 
@@ -108,6 +108,28 @@
 																'https://geodata.nationaalgeoregister.nl/weggeg/wms',
 																{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
 																{ transitionEffect: "resize", tileSize: new OL.Size(512,512) }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'NL';
+				}
+			}, {
+				// Luchtfoto's Bij12 (The Netherlands)
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.satellite') + ': Luchtfoto 2014',
+																'http://webservices.gbo-provincies.nl/lufo/services/wms?',
+																{ layers: "actueel_zomer", format: "image/jpeg",isBaseLayer: true},
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") }
+															 ),
+				inArea: function() {
+					return Waze.model.countries.top.abbr === 'NL';
+				}
+			}, {
+				// BGT (The Netherlands)
+				// <Fees>NONE</Fees>
+				// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+				layer: new OL.Layer.WMS(I18n.t('openmaps.maptype.cadastre') + ': BGT',
+																'https://geodata.nationaalgeoregister.nl/bgt/wms?',
+																{ layers: "bgtomtrekgericht,bgtvulling", format: "image/png" },
+																{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") }
 															 ),
 				inArea: function() {
 					return Waze.model.countries.top.abbr === 'NL';
