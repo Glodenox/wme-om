@@ -31,13 +31,11 @@ GreaseMonkey and TamperMonkey will occasionally check for new versions of these 
 
 ## How to use
 
-The script adds additional layers to the map which can be toggled on or off. Enabling a map will make it appear as background in front of the satellite imagery.
+![Open Maps layers](https://tomputtemans.com/waze-scripts/images/OM-3.png)
 
-![Open Maps layers](https://tomputtemans.com/waze-scripts/images/OM-1.png)
+The script adds a tab with a selection list that will contain any maps that are available for the current view of the map. With the slider you can determine how strongly the selected map obscures the Waze satellite imagery.
 
-Whenever a map is visible, the opacity slider is available in the top-right corner. With the slider you can determine how strongly the selected map obscures the satellite imagery.
-
-![Open Maps opacity slider](https://tomputtemans.com/waze-scripts/images/OM-2.jpg)
+![Open Maps opacity slider](https://tomputtemans.com/waze-scripts/images/OM-4.jpg)
 
 ## Feedback and suggestions
 
