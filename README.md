@@ -4,7 +4,7 @@ This userscript augments the [Waze Map Editor](https://www.waze.com/editor/) by 
 
 ### Current maps configured
 
-- AGIV (Flanders, Belgium)
+- AGIV: cadastre and satellite imagery (Flanders, Belgium)
 - PICC (Wallonia, Belgium)
 - Nationaal Wegen Bestand (The Netherlands)
 - BAG (The Netherlands)

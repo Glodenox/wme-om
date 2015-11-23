@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.0
+// @version     2.1
 // @grant       none
 // ==/UserScript==
 
@@ -205,16 +205,25 @@
 		})();
 
 		// AGIV: Vlaanderen (Belgium)
-		// <Fees>Het gebruiksrecht is te vinden op http://www.agiv.be/gis/diensten/?artid=1442</Fees>
-		// <AccessConstraints>geen</AccessConstraints>
-		OpenMaps.addMap('AGIV', 'cadastre', 'WMS', 'https://grb.agiv.be/geodiensten/raadpleegdiensten/GRB/wms', 
+		// <Fees>Gratis</Fees>
+		// <AccessConstraints>Door het gebruik van deze service, is de gebruiker verplicht zich te houden aan de toegangs- en gebruiksbepalingen van de in deze service aangeboden gegevens.</AccessConstraints>
+		OpenMaps.addMap('AGIV', 'cadastre', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB-basiskaart/wms', 
 										function() {
 											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "GRB_Basiskaart", format: "image/png" },
+										{ layers: "GRB_BSK", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
-
+		// AGIV: Vlaanderen (Belgium)
+		// <Fees>Gratis</Fees>
+		// <AccessConstraints>Door het gebruik van deze service, is de gebruiker verplicht zich te houden aan de toegangs- en gebruiksbepalingen van de in deze service aangeboden gegevens.</AccessConstraints>
+		OpenMaps.addMap('AGIV', 'satellite', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', 
+										function() {
+											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
+											return bounds.intersectsBounds(Waze.map.getExtent());
+										},
+										{ layers: "Ortho", format: "image/png" },
+										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
 		// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
 		// <Fees></Fees>
 		// <AccessConstraints></AccessConstraints>
