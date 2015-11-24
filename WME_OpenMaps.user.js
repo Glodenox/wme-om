@@ -42,7 +42,7 @@
 			fr: {
 				opacity_label: "Opacité",
 				tab_title: "Open Maps",
-				no_map_selected: "Aucun carte",
+				no_map_selected: "Aucune carte",
 				maptype: {
 					cadastre: "Cadastre",
 					satellite: "Satellite"
