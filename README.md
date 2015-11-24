@@ -6,7 +6,7 @@ This userscript augments the [Waze Map Editor](https://www.waze.com/editor/) by 
 
 - AGIV: cadastre and satellite imagery (Flanders, Belgium)
 - PICC (Wallonia, Belgium)
-- Nationaal Wegen Bestand (The Netherlands)
+- Irisnet (Brussels, Belgium)
 - BAG (The Netherlands)
 - Weggegevens (The Netherlands)
 - Luchtfoto 2014 (The Netherlands)
