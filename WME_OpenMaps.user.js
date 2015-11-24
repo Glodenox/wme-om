@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.1
+// @version     2.2
 // @grant       none
 // ==/UserScript==
 
@@ -88,8 +88,8 @@
 			noMapOption.layer = emptyLayer;
 			openMapsSelector.appendChild(noMapOption);
 			openMapsSelector.addEventListener('change', function(event) {
-				var layer = openMapsSelector.options[openMapsSelector.selectedIndex].layer;
-				replaceLayer(layer);
+				localStorage.OM_previousMap = openMapsSelector.options[openMapsSelector.selectedIndex].value;
+				replaceLayer(openMapsSelector.options[openMapsSelector.selectedIndex].layer);
 			});
 			openMapsSelector.style.marginBottom = '5px';
 			openMapsContent.appendChild(openMapsSelector);
@@ -172,16 +172,15 @@
 			}
 			
 			return {
-				addMap: function(name, category, format, url, inArea, params, options) {
+				addMap: function(id, name, category, format, url, inArea, params, options) {
 					var layer = new OL.Layer.WMS(I18n.t('openmaps.tab_title'), url, params, options),
 							option = document.createElement('option'),
 							listed = inArea();
 					option.appendChild(document.createTextNode(name));
 					option.layer = layer;
-					layer.events.register('visibilitychanged', null, function(e) {
-						opacityDiv.style.display = (layer.visibility ? 'block' : 'none');
-					});
+					option.value = id;
 					layer.setOpacity(localStorage.OM_opacity / 100);
+					// Append to select box if the map is in the current area
 					if (listed) {
 						if (!categories[category]) {
 							var optgroup = document.createElement('optgroup');
@@ -190,6 +189,11 @@
 							openMapsSelector.appendChild(optgroup);
 						}
 						categories[category].appendChild(option);
+					}
+					// Select the map again if it was selected at the end of the previous session
+					if (localStorage.OM_previousMap == id) {
+						openMapsSelector.selectedIndex = option.index;
+						openMapsSelector.dispatchEvent(new Event('change'));
 					}
 					
 					maps.push({
@@ -207,65 +211,71 @@
 		// AGIV: Vlaanderen (Belgium)
 		// <Fees>Gratis</Fees>
 		// <AccessConstraints>Door het gebruik van deze service, is de gebruiker verplicht zich te houden aan de toegangs- en gebruiksbepalingen van de in deze service aangeboden gegevens.</AccessConstraints>
-		OpenMaps.addMap('AGIV', 'cadastre', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB-basiskaart/wms', 
+		OpenMaps.addMap(3201, 'AGIV', 'cadastre', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB-basiskaart/wms', 
 										function() {
 											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "GRB_BSK", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+
 		// AGIV: Vlaanderen (Belgium)
 		// <Fees>Gratis</Fees>
 		// <AccessConstraints>Door het gebruik van deze service, is de gebruiker verplicht zich te houden aan de toegangs- en gebruiksbepalingen van de in deze service aangeboden gegevens.</AccessConstraints>
-		OpenMaps.addMap('AGIV', 'satellite', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', 
+		OpenMaps.addMap(3202, 'AGIV', 'satellite', 'WMS', 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', 
 										function() {
 											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "Ortho", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+
 		// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
 		// <Fees></Fees>
 		// <AccessConstraints></AccessConstraints>
-		OpenMaps.addMap('PICC', 'cadastre', 'WMS', 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
+		OpenMaps.addMap(3203, 'PICC', 'cadastre', 'WMS', 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
 										function() {
 											return Waze.model.countries.top.abbr === 'BE';
 										},
 										{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Région wallonne" });
 
-		// Nationaal Wegen Bestand WMS (The Netherlands)
+		// Brussels NL (Belgium)
 		// <Fees>NONE</Fees>
-		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
-		OpenMaps.addMap('Nationaal Wegenbestand', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
+		// <AccessConstraints>NONE</AccessConstraints>
+		OpenMaps.addMap(3204, 'Irisnet NL', 'cadastre', 'WMS', 'http://geoserver.gis.irisnet.be/geoserver/wms',
 										function() {
-											return Waze.model.countries.top.abbr === 'NL';
+											//4.236259,50.760568,4.487572,50.915372 
+											var bounds = new OL.Bounds(471578, 6579050, 499555, 6606337);
+											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "wegvakken,hectopunten", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+										{ layers: "urbisNL", format: "image/png" },
+										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
+
+		// Brussels FR (Belgium)
+		// <Fees>NONE</Fees>
+		// <AccessConstraints>NONE</AccessConstraints>
+		OpenMaps.addMap(3205, 'Irisnet FR', 'cadastre', 'WMS', 'http://geoserver.gis.irisnet.be/geoserver/wms',
+										function() {
+											//4.236259,50.760568,4.487572,50.915372 
+											var bounds = new OL.Bounds(471578, 6579050, 499555, 6606337);
+											return bounds.intersectsBounds(Waze.map.getExtent());
+										},
+										{ layers: "urbisFR", format: "image/png" },
+										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
 
 		// BAG WMS (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>HotherRestrictions; Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
-		OpenMaps.addMap('BAG', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bag/wms',
+		OpenMaps.addMap(3101, 'BAG', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bag/wms',
 										function() {
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "ligplaats,pand,verblijfsobject,woonplaats,standplaats", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
-		
-		// Weggegevens WMS (The Netherlands)
-		// <Fees>NONE</Fees>
-		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
-		OpenMaps.addMap('Weggegevens', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/weggeg/wms',
-										function() {
-											return Waze.model.countries.top.abbr === 'NL';
-										},
-										{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
-		
+
 		// Luchtfoto's Bij12 (The Netherlands)
-		OpenMaps.addMap('Luchtfoto 2014', 'satellite', 'WMS', 'http://webservices.gbo-provincies.nl/lufo/services/wms?',
+		OpenMaps.addMap(3102, 'Luchtfoto 2014', 'satellite', 'WMS', 'http://webservices.gbo-provincies.nl/lufo/services/wms?',
 										function() {
 											return Waze.model.countries.top.abbr === 'NL';
 										},
@@ -275,21 +285,16 @@
 		// BGT (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
-		OpenMaps.addMap('BGT', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bgt/wms?',
+		OpenMaps.addMap(3103, 'BGT', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bgt/wms?',
 										function() {
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "bgtomtrekgericht,bgtvulling", format: "image/png" },
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
-		
 	}
 
 	function log(message) {
-		if (typeof message === 'string') {
-			console.log('OM: ' + message);
-		} else {
-			console.log('OM', message);
-		}
+		console.log('%cWME Open Maps: %c' + message, 'color:black', 'color:#d97e00');
 	}
 
 	// attempt to bootstrap after about a second
