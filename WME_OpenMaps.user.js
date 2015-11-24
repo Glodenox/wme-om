@@ -281,11 +281,21 @@
 										},
 										{ layers: "actueel_zomer", format: "image/jpeg",isBaseLayer: true},
 										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
-		
+
+		// Weggegevens WMS (The Netherlands)
+		// <Fees>NONE</Fees>
+		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+		OpenMaps.addMap(3103, 'Weggegevens', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/weggeg/wms',
+										function() {
+											return Waze.model.countries.top.abbr === 'NL';
+										},
+										{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
+										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+
 		// BGT (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
-		OpenMaps.addMap(3103, 'BGT', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bgt/wms?',
+		OpenMaps.addMap(3104, 'BGT', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bgt/wms?',
 										function() {
 											return Waze.model.countries.top.abbr === 'NL';
 										},
