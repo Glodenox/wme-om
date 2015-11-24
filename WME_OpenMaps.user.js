@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.2.1
+// @version     2.2.2
 // @grant       none
 // ==/UserScript==
 
@@ -189,13 +189,13 @@
 							openMapsSelector.appendChild(optgroup);
 						}
 						categories[category].appendChild(option);
+						// Select the map again if it was selected at the end of the previous session
+						if (localStorage.OM_previousMap == id) {
+							openMapsSelector.selectedIndex = option.index;
+							openMapsSelector.dispatchEvent(new Event('change'));
+						}
 					}
-					// Select the map again if it was selected at the end of the previous session
-					if (localStorage.OM_previousMap == id) {
-						openMapsSelector.selectedIndex = option.index;
-						openMapsSelector.dispatchEvent(new Event('change'));
-					}
-					
+
 					maps.push({
 						name: name,
 						category: category,
