@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.2.3
+// @version     2.2.4
 // @grant       none
 // ==/UserScript==
 
