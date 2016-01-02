@@ -22,7 +22,7 @@ You will need to install an add-on that manages userscripts for this to work. If
 
 These add-ons will be visible in the browser with an additional button that is visible to the right of the address bar. Through this button it will be possible to maintain any userscripts you install.
 
-For WME Open Maps, you should be able to install the script at [Greasy Fork](https://greasyfork.org/scripts/13316-wme-road-events-data). There will be a big green install button which you will have to press to install the script.
+For WME Open Maps, you should be able to install the script at [Greasy Fork](https://greasyfork.org/scripts/13334-wme-openmaps). There will be a big green install button which you will have to press to install the script.
 __When installing userscripts always pay attention to the site(s) on which the script runs.__ This script only runs on Waze.com, so other sites will not be affected in any way.
 
 After installing a userscript, you will be able to find it working on the site(s) specified. Do note that if you had the page open before installing the userscript, you will first need to refresh the page.

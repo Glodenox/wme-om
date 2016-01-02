@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.2.2
+// @version     2.2.3
 // @grant       none
 // ==/UserScript==
 
@@ -77,7 +77,7 @@
 					opacityLabel = document.createElement('label'),
 					opacityDiv = document.createElement('div');
 
-			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="icon-picture"></span></a>';
+			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa"></span></a>';
 			openMapsContent.id = 'sidepanel-openMaps';
 			openMapsContent.className = 'tab-pane';
 			openMapsTitle.appendChild(document.createTextNode(I18n.t('openmaps.tab_title')));
