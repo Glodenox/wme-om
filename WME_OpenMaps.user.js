@@ -77,7 +77,7 @@
 					opacityLabel = document.createElement('label'),
 					opacityDiv = document.createElement('div');
 
-			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa"></span></a>';
+			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa icon-"></span></a>';
 			openMapsContent.id = 'sidepanel-openMaps';
 			openMapsContent.className = 'tab-pane';
 			openMapsTitle.appendChild(document.createTextNode(I18n.t('openmaps.tab_title')));
