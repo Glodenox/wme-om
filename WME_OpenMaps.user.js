@@ -5,20 +5,31 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.2.4
-// @grant       none
+// @exclude     https://www.waze.com/user/*editor/*
+// @version     2.3.0
+// @grant       GM_xmlhttpRequest
 // ==/UserScript==
 
 (function() {
-	function omInit() {
+	function init() {
+		// Variables needed in their 'unsafe' context
+		var OL = unsafeWindow.OL,
+				Waze = unsafeWindow.Waze,
+				I18n = unsafeWindow.I18n;
+
 		// Check initialisation
-		if (typeof Waze === 'undefined' || typeof Waze.map === 'undefined' || typeof Waze.model.countries.top === 'undefined') {
-			setTimeout(omInit, 660);
+		if (typeof Waze === 'undefined' || typeof Waze.map === 'undefined') {
+			setTimeout(init, 660);
 			log('Waze object unavailable, map still loading');
 			return;
 		}
+		if (typeof Waze.model === 'undefined' || typeof Waze.model.countries === 'undefined' || typeof Waze.model.countries.top === 'undefined') {
+			setTimeout(init, 660);
+			log('Top country unavailable, still loading');
+			return;
+		}
 		log('OM initated');
-
+		
 		// set up language string
 		var om_strings = {
 			en: {
@@ -50,11 +61,12 @@
 			}
 		};
 		om_strings['en_GB'] = om_strings.en;
-		I18n.availableLocales.map(function(locale) {
+		for(var i = 0; i < I18n.availableLocales.length; i++) {
+			var locale = I18n.availableLocales[i];
 			if (I18n.translations[locale]) {
-				I18n.translations[locale].openmaps = om_strings[locale];
+				I18n.translations[locale].openmaps = cloneInto(om_strings[locale], unsafeWindow);
 			}
-		});
+		}
 		if (typeof localStorage.OM_opacity == 'undefined') {
 			localStorage.OM_opacity = 100;
 		}
@@ -77,7 +89,7 @@
 					opacityLabel = document.createElement('label'),
 					opacityDiv = document.createElement('div');
 
-			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa icon-"></span></a>';
+			openMapsTab.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa"></span></a>';
 			openMapsContent.id = 'sidepanel-openMaps';
 			openMapsContent.className = 'tab-pane';
 			openMapsTitle.appendChild(document.createTextNode(I18n.t('openmaps.tab_title')));
@@ -125,16 +137,27 @@
 			footer.style.fontSize = '11px';
 			openMapsContent.appendChild(footer);
 
+			/*GM_xmlhttpRequest({
+				method: 'GET',
+				url: "https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB-basiskaart/wms?request=GetCapabilities&service=WMS",
+				onload: function(response) {
+					var div = document.createElement('div');
+					var title = getTitle(response.responseXML);
+					div.appendChild(document.createTextNode(title));
+					openMapsContent.appendChild(div);
+				}
+			});*/
+
 			Waze.map.addLayer(emptyLayer);
 			// Necessary as the layer doesn't update when a zoom has occurred
-			Waze.map.events.register('zoomend', null, function() {
+			Waze.map.events.register('zoomend', null, exportFunction(function() {
 				if (activeLayer) {
 					activeLayer.redraw();
 				}
-			});
+			}, unsafeWindow));
 
 			// Start listening to any event that changes the maps extent and add/remove the layers as such
-			Waze.map.events.register("moveend", null, function() {
+			Waze.map.events.register("moveend", null, exportFunction(function() {
 				maps.forEach(function(map) {
 					if (map.listed && !map.inArea()) {
 						if (activeLayer === map.layer) {
@@ -156,8 +179,8 @@
 						categories[map.category].appendChild(map.option);
 						map.listed = true;
 					}
-				})
-			});
+				});
+			}, unsafeWindow));
 			
 			function replaceLayer(targetLayer) {
 				if (activeLayer === targetLayer) {
@@ -171,11 +194,42 @@
 				activeLayer = targetLayer;
 			}
 			
+			function getTitle(node) {
+				for (var i = 0; i < node.childNodes.length; i++) {
+					if (node.childNodes[i].nodeName === 'Title') {
+						return node.childNodes[i].textContent;
+					}
+					var title = getTitle(node.childNodes[i]);
+					if (title) {
+						return title;
+					}
+				}
+			}
+			
 			return {
-				addMap: function(id, name, category, format, url, inArea, params, options) {
-					var layer = new OL.Layer.WMS(I18n.t('openmaps.tab_title'), url, params, options),
+				addMap: function(id, name, category, format, url, inArea, parameters, optionList) {
+					var params = cloneInto({
+								layers: parameters.layers,
+								transparent: parameters.transparent || true,
+								format: parameters.format || 'image/png'
+							}, unsafeWindow),
+							options = cloneInto({
+								transitionEffect: 'resize',
+								attribution: optionList.attribution
+							}, unsafeWindow);
+					options.tileSize = (optionList.tileSize ? new OL.Size(optionList.tileSize, optionList.tileSize) : new OL.Size(512, 512));
+					if (optionList.projection) {
+						options.projection = new OL.Projection(optionList.projection);
+					}
+					var	layer = new OL.Layer.WMS(I18n.t('openmaps.tab_title'), url, params, options),
 							option = document.createElement('option'),
-							listed = inArea();
+							areaCheck = inArea;
+					if (typeof areaCheck === 'string') {
+						areaCheck = function() {
+							return Waze.model.countries.top.abbr === inArea;
+						}
+					}
+					var listed = areaCheck();
 					option.appendChild(document.createTextNode(name));
 					option.layer = layer;
 					option.value = id;
@@ -199,7 +253,7 @@
 					maps.push({
 						name: name,
 						category: category,
-						inArea: inArea,
+						inArea: areaCheck,
 						layer: layer,
 						option: option,
 						listed: listed
@@ -216,8 +270,8 @@
 											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "GRB_BSK", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+										{ layers: "GRB_BSK" },
+										{ attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
 
 		// AGIV: Vlaanderen (Belgium)
 		// <Fees>Gratis</Fees>
@@ -227,87 +281,81 @@
 											var bounds = new OL.Bounds(280525, 6557859, 661237, 6712007);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "Ortho", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+										{ layers: "Ortho" },
+										{ projection: "EPSG:3857", attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
 
 		// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
 		// <Fees></Fees>
 		// <AccessConstraints></AccessConstraints>
 		OpenMaps.addMap(3203, 'PICC', 'cadastre', 'WMS', 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer',
-										function() {
-											return Waze.model.countries.top.abbr === 'BE';
-										},
-										{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Région wallonne" });
+										'BE',
+										{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60" },
+										{ projection: "EPSG:3857", attribution: "Région wallonne" });
 
 		// Brussels NL (Belgium)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>NONE</AccessConstraints>
 		OpenMaps.addMap(3204, 'Irisnet NL', 'cadastre', 'WMS', 'http://geoserver.gis.irisnet.be/geoserver/wms',
 										function() {
-											//4.236259,50.760568,4.487572,50.915372 
 											var bounds = new OL.Bounds(471578, 6579050, 499555, 6606337);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "urbisNL", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
+										{ layers: "urbisNL" },
+										{ projection: "EPSG:31370", attribution: "Irisnet GIS" });
 
 		// Brussels FR (Belgium)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>NONE</AccessConstraints>
 		OpenMaps.addMap(3205, 'Irisnet FR', 'cadastre', 'WMS', 'http://geoserver.gis.irisnet.be/geoserver/wms',
 										function() {
-											//4.236259,50.760568,4.487572,50.915372 
 											var bounds = new OL.Bounds(471578, 6579050, 499555, 6606337);
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
-										{ layers: "urbisFR", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
+										{ layers: "urbisFR" },
+										{ projection: "EPSG:31370", attribution: "Irisnet GIS" });
 
 		// BAG WMS (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>HotherRestrictions; Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
 		OpenMaps.addMap(3101, 'BAG', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bag/wms',
-										function() {
-											return Waze.model.countries.top.abbr === 'NL';
-										},
-										{ layers: "ligplaats,pand,verblijfsobject,woonplaats,standplaats", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+										'NL',
+										{ layers: "ligplaats,pand,verblijfsobject,woonplaats,standplaats" },
+										{ attribution: "PDOK" });
 
 		// Luchtfoto's Bij12 (The Netherlands)
 		OpenMaps.addMap(3102, 'Luchtfoto 2014', 'satellite', 'WMS', 'http://webservices.gbo-provincies.nl/lufo/services/wms?',
-										function() {
-											return Waze.model.countries.top.abbr === 'NL';
-										},
-										{ layers: "actueel_zomer", format: "image/jpeg",isBaseLayer: true},
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
+										'NL',
+										{ layers: "actueel_zomer" },
+										{ projection: "EPSG:28992", attribution: "GBO provincies" });
 
 		// Weggegevens WMS (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
 		OpenMaps.addMap(3103, 'Weggegevens', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/weggeg/wms',
-										function() {
-											return Waze.model.countries.top.abbr === 'NL';
-										},
-										{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+										'NL',
+										{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden" },
+										{ attribution: "PDOK" });
 
 		// BGT (The Netherlands)
 		// <Fees>NONE</Fees>
 		// <AccessConstraints>Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
 		OpenMaps.addMap(3104, 'BGT', 'cadastre', 'WMS', 'https://geodata.nationaalgeoregister.nl/bgt/wms?',
-										function() {
-											return Waze.model.countries.top.abbr === 'NL';
-										},
-										{ layers: "bgtomtrekgericht,bgtvulling", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
+										'NL',
+										{ layers: "bgtomtrekgericht,bgtvulling" },
+										{ projection: "EPSG:28992" },
+										{ attribution: "PDOK" });
+		
+		// To investigate in the future:
+		// * ruimtelijkeplannen.nl
+		//     http://www.ruimtelijkeplannen.nl/web-roo/docs/afnemers/Uitleg_WMS_WFS_en_tiled_services.pdf
+		//     http://afnemers.ruimtelijkeplannen.nl/afnemers/services?request=GetCapabilities&version=1.1.1&service=WMS
 	}
 
 	function log(message) {
 		console.log('%cWME Open Maps: %c' + message, 'color:black', 'color:#d97e00');
 	}
 
-	// attempt to bootstrap after about a second
-	log('OM bootstrap set');
-	setTimeout(omInit, 1020);
+	// attempt to bootstrap after about a second, arbitrary number
+	log('initiated');
+	setTimeout(init, 1020);
 })();
