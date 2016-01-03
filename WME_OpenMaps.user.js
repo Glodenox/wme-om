@@ -6,7 +6,7 @@
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
 // @exclude     https://www.waze.com/user/*editor/*
-// @version     2.3.0
+// @version     2.3.0-SNAPSHOT
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
 
