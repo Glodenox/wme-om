@@ -5,7 +5,7 @@
 // @include     https://www.waze.com/*/editor/*
 // @include     https://www.waze.com/editor/*
 // @include     https://editor-beta.waze.com/*
-// @version     2.2.4
+// @version     2.2.5
 // @grant       none
 // ==/UserScript==
 
@@ -126,6 +126,7 @@
 			openMapsContent.appendChild(footer);
 
 			Waze.map.addLayer(emptyLayer);
+			Waze.map.raiseLayer(emptyLayer, 1 - Waze.map.getLayerIndex(emptyLayer)); // Move to 1 spot above the base layer
 			// Necessary as the layer doesn't update when a zoom has occurred
 			Waze.map.events.register('zoomend', null, function() {
 				if (activeLayer) {
@@ -173,6 +174,9 @@
 			
 			return {
 				addMap: function(id, name, category, format, url, inArea, params, options) {
+					params.transparent = true;
+					params.transitionEffect = "resize";
+					params.tileSize = new OL.Size(512,512);
 					var layer = new OL.Layer.WMS(I18n.t('openmaps.tab_title'), url, params, options),
 							option = document.createElement('option'),
 							listed = inArea();
@@ -217,7 +221,7 @@
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "GRB_BSK", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+										{ attribution: "Grootschalig Referentie Bestand Vlaanderen, AGIV" });
 
 		// AGIV: Vlaanderen (Belgium)
 		// <Fees>Gratis</Fees>
@@ -228,7 +232,7 @@
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "Ortho", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
+										{ projection: new OL.Projection("EPSG:3857"), attribution: "Agentschap voor Geografische Informatie Vlaanderen" });
 
 		// Projet Informatique de Cartographie Continue: Wallonie (Belgium)
 		// <Fees></Fees>
@@ -238,7 +242,7 @@
 											return Waze.model.countries.top.abbr === 'BE';
 										},
 										{ layers: "1,2,3,5,6,8,24,25,33,48,49,50,52,53,54,55,56,58,59,60", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:3857"), attribution: "Région wallonne" });
+										{ projection: new OL.Projection("EPSG:3857"), attribution: "Région wallonne" });
 
 		// Brussels NL (Belgium)
 		// <Fees>NONE</Fees>
@@ -250,7 +254,7 @@
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "urbisNL", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
+										{ projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
 
 		// Brussels FR (Belgium)
 		// <Fees>NONE</Fees>
@@ -262,7 +266,7 @@
 											return bounds.intersectsBounds(Waze.map.getExtent());
 										},
 										{ layers: "urbisFR", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
+										{ projection: new OL.Projection("EPSG:31370"), attribution: "Irisnet GIS" });
 
 		// BAG WMS (The Netherlands)
 		// <Fees>NONE</Fees>
@@ -272,7 +276,7 @@
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "ligplaats,pand,verblijfsobject,woonplaats,standplaats", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+										{});
 
 		// Luchtfoto's Bij12 (The Netherlands)
 		OpenMaps.addMap(3102, 'Luchtfoto 2014', 'satellite', 'WMS', 'http://webservices.gbo-provincies.nl/lufo/services/wms?',
@@ -280,7 +284,7 @@
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "actueel_zomer", format: "image/jpeg",isBaseLayer: true},
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
+										{ projection: new OL.Projection("EPSG:28992") });
 
 		// Weggegevens WMS (The Netherlands)
 		// <Fees>NONE</Fees>
@@ -290,7 +294,7 @@
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "weggegaantalrijbanen,weggegmaximumsnelheden", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512) });
+										{});
 
 		// BGT (The Netherlands)
 		// <Fees>NONE</Fees>
@@ -300,7 +304,7 @@
 											return Waze.model.countries.top.abbr === 'NL';
 										},
 										{ layers: "bgtomtrekgericht,bgtvulling", format: "image/png" },
-										{ transitionEffect: "resize", tileSize: new OL.Size(512,512), projection: new OL.Projection("EPSG:28992") });
+										{ projection: new OL.Projection("EPSG:28992") });
 	}
 
 	function log(message) {
