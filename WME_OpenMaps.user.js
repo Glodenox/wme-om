@@ -21,19 +21,25 @@
         I18n = unsafeWindow.I18n,
         $ = unsafeWindow.$;
     if (typeof Waze === 'undefined' || typeof Waze.map === 'undefined') {
-      setTimeout(init, 660);
+      setTimeout(init, 800);
       log('Waze object unavailable, map still loading');
       return;
     }
+    if (document.getElementById('user-info') == null) {
+      setTimeout(init, 500);
+      log('user-info element not yet available, map still loading');
+      return;
+    }
     if (typeof Waze.loginManager === 'undefined') {
-      setTimeout(init, 100);
+      setTimeout(init, 300);
       return;
     }
     if (!Waze.loginManager.hasUser()) {
-      Waze.loginManager.events.register("login", null, init);
-      Waze.loginManager.events.register("loginStatus", null, init);
+      Waze.loginManager.events.register("login", null, exportFunction(init, unsafeWindow));
+      Waze.loginManager.events.register("loginStatus", null, exportFunction(init, unsafeWindow));
       return;
     }
+
     // set up language string
     var om_strings = {
       en: {
@@ -70,8 +76,9 @@
     }
     
     if (typeof localStorage.OpenMaps == 'undefined') {
-      localStorage.OpenMaps = {};
-      localStorage.OpenMaps.state = {};
+      var storage = {};
+      storage.state = {};
+      localStorage.OpenMaps = JSON.stringify(storage);
     }
     
     // TODO: version management?
@@ -80,7 +87,7 @@
     var maps = {
       '3201': { id: 3201, url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB-basiskaart/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/png', title: 'GRB-basiskaart', abstract: 'Via de WMS GRB-basiskaart kan je het Grootschalig Referentiebestand (GRB) opvragen en visualiseren als een kaart. De WMS GRB-basiskaart omvat alle GRB basiskaart gegevens gebaseerd op het GRBgis product. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten.', attribution: 'Agentschap voor Geografische Informatie Vlaanderen', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ 'GRB_BSK' ], layers: { 'GRB_BSK': { queryable: false, title: 'GRB-basiskaart', abstract: 'Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart' } } },
       '3202': { id: 3202, url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', title: 'Orthomozaïek Vlaanderen', abstract: 'WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.', attribution: 'Agentschap voor Geografische Informatie Vlaanderen', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ 'Ortho' ], layers: { 'Ortho': { queryable: false, title: 'Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.' }, 'Vliegdagcontour': { queryable: true, title: 'Vliegdagcontour Orthofotomozaïek', abstract: 'Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.' } } },
-      '3203': { id: 3203, url: 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OL.Bounds(295477.314255, 740430.033845, 6347477.319654, 6640885.073618), format: 'image/png', title: 'Topographie PICC', abstract: 'Service de visualisation du Projet Informatique de Cartographie Continue (PICC)', attribution: 'Région wallonne', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ '1','2','3','5','6','8','24','25','33','48','49','50','52','53','54','55','56','58','59','60' ], layers: { '1': { queryable: true, title: 'Construit: Bâtiments' }, '2': { queryable: true, title: 'Construit: Objet linéaire' }, '3': { queryable: true, title: 'Construit: Objet ponctuel' }, '5': { queryable: true, title: 'Voirie: Axe' }, '6': { queryable: true, title: 'Voirie: Bord' }, '7': { queryable: true, title: 'Voirie: Equipement' }, '8': { queryable: true, title: 'Voirie: Marquage au sol' }, '10': { queryable: true, title: 'Repère Topo: Point de niveau de voirie' }, '11': { queryable: true, title: 'Repère Topo: Borne kilométrique' }, '12': { queryable: true, title: 'Repère Topo: Point de canevas' }, '15': { queryable: true, title: 'Equipement: Cabine: Objets linéaires' }, '16': { queryable: true, title: 'Equipement: Cabine: Objets ponctuels' }, '18': { queryable: true, title: 'Equipement: Accès sous-terrain: Objet linéaire' }, '19': { queryable: true, title: 'Equipement: Accès sous-terrain: Objet ponctuel' }, '20': { queryable: true, title: 'Equipement: Signalisation' }, '21': { queryable: true, title: 'Equipement: Ecran anti-bruit' }, '22': { queryable: true, title: 'Equipement: Poteau' }, '24': { queryable: true, title: 'Hydrographie: Objet linéaire' }, '25': { queryable: true, title: 'Hydrographie: Objet ponctuel' }, '27': { queryable: true, title: 'Réseau aérien: Pylone' }, '28': { queryable: true, title: 'Réseau aérien: Contour Pylone' }, '29': { queryable: true, title: 'Réseau aérien: Ligne HT' }, '31': { queryable: true, title: 'Réseau ferroviaire: Portique' }, '32': { queryable: true, title: 'Réseau ferroviaire: Pylone' }, '33': { queryable: true, title: 'Réseau ferroviaire: Rail' }, '34': { queryable: true, title: 'Réseau ferroviaire: Quai gare' }, '36': { queryable: true, title: 'Relief: Rupture de pente' }, '37': { queryable: true, title: 'Relief: Carrière, sablière, excavation diverse' }, '38': { queryable: true, title: 'Relief: Dépôt - Terril' }, '39': { queryable: true, title: 'Relief: Niveau terrain' }, '41': { queryable: true, title: 'Paysage limite: Limite' }, '42': { queryable: true, title: 'Paysage limite: Haie' }, '43': { queryable: true, title: 'Paysage limite: Boisement' }, '45': { queryable: true, title: 'Paysage limite: Arbre: Rangée' }, '46': { queryable: true, title: 'Paysage limite: Arbre: Arbres' }, '48': { queryable: true, title: 'Toponymie: Numéro de bâtiment' }, '49': { queryable: true, title: 'Toponymie: Numéro des rue' }, '50': { queryable: true, title: 'Toponymie: Nom des rues' }, '52': { queryable: true, title: 'Toponymie: Hydrographie: Eléments hydrographiques ponctuels' }, '53': { queryable: true, title: 'Toponymie: Hydrographie: Lacs, étangs, piscines' }, '54': { queryable: true, title: 'Toponymie: Hydrographie: Cours d\'eau divers' }, '55': { queryable: true, title: 'Toponymie: Hydrographie: Canaux, cours d\'eau navigeables' }, '56': { queryable: true, title: 'Toponymie: Elément ponctuel divers' }, '57': { queryable: true, title: 'Toponymie: Lieu-dits' }, '58': { queryable: true, title: 'Toponymie: Hameau' }, '59': { queryable: true, title: 'Toponymie: Ancienne commune' }, '60': { queryable: true, title: 'Toponymie: Commune' } } },
+      '3203': { id: 3203, url: 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OL.Bounds(295477.314255, 740430.033845, 6347477.319654, 6640885.073618), format: 'image/png', title: 'PICC, Service de visualisation', abstract: 'Service de visualisation du Projet Informatique de Cartographie Continue (PICC)', attribution: 'Service public de Wallonie', capabilities: [ 'GetCapabilities', 'GetMap', 'GetFeatureInfo' ], default_layers: [ '3', '4', '6', '8', '9', '17', '18', '19', '25', '26', '27' ], layers: { '1': { queryable: true, title: 'Relief: ligne' }, '3': { queryable: true, title: 'Hydrographie: bord' }, '4': { queryable: true, title: 'Hydrographie: axe' }, '6': { queryable: true, title: 'Reseau ferroviaire: ligne' }, '8': { queryable: true, title: 'Voirie: axe >= 5k' }, '9': { queryable: true, title: 'Voirie: axe' }, '10': { queryable: true, title: 'Voirie: ligne' }, '12': { queryable: true, title: 'Occupation du sol: surface' }, '13': { queryable: true, title: 'Occupation du sol: bord' }, '14': { queryable: true, title: 'Occupation du sol: ligne' }, '15': { queryable: true, title: 'Occupation du sol: point' }, '17': { queryable: true, title: 'Construction: emprise du batiment' }, '18': { queryable: true, title: 'Construction: ouvrage d\'art: bord' }, '19': { queryable: true, title: 'Construction: bord du batiment' }, '21': { queryable: true, title: 'Equipement: surface' }, '22': { queryable: true, title: 'Equipement: axe' }, '23': { queryable: true, title: 'Equipement: ligne' }, '24': { queryable: true, title: 'Equipement: point' }, '25': { queryable: true, title: 'Symbologie' }, '26': { queryable: true, title: 'Adresses' }, '27': { queryable: true, title: 'Toponymie' } } },
       '3204': { id: 3204, url: 'http://geoserver.gis.irisnet.be/geoserver/wms', crs: 'EPSG:31370', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', title: 'CIRB', abstract: 'Web Map Service for the CIRB layers', attribution: 'Irisnet GIS', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ 'urbisNL' ], layers: { 'urbisNL': { queryable: false, title: 'Urbis Base Map NL', abstract: 'This layer represents the base map in dutch.' }, 'urbisFR': { queryable: false, title: 'Urbis Base Map FR', abstract: 'This layer represents the base map in french.' }, 'urbis:ortho2014': { queryable: false, title: 'Ortho 2014', abstract: 'This layer is ortho 2014 in the Brussels region' }, 'urbis:ortho2012': { queryable: false, title: 'Ortho 2012', abstract: 'This layer is ortho 2012 in the Brussels region' }, 'urbis:ortho2009': { queryable: false, title: 'Ortho 2009', abstract: 'This layer is ortho 2009 in the Brussels region' }, 'urbis:ortho2004': { queryable: false, title: 'Ortho 2004', abstract: 'This layer is ortho 2004 in the Brussels region' }, 'urbisFRGray': { queryable: false, title: 'Urbis Base Map Gray FR', abstract: 'This layer represents the gray base map in french.' }, 'urbisNLGray': { queryable: false, title: 'Urbis Base Map Gray NL', abstract: 'This layer represents the gray base map in dutch.' }, 'urbis:LabeledStreetAxe': { queryable: true, title: 'Labeled Street Axe', abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building' }, 'urbis:URB_A_ADPT': { queryable: false, title: 'Address points', abstract: 'This layer is the localization of address points of the Brussels Region' }, 'urbis:URB_A_BU': { queryable: true, title: 'Buildings', abstract: 'This layer represents the buildings of the Brussels Region' }, 'urbis:URB_A_MD': { queryable: true, title: 'Monitoring districts', abstract: 'This layer reprensent the monitoring districts of the Brussels Region' }, 'urbis:URB_A_MU': { queryable: true, title: 'Municipalities', abstract: 'This layer represents the municipalities of the Brussels Region' }, 'urbis:URB_A_MY_SA': { queryable: true, title: 'Street axes', abstract: 'This layer represents the axes of the street of the Brussels Region' }, 'urbis:URB_A_MY_SS': { queryable: true, title: 'Street sections', abstract: 'This layer represents the street sections of the Brussels Region' }, 'urbis:URB_A_MZ': { queryable: true, title: 'Municipal zips', abstract: 'This layer is the zip of the municipality of the Brussels Region' }, 'urbis:URB_A_POL': { queryable: true, title: 'Police districts', abstract: 'This layer is the police districts of the Brussels Region' }, 'urbis:URB_A_RE': { queryable: true, title: 'Region', abstract: 'This layer is the Brussels Region' }, 'urbis:URB_A_SD': { queryable: true, title: 'Statistical districts', abstract: 'This layer represents the limit of the statistical districts of the Brussels Region' }, 'urbis:URB_A_SN': { queryable: true, title: 'Street nodes', abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe' }, 'urbis:URB_M_RTLINE': { queryable: true, title: 'Rail tracks', abstract: 'This layer represents the rails tracks.' }, 'urbis:URB_M_SHAPE': { queryable: true, title: 'UrbisMap shapes', abstract: 'This layer represents the shapes of UrbisMap.' }, 'urbis:URB_M_TONAME_LIN': { queryable: true, title: 'Toponymy', abstract: 'This layer represents the toponymy of public places.' }, 'urbis:URB_M_ZIPOINT': { queryable: true, title: 'Points of interest', abstract: 'This layer represents the point of zone of interest.' }, 'urbis:URB_T_LINE': { queryable: true, title: 'Urbis Topo Lines', abstract: 'This layer represents the topo lines.' }, 'urbis:URB_T_POINT': { queryable: true, title: 'Urbis Topo Points', abstract: 'This layer represents the topo points.' }, 'urbis:URB_A_SI_POINT_VW': { queryable: true, title: 'Street sides' }, 'urbis:MuNeighbour': { queryable: true, title: 'Neighbour Municipalities' }, 'urbis:Highways': { queryable: true, title: 'Highways' } } },
       '3205': { id: 3205, url: 'https://geo.agiv.be/ogc/wms/gipodpubliek', crs: 'EPSG:3857', bbox: new OL.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', title: 'GIPOD Publieke Informatie', abstract: 'Deze WMS geeft een overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.', attribution: 'Agentschap voor Geografische Informatie Vlaanderen', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ 'ManOml', 'ManCon', 'ManIcoon', 'WoOml', 'WoCon', 'WoIcoon' ], layers: { 'ManOml': { queryable: true, title: 'Omleidingen van de manifestaties', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.' }, 'ManCon': { queryable: true, title: 'Manifestaties contour', abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'ManIcoon': { queryable: true, title: 'Manifestaties icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoOml': { queryable: true, title: 'Omleidingen van de werkopdrachten', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.' }, 'WoCon': { queryable: true, title: 'Werkopdrachten contour', abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoIcoon': { queryable: true, title: 'Werkopdrachten icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' } } },
       '3206': { id: 3206, url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omw/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', title: 'Orthomozaïek Vl. Tijdsreeksen', abstract: 'WMS met de tijdsreeks van middenschalige orthofotomozaïeken met een resolutie van 25cm, gebiedsdekkend voor Vlaanderen', attribution: 'Agentschap voor Geografische Informatie Vlaanderen', capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'], default_layers: [ 'OMWRGB15VL' ], layers: { 'OMWRGB15VL': { queryable: false, title: 'Winteropnamen, 2015', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2015 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB15VL_vdc': { queryable: true, title: 'Winteropnamen, 2015, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB14VL': { queryable: false, title: 'Winteropnamen, 2014', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2014 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB14VL_vdc': { queryable: true, title: 'Winteropnamen, 2014, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB13VL': { queryable: false, title: 'Winteropnamen, 2013', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2013 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB13VL_vdc': { queryable: true, title: 'Winteropnamen, 2013, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB12VL': { queryable: false, title: 'Winteropnamen, 2012', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2012 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB12VL_vdc': { queryable: true, title: 'Winteropnamen, 2012, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB08_11VL': { queryable: false, title: 'Winteropnamen, 2008-2011', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2008-2011 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB08_11VL_vdc': { queryable: true, title: 'Winteropnamen, 2008-2011, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB05_07VL': { queryable: false, title: 'Winteropnamen, 2005-2007', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2005-2007 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB05_07VL_vdc': { queryable: true, title: 'Winteropnamen, 2005-2007, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB00_03VL': { queryable: false, title: 'Winteropnamen, 2000-2003', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2000-2003 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB00_03VL_vdc': { queryable: true, title: 'Winteropnamen, 2000-2003, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' } } },
@@ -111,9 +118,10 @@
       placeholderClass: 'result',
       handle: '.title'
     }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, ui) {
-      var movedHandle = handles.splice(ui.oldindex, 1)[0];
-      handles.splice(ui.index, 0, movedHandle);
-      Waze.map.setLayerIndex(movedHandle.layer, ui.index + 1); // Ugly hack to obtain the layer
+      console.log('sortupdate', e, ui, handles);
+      var movedHandle = handles.splice(ui.oldElementIndex, 1)[0];
+      handles.splice(ui.elementIndex, 0, movedHandle);
+      Waze.map.setLayerIndex(movedHandle.layer, ui.index + 1);
     }, unsafeWindow));
     handleList.className = 'result-list';
     tab.appendChild(handleList);
@@ -127,6 +135,7 @@
       if (addMap.selectedIndex != 0) {
         var mapId = addMap.options[addMap.selectedIndex].value;
         handles.push(new MapHandle(maps[mapId]));
+        saveMapState();
         addMap.selectedIndex = 0;
       }
     });
@@ -142,15 +151,30 @@
     tab.appendChild(footer);
     
     // Try to convert any previous localStorage data
-    if (typeof localStorage.OM_previousMap != 'undefined') {
-      var previousMapId = localStorage.OM_previousMap;
-      if (previousMapId == 'No map') {
-        localStorage.removeItem('OM_previousMap');
-        localStorage.removeItem('OM_opacity');
-      } else if (typeof maps[localStorage.OM_previousMap] != 'undefined') {
-        handles.push(new MapHandle(maps[localStorage.OM_previousMap]));
-        // TODO: opacity?
+    if (typeof localStorage.OM_previousMap != 'undefined' || typeof localStorage.OM_opacity != 'undefined') {
+      if (typeof maps[localStorage.OM_previousMap] != 'undefined') {
+        handles.push(new MapHandle(maps[localStorage.OM_previousMap], localStorage.OM_opacity));
+        saveMapState();
       }
+      localStorage.removeItem('OM_previousMap');
+      localStorage.removeItem('OM_opacity');
+    }
+    // Reload previous map(s)
+    if (typeof localStorage.OpenMaps != 'undefined') {
+      var storage = JSON.parse(localStorage.OpenMaps);
+      storage.state.active.forEach(function(mapHandle, i) {
+        if (maps[mapHandle.mapId] == undefined) { // no strict equal as null should fail as well
+          console.log('Removing map', i, mapHandle);
+          storage.state.active.splice(i, 1);
+          localStorage.OpenMaps = JSON.stringify(storage);
+          return;
+        }
+        handles.push(new MapHandle(maps[mapHandle.mapId], {
+          opacity: mapHandle.opacity,
+          layers: mapHandle.layers
+        })); // TODO: add hidden attribute and layer logic
+        saveMapState();
+      });
     }
 
     function updateMapSelector() {
@@ -165,14 +189,14 @@
       }
       if (localMaps.length == 0) {
         var noMaps = document.createElement('option');
-        noMaps.text = I18n.t('no_local_maps');
+        noMaps.text = I18n.t('openmaps.no_local_maps');
         addMap.appendChild(noMaps);
       } else {
         localMaps.sort(function(a, b) {
           return a.title.localeCompare(b.title);
         })
         var selectMap = document.createElement('option');
-        selectMap.text = 'Select a map to add';
+        selectMap.text = 'Select a map to add'; // TODO: I18n
         addMap.appendChild(selectMap);
         localMaps.forEach(function(map) {
           var option = document.createElement('option');
@@ -190,7 +214,7 @@
           tabs = userInfo.querySelector('.tab-content'),
           tabHandle = document.createElement('li'),
           tab = document.createElement('div');
-      tabHandle.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa icon-"></span></a>';
+      tabHandle.innerHTML = '<a href="#sidepanel-openMaps" data-toggle="tab" title="' + I18n.t('openmaps.tab_title') + '"><span class="fa"></span></a>';
       tab.id = 'sidepanel-openMaps';
       tab.className = 'tab-pane';
       tabHandles.appendChild(tabHandle);
@@ -234,13 +258,28 @@
         }
       });
     }
+      
+    function saveMapState() {
+      var storage = JSON.parse(localStorage.OpenMaps);
+      storage.state.active = [];
+      handles.forEach(function(handle) {
+        var handleState = {
+          mapId: handle.mapId,
+          opacity: handle.opacity,
+          layers: handle.mapLayers.slice()
+        };
+        storage.state.active.push(handleState);
+      });
+      localStorage.OpenMaps = JSON.stringify(storage);
+      console.log("Saved map state", storage);
+    }
 
-    function MapHandle(map, activeLayers) {
+    function MapHandle(map, options) {
       var self = this;
       this.layer = null;
       this.mapId = map.id;
       this.mapLayers = [];
-      this.opacity = 1;
+      this.opacity = (options && options.opacity ? options.opacity : "100");
       var hidden = false;
       var container = document.createElement('li');
       var layerContainer = document.createElement('ul');
@@ -263,20 +302,6 @@
           var percentage = parseInt(loadedTiles * 100 / totalTiles, 10);
           title.style.borderImage = 'linear-gradient(to right, #bfb, #bfb ' + percentage + '%, #fff ' + percentage + '%, #fff) 100 4 stretch';
         }
-      }
-      
-      function saveState() {
-        var state = {};
-        state.active = [];
-        handles.forEach(function(handle) {
-          var handleState = {
-            mapId: handle.mapId,
-            opacity: handle.opacity,
-            layers: handle.mapLayers.slice()
-          };
-          state.active.push(handleState);
-        });
-        localStorage.OpenMaps.state = state;
       }
 
       this.clearError = function() {
@@ -306,12 +331,13 @@
           options.projection = new OL.Projection(map.crs);
           options.tileSize = (map.tile_size ? new OL.Size(map.tile_size, map.tile_size) : new OL.Size(512, 512));
           this.layer = new OL.Layer.WMS(map.title, map.url, params, options);
+          this.layer.setOpacity(this.opacity / 100);
           this.layer.events.register('tileerror', null, exportFunction(function(obj) {
             if (error.title != '') {
               return;
             }
             error.style.display = 'inline';
-            error.title = 'Retrieving error...';
+            error.title = 'Retrieving error...'; // TODO: I18n
             $(error).tooltip();
             loadTileError(obj.tile.url, function(msg) {
               $(error).tooltip('destroy');
@@ -328,7 +354,7 @@
             updateTileLoader();
           }, unsafeWindow));
           Waze.map.addLayer(this.layer);
-          Waze.map.setLayerIndex(this.layer, handles.indexOf(self) + 1);
+          Waze.map.setLayerIndex(this.layer, Math.max(handles.indexOf(self) + 1, 1));
           this.layer.events.register('visibilitychanged', null, exportFunction(function() {
             title.style.textDecoration = (self.layer.getVisibility() ? 'none' : 'line-through');
           }, unsafeWindow));
@@ -339,7 +365,7 @@
           this.layer.setVisibility(true);
         }
         self.mapLayers = cloneInto(newLayers, unsafeWindow);
-        console.log(handles);
+        saveMapState();
       };
       
       remove.style.fontFamily = 'FontAwesome';
@@ -370,6 +396,7 @@
       visibility.addEventListener('click', function(e) {
         hidden = !hidden;
         self.layer.setVisibility(!hidden);
+        saveMapState();
       });
       container.appendChild(visibility);
       error.style.fontFamily = 'FontAwesome';
@@ -420,13 +447,12 @@
 			opacitySlider.max = 100;
 			opacitySlider.min = 5;
 			opacitySlider.step = 5;
-      opacitySlider.value = 100;
+      opacitySlider.value = this.opacity;
       opacitySlider.style.verticalAlign = 'middle';
       opacitySlider.addEventListener('input', function() {
-        var opacity = opacitySlider.value / 100;
-				self.layer.setOpacity(opacity);
-        self.opacity = opacity;
-        console.log(handles);
+        self.layer.setOpacity(this.value / 100);
+        self.opacity = this.value;
+        saveMapState();
 			});
       editContainer.appendChild(opacitySlider);
       layerContainer.style.overflowY = 'scroll';
