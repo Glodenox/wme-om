@@ -45,6 +45,7 @@
       en: {
         opacity_label: 'Opacity',
         tab_title: 'Open Maps',
+        maps_title: 'Active Maps',
         no_local_maps: 'No maps found for this area',
         expand: 'Click to expand',
         collapse: 'Click to collapse',
@@ -107,18 +108,38 @@
     // List of map handles
     var handles = [];
     var tab = addOpenMapsTab();
+
+    // Satellite imagery toggle
+    var satImageryDiv = document.createElement('div');
+    satImageryDiv.className = 'controls-container';
+    var satImagery = document.createElement('input');
+    satImagery.type = 'checkbox';
+    satImagery.id = 'satImagery-on';
+    satImagery.checked = Waze.map.layers[0].getVisibility();
+    satImagery.addEventListener('click', function() {
+      Waze.map.layers[0].setVisibility(this.checked);
+    });
+    Waze.map.layers[0].events.register('visibilitychanged', null, exportFunction(function() {
+      satImagery.checked = Waze.map.layers[0].getVisibility();
+    }, unsafeWindow));
+    satImageryDiv.appendChild(satImagery);
+    var satImageryLabel = document.createElement('label');
+    satImageryLabel.htmlFor = 'satImagery-on';
+    satImageryLabel.appendChild(document.createTextNode('Display satellite imagery')); // TODO: I18n
+    satImageryDiv.appendChild(satImageryLabel);
+    tab.appendChild(satImageryDiv);
+    
+    // List of maps visible in Open Maps
     var title = document.createElement('h4');
-    title.appendChild(document.createTextNode(I18n.t('openmaps.tab_title')));
+    title.appendChild(document.createTextNode(I18n.t('openmaps.maps_title')));
     title.style.marginBottom = '5px';
     tab.appendChild(title);
-
     var handleList = document.createElement('ul');
     $(handleList).sortable(cloneInto({
       forcePlaceholderSize: true,
       placeholderClass: 'result',
       handle: '.title'
     }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, ui) {
-      console.log('sortupdate', e, ui, handles);
       var movedHandle = handles.splice(ui.oldElementIndex, 1)[0];
       handles.splice(ui.elementIndex, 0, movedHandle);
       Waze.map.setLayerIndex(movedHandle.layer, ui.index + 1);
@@ -126,6 +147,7 @@
     handleList.className = 'result-list';
     tab.appendChild(handleList);
 
+    // Select box to add new Open Maps maps
     var addMap = document.createElement('select');
     addMap.className = 'form-control';
     addMap.style.margin = '8px 0';
@@ -171,11 +193,30 @@
         }
         handles.push(new MapHandle(maps[mapHandle.mapId], {
           opacity: mapHandle.opacity,
-          layers: mapHandle.layers
-        })); // TODO: add hidden attribute and layer logic
+          layers: mapHandle.layers, // TODO: add proper layer logic
+          hidden: mapHandle.hidden
+        }));
         saveMapState();
       });
     }
+    // Add the control to catch a click on the map area for retrieving map information
+    var queryParams = null;
+    var getFeatureInfoControl = new OL.Control(cloneInto({
+      id: 'GetFeatureInfoControl'
+    }, unsafeWindow));
+    Waze.map.addControl(getFeatureInfoControl);
+    var clickHandlerConfiguration = cloneInto({
+      'click': null
+    }, unsafeWindow);
+    var clickHandler = new OL.Handler.Click(getFeatureInfoControl, cloneInto({
+      'click': function(e) {
+        clickHandler.deactivate();
+        queryParams.callback();
+        console.log(queryParams.url + '?service=wms&request=GetFeatureInfo&bbox=' + Waze.map.getExtent().toBBOX() + '&layers=ManCon,WoCon&query_layers=ManCon,WoCon&height=' + Waze.map.getSize().h + '&width=' + Waze.map.getSize().w + '&version=1.3.0&crs=EPSG:3857&i=' + e.xy.x + '&j=' + e.xy.y + '&info_format=text/html');
+        queryParams = null;
+      }
+    }, unsafeWindow, { cloneFunctions: true }));
+    getFeatureInfoControl.handler = clickHandler;
 
     function updateMapSelector() {
       var localMaps = [];
@@ -266,7 +307,8 @@
         var handleState = {
           mapId: handle.mapId,
           opacity: handle.opacity,
-          layers: handle.mapLayers.slice()
+          layers: handle.mapLayers.slice(),
+          hidden: handle.hidden
         };
         storage.state.active.push(handleState);
       });
@@ -280,7 +322,7 @@
       this.mapId = map.id;
       this.mapLayers = [];
       this.opacity = (options && options.opacity ? options.opacity : "100");
-      var hidden = false;
+      this.hidden = (options && options.hidden ? true : false);
       var container = document.createElement('li');
       var layerContainer = document.createElement('ul');
       var title = document.createElement('p');
@@ -288,6 +330,7 @@
       var editContainer = document.createElement('div');
       var remove = document.createElement('span');
       var visibility = document.createElement('span');
+      var query = document.createElement('span');
       var edit = document.createElement('span');
       var error = document.createElement('span');
       var loadedTiles = 0;
@@ -332,6 +375,7 @@
           options.tileSize = (map.tile_size ? new OL.Size(map.tile_size, map.tile_size) : new OL.Size(512, 512));
           this.layer = new OL.Layer.WMS(map.title, map.url, params, options);
           this.layer.setOpacity(this.opacity / 100);
+          this.layer.setVisibility(!this.hidden);
           this.layer.events.register('tileerror', null, exportFunction(function(obj) {
             if (error.title != '') {
               return;
@@ -354,7 +398,7 @@
             updateTileLoader();
           }, unsafeWindow));
           Waze.map.addLayer(this.layer);
-          Waze.map.setLayerIndex(this.layer, Math.max(handles.indexOf(self) + 1, 1));
+          Waze.map.setLayerIndex(this.layer, handles.length + 1);
           this.layer.events.register('visibilitychanged', null, exportFunction(function() {
             title.style.textDecoration = (self.layer.getVisibility() ? 'none' : 'line-through');
           }, unsafeWindow));
@@ -388,14 +432,34 @@
         editContainer.style.display = (editContainer.style.display == 'none' ? 'block' : 'none');
       });
       container.appendChild(edit);
+      query.style.fontFamily = 'FontAwesome';
+      query.style.padding = '0 3px';
+      query.style.float = 'right';
+      query.style.cursor = 'pointer';
+      query.title = 'Query a certain location of this map for more information by clicking somewhere on the map'; // TODO: I18n
+      $(query).tooltip();
+      query.appendChild(document.createTextNode(''));
+      query.addEventListener('click', function() {
+        this.style.color = 'blue';
+        queryParams = {
+          url: map.url,
+          callback: function() {
+            query.style.color = '';
+            document.getElementById('WazeMap').style.cursor = '';
+          }
+        };
+        getFeatureInfoControl.activate();
+        document.getElementById('WazeMap').style.cursor = 'help';
+      });
+      container.appendChild(query);
       visibility.style.fontFamily = 'FontAwesome';
       visibility.style.padding = '0 3px';
       visibility.style.float = 'right';
       visibility.style.cursor = 'pointer';
       visibility.appendChild(document.createTextNode('')); // icon-eye-open: , icon-eye-close: 
       visibility.addEventListener('click', function(e) {
-        hidden = !hidden;
-        self.layer.setVisibility(!hidden);
+        self.hidden = !self.hidden;
+        self.layer.setVisibility(!self.hidden);
         saveMapState();
       });
       container.appendChild(visibility);
@@ -423,6 +487,7 @@
       title.appendChild(handle);
       title.style.cursor = 'default';
       title.style.borderTop = '2px solid transparent';
+      title.style.textDecoration = (this.hidden ? 'line-through' : 'none');
       title.appendChild(document.createTextNode(map.title));
       container.appendChild(title);
       description.className = 'additional-info';
