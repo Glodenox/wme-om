@@ -1,0 +1,26 @@
+Template: 
+{
+	id: ,
+	url: '',
+	crs: '',
+	bbox: new OL.Bounds(0, 0, 0, 0}, // minx: 0, miny: 0, maxx: 0, maxy: 0
+	format: 'image/png',
+	title: '',
+	abstract: '',
+	attribution: '',
+	capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'],
+	default_layers: [ ],
+	layers: {
+		'': {
+			bbox: new OL.Bounds(0, 0, 0, 0), // optional
+			queryable: true,
+			title: '',
+			abstract: '' // optional
+		}
+	}
+}
+
+1. Retrieve country code from https://countrycode.org/ and compose a new ID with it: country code + ##
+2. Clean up URL (HTTPS? Removed arguments?)
+3. Calculate BBOX: (new OL.Bounds(0, 0, 0, 0)).transform(new OL.Projection('EPSG:'), Waze.map.getProjection())
+4. Layers: put all layer groups as first in the array, followed by other layers
