@@ -626,6 +626,7 @@
         button.style.float = 'right';
         button.style.cursor = 'pointer';
         button.style.height = 'auto';
+        button.style.outline = 'none';
         button.appendChild(document.createTextNode(icon));
         if (title) {
           button.title = title;
