@@ -20,7 +20,7 @@ It is also possible to adjust the visibility of these maps within the usual laye
 
 ## Installation instructions
 
-> TL;DR: install as most other WME userscripts from its [Greasy Fork page](https://greasyfork.org/scripts/13334-wme-openmaps)
+> TL;DR: install as most other WME userscripts from its Greasy Fork page: [INSTALL OPEN MAPS](https://greasyfork.org/scripts/13334-wme-openmaps)
 
 Userscripts are snippets of code that are executed after the loading of certain webpages. This script does this after the loading of the Waze Map Editor. In order to run userscripts in your browser, you are adviced to use Firefox or Google Chrome.
 
