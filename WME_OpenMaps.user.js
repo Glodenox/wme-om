@@ -219,12 +219,12 @@
       forcePlaceholderSize: true,
       placeholderClass: 'result',
       handle: '.title'
-    }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, ui) {
-      var movedHandle = handles.splice(ui.oldElementIndex, 1)[0];
-      handles.splice(ui.elementIndex, 0, movedHandle);
-      if (ui.elementIndex >= 0 && ui.elementIndex < handles.length) { // sanity check
+    }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, change) {
+      var movedHandle = handles.splice(change.oldElementIndex, 1)[0];
+      handles.splice(change.elementIndex, 0, movedHandle);
+      if (change.elementIndex >= 0 && change.elementIndex < handles.length) { // sanity check
         var aerialImageryIndex = Waze.map.getLayerIndex(Waze.map.getLayersBy('uniqueName', 'satellite_imagery')[0]);
-        Waze.map.setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + ui.elementIndex + 1);
+        Waze.map.setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + change.elementIndex + 1);
       }
       saveMapState();
     }, unsafeWindow));
@@ -968,13 +968,13 @@
         forcePlaceholderSize: true,
         placeholderClass: 'result',
         handle: '.title'
-      }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, ui) {
-        if (ui.elementIndex < 0 || ui.elementIndex >= self.mapLayers.length || ui.oldElementIndex < 0 || ui.oldElementIndex >= self.mapLayers.length) { // Sanity check
-          log('Received an invalid element index when reordering map layers. Old index: ' + ui.oldElementIndex + ', new index: ' + ui.elementIndex);
+      }, unsafeWindow)).bind('sortupdate', exportFunction(function(e, change) {
+        if (change.elementIndex < 0 || change.elementIndex >= self.mapLayers.length || change.oldElementIndex < 0 || change.oldElementIndex >= self.mapLayers.length) { // Sanity check
+          log('Received an invalid element index when reordering map layers. Old index: ' + change.oldElementIndex + ', new index: ' + change.elementIndex);
           return;
         }
-        self.mapLayers.splice(ui.elementIndex, 0, self.mapLayers.splice(ui.oldElementIndex, 1)[0]);
-        layerRedrawNeeded = self.mapLayers[ui.elementIndex].visible; // Only redraw if it was a visible layer
+        self.mapLayers.splice(change.elementIndex, 0, self.mapLayers.splice(change.oldElementIndex, 1)[0]);
+        layerRedrawNeeded = self.mapLayers[change.elementIndex].visible; // Only redraw if it was a visible layer
         self.updateLayers.call(self);
       }, unsafeWindow));
       
