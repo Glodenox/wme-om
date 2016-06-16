@@ -95,7 +95,7 @@
           v2_3_4: '- Small UI improvements and internal code refactoring',
           v2_3_5: '- Slightly improved map query response handling\n- Fixed TamperMonkey notices about accessing external resources',
           v2_3_6: '- Fix behaviour on WME beta\n- Group maps by country\n- Add Hectopunten map for The Netherlands',
-          v2_3_7: '- Defunct layer cleanup\n- Add Wegenregister map for Belgium'
+          v2_3_7: '- Fixed map layer sorting\n- Defunct layer cleanup\n- Add Wegenregister map for Belgium'
         }
       },
       nl: {
@@ -140,7 +140,7 @@
           v2_3_4: '- Kleine veranderingen aan de UI en interne herwerking van code',
           v2_3_5: '- Licht verbeterde verwerking van kaartopzoekingen\n- Probleem opgelost met TamperMonkey-meldingen over het gebruik van externe bronnen',
           v2_3_6: '- Werking op WME beta verbeterd\n- Groupeer kaarten per land\n- Toevoeging van Hectopuntenkaart in Nederland',
-          v2_3_7: '- Opschonen van onbestaande kaartlagen\n- Wegenregister toegevoegd voor België'
+          v2_3_7: '- Sorteren van kaartlagen hersteld\n- Opschonen van onbestaande kaartlagen\n- Wegenregister toegevoegd voor België'
         }
       },
       fr: {
