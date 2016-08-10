@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?><WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:srv="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd" xmlns:gmd="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" xmlns:gco="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:gml="http://schemas.opengis.net/gml" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="1913" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 https://geodata.nationaalgeoregister.nl/www/inspire/inspire_vs.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>BAG</Title>
+    <Abstract>De gegevens bestaan uit BAG-panden en een deelselectie van BAG-gegevens van deze panden en de zich daarin bevindende verblijfsobjecten. Ook de ligplaatsen en standplaatsen zijn hierin opgenomen met een deelselectie van BAG-gegevens. De gegevens van de nummeraanduiding zijn in deze services onderdeel van de adresseerbare objecten, hierbij wordt slechts 1 adres opgenomen, dus objecten met meerdere adressen (hoofd- en nevenadressen) zijn niet compleet. In deze services zitten dus niet alle BAG adressen. Wij adviseren u, aangezien er sprake is van beperkte gegevens, om in de webservice BAG Bevragen de actuele gegevens te controleren. Dit kan ook in een van de andere BAG producten: BAG Web, BAG Extract of BAG Compact. BAG Bevragen: http://www.kadaster.nl/web/artikel/productartikel/BAG-Bevragen.htm Andere BAG producten: http://www.kadaster.nl/web/Themas/Registraties/BAG/BAGartikelen/BAG-producten.htm De service wordt dagelijks geactualiseerd.</Abstract>
+    <KeywordList>
+      <Keyword>BAG</Keyword>
+      <Keyword>adres</Keyword>
+      <Keyword>gebouw</Keyword>
+      <Keyword>pand</Keyword>
+      <Keyword>verblijfsobject</Keyword>
+      <Keyword>ligplaats</Keyword>
+      <Keyword>standplaats</Keyword>
+      <Keyword>nummeraanduiding</Keyword>
+      <Keyword>woonplaats</Keyword>
+      <Keyword>infoMapAccessService</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>KlantContactCenter PDOK</ContactPerson>
+        <ContactOrganization>PDOK</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>pointOfContact</ContactPosition>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address/>
+        <City>Apeldoorn</City>
+        <StateOrProvince/>
+        <PostCode/>
+        <Country>Nederland</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>http://creativecommons.org/publicdomain/mark/1.0/deed.nl</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+    </Exception>
+    <inspire_vs:ExtendedCapabilities>
+      <inspire_common:MetadataUrl>
+        <inspire_common:URL>http://www.nationaalgeoregister.nl/geonetwork/srv/eng/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=9e2e977a-16a6-42a4-a208-c4f70704f383</inspire_common:URL>
+        <inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+      </inspire_common:MetadataUrl>
+      <inspire_common:SupportedLanguages>
+        <inspire_common:DefaultLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:DefaultLanguage>
+        <inspire_common:SupportedLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:SupportedLanguage>
+      </inspire_common:SupportedLanguages>
+      <inspire_common:ResponseLanguage>
+        <inspire_common:Language>dut</inspire_common:Language>
+      </inspire_common:ResponseLanguage>
+    </inspire_vs:ExtendedCapabilities>
+    <Layer>
+      <Title>BAG</Title>
+      <Abstract>De gegevens bestaan uit BAG-panden en een deelselectie van BAG-gegevens van deze panden en de zich daarin bevindende verblijfsobjecten. Ook de ligplaatsen en standplaatsen zijn hierin opgenomen met een deelselectie van BAG-gegevens. De gegevens van de nummeraanduiding zijn in deze services onderdeel van de adresseerbare objecten, hierbij wordt slechts 1 adres opgenomen, dus objecten met meerdere adressen (hoofd- en nevenadressen) zijn niet compleet. In deze services zitten dus niet alle BAG adressen. Wij adviseren u, aangezien er sprake is van beperkte gegevens, om in de webservice BAG Bevragen de actuele gegevens te controleren. Dit kan ook in een van de andere BAG producten: BAG Web, BAG Extract of BAG Compact. BAG Bevragen: http://www.kadaster.nl/web/artikel/productartikel/BAG-Bevragen.htm Andere BAG producten: http://www.kadaster.nl/web/Themas/Registraties/BAG/BAGartikelen/BAG-producten.htm De service wordt dagelijks geactualiseerd.</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:25831</CRS>
+      <CRS>EPSG:25832</CRS>
+      <CRS>EPSG:28992</CRS>
+      <CRS>EPSG:3034</CRS>
+      <CRS>EPSG:3035</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>3.206235952734017</westBoundLongitude>
+        <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+        <southBoundLatitude>50.7336070072307</southBoundLatitude>
+        <northBoundLatitude>53.58297881371805</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+      <BoundingBox CRS="EPSG:4326" minx="50.7336070072307" miny="3.206235952734017" maxx="53.58297881371805" maxy="7.2452582753351376"/>
+      <BoundingBox CRS="EPSG:4258" minx="50.733607008154785" miny="3.2062359527340165" maxx="53.582978814618805" maxy="7.2452582753351376"/>
+      <BoundingBox CRS="EPSG:3035" minx="3072766.931920088" miny="3842143.7494878774" maxx="3407222.0125983255" maxy="4138583.0956788687"/>
+      <BoundingBox CRS="EPSG:3034" minx="2667442.1838948894" miny="3537507.8556474377" maxx="2990189.456505623" maxy="3823662.1598295826"/>
+      <BoundingBox CRS="EPSG:3857" minx="356916.55362143705" miny="6574306.479269904" maxx="806538.461876059" maxy="7091569.761091683"/>
+      <BoundingBox CRS="EPSG:28992" minx="957.146213946311" miny="304838.41435884463" maxx="286100.91153222404" maxy="624058.0219082627"/>
+      <BoundingBox CRS="EPSG:25831" minx="513653.4141300683" miny="5620221.940357837" maxx="799536.1653213303" maxy="5945508.295296945"/>
+      <BoundingBox CRS="EPSG:25832" minx="91269.26029616862" miny="5621669.929229348" maxx="383836.3167349766" maxy="5952746.130986118"/>
+      <Layer queryable="1">
+        <Name>bag</Name>
+        <Title>bag</Title>
+        <Abstract>bag</Abstract>
+        <CRS>EPSG:28992</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ligplaats</Name>
+        <Title>ligplaats</Title>
+        <Abstract>ligplaats</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ligplaats</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7334127694571" miny="3.2051823668269814" maxx="53.58278517693342" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73341277038118" miny="3.2051823668269814" maxx="53.58278517783418" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073614.3025099616" miny="3851492.1797789703" maxx="3405033.2934443876" maxy="4138450.626227286"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668257.571715348" miny="3546541.1842526076" maxx="2988074.0491355434" maxy="3823535.927986264"/>
+        <BoundingBox CRS="EPSG:3857" minx="356799.268974759" miny="6574272.316704847" maxx="806419.1283440797" maxy="7091533.451465934"/>
+        <BoundingBox CRS="EPSG:25831" minx="513590.01161562005" miny="5620234.96004342" maxx="791375.717212824" maxy="5943906.836550638"/>
+        <BoundingBox CRS="EPSG:25832" minx="100650.211576448" miny="5622404.0854928065" maxx="383725.93425894435" maxy="5950552.142101422"/>
+        <AuthorityURL name="kadaster">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.kadaster.nl"/>
+        </AuthorityURL>
+        <Identifier authority="kadaster">nl.kad.20</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+        <Style>
+          <Name>bag:bag_ligplaats</Name>
+          <Title>ligplaats</Title>
+          <LegendURL width="66" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ligplaats"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>8000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>pand</Name>
+        <Title>pand</Title>
+        <Abstract>pand</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>pand</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7334127694571" miny="3.2051823668269814" maxx="53.58278517693342" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73341277038118" miny="3.2051823668269814" maxx="53.58278517783418" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073614.3025099616" miny="3851492.1797789703" maxx="3405033.2934443876" maxy="4138450.626227286"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668257.571715348" miny="3546541.1842526076" maxx="2988074.0491355434" maxy="3823535.927986264"/>
+        <BoundingBox CRS="EPSG:3857" minx="356799.268974759" miny="6574272.316704847" maxx="806419.1283440797" maxy="7091533.451465934"/>
+        <BoundingBox CRS="EPSG:25831" minx="513590.01161562005" miny="5620234.96004342" maxx="791375.717212824" maxy="5943906.836550638"/>
+        <BoundingBox CRS="EPSG:25832" minx="100650.211576448" miny="5622404.0854928065" maxx="383725.93425894435" maxy="5950552.142101422"/>
+        <AuthorityURL name="kadaster">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.kadaster.nl"/>
+        </AuthorityURL>
+        <Identifier authority="kadaster">nl.kad.21</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+        <Style>
+          <Name>bag:bag_pand</Name>
+          <Title>Pand</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=pand"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>bag:bag_pand_selected</Name>
+          <Title>Default polygon style</Title>
+          <Abstract>Vis</Abstract>
+          <LegendURL width="65" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=pand&amp;style=bag_pand_selected"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>8000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>standplaats</Name>
+        <Title>standplaats</Title>
+        <Abstract>standplaats</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>standplaats</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7334127694571" miny="3.2051823668269814" maxx="53.58278517693342" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73341277038118" miny="3.2051823668269814" maxx="53.58278517783418" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073614.3025099616" miny="3851492.1797789703" maxx="3405033.2934443876" maxy="4138450.626227286"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668257.571715348" miny="3546541.1842526076" maxx="2988074.0491355434" maxy="3823535.927986264"/>
+        <BoundingBox CRS="EPSG:3857" minx="356799.268974759" miny="6574272.316704847" maxx="806419.1283440797" maxy="7091533.451465934"/>
+        <BoundingBox CRS="EPSG:25831" minx="513590.01161562005" miny="5620234.96004342" maxx="791375.717212824" maxy="5943906.836550638"/>
+        <BoundingBox CRS="EPSG:25832" minx="100650.211576448" miny="5622404.0854928065" maxx="383725.93425894435" maxy="5950552.142101422"/>
+        <AuthorityURL name="kadaster">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.kadaster.nl"/>
+        </AuthorityURL>
+        <Identifier authority="kadaster">nl.kad.22</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+        <Style>
+          <Name>bag:bag_standplaats</Name>
+          <Title>Default polygon style</Title>
+          <Abstract>A sample style that just draws out a solid gray interior with a black 1px outline</Abstract>
+          <LegendURL width="66" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=standplaats"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>8000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>verblijfsobject</Name>
+        <Title>verblijfsobject</Title>
+        <Abstract>verblijfsobject</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>verblijfsobject</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7334127694571" miny="3.2051823668269814" maxx="53.58278517693342" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73341277038118" miny="3.2051823668269814" maxx="53.58278517783418" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073614.3025099616" miny="3851492.1797789703" maxx="3405033.2934443876" maxy="4138450.626227286"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668257.571715348" miny="3546541.1842526076" maxx="2988074.0491355434" maxy="3823535.927986264"/>
+        <BoundingBox CRS="EPSG:3857" minx="356799.268974759" miny="6574272.316704847" maxx="806419.1283440797" maxy="7091533.451465934"/>
+        <BoundingBox CRS="EPSG:25831" minx="513590.01161562005" miny="5620234.96004342" maxx="791375.717212824" maxy="5943906.836550638"/>
+        <BoundingBox CRS="EPSG:25832" minx="100650.211576448" miny="5622404.0854928065" maxx="383725.93425894435" maxy="5950552.142101422"/>
+        <AuthorityURL name="kadaster">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.kadaster.nl"/>
+        </AuthorityURL>
+        <Identifier authority="kadaster">nl.kad.23</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+        <Style>
+          <Name>bag:bag_verblijfsobject</Name>
+          <Title>Verblijfsobject</Title>
+          <LegendURL width="106" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=verblijfsobject"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>8000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>woonplaats</Name>
+        <Title>woonplaats</Title>
+        <Abstract>woonplaats</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>woonplaats</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.206235952734017</westBoundLongitude>
+          <eastBoundLongitude>7.2452582753351376</eastBoundLongitude>
+          <southBoundLatitude>50.7336070072307</southBoundLatitude>
+          <northBoundLatitude>53.58297881371805</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.206235952734017" miny="50.7336070072307" maxx="7.2452582753351376" maxy="53.58297881371805"/>
+        <BoundingBox CRS="EPSG:28992" minx="10425.156" miny="306846.198" maxx="278026.09" maxy="621876.3"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7334127694571" miny="3.2051823668269814" maxx="53.58278517693342" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73341277038118" miny="3.2051823668269814" maxx="53.58278517783418" maxy="7.244186283978288"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073614.3025099616" miny="3851492.1797789703" maxx="3405033.2934443876" maxy="4138450.626227286"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668257.571715348" miny="3546541.1842526076" maxx="2988074.0491355434" maxy="3823535.927986264"/>
+        <BoundingBox CRS="EPSG:3857" minx="356799.268974759" miny="6574272.316704847" maxx="806419.1283440797" maxy="7091533.451465934"/>
+        <BoundingBox CRS="EPSG:25831" minx="513590.01161562005" miny="5620234.96004342" maxx="791375.717212824" maxy="5943906.836550638"/>
+        <BoundingBox CRS="EPSG:25832" minx="100650.211576448" miny="5622404.0854928065" maxx="383725.93425894435" maxy="5950552.142101422"/>
+        <AuthorityURL name="kadaster">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.kadaster.nl"/>
+        </AuthorityURL>
+        <Identifier authority="kadaster">nl.kad.24</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=aa3b5e6e-7baa-40c0-8972-3353e927ec2f"/>
+        </MetadataURL>
+        <Style>
+          <Name>bag:bag_woonplaats</Name>
+          <Title>Woonplaats</Title>
+          <LegendURL width="22" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/bag/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=woonplaats"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

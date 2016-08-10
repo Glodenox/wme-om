@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities
+	xmlns:srv="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd"
+	xmlns:gmd="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd"
+	xmlns:gco="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd"
+	xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0"
+	xmlns:gml="http://schemas.opengis.net/gml" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+	version="1.3.0" updateSequence="1370" xmlns="http://www.opengis.net/wms"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://geoserver.gis.irisnet.be:80/geoserver/www/inspire/inspire_vs.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>CIRB WMS</Title>
+		<Abstract>Web Map Service for the CIRB layers</Abstract>
+		<KeywordList>
+			<Keyword>WFS</Keyword>
+			<Keyword>WMS</Keyword>
+			<Keyword>GEOSERVER</Keyword>
+			<Keyword>CIRB</Keyword>
+			<Keyword>infoMapAccessService</Keyword>
+		</KeywordList>
+		
+		<OnlineResource xlink:type="simple"
+			xlink:href="http://geoserver.gis.irisnet.be/wms" />
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Eric Auquière</ContactPerson>
+				<ContactOrganization>CIRB</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition />
+			<ContactAddress>
+				<AddressType>Postal</AddressType>
+				<Address>Avenue des arts 21</Address>
+				<City>Brussels</City>
+				<StateOrProvince />
+				<PostCode>1000</PostCode>
+				<Country>Belgium</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone />
+			<ContactFacsimileTelephone />
+			<ContactElectronicMailAddress>eauquiere@cirb.irisnet.be
+			</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>NONE</Fees>
+		<AccessConstraints>NONE</AccessConstraints>
+	</Service>
+	
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xlink:type="simple"
+								xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?SERVICE=WMS&amp;" />
+						</Get>
+						<Post>
+							<OnlineResource xlink:type="simple"
+								xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?SERVICE=WMS&amp;" />
+						</Post>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/png</Format>
+				<Format>application/atom+xml</Format>
+				<Format>application/pdf</Format>
+				<Format>application/vnd.google-earth.kml+xml</Format>
+				<Format>application/vnd.google-earth.kmz</Format>
+				<Format>image/geotiff</Format>
+				<Format>image/geotiff8</Format>
+				<Format>image/gif</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/png8</Format>
+				<Format>image/svg+xml</Format>
+				<Format>image/tiff</Format>
+				<Format>image/tiff8</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xlink:type="simple"
+								xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?SERVICE=WMS&amp;" />
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>text/plain</Format>
+				<Format>application/vnd.ogc.gml</Format>
+				<Format>text/html</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xlink:type="simple"
+								xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?SERVICE=WMS&amp;" />
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>XML</Format>
+			<Format>INIMAGE</Format>
+			<Format>BLANK</Format>
+		</Exception>
+		<inspire_vs:ExtendedCapabilities>
+			
+			<inspire_common:ResourceLocator>
+				<inspire_common:URL>http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?SERVICE=WMS&amp;</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.ogc.wms_xml</inspire_common:MediaType>
+			</inspire_common:ResourceLocator>
+			
+			<inspire_common:ResourceType>service</inspire_common:ResourceType>
+			
+			<inspire_common:TemporalReference>
+				<inspire_common:DateOfLastRevision>2013-10-08</inspire_common:DateOfLastRevision>
+			</inspire_common:TemporalReference>
+			
+			<inspire_common:Conformity>
+				<inspire_common:Specification xsi:type="inspire_common:citationInspireInteroperabilityRegulation_eng">
+				<inspire_common:Title>COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</inspire_common:Title>
+				<inspire_common:DateOfPublication>2010-12-08</inspire_common:DateOfPublication>
+				<inspire_common:URI>OJ:L:2010:323:0011:0102:EN:PDF</inspire_common:URI>
+				<inspire_common:ResourceLocator>
+					<inspire_common:URL>
+						http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:EN:PDF
+					</inspire_common:URL>
+					<inspire_common:MediaType>application/pdf</inspire_common:MediaType>
+				</inspire_common:ResourceLocator>
+				</inspire_common:Specification>
+				<inspire_common:Degree>notEvaluated</inspire_common:Degree>
+			</inspire_common:Conformity>
+			
+			<inspire_common:MetadataPointOfContact>
+				<inspire_common:OrganisationName>CIRB</inspire_common:OrganisationName>
+				<inspire_common:EmailAddress>eauquiere@cirb.irisnet.be</inspire_common:EmailAddress>
+			</inspire_common:MetadataPointOfContact>
+			<inspire_common:MetadataDate>2011-04-28</inspire_common:MetadataDate>			
+			<inspire_common:SpatialDataServiceType>view</inspire_common:SpatialDataServiceType>
+			
+			<inspire_common:MandatoryKeyword xsi:type="inspire_common:classificationOfSpatialDataService">
+				<inspire_common:KeywordValue>infoMapAccessService</inspire_common:KeywordValue>
+			</inspire_common:MandatoryKeyword>
+			
+			<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_dut">
+				<inspire_common:OriginatingControlledVocabulary xsi:type="inspire_common:originatingControlledVocabularyGemetInspireThemes">
+				<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+				<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+				</inspire_common:OriginatingControlledVocabulary>
+				<inspire_common:KeywordValue>Orthobeeldvorming</inspire_common:KeywordValue>
+			</inspire_common:Keyword>
+			<inspire_common:SupportedLanguages xsi:type="inspire_common:supportedLanguagesType">
+				<inspire_common:DefaultLanguage>
+				<inspire_common:Language>eng</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+			</inspire_common:SupportedLanguages>
+			
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>eng</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+			
+			<inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
+				<inspire_common:URL>http://geonetwork.geobru.irisnet.be/geonetwork/srv/en/csw?service=CSW&amp;Request=GetRecordById&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=d52a665f-7b72-443a-af5f-115d726f93b7&amp;version=2.0.2</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
+			</inspire_common:MetadataUrl>
+		</inspire_vs:ExtendedCapabilities>
+
+	  
+		
+		<Layer>
+			<Title>CIRB WMS</Title>
+			<Abstract>Web Map Service for the CIRB layers</Abstract>
+			<CRS>EPSG:3043</CRS>
+			<CRS>EPSG:31300</CRS>
+			<CRS>EPSG:31370</CRS>
+			<CRS>EPSG:3812</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:900913</CRS>
+			<CRS>CRS:84</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>2.235</westBoundLongitude>
+				<eastBoundLongitude>4.513</eastBoundLongitude>
+				<southBoundLatitude>49.293</southBoundLatitude>
+				<northBoundLatitude>50.926</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			
+      <Layer queryable="1">
+        <Name>urbis:LabeledStreetAxe</Name>
+        <Title>LabeledStreetAxe</Title>
+        <Abstract>Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building</Abstract>
+        <KeywordList>
+          <Keyword>URB_A_SA_AGGREG</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <SRS>EPSG:31370</SRS>
+        <!--WKT definition of this CRS:
+PROJCS["Belge 1972 / Belgian Lambert 72", 
+  GEOGCS["Belge 1972", 
+    DATUM["Reseau National Belge 1972", 
+      SPHEROID["International 1924", 6378388.0, 297.0, AUTHORITY["EPSG","7022"]], 
+      TOWGS84[-106.8686, 52.2978, -103.7239, 0.3366, 0.457, -1.8422, -1.2747], 
+      AUTHORITY["EPSG","6313"]], 
+    PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+    UNIT["degree", 0.017453292519943295], 
+    AXIS["Geodetic longitude", EAST], 
+    AXIS["Geodetic latitude", NORTH], 
+    AUTHORITY["EPSG","4313"]], 
+  PROJECTION["Lambert_Conformal_Conic_2SP", AUTHORITY["EPSG","9802"]], 
+  PARAMETER["central_meridian", 4.367486666666666], 
+  PARAMETER["latitude_of_origin", 90.0], 
+  PARAMETER["standard_parallel_1", 51.166667233333335], 
+  PARAMETER["false_easting", 150000.013], 
+  PARAMETER["false_northing", 5400088.438], 
+  PARAMETER["scale_factor", 1.0], 
+  PARAMETER["standard_parallel_2", 49.833333900000014], 
+  UNIT["m", 1.0], 
+  AXIS["Easting", EAST], 
+  AXIS["Northing", NORTH], 
+  AUTHORITY["EPSG","31370"]]-->
+        <LatLonBoundingBox minx="4.24850561903034" miny="50.76338093068916" maxx="4.483692432107067" maxy="50.91427480095912"/>
+        <BoundingBox SRS="EPSG:31370" minx="141617.26653625502" miny="161465.941773353" maxx="158156.698029848" maxy="178244.8229044"/>
+        <Style>
+          <Name>OsirisLineFrLblZoom</Name>
+          <Title>SLD Cook Book: Label following line for osiris</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://192.168.15.58:8080/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LabeledStreetAxe"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>OsirisLineFrLblZoom</Name>
+          <Title>SLD Cook Book: Label following line for osiris</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://192.168.15.58:8080/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LabeledStreetAxe&amp;style=OsirisLineFrLblZoom"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>OsirisLineNlLblZoom</Name>
+          <Title>SLD Cook Book: Label following line for osiris</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://192.168.15.58:8080/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LabeledStreetAxe&amp;style=OsirisLineNlLblZoom"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+			
+			
+			<Layer queryable="0">
+				<Name>urbis:URB_A_ADPT</Name>
+				<Title>Address points</Title>
+				<Abstract>This layer is the localization of address points of the
+					Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Adresses</Keyword> 
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.25</westBoundLongitude>
+					<eastBoundLongitude>4.48</eastBoundLongitude>
+					<southBoundLatitude>50.768</southBoundLatitude>
+					<northBoundLatitude>50.911</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141737.497" miny="162020.529"
+					maxx="157878.449" maxy="177860.059" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>
+				<Identifier authority="http://www.cirb.be">URB_A_ADPT</Identifier> 				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=3febf25d-a21c-4e14-adee-e1b022185314" />
+				</MetadataURL>
+				
+				<Style>
+					<Name>urbis_address_labels</Name>
+					<Title>URB_A_ADPT</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_ADPT" />
+					</LegendURL>
+				</Style>
+				
+
+				
+				
+				
+
+			</Layer>
+			<Layer queryable="1">
+				<Name>urbis:URB_A_BU</Name>
+				<Title>Buildings</Title>
+				<Abstract>This layer represents the buildings of the Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>building</Keyword>
+					<Keyword>built environment </Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.243</westBoundLongitude>
+					<eastBoundLongitude>4.48</eastBoundLongitude>
+					<southBoundLatitude>50.765</southBoundLatitude>
+					<northBoundLatitude>50.911</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141234.938" miny="161646.996"
+					maxx="157887.27" maxy="177901.098" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=abd786df-2ad9-4025-adde-7ded08c259d3" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_buildings_style</Name>
+					<Title>Buildings</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_BU" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_MD</Name>
+				<Title>Monitoring districts</Title>
+				<Abstract>This layer reprensent the monitoring districts of the
+					Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Administrative unit</Keyword>
+					<Keyword>Statistical unit</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.242</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=9651e420-2c8d-48ec-b4a1-6a43a3f6a40f" />
+				</MetadataURL>
+				<Style>
+					<Name>polygon</Name>
+					<Title>Urbis Monitoring districts style</Title>
+					<Abstract>Urbis Monitoring districts style</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MD" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_MD</Name>
+					<Title>MRBC Monitoring districts style</Title>
+					<Abstract>MRBC Monitoring districts style</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MD" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_MU</Name>
+				<Title>Municipalities</Title>
+				<Abstract>This layer represents the municipalities of the Brussels
+					Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>administration</Keyword>
+					<Keyword>municipality</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.242</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=0e1a4a49-52af-4a1d-976a-a7d64f18204e" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_municipalities</Name>
+					<Title>Communes</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MU" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>urbis_municipalities_labels_nl</Name>
+					<Title>URB_A_MU</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MU&amp;style=urbis_municipalities_labels_nl" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>urbis_municipalities_labels_fr</Name>
+					<Title>URB_A_MU</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MU&amp;style=urbis_municipalities_labels_fr" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_MU</Name>
+					<Title>MRBC Municipalities style</Title>
+					<Abstract> MRBC Municipalities style </Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MU" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_MY_SA</Name>
+				<Title>Street axes</Title>
+				<Abstract>This layer represents the axes of the street of the
+					Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Transport network</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.249</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.758</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.249" miny="50.758"
+					maxx="4.482" maxy="50.914" />
+				<BoundingBox CRS="EPSG:31370" minx="141617.011" miny="160897.165"
+					maxx="158031.521" maxy="178193.604" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=71872f9a-e2d6-47e4-9ec2-a15428c50a9b" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_streets_fr</Name>
+					<Title>Streets</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MY_SA" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_SA</Name>
+					<Title>MRBC Street axes style</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MY_SA" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_MY_SS</Name>
+				<Title>Street sections</Title>
+				<Abstract>This layer represents the street sections of the Brussels
+					Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Street</Keyword>
+					<Keyword>Sections</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.244</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.244" miny="50.763"
+					maxx="4.482" maxy="50.913" />
+				<BoundingBox CRS="EPSG:31370" minx="141275.288" miny="161464.403"
+					maxx="158005.472" maxy="178084.343" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=85ad7f95-5b2f-4d1e-85a0-84cbf471fe4e"/>
+				</MetadataURL>
+				<Style>
+					<Name>urbis_main_roads_style</Name>
+					<Title>urbis_main_roads</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MY_SS" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_SS</Name>
+					<Title>MRBC road style</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MY_SS" />
+					</LegendURL>
+				</Style>
+			</Layer>
+
+
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_MZ</Name>
+				<Title>Municipal zips</Title>
+				<Abstract>This layer is the zip of the municipality of the Brussels
+					Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>administrative unit</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.24247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.76336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.24247036581555" miny="50.76336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" />
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=3452edb8-641e-4c79-96ba-516d0119291e" />
+				</MetadataURL>
+				<Style>
+					<Name>polygon</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a transparent red
+						interior with a red outline
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MZ" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_MZ</Name>
+					<Title>MRBC Municipalities Zip style</Title>
+					<Abstract>MRBC Municipalities Zip style</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_MZ" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_POL</Name>
+				<Title>Police districts</Title>
+				<Abstract>This layer is the police districts of the Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Administrative unit</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.24247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.76336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.24247036581555" miny="50.76336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" />
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=8d89a535-35b3-4ded-894d-3cf1b4bad93e" />
+				</MetadataURL>
+				<Style>
+					<Name>polygon</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a transparent red
+						interior with a red outline
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_POL" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_POL</Name>
+					<Title>MRBC Police district style</Title>
+					<Abstract>MRBC Police district style</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_POL" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_RE</Name>
+				<Title>Region</Title>
+				<Abstract>This layer is the Brussels Region</Abstract>
+				<KeywordList>
+					<Keyword>Administrative unit</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.242</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=6f340f3e-2cd9-4f22-83a1-a6933853e903" />
+				</MetadataURL>
+				<Style>
+					<Name>UrbAdm_Re_style</Name>
+					<Title>Région</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_RE" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_RE</Name>
+					<Title>MRBC Région Style</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_RE" />
+					</LegendURL>
+				</Style>				
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_SD</Name>
+				<Title>Statistical districts</Title>
+				<Abstract>This layer represents the limit of the statistical
+					districts of the Brussels Region
+				</Abstract>
+				<KeywordList>
+					<Keyword>Statistical unit</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.242</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=a85212a9-86bf-47e1-888c-be31da22f57f" />
+				</MetadataURL>
+				<Style>
+					<Name>polygon</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a transparent red
+						interior with a red outline
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_SD" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_SD</Name>
+					<Title>MRBC Statistical districts style</Title>
+					<Abstract>MRBC Statistical districts style</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_SD" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_SN</Name>
+				<Title>Street nodes</Title>
+				<Abstract>This layer represents the street nodes. Each node is an
+					intersection or an extremity of a street axe
+				</Abstract>
+				<KeywordList>
+					<Keyword>transport infrastructure</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.248503148217136</westBoundLongitude>
+					<eastBoundLongitude>4.481911320535646</eastBoundLongitude>
+					<southBoundLatitude>50.758267791738895</southBoundLatitude>
+					<northBoundLatitude>50.91381436629252</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.248503148217136" miny="50.758267791738895"
+					maxx="4.481911320535646" maxy="50.91381436629252" />
+				<BoundingBox CRS="EPSG:31370" minx="141617.011" miny="160897.165"
+					maxx="158031.521" maxy="178193.604" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>					
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=6c5fef0f-81ac-4da9-8cdc-ad3efb945655" />
+				</MetadataURL>
+				<Style>
+					<Name>point</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_SN" />
+					</LegendURL>
+				</Style>
+
+
+			</Layer>
+			<Layer queryable="1">
+				<Name>urbis:URB_M_RTLINE</Name>
+				<Title>Rail tracks</Title>
+				<Abstract>This layer represents the rails tracks.</Abstract>
+				<KeywordList>
+					<Keyword>transport infrastructure</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.247</westBoundLongitude>
+					<eastBoundLongitude>4.476</eastBoundLongitude>
+					<southBoundLatitude>50.774</southBoundLatitude>
+					<northBoundLatitude>50.906</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141513.28" miny="162597.035"
+					maxx="157632.78" maxy="177308.16" />
+				<BoundingBox CRS="CRS:84" minx="4.248503148217136" miny="50.758267791738895"
+					maxx="4.481911320535646" maxy="50.91381436629252" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>					
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=5a08229f-d2ed-4b75-b588-1b07994aacc8" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_map_rtline_1</Name>
+					<Title>urbis rail tram lines</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_RTLINE" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>urbis_rt_style</Name>
+					<Title>UrbMap_Rt</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_RTLINE&amp;style=urbis_rt_style" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>MRBC_ADM_RTLINE</Name>
+					<Title>MRBC RTLINE style</Title>
+					<Abstract>Tram et Metro</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_RTLINE" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_M_SHAPE</Name>
+				<Title>UrbisMap shapes</Title>
+				<Abstract>This layer represents the shapes of UrbisMap.</Abstract>
+				<KeywordList>
+					<Keyword>shape</Keyword>
+					<Keyword>UrbisMap</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.242</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>50.763</southBoundLatitude>
+					<northBoundLatitude>50.914</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141192.712" miny="161467.143"
+					maxx="158023.663" maxy="178178.889" />
+				<BoundingBox CRS="CRS:84" minx="4.248503148217136" miny="50.758267791738895"
+					maxx="4.481911320535646" maxy="50.91381436629252" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>			
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx"/>
+				</MetadataURL>
+				<Style>
+					<Name>urbis_map_shapes</Name>
+					<Title>urbis shapes</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_SHAPE" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_M_TONAME_LIN</Name>
+				<Title>Toponymy</Title>
+				<Abstract>This layer represents the toponymy of public places.
+				</Abstract>
+				<KeywordList>
+					<Keyword>toponymy</Keyword>
+					<Keyword>geographical designation</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.249</westBoundLongitude>
+					<eastBoundLongitude>4.481</eastBoundLongitude>
+					<southBoundLatitude>50.764</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.249" miny="50.764"
+					maxx="4.481" maxy="50.913" />
+				<BoundingBox CRS="EPSG:31370" minx="141671.0" miny="161503.0"
+					maxx="157980.0" maxy="178131.0" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=e53dea13-3be1-48dc-8d72-eeefb8f64bd2" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_toponymy</Name>
+					<Title>toponymy</Title>
+					<Abstract />
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_TONAME_LIN" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_M_ZIPOINT</Name>
+				<Title>Points of interest</Title>
+				<Abstract>This layer represents the point of zone of interest.
+				</Abstract>
+				<KeywordList>
+					<Keyword>point</Keyword>
+					<Keyword>zi</Keyword>
+					<Keyword>zone of interest</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.244</westBoundLongitude>
+					<eastBoundLongitude>4.513</eastBoundLongitude>
+					<southBoundLatitude>50.743</southBoundLatitude>
+					<northBoundLatitude>50.926</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141332.478" miny="159203.0"
+					maxx="160197.0" maxy="179577.0" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+				<Style>
+					<Name>point</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_ZIPOINT" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>urbis_SUL_style</Name>
+					<Title>SUL style</Title>
+					<Abstract>
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_ZIPOINT&amp;style=urbis_SUL_style" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>mobility_landmarks</Name>
+					<Title>geoserver style</Title>
+					<Abstract>Generated by GeoServer</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_M_ZIPOINT&amp;style=mobility_landmarks" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_T_LINE</Name>
+				<Title>Urbis Topo Lines</Title>
+				<Abstract>This layer represents the topo lines.</Abstract>
+				<KeywordList>
+					<Keyword>topo</Keyword>
+					<Keyword>lines</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.244</westBoundLongitude>
+					<eastBoundLongitude>4.513</eastBoundLongitude>
+					<southBoundLatitude>50.743</southBoundLatitude>
+					<northBoundLatitude>50.926</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="141332.478" miny="159203.0"
+					maxx="160197.0" maxy="179577.0" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_topo_line</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a green line
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_T_LINE" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_T_POINT</Name>
+				<Title>Urbis Topo Points</Title>
+				<Abstract>This layer represents the topo points.</Abstract>
+				<KeywordList>
+					<Keyword>topo</Keyword>
+					<Keyword>points</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.235</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>49.293</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="158007.72" maxy="178096.34" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_topo_point</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_T_POINT" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+		
+			
+			<Layer queryable="1">
+				<Name>urbis:URB_A_SI_POINT_VW</Name>
+				<Title>Street sides</Title>
+				<Abstract>Street sides</Abstract>
+				<KeywordList>
+					<Keyword>Street sides</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.235</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>49.293</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="198007.72" maxy="178096.34" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=cbce7e4a-fbe0-4d69-9304-22bd92a89529" />
+				</MetadataURL>
+				<Style>
+					<Name>urbis_si_labels</Name>
+					<Title>geoserver style</Title>
+					<Abstract>Generated by GeoServer</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=URB_A_SI_POINT_VW&amp;style=urbis_si_labels" />
+					</LegendURL>
+				</Style>
+			</Layer>
+			
+			<Layer queryable="0">
+				<Name>urbisFR</Name>
+				<Title>Urbis Base Map FR</Title>
+				<Abstract>This layer represents the base map in french.</Abstract>
+				<KeywordList>
+					<Keyword>basemap</Keyword>
+					<Keyword>fr</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2</westBoundLongitude>
+					<eastBoundLongitude>7</eastBoundLongitude>
+					<southBoundLatitude>49</southBoundLatitude>
+					<northBoundLatitude>52</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="300000.0" maxy="300000.0" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+			
+			
+			<Layer queryable="0">
+				<Name>urbisNL</Name>
+				<Title>Urbis Base Map NL</Title>
+				<Abstract>This layer represents the base map in dutch.</Abstract>
+				<KeywordList>
+					<Keyword>basemap</Keyword>
+					<Keyword>dutch</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2</westBoundLongitude>
+					<eastBoundLongitude>7</eastBoundLongitude>
+					<southBoundLatitude>49</southBoundLatitude>
+					<northBoundLatitude>52</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="300000.0" maxy="300000.0" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+			
+			<!--<Layer queryable="1">
+				<Name>AAS_ARBRE:VW_ARBRE</Name>
+				<Title>VW_ARBRE</Title>
+				<Abstract>This layer represents the trees for the application arbre
+					in Urbis_AaS.
+				</Abstract>
+				<KeywordList>
+					<Keyword>tree</Keyword>
+					<Keyword>Urbis_AaS</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.280538963481987</westBoundLongitude>
+					<eastBoundLongitude>4.459374775869229</eastBoundLongitude>
+					<southBoundLatitude>50.78665685791002</southBoundLatitude>
+					<northBoundLatitude>50.88300662813783</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.280538963481987" miny="50.78665685791002"
+					maxx="4.459374775869229" maxy="50.88300662813783" />
+				<BoundingBox CRS="EPSG:31370" minx="143865.950000003"
+					miny="164052.52" maxx="156450.890000001" maxy="174766.48" />
+				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/" />
+				</MetadataURL>
+				<Style>
+					<Name>point</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.gis.irisnet.be/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=VW_ARBRE" />
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>point</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.gis.irisnet.be/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=VW_ARBRE&amp;style=point" />
+					</LegendURL>
+				</Style>
+
+			</Layer>-->
+			<!-- START ORTHO -->
+			<Layer queryable="0">
+				<Name>urbis:ortho2012</Name>
+				<Title>Ortho 2012</Title>
+				<Abstract>This layer is ortho 2012 in the Brussels region</Abstract>
+				<KeywordList>
+					<Keyword>ortho</Keyword>
+					<Keyword>2012</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.17247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.56336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<!-- <BoundingBox CRS="CRS:84" minx="4.17247036581555" miny="50.56336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" /> -->
+				<BoundingBox CRS="CRS:84" minx="4.235214" miny="50.759706"
+					maxx="4.488402" maxy="50.918823" />
+				<BoundingBox CRS="EPSG:31370" minx="131192.712" miny="151464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=db2e0ac3-a8ac-464b-bfef-514dfa37d4e6" />
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>0</Title>
+					<LegendURL width="16" height="16">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.gis.irisnet.be/arcgis/services/basemap/ortho2012/MapServer/WmsServer?request=GetLegendGraphic&amp;version=1.3.0&amp;format=image/png&amp;layer=0" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+
+			<Layer queryable="0">
+				<Name>urbis:ortho2009</Name>
+				<Title>Ortho 2009</Title>
+				<Abstract>This layer is ortho 2009 in the Brussels region</Abstract>
+				<KeywordList>
+					<Keyword>ortho</Keyword>
+					<Keyword>2009</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.17247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.56336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<!-- <BoundingBox CRS="CRS:84" minx="4.17247036581555" miny="50.56336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" /> -->
+				<BoundingBox CRS="CRS:84" minx="4.235214" miny="50.759706"
+					maxx="4.488402" maxy="50.918823" />
+				<BoundingBox CRS="EPSG:31370" minx="131192.712" miny="151464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+
+			<Layer queryable="0">
+				<Name>urbis:ortho2004</Name>
+				<Title>Ortho 2004</Title>
+				<Abstract>This layer is ortho 2004 in the Brussels region</Abstract>
+				<KeywordList>
+					<Keyword>ortho</Keyword>
+					<Keyword>2004</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.17247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.56336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<!-- <BoundingBox CRS="CRS:84" minx="4.17247036581555" miny="50.56336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" /> -->
+				<BoundingBox CRS="CRS:84" minx="4.235214" miny="50.759706"
+					maxx="4.488402" maxy="50.918823" />
+				<BoundingBox CRS="EPSG:31370" minx="131192.712" miny="151464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+			
+			
+			<Layer queryable="0">
+				<Name>urbis:ortho2014</Name>
+				<Title>Ortho 2014</Title>
+				<Abstract>This layer is ortho 2014 in the Brussels region</Abstract>
+				<KeywordList>
+					<Keyword>ortho</Keyword>
+					<Keyword>2014</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.17247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.56336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<!-- <BoundingBox CRS="CRS:84" minx="4.17247036581555" miny="50.56336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" /> -->
+				<BoundingBox CRS="CRS:84" minx="4.235214" miny="50.759706"
+					maxx="4.488402" maxy="50.918823" />
+				<BoundingBox CRS="EPSG:31370" minx="131192.712" miny="151464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				
+			</Layer>
+			
+			<Layer queryable="0">
+				<Name>urbisFRGray</Name>
+				<Title>Urbis Base Map Gray FR</Title>
+				<Abstract>This layer represents the gray base map in french.</Abstract>
+				<KeywordList>
+					<Keyword>carte de base</Keyword>
+					<Keyword>fr</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2</westBoundLongitude>
+					<eastBoundLongitude>7</eastBoundLongitude>
+					<southBoundLatitude>49</southBoundLatitude>
+					<northBoundLatitude>52</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="300000.0" maxy="300000.0" />
+				<Attribution>
+					<Title>CIRB</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://www.geo.irisnet.be/geonetwork/srv/fre/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+			
+			<Layer queryable="0">
+				<Name>urbisNLGray</Name>
+				<Title>Urbis Base Map Gray NL</Title>
+				<Abstract>This layer represents the gray base map in dutch.</Abstract>
+				<KeywordList>
+					<Keyword>carte de base</Keyword>
+					<Keyword>nl</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2</westBoundLongitude>
+					<eastBoundLongitude>7</eastBoundLongitude>
+					<southBoundLatitude>49</southBoundLatitude>
+					<northBoundLatitude>52</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="300000.0" maxy="300000.0" />
+				<Attribution>
+					<Title>CIRB</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://www.geo.irisnet.be/geonetwork/srv/fre/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>
+			</Layer>
+			
+			<!--<Layer queryable="0">
+				<Name>urbis:ortho2012IR</Name>
+				<Title>Ortho 2012 IR</Title>
+				<Abstract>This layer is ortho 2012 IR in the Brussels region</Abstract>
+				<KeywordList>
+					<Keyword>ortho</Keyword>
+					<Keyword>2012IR</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>4.17247036581555</westBoundLongitude>
+					<eastBoundLongitude>4.481540382025686</eastBoundLongitude>
+					<southBoundLatitude>50.56336086880375</southBoundLatitude>
+					<northBoundLatitude>50.91359611002929</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="4.17247036581555" miny="50.56336086880375"
+					maxx="4.481540382025686" maxy="50.91359611002929" />
+				<BoundingBox CRS="EPSG:31370" minx="131192.712" miny="151464.403"
+					maxx="158005.472" maxy="178169.335" />
+				<Attribution>
+					<Title>CIRB/CIBG</Title>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+						xlink:href="http://www.cirb.irisnet.be" />
+					<LogoURL width="100" height="100">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://www.cirb.irisnet.be/fr/++theme++plonetheme.cirb/images/centre-d-informatique-pour-la-region-bruxelloise.jpg" />
+					</LogoURL>
+				</Attribution>							
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geonetwork.geobru.irisnet.be/geonetwork/srv/eng/csw?Request=GetRecordById&amp;Service=CSW&amp;Version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=xxx" />
+				</MetadataURL>				
+			</Layer>-->			
+			<!-- END ORTHO -->
+			<Layer queryable="1">
+				<Name>urbis:MuNeighbour</Name>
+				<Title>MuNeighbour</Title>
+				<Abstract>Neighbour Municipalities</Abstract>
+				<KeywordList>
+					<Keyword>Neighbour</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.235</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>49.293</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="198007.72" maxy="178096.34" />
+				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geobru.irisnet.be/newgeonetwork/" />
+				</MetadataURL>
+				
+				<Style>
+					<Name>urbis_mu_neighboor_fr</Name>
+					<Title>A boring default style</Title>
+					<Abstract>A sample style that just prints out a purple square
+					</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=MuNeighbour&amp;style=urbis_mu_neighboor_fr" />
+					</LegendURL>
+				</Style>
+				
+			</Layer>			
+			<Layer queryable="1">
+				<Name>urbis:Highways</Name>
+				<Title>Highways</Title>
+				<Abstract>Highways</Abstract>
+				<KeywordList>
+					<Keyword>Highways</Keyword>
+				</KeywordList>
+				<CRS>EPSG:31370</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.235</westBoundLongitude>
+					<eastBoundLongitude>4.482</eastBoundLongitude>
+					<southBoundLatitude>49.293</southBoundLatitude>
+					<northBoundLatitude>50.913</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:31370" minx="0.0" miny="0.0"
+					maxx="198007.72" maxy="178096.34" />
+				
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:type="simple"
+						xlink:href="http://geobru.irisnet.be/newgeonetwork/" />
+				</MetadataURL>
+				
+				<Style>
+					<Name>urbis_highways</Name>
+					<Title>geoserver style</Title>
+					<Abstract>Generated by GeoServer</Abstract>
+					<LegendURL width="20" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+							xlink:type="simple"
+							xlink:href="http://geoserver.gis.irisnet.be:80/geoserver/urbis/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Highways&amp;style=urbis_highways" />
+					</LegendURL>
+				</Style>
+				
+			</Layer>		
+		
+		
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

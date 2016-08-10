@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2014 sp1 (x64) (http://www.altova.com) by AGIV (AGIV) -->
+<WMS_Capabilities version="1.3.0" xmlns="http://www.opengis.net/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:insp_com="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:insp_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen</Title>
+		<Abstract>WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.</Abstract>
+		<KeywordList>
+			<Keyword>AGIV-product</Keyword>
+			<Keyword>kleurenorthofotomozaïek</Keyword>
+			<Keyword>kleurenorthofoto's</Keyword>
+			<Keyword>kleurenortho's</Keyword>
+			<Keyword>luchtopnamen</Keyword>
+			<Keyword>Vlaams Gewest</Keyword>
+			<Keyword>vliegdagcontour</Keyword>
+			<Keyword>meest recent</Keyword>
+			<Keyword>luchtfoto</Keyword>
+			<Keyword>luchtfoto's</Keyword>
+			<Keyword>middenschalig</Keyword>
+			<Keyword>winter</Keyword>
+			<Keyword>open data</Keyword>
+			<Keyword vocabulary="GDI-Vlaanderen Trefwoorden">Lijst M&amp;R INSPIRE</Keyword>
+			<Keyword vocabulary="GDI-Vlaanderen Service Types">OGC:WMS</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Agentschap Informatie Vlaanderen</ContactPerson>
+				<ContactOrganization>AIV</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactAddress>
+				<AddressType>Postal</AddressType>
+				<Address>Koningin Maria Hendrikaplein 70</Address>
+				<City>Gent</City>
+				<StateOrProvince/>
+				<PostCode>9000</PostCode>
+				<Country>Belgium</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+32 9 276 15 00</ContactVoiceTelephone>
+			<ContactElectronicMailAddress>informatie.vlaanderen@vlaanderen.be</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>Het gebruik van de service is kosteloos.</Fees>
+		<AccessConstraints>Het gebruiksrecht is te vinden op https://overheid.vlaanderen.be/Webdiensten-Gebruiksrecht.</AccessConstraints>
+		<MaxWidth>2048</MaxWidth>
+		<MaxHeight>2048</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<insp_vs:ExtendedCapabilities>
+			<insp_com:ResourceLocator>
+				<insp_com:URL>http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms?</insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.wms_xml</insp_com:MediaType>
+			</insp_com:ResourceLocator>
+			<insp_com:ResourceType>service</insp_com:ResourceType>
+			<insp_com:TemporalReference>
+				<insp_com:DateOfCreation>2015-11-17</insp_com:DateOfCreation>
+			</insp_com:TemporalReference>
+			<insp_com:Conformity>
+				<insp_com:Specification xsi:type="insp_com:citationInspireInteroperabilityRegulation_dut">
+					<insp_com:Title>VERORDENING (EU) Nr. 1089/2010 VAN DE COMMISSIE van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</insp_com:Title>
+					<insp_com:DateOfPublication>2010-12-08</insp_com:DateOfPublication>
+					<insp_com:URI>OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URI>
+					<insp_com:ResourceLocator>
+						<insp_com:URL>http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URL>
+						<insp_com:MediaType>application/pdf</insp_com:MediaType>
+					</insp_com:ResourceLocator>
+				</insp_com:Specification>
+				<insp_com:Degree>notEvaluated</insp_com:Degree>
+			</insp_com:Conformity>
+			<insp_com:MetadataPointOfContact>
+				<insp_com:OrganisationName>AIV</insp_com:OrganisationName>
+				<insp_com:EmailAddress>informatie.vlaanderen@vlaanderen.be</insp_com:EmailAddress>
+			</insp_com:MetadataPointOfContact>
+			<insp_com:MetadataDate>2013-05-22</insp_com:MetadataDate>
+			<insp_com:SpatialDataServiceType>view</insp_com:SpatialDataServiceType>
+			<insp_com:MandatoryKeyword xsi:type="insp_com:classificationOfSpatialDataService">
+				<insp_com:KeywordValue>infoMapAccessService</insp_com:KeywordValue>
+			</insp_com:MandatoryKeyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Orthobeeldvorming</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:SupportedLanguages xsi:type="insp_com:supportedLanguagesType">
+				<insp_com:DefaultLanguage>
+					<insp_com:Language>dut</insp_com:Language>
+				</insp_com:DefaultLanguage>
+			</insp_com:SupportedLanguages>
+			<insp_com:ResponseLanguage>
+				<insp_com:Language>dut</insp_com:Language>
+			</insp_com:ResponseLanguage>
+			<insp_com:MetadataUrl xsi:type="insp_com:resourceLocatorType">
+				<insp_com:URL>https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=summary&amp;ID=418e8e4a-12c1-80a8-8306-fcf4-799c-581d-c4e38594&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</insp_com:MediaType>
+			</insp_com:MetadataUrl>
+		</insp_vs:ExtendedCapabilities>
+		<Layer>
+			<Title>Orthofoto Vlaanderen, winter, meest recent - kleur</Title>
+			<Abstract>Compilatie van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn samen met de vliegdagcontour die van ieder deel de opnamedata weergeeft.</Abstract>
+			<KeywordList>
+				<Keyword>AGIV-product</Keyword>
+				<Keyword>kleurenorthofotomozaïek</Keyword>
+				<Keyword>kleurenorthofoto's</Keyword>
+				<Keyword>kleurenortho's</Keyword>
+				<Keyword>luchtopnamen</Keyword>
+				<Keyword>ortho</Keyword>
+				<Keyword>orthofoto</Keyword>
+				<Keyword>orthofotomozaïek</Keyword>
+				<Keyword>orthofoto's</Keyword>
+				<Keyword>ortho's</Keyword>
+				<Keyword>Vlaams Gewest</Keyword>
+				<Keyword>vliegdagcontour</Keyword>
+				<Keyword>meest recent</Keyword>
+				<Keyword>luchtfoto</Keyword>
+				<Keyword>luchtfoto's</Keyword>
+				<Keyword>middenschalig</Keyword>
+				<Keyword>winter</Keyword>
+				<Keyword>open data</Keyword>
+			</KeywordList>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:31370</CRS>
+			<CRS>EPSG:3812</CRS>
+			<CRS>EPSG:3043</CRS>
+			<CRS>EPSG:32631</CRS>
+			<CRS>EPSG:25831</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:102100</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>2.52</westBoundLongitude>
+				<eastBoundLongitude>5.94</eastBoundLongitude>
+				<southBoundLatitude>50.64</southBoundLatitude>
+				<northBoundLatitude>51.51</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="CRS:84" minx="2.52" miny="50.64" maxx="5.94" maxy="51.51"/>
+			<BoundingBox CRS="EPSG:4326" minx="2.52" miny="50.64" maxx="5.94" maxy="51.51"/>
+			<BoundingBox CRS="EPSG:4258" minx="2.52" miny="50.64" maxx="5.94" maxy="51.51"/>
+			<BoundingBox CRS="EPSG:31370" minx="22000" miny="150000" maxx="259000" maxy="245000"/>
+			<BoundingBox CRS="EPSG:3812" minx="552000" miny="650000" maxx="759000" maxy="745000"/>
+			<BoundingBox CRS="EPSG:3043" minx="466900" miny="5610500" maxx="705700" maxy="5710000"/>
+			<BoundingBox CRS="EPSG:32631" minx="466900" miny="5610500" maxx="705700" maxy="5710000"/>
+			<BoundingBox CRS="EPSG:25831" minx="466900" miny="5610500" maxx="705700" maxy="5710000"/>
+			<BoundingBox CRS="EPSG:3857" minx="280525" miny="6557859" maxx="661237" maxy="6712007"/>
+			<BoundingBox CRS="EPSG:102100" minx="280525" miny="6557859" maxx="661237" maxy="6712007"/>
+			<AuthorityURL name="agiv-be">
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.agiv.be" xlink:type="simple"/>
+			</AuthorityURL>
+			<Layer queryable="0">
+				<Name>Ortho</Name>
+				<Title>Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen</Title>
+				<Abstract>Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.</Abstract>
+				<KeywordList>
+					<Keyword>AGIV-product</Keyword>
+					<Keyword>kleurenorthofotomozaïek</Keyword>
+					<Keyword>kleurenorthofoto's</Keyword>
+					<Keyword>kleurenortho's</Keyword>
+					<Keyword>luchtopnamen</Keyword>
+					<Keyword>ortho</Keyword>
+					<Keyword>orthofoto</Keyword>
+					<Keyword>orthofotomozaïek</Keyword>
+					<Keyword>orthofoto's</Keyword>
+					<Keyword>ortho's</Keyword>
+					<Keyword>Vlaams Gewest</Keyword>
+					<Keyword>vliegdagcontour</Keyword>
+					<Keyword>meest recent</Keyword>
+					<Keyword>luchtfoto</Keyword>
+					<Keyword>luchtfoto's</Keyword>
+					<Keyword>middenschalig</Keyword>
+					<Keyword>winter</Keyword>
+					<Keyword>open data</Keyword>
+				</KeywordList>
+				<Identifier authority="agiv-be">8f344446-1bd6-49b3-ba14-c7bdde30d437Ortho</Identifier>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://metadata.agiv.be/zoekdienst/?uuid=f5304d6d-0dd4-43fd-a726-427af31e8d61&amp;hl=dut" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=f5304d6d-0dd4-43fd-a726-427af31e8d61&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Ortho</Title>
+					<LegendURL width="66" height="21">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Ortho" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Vliegdagcontour</Name>
+				<Title>Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen, vliegdagcontour</Title>
+				<Abstract>Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.</Abstract>
+				<KeywordList>
+					<Keyword>AGIV-product</Keyword>
+					<Keyword>kleurenorthofotomozaïek</Keyword>
+					<Keyword>kleurenorthofoto's</Keyword>
+					<Keyword>kleurenortho's</Keyword>
+					<Keyword>luchtopnamen</Keyword>
+					<Keyword>ortho</Keyword>
+					<Keyword>orthofoto</Keyword>
+					<Keyword>orthofotomozaïek</Keyword>
+					<Keyword>orthofoto's</Keyword>
+					<Keyword>ortho's</Keyword>
+					<Keyword>Vlaams Gewest</Keyword>
+					<Keyword>vliegdagcontour</Keyword>
+					<Keyword>meest recent</Keyword>
+					<Keyword>luchtfoto</Keyword>
+					<Keyword>luchtfoto's</Keyword>
+					<Keyword>middenschalig</Keyword>
+					<Keyword>winter</Keyword>
+					<Keyword>open data</Keyword>
+				</KeywordList>
+				<Identifier authority="agiv-be">8f344446-1bd6-49b3-ba14-c7bdde30d437VliegdagContour</Identifier>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://metadata.agiv.be/zoekdienst/?uuid=f5304d6d-0dd4-43fd-a726-427af31e8d61&amp;hl=dut" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=f5304d6d-0dd4-43fd-a726-427af31e8d61&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Vliedagcontour</Title>
+					<LegendURL width="135" height="16">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/OMWRGBMRVL/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Vliedagcontour" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

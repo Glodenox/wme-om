@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?><WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:srv="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd" xmlns:gmd="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" xmlns:gco="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:gml="http://schemas.opengis.net/gml" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="1913" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 https://geodata.nationaalgeoregister.nl/www/inspire/inspire_vs.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>Weggegevens WMS</Title>
+    <Abstract>De service van Weggegevens bevat op dit moment de lagen maximum snelheden en rijstroken van de rijkswegen.</Abstract>
+    <KeywordList>
+      <Keyword>Transport</Keyword>
+      <Keyword>Transport Networks</Keyword>
+      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>KlantContactCenter PDOK</ContactPerson>
+        <ContactOrganization>PDOK</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>pointOfContact</ContactPosition>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address/>
+        <City>Apeldoorn</City>
+        <StateOrProvince/>
+        <PostCode/>
+        <Country>Nederland</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>otherRestrictions;
+        http://creativecommons.org/publicdomain/zero/1.0/deed.nl; Geen beperkingen</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+    </Exception>
+    <inspire_vs:ExtendedCapabilities>
+      <inspire_common:MetadataUrl>
+        <inspire_common:URL>http://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=598c4109-21d2-4a6c-b083-9975a6736853</inspire_common:URL>
+        <inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+      </inspire_common:MetadataUrl>
+      <inspire_common:SupportedLanguages>
+        <inspire_common:DefaultLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:DefaultLanguage>
+        <inspire_common:SupportedLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:SupportedLanguage>
+      </inspire_common:SupportedLanguages>
+      <inspire_common:ResponseLanguage>
+        <inspire_common:Language>dut</inspire_common:Language>
+      </inspire_common:ResponseLanguage>
+    </inspire_vs:ExtendedCapabilities>
+    <Layer>
+      <Title>Weggegevens WMS</Title>
+      <Abstract>De service van Weggegevens bevat op dit moment de lagen maximum snelheden en rijstroken van de rijkswegen.</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:25831</CRS>
+      <CRS>EPSG:25832</CRS>
+      <CRS>EPSG:28992</CRS>
+      <CRS>EPSG:3034</CRS>
+      <CRS>EPSG:3035</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>3.461</westBoundLongitude>
+        <eastBoundLongitude>7.239</eastBoundLongitude>
+        <southBoundLatitude>50.741</southBoundLatitude>
+        <northBoundLatitude>53.443</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="3.461" miny="50.741" maxx="7.239" maxy="53.443"/>
+      <BoundingBox CRS="EPSG:4326" minx="50.741" miny="3.461" maxx="53.443" maxy="7.239"/>
+      <BoundingBox CRS="EPSG:4258" minx="50.74100000092405" miny="3.4610000000000003" maxx="53.44300000090212" maxy="7.238999999999999"/>
+      <BoundingBox CRS="EPSG:3035" minx="3073605.4761806135" miny="3860117.362946014" maxx="3390149.4535226747" maxy="4137568.8025613995"/>
+      <BoundingBox CRS="EPSG:3034" minx="2668251.697929628" miny="3554875.1717034895" maxx="2973718.614171708" maxy="3822699.153141481"/>
+      <BoundingBox CRS="EPSG:3857" minx="385276.75763551984" miny="6575606.8651319705" maxx="805841.7938525073" maxy="7065365.041596532"/>
+      <BoundingBox CRS="EPSG:28992" minx="18961.171464895335" miny="305648.8902336918" maxx="285638.3714158175" maxy="607999.719741208"/>
+      <BoundingBox CRS="EPSG:25831" minx="530620.190574971" miny="5621125.076542423" maxx="799047.6036605914" maxy="5929923.251742309"/>
+      <BoundingBox CRS="EPSG:25832" minx="109292.17488230084" miny="5622502.436806154" maxx="383037.1711804237" maxy="5935849.988913842"/>
+      <AuthorityURL name="PDOK">
+        <OnlineResource xlink:type="simple" xlink:href="http://www.pdok.nl"/>
+      </AuthorityURL>
+      <Layer queryable="1" opaque="0">
+        <Name>weggegaantalrijbanen</Name>
+        <Title>weggegaantalrijbanen</Title>
+        <Abstract>Weggegevens aantalrijbanen</Abstract>
+        <KeywordList>
+          <Keyword>Vervoersnetwerken</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.461</westBoundLongitude>
+          <eastBoundLongitude>7.239</eastBoundLongitude>
+          <southBoundLatitude>50.741</southBoundLatitude>
+          <northBoundLatitude>53.443</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.461" miny="50.741" maxx="7.239" maxy="53.443"/>
+        <BoundingBox CRS="EPSG:28992" minx="26887.936" miny="307280.152" maxx="278022.27" maxy="606251.394"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7412119639688" miny="3.4598241262380247" maxx="53.44250488273732" maxy="7.238058551607761"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.741211964892834" miny="3.4598241262380247" maxx="53.44250488363945" maxy="7.238058551607761"/>
+        <BoundingBox CRS="EPSG:3035" minx="3074047.60963948" miny="3867936.7299854592" maxx="3388392.3742744895" maxy="4137443.2430177266"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668675.9532573773" miny="3562430.5738135437" maxx="2972020.5495920484" maxy="3822579.5771885617"/>
+        <BoundingBox CRS="EPSG:3857" minx="385145.8599670995" miny="6575644.151429631" maxx="805736.9922968751" maxy="7065272.506629794"/>
+        <BoundingBox CRS="EPSG:25831" minx="530553.4962282814" miny="5621203.448967569" maxx="791357.98103891" maxy="5928284.023101638"/>
+        <BoundingBox CRS="EPSG:25832" minx="117136.09357796586" miny="5622837.557453962" maxx="382934.2119112067" maxy="5934088.667464998"/>
+        <AuthorityURL name="Rijkswaterstaat">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.rws.nl"/>
+        </AuthorityURL>
+        <Identifier authority="Rijkswaterstaat">nl.rws.1</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=27df6b33-194c-46d6-ac94-257c306c91f2"/>
+        </MetadataURL>
+        <Style>
+          <Name>weggeg:weggegaantalrijbanen</Name>
+          <Title>Weggeg rijbanen</Title>
+          <LegendURL width="63" height="300">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=weggegaantalrijbanen"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>weggegmaximumsnelheden</Name>
+        <Title>weggegmaximumsnelheden</Title>
+        <Abstract>Weggegevens maximumsnelheden</Abstract>
+        <KeywordList>
+          <Keyword>Vervoersnetwerken</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.461</westBoundLongitude>
+          <eastBoundLongitude>7.239</eastBoundLongitude>
+          <southBoundLatitude>50.741</southBoundLatitude>
+          <northBoundLatitude>53.443</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.461" miny="50.741" maxx="7.239" maxy="53.443"/>
+        <BoundingBox CRS="EPSG:28992" minx="26887.936" miny="307280.152" maxx="278022.27" maxy="606251.394"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.7412119639688" miny="3.4598241262380247" maxx="53.44250488273732" maxy="7.238058551607761"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.741211964892834" miny="3.4598241262380247" maxx="53.44250488363945" maxy="7.238058551607761"/>
+        <BoundingBox CRS="EPSG:3035" minx="3074047.60963948" miny="3867936.7299854592" maxx="3388392.3742744895" maxy="4137443.2430177266"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668675.9532573773" miny="3562430.5738135437" maxx="2972020.5495920484" maxy="3822579.5771885617"/>
+        <BoundingBox CRS="EPSG:3857" minx="385145.8599670995" miny="6575644.151429631" maxx="805736.9922968751" maxy="7065272.506629794"/>
+        <BoundingBox CRS="EPSG:25831" minx="530553.4962282814" miny="5621203.448967569" maxx="791357.98103891" maxy="5928284.023101638"/>
+        <BoundingBox CRS="EPSG:25832" minx="117136.09357796586" miny="5622837.557453962" maxx="382934.2119112067" maxy="5934088.667464998"/>
+        <AuthorityURL name="Rijkswaterstaat">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.rws.nl"/>
+        </AuthorityURL>
+        <Identifier authority="Rijkswaterstaat">nl.rws.2</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=abaf1e22-55aa-4a11-a855-7ac963e4a82b"/>
+        </MetadataURL>
+        <Style>
+          <Name>weggeg:weggegmaximumsnelheden</Name>
+          <Title>Weggeg maximumsnelheden</Title>
+          <LegendURL width="46" height="160">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/weggeg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=weggegmaximumsnelheden"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

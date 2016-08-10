@@ -1,0 +1,614 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities version="1.3.0" updateSequence="0" xmlns="http://www.opengis.net/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sld="http://www.opengis.net/sld" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>luchtfoto</Title>
+    <Abstract>luchtfoto wms</Abstract>
+    <OnlineResource xlink:type="simple" xlink:href="http://www.gbo-provincies.nl"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Functioneel beheerder</ContactPerson>
+        <ContactOrganization>GBO provincies</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Functioneel beheerder</ContactPosition>
+      <ContactElectronicMailAddress>ondergrondenreferenties@gbo-provincies.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://webservices.gbo-provincies.nl/lufo/services/wms?"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>image/png; subtype=8bit</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/x-ms-bmp</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://webservices.gbo-provincies.nl/lufo/services/wms?"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>text/plain</Format>
+        <Format>text/html</Format>
+        <Format>application/gml+xml; version=2.1</Format>
+        <Format>application/gml+xml; version=3.0</Format>
+        <Format>application/gml+xml; version=3.1</Format>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>text/xml; subtype=gml/3.0.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://webservices.gbo-provincies.nl/lufo/services/wms?"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <sld:GetLegendGraphic>
+        <Format>image/png</Format>
+        <Format>image/png; subtype=8bit</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/x-ms-bmp</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://webservices.gbo-provincies.nl/lufo/services/wms?"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </sld:GetLegendGraphic>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+    </Exception>
+    <Layer>
+      <Title>Luchtfoto's</Title>
+      <CRS>EPSG:28992</CRS>
+      <CRS>EPSG:25831</CRS>
+      <CRS>EPSG:25832</CRS>
+      <CRS>EPSG:31466</CRS>
+      <CRS>EPSG:31467</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:3035</CRS>
+      <CRS>EPSG:3034</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:3043</CRS>
+      <CRS>EPSG:3044</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-34.38356201</westBoundLongitude>
+        <eastBoundLongitude>47.75954162</eastBoundLongitude>
+        <southBoundLatitude>33.35999408</southBoundLatitude>
+        <northBoundLatitude>72.19229289</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="EPSG:28992" minx="-1460258.46610088" miny="-1446606.94010484" maxx="1914742.11204991" maxy="2734483.56347088"/>
+      <BoundingBox CRS="EPSG:25831" minx="-989353.63062424" miny="3818318.71039215" maxx="2461991.12886897" maxy="8137467.32166717"/>
+      <BoundingBox CRS="EPSG:25832" minx="-1428870.17565875" miny="3791612.21759584" maxx="2087411.30337496" maxy="8159721.61825199"/>
+      <BoundingBox CRS="EPSG:31466" minx="3838469.60329081" miny="831133.38322145" maxx="8079178.94651828" maxy="4229112.60018138"/>
+      <BoundingBox CRS="EPSG:31467" minx="3792644.11940351" miny="1570432.61681089" maxx="8162491.98679780" maxy="5088080.53175369"/>
+      <BoundingBox CRS="EPSG:4326" minx="33.35999408" miny="-34.38356201" maxx="72.19229289" maxy="47.75954162"/>
+      <BoundingBox CRS="EPSG:3857" minx="-3827560.61470125" miny="3919690.00863856" maxx="5316567.85350786" maxy="11782081.59987580"/>
+      <BoundingBox CRS="EPSG:3035" minx="1264211.86957148" miny="2318157.76782940" maxx="5557317.69725729" maxy="5877069.22854008"/>
+      <BoundingBox CRS="EPSG:3034" minx="894777.32078747" miny="2009687.98654664" maxx="5092335.08857454" maxy="5587872.34054148"/>
+      <BoundingBox CRS="EPSG:4258" minx="33.35999408" miny="-34.38356201" maxx="72.19229289" maxy="47.75954162"/>
+      <BoundingBox CRS="EPSG:3043" minx="3818318.71039215" miny="-989353.63062424" maxx="8137467.32166717" maxy="2461991.12886897"/>
+      <BoundingBox CRS="EPSG:3044" minx="3791612.21759584" miny="-1428870.17565875" maxx="8159721.61825199" maxy="2087411.30337496"/>
+      <Layer queryable="1">
+        <Name>europe</Name>
+        <Title>europe</Title>
+        <CRS>EPSG:28992</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-34.38356201</westBoundLongitude>
+          <eastBoundLongitude>47.75954162</eastBoundLongitude>
+          <southBoundLatitude>33.35999408</southBoundLatitude>
+          <northBoundLatitude>72.19229289</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-1460258.46610088" miny="-1446606.94010484" maxx="1914742.11204991" maxy="2734483.56347088"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>actueel_winter</Name>
+        <Title>Luchtfoto 2015 (winter)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.19825373</westBoundLongitude>
+          <eastBoundLongitude>7.39512168</eastBoundLongitude>
+          <southBoundLatitude>50.69875089</southBoundLatitude>
+          <northBoundLatitude>53.59254070</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="10000.00000000" miny="303000.00000000" maxx="288000.00000000" maxy="623000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="513128.01326936" miny="5616379.18530477" maxx="801472.89664644" maxy="5945367.62937765"/>
+        <BoundingBox CRS="EPSG:25832" minx="100037.77469096" miny="5618074.87602820" maxx="393739.68466238" maxy="5951697.43903046"/>
+        <BoundingBox CRS="EPSG:31466" minx="5619179.43056303" miny="2311752.39797824" maxx="5941573.40372831" maxy="2592444.84533562"/>
+        <BoundingBox CRS="EPSG:31467" minx="5619836.36736379" miny="3099943.94393712" maxx="5953591.28326500" maxy="3393761.78092821"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.69875089" miny="3.19825373" maxx="53.59254070" maxy="7.39512168"/>
+        <BoundingBox CRS="EPSG:3857" minx="356027.97682073" miny="6535093.40528928" maxx="823221.17980889" maxy="7058949.36591236"/>
+        <BoundingBox CRS="EPSG:3035" minx="3069148.21870449" miny="3850828.30397829" maxx="3406181.92899970" maxy="4148474.77452424"/>
+        <BoundingBox CRS="EPSG:3034" minx="2663948.67320728" miny="3545900.72985255" maxx="2989183.35337908" maxy="3833225.84064600"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.69875089" miny="3.19825373" maxx="53.59254071" maxy="7.39512168"/>
+        <BoundingBox CRS="EPSG:3043" minx="5616379.18530477" miny="513128.01326936" maxx="5945367.62937765" maxy="801472.89664644"/>
+        <BoundingBox CRS="EPSG:3044" minx="5618074.87602820" miny="100037.77469096" maxx="5951697.43903046" maxy="393739.68466238"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>actueel_zomer</Name>
+        <Title>Luchtfoto 2015 (zomer)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.01375443</westBoundLongitude>
+          <eastBoundLongitude>7.48873682</eastBoundLongitude>
+          <southBoundLatitude>50.57882357</southBoundLatitude>
+          <northBoundLatitude>53.65547756</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-2000.00000000" miny="290000.00000000" maxx="294000.00000000" maxy="630000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="500909.51721993" miny="5603004.07868629" maxx="807888.93234713" maxy="5952570.06949393"/>
+        <BoundingBox CRS="EPSG:25832" minx="87403.33028067" miny="5604801.94011804" maxx="400082.43935491" maxy="5959311.41067379"/>
+        <BoundingBox CRS="EPSG:31466" minx="5606129.76213504" miny="2299646.31919277" maxx="5948681.76405374" maxy="2598502.52374060"/>
+        <BoundingBox CRS="EPSG:31467" minx="5606558.12382904" miny="3087304.49844966" maxx="5961208.23390962" maxy="3400107.03356597"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.57882357" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3857" minx="335489.60864738" miny="6514100.00626710" maxx="833642.36996428" maxy="7070734.47598074"/>
+        <BoundingBox CRS="EPSG:3035" minx="3055798.11911788" miny="3838052.28244191" maxx="3413929.65468372" maxy="4154911.45029442"/>
+        <BoundingBox CRS="EPSG:3034" minx="2651059.96978012" miny="3533558.07555380" maxx="2996649.88145612" maxy="3839441.25729136"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.57882358" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3043" minx="5603004.07868629" miny="500909.51721993" maxx="5952570.06949393" maxy="807888.93234713"/>
+        <BoundingBox CRS="EPSG:3044" minx="5604801.94011804" miny="87403.33028067" maxx="5959311.41067379" maxy="400082.43935491"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2014_winter</Name>
+        <Title>Luchtfoto 2014 (winter)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.21333941</westBoundLongitude>
+          <eastBoundLongitude>7.39512168</eastBoundLongitude>
+          <southBoundLatitude>50.69900170</southBoundLatitude>
+          <northBoundLatitude>53.59252408</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="11000.00000000" miny="303000.00000000" maxx="288000.00000000" maxy="623000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="514126.86807503" miny="5616411.68825478" maxx="801472.89664644" maxy="5945367.62937765"/>
+        <BoundingBox CRS="EPSG:25832" minx="101037.95549772" miny="5618074.87602820" maxx="393739.68466238" maxy="5951646.28537037"/>
+        <BoundingBox CRS="EPSG:31466" minx="5619179.43056303" miny="2312752.60558945" maxx="5941564.51265392" maxy="2592444.84533562"/>
+        <BoundingBox CRS="EPSG:31467" minx="5619836.36736379" miny="3100944.52818072" maxx="5953540.11624523" maxy="3393761.78092821"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.69900170" miny="3.21333941" maxx="53.59252408" maxy="7.39512168"/>
+        <BoundingBox CRS="EPSG:3857" minx="357707.30669982" miny="6535137.36682264" maxx="823221.17980889" maxy="7058946.25526943"/>
+        <BoundingBox CRS="EPSG:3035" minx="3069148.21870449" miny="3851825.51052867" maxx="3406118.59324278" maxy="4148474.77452424"/>
+        <BoundingBox CRS="EPSG:3034" minx="2663948.67320728" miny="3546864.29916599" maxx="2989123.85900877" maxy="3833225.84064600"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.69900170" miny="3.21333941" maxx="53.59252408" maxy="7.39512168"/>
+        <BoundingBox CRS="EPSG:3043" minx="5616411.68825478" miny="514126.86807503" maxx="5945367.62937765" maxy="801472.89664644"/>
+        <BoundingBox CRS="EPSG:3044" minx="5618074.87602820" miny="101037.95549772" maxx="5951646.28537037" maxy="393739.68466238"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2014_zomer</Name>
+        <Title>Luchtfoto 2014 (zomer)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.01375443</westBoundLongitude>
+          <eastBoundLongitude>7.48873682</eastBoundLongitude>
+          <southBoundLatitude>50.57882357</southBoundLatitude>
+          <northBoundLatitude>53.65547756</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-2000.00000000" miny="290000.00000000" maxx="294000.00000000" maxy="630000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="500909.51721993" miny="5603004.07868629" maxx="807888.93234713" maxy="5952570.06949393"/>
+        <BoundingBox CRS="EPSG:25832" minx="87403.33028067" miny="5604801.94011804" maxx="400082.43935491" maxy="5959311.41067379"/>
+        <BoundingBox CRS="EPSG:31466" minx="5606129.76213504" miny="2299646.31919277" maxx="5948681.76405374" maxy="2598502.52374060"/>
+        <BoundingBox CRS="EPSG:31467" minx="5606558.12382904" miny="3087304.49844966" maxx="5961208.23390962" maxy="3400107.03356597"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.57882357" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3857" minx="335489.60864738" miny="6514100.00626710" maxx="833642.36996428" maxy="7070734.47598074"/>
+        <BoundingBox CRS="EPSG:3035" minx="3055798.11911788" miny="3838052.28244191" maxx="3413929.65468372" maxy="4154911.45029442"/>
+        <BoundingBox CRS="EPSG:3034" minx="2651059.96978012" miny="3533558.07555380" maxx="2996649.88145612" maxy="3839441.25729136"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.57882358" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3043" minx="5603004.07868629" miny="500909.51721993" maxx="5952570.06949393" maxy="807888.93234713"/>
+        <BoundingBox CRS="EPSG:3044" minx="5604801.94011804" miny="87403.33028067" maxx="5959311.41067379" maxy="400082.43935491"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2013_winter</Name>
+        <Title>Luchtfoto 2013 (winter)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.19871325</westBoundLongitude>
+          <eastBoundLongitude>7.28910060</eastBoundLongitude>
+          <southBoundLatitude>50.71222700</southBoundLatitude>
+          <northBoundLatitude>53.58371275</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="10000.00000000" miny="304500.00000000" maxx="281000.00000000" maxy="622000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="513161.22909892" miny="5617877.50910804" maxx="794424.78420679" maxy="5944131.01011081"/>
+        <BoundingBox CRS="EPSG:25832" minx="100110.76527894" miny="5619915.68486996" maxx="386701.10228314" maxy="5950697.53194679"/>
+        <BoundingBox CRS="EPSG:31466" minx="5620738.94991218" miny="2311764.39102293" maxx="5940573.21387424" maxy="2585437.23010723"/>
+        <BoundingBox CRS="EPSG:31467" minx="5621677.86386482" miny="3100016.95294940" maxx="5952590.97357921" maxy="3386720.37227895"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.71222700" miny="3.19871325" maxx="53.58371275" maxy="7.28910060"/>
+        <BoundingBox CRS="EPSG:3857" minx="356079.13001753" miny="6537455.78329436" maxx="811418.96737128" maxy="7057297.71720685"/>
+        <BoundingBox CRS="EPSG:3035" minx="3071085.68231123" miny="3850921.85114724" maxx="3405183.66237206" maxy="4141425.93322745"/>
+        <BoundingBox CRS="EPSG:3034" minx="2665817.06926296" miny="3545990.73472721" maxx="2988218.63639440" maxy="3826412.26775735"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.71222700" miny="3.19871325" maxx="53.58371275" maxy="7.28910060"/>
+        <BoundingBox CRS="EPSG:3043" minx="5617877.50910804" miny="513161.22909892" maxx="5944131.01011081" maxy="794424.78420679"/>
+        <BoundingBox CRS="EPSG:3044" minx="5619915.68486996" miny="100110.76527894" maxx="5950697.53194679" maxy="386701.10228314"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2013_zomer</Name>
+        <Title>Luchtfoto 2013 (zomer)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.01375443</westBoundLongitude>
+          <eastBoundLongitude>7.48873682</eastBoundLongitude>
+          <southBoundLatitude>50.57882357</southBoundLatitude>
+          <northBoundLatitude>53.65547756</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-2000.00000000" miny="290000.00000000" maxx="294000.00000000" maxy="630000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="500909.51721993" miny="5603004.07868629" maxx="807888.93234713" maxy="5952570.06949393"/>
+        <BoundingBox CRS="EPSG:25832" minx="87403.33028067" miny="5604801.94011804" maxx="400082.43935491" maxy="5959311.41067379"/>
+        <BoundingBox CRS="EPSG:31466" minx="5606129.76213504" miny="2299646.31919277" maxx="5948681.76405374" maxy="2598502.52374060"/>
+        <BoundingBox CRS="EPSG:31467" minx="5606558.12382904" miny="3087304.49844966" maxx="5961208.23390962" maxy="3400107.03356597"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.57882357" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3857" minx="335489.60864738" miny="6514100.00626710" maxx="833642.36996428" maxy="7070734.47598074"/>
+        <BoundingBox CRS="EPSG:3035" minx="3055798.11911788" miny="3838052.28244191" maxx="3413929.65468372" maxy="4154911.45029442"/>
+        <BoundingBox CRS="EPSG:3034" minx="2651059.96978012" miny="3533558.07555380" maxx="2996649.88145612" maxy="3839441.25729136"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.57882358" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3043" minx="5603004.07868629" miny="500909.51721993" maxx="5952570.06949393" maxy="807888.93234713"/>
+        <BoundingBox CRS="EPSG:3044" minx="5604801.94011804" miny="87403.33028067" maxx="5959311.41067379" maxy="400082.43935491"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2012_winter</Name>
+        <Title>Luchtfoto 2012 (winter)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.21379576</westBoundLongitude>
+          <eastBoundLongitude>7.28910060</eastBoundLongitude>
+          <southBoundLatitude>50.71696998</southBoundLatitude>
+          <northBoundLatitude>53.58369930</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="11000.00000000" miny="305000.00000000" maxx="281000.00000000" maxy="622000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="514160.08593742" miny="5618409.45910295" maxx="794408.75880797" maxy="5944131.01011081"/>
+        <BoundingBox CRS="EPSG:25832" minx="101135.28250055" miny="5620414.90472787" maxx="386701.10228314" maxy="5950646.38579197"/>
+        <BoundingBox CRS="EPSG:31466" minx="5621238.89428436" miny="2312768.60152864" maxx="5940564.32554977" maxy="2585437.23010723"/>
+        <BoundingBox CRS="EPSG:31467" minx="5622177.28511596" miny="3101041.87974821" maxx="5952539.81406795" maxy="3386720.37227895"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.71696998" miny="3.21379576" maxx="53.58369930" maxy="7.28910060"/>
+        <BoundingBox CRS="EPSG:3857" minx="357758.10792250" miny="6538287.39543250" maxx="811418.96737128" maxy="7057295.20130065"/>
+        <BoundingBox CRS="EPSG:3035" minx="3071584.65305618" miny="3851950.24577917" maxx="3405120.32762650" maxy="4141425.93322745"/>
+        <BoundingBox CRS="EPSG:3034" minx="2666298.85672468" miny="3546984.30814586" maxx="2988159.14042953" maxy="3826412.26775735"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.71696998" miny="3.21379576" maxx="53.58369931" maxy="7.28910060"/>
+        <BoundingBox CRS="EPSG:3043" minx="5618409.45910295" miny="514160.08593742" maxx="5944131.01011081" maxy="794408.75880797"/>
+        <BoundingBox CRS="EPSG:3044" minx="5620414.90472787" miny="101135.28250055" maxx="5950646.38579197" maxy="386701.10228314"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2012_zomer</Name>
+        <Title>Luchtfoto 2012 (zomer)</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.01375443</westBoundLongitude>
+          <eastBoundLongitude>7.48873682</eastBoundLongitude>
+          <southBoundLatitude>50.57882357</southBoundLatitude>
+          <northBoundLatitude>53.65547756</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-2000.00000000" miny="290000.00000000" maxx="294000.00000000" maxy="630000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="500909.51721993" miny="5603004.07868629" maxx="807888.93234713" maxy="5952570.06949393"/>
+        <BoundingBox CRS="EPSG:25832" minx="87403.33028067" miny="5604801.94011804" maxx="400082.43935491" maxy="5959311.41067379"/>
+        <BoundingBox CRS="EPSG:31466" minx="5606129.76213504" miny="2299646.31919277" maxx="5948681.76405374" maxy="2598502.52374060"/>
+        <BoundingBox CRS="EPSG:31467" minx="5606558.12382904" miny="3087304.49844966" maxx="5961208.23390962" maxy="3400107.03356597"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.57882357" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3857" minx="335489.60864738" miny="6514100.00626710" maxx="833642.36996428" maxy="7070734.47598074"/>
+        <BoundingBox CRS="EPSG:3035" minx="3055798.11911788" miny="3838052.28244191" maxx="3413929.65468372" maxy="4154911.45029442"/>
+        <BoundingBox CRS="EPSG:3034" minx="2651059.96978012" miny="3533558.07555380" maxx="2996649.88145612" maxy="3839441.25729136"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.57882358" miny="3.01375443" maxx="53.65547756" maxy="7.48873682"/>
+        <BoundingBox CRS="EPSG:3043" minx="5603004.07868629" miny="500909.51721993" maxx="5952570.06949393" maxy="807888.93234713"/>
+        <BoundingBox CRS="EPSG:3044" minx="5604801.94011804" miny="87403.33028067" maxx="5959311.41067379" maxy="400082.43935491"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+        <MinScaleDenominator>0.0</MinScaleDenominator>
+        <MaxScaleDenominator>100000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2011</Name>
+        <Title>Luchtfoto 2011</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.98455565</westBoundLongitude>
+          <eastBoundLongitude>7.51805781</eastBoundLongitude>
+          <southBoundLatitude>50.56031076</southBoundLatitude>
+          <northBoundLatitude>53.63749375</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-4000.00000000" miny="288000.00000000" maxx="296000.00000000" maxy="628000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="498978.28852276" miny="5600941.43940393" maxx="809952.89511572" maxy="5950638.00410096"/>
+        <BoundingBox CRS="EPSG:25832" minx="85305.73144944" miny="5602707.29837585" maxx="401978.03384793" maxy="5957413.91294831"/>
+        <BoundingBox CRS="EPSG:31466" minx="5604112.92049401" miny="2297630.02793203" maxx="5946699.20945623" maxy="2600485.65707617"/>
+        <BoundingBox CRS="EPSG:31467" minx="5604462.65272662" miny="3085206.06811434" maxx="5959309.95781136" maxy="3402003.40739264"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.56031076" miny="2.98455565" maxx="53.63749375" maxy="7.51805781"/>
+        <BoundingBox CRS="EPSG:3857" minx="332239.21563630" miny="6510864.11160891" maxx="836906.36669388" maxy="7067365.15304965"/>
+        <BoundingBox CRS="EPSG:3035" minx="3053676.61075592" miny="3835933.53604378" maxx="3412059.77419447" maxy="4156778.44712926"/>
+        <BoundingBox CRS="EPSG:3034" minx="2649012.06010152" miny="3531511.00987110" maxx="2994839.23218640" maxy="3841248.39421342"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.56031077" miny="2.98455565" maxx="53.63749376" maxy="7.51805781"/>
+        <BoundingBox CRS="EPSG:3043" minx="5600941.43940393" miny="498978.28852276" maxx="5950638.00410096" maxy="809952.89511572"/>
+        <BoundingBox CRS="EPSG:3044" minx="5602707.29837585" miny="85305.73144944" maxx="5957413.91294831" maxy="401978.03384793"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2010</Name>
+        <Title>Luchtfoto 2010</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.98858869</westBoundLongitude>
+          <eastBoundLongitude>7.51447972</eastBoundLongitude>
+          <southBoundLatitude>50.56031076</southBoundLatitude>
+          <northBoundLatitude>53.56562025</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-4000.00000000" miny="288000.00000000" maxx="296000.00000000" maxy="620000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="499243.81083743" miny="5600941.43940393" maxx="809952.89511572" maxy="5942638.54687825"/>
+        <BoundingBox CRS="EPSG:25832" minx="85305.73144944" miny="5602707.29837585" maxx="401574.61720371" maxy="5949413.84005450"/>
+        <BoundingBox CRS="EPSG:31466" minx="5604112.92049401" miny="2297630.02793203" maxx="5938697.39702794" maxy="2600419.06001281"/>
+        <BoundingBox CRS="EPSG:31467" minx="5604462.65272662" miny="3085206.06811434" maxx="5951306.66377992" maxy="3401599.89249258"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.56031076" miny="2.98858869" maxx="53.56562025" maxy="7.51447972"/>
+        <BoundingBox CRS="EPSG:3857" minx="332688.17082815" miny="6510864.11160891" maxx="836508.05557708" maxy="7053913.81717471"/>
+        <BoundingBox CRS="EPSG:3035" minx="3053676.61075592" miny="3835933.53604378" maxx="3404073.57653590" maxy="4156264.36216043"/>
+        <BoundingBox CRS="EPSG:3034" minx="2649012.06010152" miny="3531511.00987110" maxx="2987121.61802835" maxy="3840759.68484773"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.56031077" miny="2.98858869" maxx="53.56562025" maxy="7.51447972"/>
+        <BoundingBox CRS="EPSG:3043" minx="5600941.43940393" miny="499243.81083743" maxx="5942638.54687825" maxy="809952.89511572"/>
+        <BoundingBox CRS="EPSG:3044" minx="5602707.29837585" miny="85305.73144944" maxx="5949413.84005450" maxy="401574.61720371"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2009</Name>
+        <Title>Luchtfoto 2009</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.01574948</westBoundLongitude>
+          <eastBoundLongitude>7.48696971</eastBoundLongitude>
+          <southBoundLatitude>50.57882357</southBoundLatitude>
+          <northBoundLatitude>53.61954130</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="-2000.00000000" miny="290000.00000000" maxx="294000.00000000" maxy="626000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="501042.32479527" miny="5603004.07868629" maxx="807888.93234713" maxy="5948570.42385270"/>
+        <BoundingBox CRS="EPSG:25832" minx="87403.33028067" miny="5604801.94011804" maxx="399880.64789203" maxy="5955311.48180797"/>
+        <BoundingBox CRS="EPSG:31466" minx="5606129.76213504" miny="2299646.31919277" maxx="5944680.91418832" maxy="2598469.22123802"/>
+        <BoundingBox CRS="EPSG:31467" minx="5606558.12382904" miny="3087304.49844966" maxx="5957206.69456512" maxy="3399905.19292956"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.57882357" miny="3.01574948" maxx="53.61954130" maxy="7.48696971"/>
+        <BoundingBox CRS="EPSG:3857" minx="335711.69655855" miny="6514100.00626710" maxx="833445.65525544" maxy="7064003.14296631"/>
+        <BoundingBox CRS="EPSG:3035" minx="3055798.11911788" miny="3838052.28244191" maxx="3409936.62139344" maxy="4154654.32363020"/>
+        <BoundingBox CRS="EPSG:3034" minx="2651059.96978012" miny="3533558.07555380" maxx="2992790.96916923" maxy="3839196.91059941"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.57882358" miny="3.01574948" maxx="53.61954130" maxy="7.48696971"/>
+        <BoundingBox CRS="EPSG:3043" minx="5603004.07868629" miny="501042.32479527" maxx="5948570.42385270" maxy="807888.93234713"/>
+        <BoundingBox CRS="EPSG:3044" minx="5604801.94011804" miny="87403.33028067" maxx="5955311.48180797" maxy="399880.64789203"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>luchtfoto_2008</Name>
+        <Title>Luchtfoto 2008</Title>
+        <CRS>EPSG:28992</CRS>
+        <CRS>EPSG:25831</CRS>
+        <CRS>EPSG:25832</CRS>
+        <CRS>EPSG:31466</CRS>
+        <CRS>EPSG:31467</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:3035</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>EPSG:3043</CRS>
+        <CRS>EPSG:3044</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.04691799</westBoundLongitude>
+          <eastBoundLongitude>7.45590695</eastBoundLongitude>
+          <southBoundLatitude>50.63326360</southBoundLatitude>
+          <northBoundLatitude>53.60158839</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:28992" minx="0.00000000" miny="296000.00000000" maxx="292000.00000000" maxy="624000.00000000"/>
+        <BoundingBox CRS="EPSG:25831" minx="503106.37754862" miny="5609062.09677458" maxx="805697.07258870" maxy="5946502.88760521"/>
+        <BoundingBox CRS="EPSG:25832" minx="89695.21613875" miny="5610890.09953552" maxx="397783.24331868" maxy="5953209.11187966"/>
+        <BoundingBox CRS="EPSG:31466" minx="5612146.08989579" miny="2301694.41632893" maxx="5942662.64213731" maxy="2596452.76961000"/>
+        <BoundingBox CRS="EPSG:31467" minx="5612648.72375232" miny="3089597.26484870" maxx="5955103.49255741" maxy="3397806.95981963"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.63326360" miny="3.04691799" maxx="53.60158839" maxy="7.45590695"/>
+        <BoundingBox CRS="EPSG:3857" minx="339181.35877597" miny="6523623.11377658" maxx="829987.76508457" maxy="7060642.48585749"/>
+        <BoundingBox CRS="EPSG:3035" minx="3061911.19782374" miny="3840420.22828841" maxx="3407813.45369197" maxy="4152530.20875979"/>
+        <BoundingBox CRS="EPSG:3034" minx="2656962.06093092" miny="3535845.16781888" maxx="2990742.69204858" maxy="3837145.47067444"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.63326360" miny="3.04691799" maxx="53.60158839" maxy="7.45590695"/>
+        <BoundingBox CRS="EPSG:3043" minx="5609062.09677458" miny="503106.37754862" maxx="5946502.88760521" maxy="805697.07258870"/>
+        <BoundingBox CRS="EPSG:3044" minx="5610890.09953552" miny="89695.21613875" maxx="5953209.11187966" maxy="397783.24331868"/>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

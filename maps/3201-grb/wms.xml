@@ -1,0 +1,1905 @@
+<?xml version="1.0"?>
+<WMS_Capabilities version="1.3.0" xmlns="http://www.opengis.net/wms" xmlns:insp_com="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:insp_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>WMS GRB</Title>
+		<Abstract>Via de WMS GRB kan je het Grootschalig Referentiebestand (GRB) opvragen en visualiseren als een kaart. De WMS GRB omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde.  Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten</Abstract>
+		<KeywordList>
+			<Keyword>aanhorigheid</Keyword>
+			<Keyword>administratief perceel</Keyword>
+			<Keyword>administratieve grens</Keyword>
+			<Keyword>adp</Keyword>
+			<Keyword>adres</Keyword>
+			<Keyword>afdak</Keyword>
+			<Keyword>afrit</Keyword>
+			<Keyword>AGIV-product</Keyword>
+			<Keyword>ano</Keyword>
+			<Keyword>anomalie</Keyword>
+			<Keyword>as built</Keyword>
+			<Keyword>as-builtplan</Keyword>
+			<Keyword>autosnelweg</Keyword>
+			<Keyword>baangracht</Keyword>
+			<Keyword>basiskaart</Keyword>
+			<Keyword>beek</Keyword>
+			<Keyword>bergplaats</Keyword>
+			<Keyword>berm</Keyword>
+			<Keyword>bijgebouw</Keyword>
+			<Keyword>bijhoudingszone</Keyword>
+			<Keyword>boordsteen</Keyword>
+			<Keyword>bouwsel</Keyword>
+			<Keyword>brandkraan</Keyword>
+			<Keyword>brug</Keyword>
+			<Keyword>bushok</Keyword>
+			<Keyword>cabine</Keyword>
+			<Keyword>capakey</Keyword>
+			<Keyword>chemische installatie</Keyword>
+			<Keyword>circulatiezone zwakke weggebruiker</Keyword>
+			<Keyword>constructie</Keyword>
+			<Keyword>CRAB</Keyword>
+			<Keyword>deelgemeente</Keyword>
+			<Keyword>deksel</Keyword>
+			<Keyword>dienstweg</Keyword>
+			<Keyword>drempel</Keyword>
+			<Keyword>elektriciteitspaal</Keyword>
+			<Keyword>fietsstalling</Keyword>
+			<Keyword>fietsweg</Keyword>
+			<Keyword>flitspaal</Keyword>
+			<Keyword>fontein</Keyword>
+			<Keyword>fout</Keyword>
+			<Keyword>garagetoegang</Keyword>
+			<Keyword>gba</Keyword>
+			<Keyword>gbg</Keyword>
+			<Keyword>gebouw</Keyword>
+			<Keyword>gebouw aan de grond</Keyword>
+			<Keyword>gebouwaanhorigheid</Keyword>
+			<Keyword>gemeente</Keyword>
+			<Keyword>gemeentegrens</Keyword>
+			<Keyword>gevel</Keyword>
+			<Keyword>gevellijn</Keyword>
+			<Keyword>gevelpunt</Keyword>
+			<Keyword>golfbreker</Keyword>
+			<Keyword>gracht</Keyword>
+			<Keyword>GRB</Keyword>
+			<Keyword>GRB gis</Keyword>
+			<Keyword>GRB-databank</Keyword>
+			<Keyword>GRB-gis</Keyword>
+			<Keyword>grenspaal</Keyword>
+			<Keyword>grootschalig</Keyword>
+			<Keyword>Grootschalig Referentiebestand</Keyword>
+			<Keyword>gvl</Keyword>
+			<Keyword>gvp</Keyword>
+			<Keyword>havendam</Keyword>
+			<Keyword>hoofdgebouw</Keyword>
+			<Keyword>hoogspanningsmast</Keyword>
+			<Keyword>huisnummer</Keyword>
+			<Keyword>ingezonken garagetoegang</Keyword>
+			<Keyword>kaart</Keyword>
+			<Keyword>kadastraal</Keyword>
+			<Keyword>kantsteen</Keyword>
+			<Keyword>keermuur</Keyword>
+			<Keyword>knw</Keyword>
+			<Keyword>koeltoren</Keyword>
+			<Keyword>kopmuur</Keyword>
+			<Keyword>kruispunt</Keyword>
+			<Keyword>kunstwerk</Keyword>
+			<Keyword>lbz</Keyword>
+			<Keyword>lokale bijhoudingszone</Keyword>
+			<Keyword>longitudinale inrichting</Keyword>
+			<Keyword>loopbrug</Keyword>
+			<Keyword>luik</Keyword>
+			<Keyword>mast</Keyword>
+			<Keyword>meer</Keyword>
+			<Keyword>meerpaal</Keyword>
+			<Keyword>meetkundig verdichtingspunt</Keyword>
+			<Keyword>metro</Keyword>
+			<Keyword>mkp</Keyword>
+			<Keyword>mkv</Keyword>
+			<Keyword>monument</Keyword>
+			<Keyword>mutatie</Keyword>
+			<Keyword>muur</Keyword>
+			<Keyword>niscode</Keyword>
+			<Keyword>onderkeldering</Keyword>
+			<Keyword>onverhard</Keyword>
+			<Keyword>onverharde zone</Keyword>
+			<Keyword>onvolledigheid</Keyword>
+			<Keyword>oppervlaktewater</Keyword>
+			<Keyword>oprit</Keyword>
+			<Keyword>opslagtank</Keyword>
+			<Keyword>overbrugging</Keyword>
+			<Keyword>paal</Keyword>
+			<Keyword>parallelweg</Keyword>
+			<Keyword>perceel</Keyword>
+			<Keyword>perceelsreconstructiepunt</Keyword>
+			<Keyword>pijler</Keyword>
+			<Keyword>planimetrisch referentiepunt</Keyword>
+			<Keyword>praatpaal</Keyword>
+			<Keyword>prp</Keyword>
+			<Keyword>puntvormige inrichting</Keyword>
+			<Keyword>putdeksel</Keyword>
+			<Keyword>rail</Keyword>
+			<Keyword>referentiebestand</Keyword>
+			<Keyword>rijbaan</Keyword>
+			<Keyword>rivier</Keyword>
+			<Keyword>rooster</Keyword>
+			<Keyword>rotonde</Keyword>
+			<Keyword>sbn</Keyword>
+			<Keyword>schoorsteen</Keyword>
+			<Keyword>silo</Keyword>
+			<Keyword>sloot</Keyword>
+			<Keyword>spoor</Keyword>
+			<Keyword>spoorbaan</Keyword>
+			<Keyword>stad</Keyword>
+			<Keyword>staketsel</Keyword>
+			<Keyword>standbeeld</Keyword>
+			<Keyword>stootband</Keyword>
+			<Keyword>straatnaam</Keyword>
+			<Keyword>strandhoofd</Keyword>
+			<Keyword>telefooncabine</Keyword>
+			<Keyword>terrein</Keyword>
+			<Keyword>terreinobject</Keyword>
+			<Keyword>toponiem</Keyword>
+			<Keyword>tram</Keyword>
+			<Keyword>tramweg</Keyword>
+			<Keyword>trap</Keyword>
+			<Keyword>trein</Keyword>
+			<Keyword>trn</Keyword>
+			<Keyword>tunnelmond</Keyword>
+			<Keyword>TV-mast</Keyword>
+			<Keyword>uitbreiding</Keyword>
+			<Keyword>vangrail</Keyword>
+			<Keyword>ventweg</Keyword>
+			<Keyword>verdieping</Keyword>
+			<Keyword>verharding</Keyword>
+			<Keyword>verheven garagetoegang</Keyword>
+			<Keyword>verhoging</Keyword>
+			<Keyword>verkeersdrempel</Keyword>
+			<Keyword>verkeerslicht</Keyword>
+			<Keyword>verkeersplateau</Keyword>
+			<Keyword>verkeersplein</Keyword>
+			<Keyword>verlichtingspaal</Keyword>
+			<Keyword>VHA</Keyword>
+			<Keyword>vijver</Keyword>
+			<Keyword>Vlaamse Hydrografische Atlas</Keyword>
+			<Keyword>voetpad</Keyword>
+			<Keyword>wandelweg</Keyword>
+			<Keyword>water</Keyword>
+			<Keyword>waterbouwkundige constructie</Keyword>
+			<Keyword>watergang</Keyword>
+			<Keyword>waterloop</Keyword>
+			<Keyword>wateroppervlak</Keyword>
+			<Keyword>watertoren</Keyword>
+			<Keyword>waterweg</Keyword>
+			<Keyword>wbn</Keyword>
+			<Keyword>wcz</Keyword>
+			<Keyword>weg</Keyword>
+			<Keyword>wegaanhorigheid</Keyword>
+			<Keyword>wegbaan</Keyword>
+			<Keyword>wegbaaninrichting</Keyword>
+			<Keyword>weginrichting</Keyword>
+			<Keyword>wegknoop</Keyword>
+			<Keyword>wegopdeling</Keyword>
+			<Keyword>wegsegment</Keyword>
+			<Keyword>wegverbinding</Keyword>
+			<Keyword>wga</Keyword>
+			<Keyword>wgo</Keyword>
+			<Keyword>wgr</Keyword>
+			<Keyword>wkn</Keyword>
+			<Keyword>wlas</Keyword>
+			<Keyword>wli</Keyword>
+			<Keyword>woz</Keyword>
+			<Keyword>wpi</Keyword>
+			<Keyword>wrb</Keyword>
+			<Keyword>wri</Keyword>
+			<Keyword>wrl</Keyword>
+			<Keyword>wti</Keyword>
+			<Keyword>wtz</Keyword>
+			<Keyword>wvb</Keyword>
+			<Keyword>zichtbare onderkeldering</Keyword>
+						<Keyword vocabulary="GDI-Vlaanderen Trefwoorden">Lijst M&amp;R INSPIRE</Keyword>
+<Keyword vocabulary="GDI-Vlaanderen Service Types">OGC:WMS</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms"/>
+		<ContactInformation>
+<ContactPersonPrimary>
+<ContactPerson>Agentschap Informatie Vlaanderen</ContactPerson>
+<ContactOrganization>AIV</ContactOrganization>
+</ContactPersonPrimary>
+<ContactAddress>
+<AddressType>Postal</AddressType>
+<Address>Koningin Maria Hendrikaplein 70</Address>
+<City>Gent</City>
+<StateOrProvince/>
+<PostCode>9000</PostCode>
+<Country>Belgium</Country>
+</ContactAddress>
+<ContactVoiceTelephone>+32 9 276 15 00</ContactVoiceTelephone>
+<ContactElectronicMailAddress>informatie.vlaanderen@vlaanderen.be</ContactElectronicMailAddress>
+</ContactInformation>
+
+		<Fees>Het gebruik van de service is kosteloos.</Fees>
+<AccessConstraints>Het gebruiksrecht is te vinden op https://overheid.vlaanderen.be/Webdiensten-Gebruiksrecht.</AccessConstraints>
+		<MaxWidth>2048</MaxWidth>
+		<MaxHeight>2048</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/png8</Format>
+				<Format>image/png</Format>
+				<Format>application/atom+xml</Format>
+				<Format>application/pdf</Format>
+				<Format>application/rss+xml</Format>
+				<Format>application/vnd.google-earth.kml+xml</Format>
+				<Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+				<Format>application/vnd.google-earth.kmz</Format>
+				<Format>image/geotiff</Format>
+				<Format>image/geotiff8</Format>
+				<Format>image/gif</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/png; mode=8bit</Format>
+				<Format>image/svg+xml</Format>
+				<Format>image/tiff</Format>
+				<Format>image/tiff8</Format>
+				<Format>text/html; subtype=openlayers</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>text/plain</Format>
+				<Format>application/vnd.ogc.gml</Format>
+				<Format>application/vnd.ogc.gml/3.1.1</Format>
+				<Format>text/html</Format>
+				<Format>application/json</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>XML</Format>
+			<Format>INIMAGE</Format>
+			<Format>BLANK</Format>
+		</Exception>
+		<insp_vs:ExtendedCapabilities>
+			<insp_com:ResourceLocator>
+				<insp_com:URL> http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms </insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.wms_xml</insp_com:MediaType>
+			</insp_com:ResourceLocator>
+			<insp_com:ResourceType>service</insp_com:ResourceType>
+			<insp_com:TemporalReference>
+				<insp_com:DateOfCreation>2015-11-17</insp_com:DateOfCreation>
+			</insp_com:TemporalReference>
+			<insp_com:Conformity>
+				<insp_com:Specification xsi:type="insp_com:citationInspireInteroperabilityRegulation_dut">
+					<insp_com:Title>VERORDENING (EU) Nr. 1089/2010 VAN DE COMMISSIE van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</insp_com:Title>
+					<insp_com:DateOfPublication>2010-12-08</insp_com:DateOfPublication>
+					<insp_com:URI>OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URI>
+					<insp_com:ResourceLocator>
+						<insp_com:URL>http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URL>
+						<insp_com:MediaType>application/pdf</insp_com:MediaType>
+					</insp_com:ResourceLocator>
+				</insp_com:Specification>
+				<insp_com:Degree>notEvaluated</insp_com:Degree>
+			</insp_com:Conformity>
+			<insp_com:MetadataPointOfContact>
+								<insp_com:OrganisationName>AIV</insp_com:OrganisationName>
+				<insp_com:EmailAddress>informatie.vlaanderen@vlaanderen.be</insp_com:EmailAddress>
+			</insp_com:MetadataPointOfContact>
+			<insp_com:MetadataDate>2011-05-04</insp_com:MetadataDate>
+			<insp_com:SpatialDataServiceType>view</insp_com:SpatialDataServiceType>
+			<insp_com:MandatoryKeyword xsi:type="insp_com:classificationOfSpatialDataService">
+				<insp_com:KeywordValue>infoMapAccessService</insp_com:KeywordValue>
+			</insp_com:MandatoryKeyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Kadastrale percelen</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Vervoersnetwerken</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Hydrografie</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Gebouwen</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:SupportedLanguages xsi:type="insp_com:supportedLanguagesType">
+				<insp_com:DefaultLanguage>
+					<insp_com:Language>dut</insp_com:Language>
+				</insp_com:DefaultLanguage>
+			</insp_com:SupportedLanguages>
+			<insp_com:ResponseLanguage>
+				<insp_com:Language>dut</insp_com:Language>
+			</insp_com:ResponseLanguage>
+			<insp_com:MetadataUrl xsi:type="insp_com:resourceLocatorType">
+				<insp_com:URL>https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=bb99337d-2146-413e-8c68-b9930061dc25&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</insp_com:MediaType>
+			</insp_com:MetadataUrl>
+		</insp_vs:ExtendedCapabilities>
+		<Layer queryable="0">
+			<Name>GRB_RPD</Name>
+			<Title>GRB-raadpleegdienst</Title>
+			<Abstract>Via de WMS GRB kan je het Grootschalig Referentiebestand (GRB) opvragen en visualiseren als een kaart. De WMS GRB omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde.  Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten</Abstract>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:31370</CRS>
+			<CRS>EPSG:3812</CRS>
+			<CRS>EPSG:3043</CRS>
+			<CRS>EPSG:32631</CRS>
+			<CRS>EPSG:25831</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:102100</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>2.52</westBoundLongitude>
+				<eastBoundLongitude>5.94</eastBoundLongitude>
+				<southBoundLatitude>50.64</southBoundLatitude>
+				<northBoundLatitude>51.51</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="CRS:84"/>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="EPSG:4326"/>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="EPSG:4258"/>
+			<BoundingBox maxy="245000" maxx="259000" miny="150000" minx="22000" CRS="EPSG:31370"/>
+			<BoundingBox maxy="745000" maxx="759000" miny="650000" minx="552000" CRS="EPSG:3812"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:3043"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:32631"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:25831"/>
+			<BoundingBox maxy="6712007" maxx="661237" miny="6557859" minx="280525" CRS="EPSG:3857"/>
+			<BoundingBox maxy="6712007" maxx="661237" miny="6557859" minx="280525" CRS="EPSG:102100"/>
+			<AuthorityURL name="agiv-be">
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.agiv.be"/>
+			</AuthorityURL>
+			<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GRB_RPD</Identifier>
+			<MetadataURL type="ISO19115:2005">
+				<Format>text/html</Format>
+				<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+			</MetadataURL>
+			<MetadataURL type="ISO19115:2005">
+				<Format>text/xml</Format>
+				<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+			</MetadataURL>
+			<Style>
+				<Name/>
+				<Title>GRB-raadpleegdienst</Title>
+				<LegendURL width="436" height="1744">
+					<Format>image/png</Format>
+					<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?request=GetLegendGraphic&amp;version=1.3.0&amp;format=image/png&amp;layer=GRB_RPD&amp;scale=1&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</LegendURL>
+			</Style>
+			<Layer queryable="0">
+				<Name>GRB_BSK</Name>
+				<Title>GRB-basiskaart</Title>
+				<Abstract>Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart</Abstract>
+				<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GRB_BSK</Identifier>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</MetadataURL>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</MetadataURL>
+				<Style>
+					<Name/>
+					<Title>GRB-basiskaart</Title>
+					<LegendURL width="436" height="1744">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?request=GetLegendGraphic&amp;version=1.3.0&amp;format=image/png&amp;layer=GRB_BSK&amp;scale=1&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+				<Layer queryable="0" opaque="1">
+					<Name>AGROND</Name>
+					<Title>AGROND - achtergrond</Title>
+					<Abstract>De achtergrond is een  inkleuring van het Vlaams Gewest</Abstract>
+					<Identifier authority="agiv-be">AGROND</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d7a37c9e-c7e1-41c7-8876-eccb535ac2ec&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d7a37c9e-c7e1-41c7-8876-eccb535ac2ec&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>AGROND</Name>
+						<Title>AGROND</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=AGROND"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>AGROND_GREY</Name>
+						<Title>AGROND_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=AGROND&amp;style=AGROND_GREY"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_ADP</Name>
+					<Title>GRB - ADP</Title>
+					<Abstract>Een administratief perceel (adp) is een grafische voorstelling van de vermoedelijke ligging van het kadastraal perceel, waarbij de perceelsgrenzen werden geïnterpreteerd rekening houdend met de terreinsituatie.</Abstract>
+					<KeywordList>
+						<Keyword>administratief perceel</Keyword>
+						<Keyword>adp</Keyword>
+						<Keyword>capakey</Keyword>
+						<Keyword>kadastraal</Keyword>
+						<Keyword>niscode</Keyword>
+						<Keyword>perceel</Keyword>
+						<Keyword>perceelsreconstructiepunt</Keyword>
+						<Keyword>prp</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7ADP</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_ADP</Name>
+						<Title>GRB_ADP</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADP"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_ADP_GREY</Name>
+						<Title>GRB_ADP_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADP&amp;style=GRB_ADP_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>7500.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_ADP_GRENS</Name>
+					<Title>GRB - ADP - administratief perceel grens</Title>
+					<Abstract>Een administratief perceel (adp) is een grafische voorstelling van de vermoedelijke ligging van het kadastraal perceel, waarbij de perceelsgrenzen werden geïnterpreteerd rekening houdend met de terreinsituatie.</Abstract>
+					<KeywordList>
+						<Keyword>administratief perceel</Keyword>
+						<Keyword>adp</Keyword>
+						<Keyword>capakey</Keyword>
+						<Keyword>kadastraal</Keyword>
+						<Keyword>niscode</Keyword>
+						<Keyword>perceel</Keyword>
+						<Keyword>perceelsreconstructiepunt</Keyword>
+						<Keyword>prp</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7ADP_GRENS</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_ADP_GRENS</Name>
+						<Title>GRB_ADP_GRENS</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADP_GRENS"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_ADP_GRENS_GREY</Name>
+						<Title>GRB_ADP_GRENS_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADP_GRENS&amp;style=GRB_ADP_GRENS_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>7500.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_SBN</Name>
+					<Title>GRB - SBN - spoorbaan</Title>
+					<Abstract>De spoorbaan (sbn) is de corridor van het transportnetwerk bedoeld voor het spoorverkeer. De spoorcorridor stelt de zone voor waar exclusief spoorverkeer (trein, metro of tram) plaatsgrijpt.</Abstract>
+					<KeywordList>
+						<Keyword>metro</Keyword>
+						<Keyword>sbn</Keyword>
+						<Keyword>spoor</Keyword>
+						<Keyword>spoorbaan</Keyword>
+						<Keyword>tram</Keyword>
+						<Keyword>tramweg</Keyword>
+						<Keyword>trein</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7SBN</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_SBN</Name>
+						<Title>GRB_SBN</Title>
+						<LegendURL width="22" height="40">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_SBN"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_SBN_GREY</Name>
+						<Title>GRB_SBN_GREY</Title>
+						<LegendURL width="22" height="40">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_SBN&amp;style=GRB_SBN_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_TRN</Name>
+					<Title>GRB - TRN - terrein</Title>
+					<Abstract>Een terrein (trn) is een surplusgebied dat deel uitmaakt van het openbaar domein en grenst aan een weg-, spoor- of watercorridor.</Abstract>
+					<KeywordList>
+						<Keyword>terrein</Keyword>
+						<Keyword>trn</Keyword>
+						<Keyword>verharding</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7TRN</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_TRN</Name>
+						<Title>GRB_TRN</Title>
+						<LegendURL width="207" height="140">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_TRN"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_TRN_GREY</Name>
+						<Title>GRB_TRN_GREY</Title>
+						<LegendURL width="207" height="140">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_TRN&amp;style=GRB_TRN_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WBN</Name>
+					<Title>GRB - WBN - wegbaan</Title>
+					<Abstract>De wegbaan (wbn) is de voorstelling van de wegcorridor in het GRB. De wegbaan wordt overlangs opgedeeld in verschillende arbitrair afgebakende wegbaanelementen. Er zijn twee types wegbaanelementen:• een kruispuntzone komt overeen met een kruispunt;• een wegsegment komt overeen met een wegvak.</Abstract>
+					<KeywordList>
+						<Keyword>berm</Keyword>
+						<Keyword>kruispunt</Keyword>
+						<Keyword>wbn</Keyword>
+						<Keyword>weg</Keyword>
+						<Keyword>wegbaan</Keyword>
+						<Keyword>wegsegment</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WBN</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WBN</Name>
+						<Title>GRB_WBN</Title>
+						<LegendURL width="137" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WBN"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WBN_GREY</Name>
+						<Title>GRB_WBN_GREY</Title>
+						<LegendURL width="137" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WBN&amp;style=GRB_WBN_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WTZ</Name>
+					<Title>GRB - WTZ - watergang</Title>
+					<Abstract>De watergang (wtz) beslaat het gebied dat rechtstreeks gedomineerd wordt door de fysieke aanwezigheid van oppervlaktewater (waterlopen en stilstaande wateroppervlakken). In de praktijk benadert de watergang (wtz) het oppervlak tussen de insteken van de beide oevertaluds (kruin).</Abstract>
+					<KeywordList>
+						<Keyword>beek</Keyword>
+						<Keyword>meer</Keyword>
+						<Keyword>oppervlaktewater</Keyword>
+						<Keyword>rivier</Keyword>
+						<Keyword>vijver</Keyword>
+						<Keyword>water</Keyword>
+						<Keyword>watergang</Keyword>
+						<Keyword>waterloop</Keyword>
+						<Keyword>wateroppervlak</Keyword>
+						<Keyword>waterweg</Keyword>
+						<Keyword>wtz</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WTZ</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WTZ</Name>
+						<Title>GRB_WTZ</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WTZ"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WTZ_GREY</Name>
+						<Title>GRB_WTZ_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WTZ&amp;style=GRB_WTZ_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WLAS</Name>
+					<Title>GRB - WLAS - VHA-waterloopsegment</Title>
+					<Abstract>Een VHA-waterloopsegment (wlas) is de aslijn van een segment van het VHA waterlopennetwerk van de Vlaamse Hydrografische Atlas.</Abstract>
+					<KeywordList>
+						<Keyword>rivier</Keyword>
+						<Keyword>VHA</Keyword>
+						<Keyword>Vlaamse Hydrografische Atlas</Keyword>
+						<Keyword>water</Keyword>
+						<Keyword>waterloop</Keyword>
+						<Keyword>waterweg</Keyword>
+						<Keyword>wlas</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">c1712ea6-fe36-4caf-9ecc-514f4d3c8563WLAS</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WLAS</Name>
+						<Title>GRB_WLAS</Title>
+						<LegendURL width="159" height="100">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WLAS"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WLAS_GREY</Name>
+						<Title>GRB_WLAS_GREY</Title>
+						<LegendURL width="159" height="100">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WLAS&amp;style=GRB_WLAS_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>15000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_KNW</Name>
+					<Title>GRB - KNW - kunstwerk</Title>
+					<Abstract>Een kunstwerk (knw) is een civieltechnische constructie, of specifiek type gebouw, niet opgenomen als gebouw aan de grond (gbg), opgetrokken uit duurzame materialen en zichtbaar aan het aardoppervlak.</Abstract>
+					<KeywordList>
+						<Keyword>bouwsel</Keyword>
+						<Keyword>brug</Keyword>
+						<Keyword>cabine</Keyword>
+						<Keyword>chemische installatie</Keyword>
+						<Keyword>fontein</Keyword>
+						<Keyword>golfbreker</Keyword>
+						<Keyword>havendam</Keyword>
+						<Keyword>hoogspanningsmast</Keyword>
+						<Keyword>knw</Keyword>
+						<Keyword>koeltoren</Keyword>
+						<Keyword>kunstwerk</Keyword>
+						<Keyword>mast</Keyword>
+						<Keyword>monument</Keyword>
+						<Keyword>opslagtank</Keyword>
+						<Keyword>overbrugging</Keyword>
+						<Keyword>pijler</Keyword>
+						<Keyword>rooster</Keyword>
+						<Keyword>schoorsteen</Keyword>
+						<Keyword>silo</Keyword>
+						<Keyword>staketsel</Keyword>
+						<Keyword>standbeeld</Keyword>
+						<Keyword>strandhoofd</Keyword>
+						<Keyword>tunnelmond</Keyword>
+						<Keyword>TV-mast</Keyword>
+						<Keyword>waterbouwkundige constructie</Keyword>
+						<Keyword>watertoren</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7KNW</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_KNW</Name>
+						<Title>GRB_KNW</Title>
+						<LegendURL width="286" height="640">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_KNW"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_KNW_GREY</Name>
+						<Title>GRB_KNW_GREY</Title>
+						<LegendURL width="286" height="640">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_KNW&amp;style=GRB_KNW_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_GBG</Name>
+					<Title>GRB - GBG - gebouw aan de grond</Title>
+					<Abstract>Een gebouw aan de grond (gbg) is een duurzaam bouwsel, vast met het aardoppervlak verbonden, dat een voor mensen toegankelijke ruimte omsluit. Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd.  Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. Bijvoorbeeld koeltorens, watertorens, e.d. worden opgenomen als kunstwerk (entiteit Knw).</Abstract>
+					<KeywordList>
+						<Keyword>bijgebouw</Keyword>
+						<Keyword>cabine</Keyword>
+						<Keyword>constructie</Keyword>
+						<Keyword>gbg</Keyword>
+						<Keyword>gebouw aan de grond</Keyword>
+						<Keyword>gebouw</Keyword>
+						<Keyword>hoofdgebouw</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GBG</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_GBG</Name>
+						<Title>GRB_GBG</Title>
+						<LegendURL width="271" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GBG"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_GBG_GREY</Name>
+						<Title>GRB_GBG_GREY</Title>
+						<LegendURL width="271" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GBG&amp;style=GRB_GBG_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_GBA</Name>
+					<Title>GRB - GBA - gebouwaanhorigheid</Title>
+					<Abstract>Een gebouwaanhorigheid is een duurzame constructie die aanleunt bij en behoort tot een in het GRB opgenomen gebouw aan de grond (Gbg).</Abstract>
+					<KeywordList>
+						<Keyword>aanhorigheid</Keyword>
+						<Keyword>afdak</Keyword>
+						<Keyword>bouwsel</Keyword>
+						<Keyword>garagetoegang</Keyword>
+						<Keyword>gba</Keyword>
+						<Keyword>gebouwaanhorigheid</Keyword>
+						<Keyword>ingezonken garagetoegang</Keyword>
+						<Keyword>loopbrug</Keyword>
+						<Keyword>onderkeldering</Keyword>
+						<Keyword>trap</Keyword>
+						<Keyword>uitbreiding</Keyword>
+						<Keyword>verdieping</Keyword>
+						<Keyword>verheven garagetoegang</Keyword>
+						<Keyword>zichtbare onderkeldering</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GBA</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_GBA</Name>
+						<Title>GRB_GBA</Title>
+						<LegendURL width="206" height="320">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GBA"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_GBA_GREY</Name>
+						<Title>GRB_GBA_GREY</Title>
+						<LegendURL width="206" height="320">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GBA&amp;style=GRB_GBA_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WGA</Name>
+					<Title>GRB - WGA - wegaanhorigheid</Title>
+					<Abstract>Een wegaanhorigheid (wga) is een constructie die binnen de wegbaan of binnen een terrein met verkeersfunctie opgericht werd om onderdak te bieden aan personen, vervoersmiddelen en goederen, maar niet als zelfstandig gebouw beschouwd kan worden.</Abstract>
+					<KeywordList>
+						<Keyword>bergplaats</Keyword>
+						<Keyword>bushok</Keyword>
+						<Keyword>cabine</Keyword>
+						<Keyword>fietsstalling</Keyword>
+						<Keyword>telefooncabine</Keyword>
+						<Keyword>wegaanhorigheid</Keyword>
+						<Keyword>wga</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WGA</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WGA</Name>
+						<Title>GRB_WGA</Title>
+						<LegendURL width="178" height="160">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGA"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WGA_GREY</Name>
+						<Title>GRB_WGA_GREY</Title>
+						<LegendURL width="178" height="160">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGA&amp;style=GRB_WGA_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WVB</Name>
+					<Title>GRB - WVB - wegverbinding</Title>
+					<Abstract>Een wegverbinding (wvb) is een lijnvormig element dat een deel van de wegcorridor voorstelt en begrensd wordt door twee wegknopen (wkn).</Abstract>
+					<KeywordList>
+						<Keyword>afrit</Keyword>
+						<Keyword>autosnelweg</Keyword>
+						<Keyword>dienstweg</Keyword>
+						<Keyword>fietsweg</Keyword>
+						<Keyword>oprit</Keyword>
+						<Keyword>parallelweg</Keyword>
+						<Keyword>rotonde</Keyword>
+						<Keyword>tramweg</Keyword>
+						<Keyword>ventweg</Keyword>
+						<Keyword>verkeersplein</Keyword>
+						<Keyword>voetpad</Keyword>
+						<Keyword>wandelweg</Keyword>
+						<Keyword>weg</Keyword>
+						<Keyword>wegsegment</Keyword>
+						<Keyword>wegverbinding</Keyword>
+						<Keyword>wvb</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WVB</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WVB</Name>
+						<Title>GRB_WVB</Title>
+						<LegendURL width="404" height="320">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WVB"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WVB_GREY</Name>
+						<Title>GRB_WVB_GREY</Title>
+						<LegendURL width="404" height="320">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WVB&amp;style=GRB_WVB_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>15000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WGR</Name>
+					<Title>GRB - WGR - gracht</Title>
+					<Abstract>Een gracht (wgr) is een waterloop, een beek of een sloot, bedoeld voor de af- of aanvoer of het tijdelijk ophouden van oppervlaktewater en gelegen binnen de wegbaan (baangrachten).</Abstract>
+					<KeywordList>
+						<Keyword>baangracht</Keyword>
+						<Keyword>beek</Keyword>
+						<Keyword>gracht</Keyword>
+						<Keyword>rivier</Keyword>
+						<Keyword>sloot</Keyword>
+						<Keyword>water</Keyword>
+						<Keyword>waterloop</Keyword>
+						<Keyword>wgr</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WGR</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WGR</Name>
+						<Title>GRB_WGR</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGR"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WGR_GREY</Name>
+						<Title>GRB_WGR_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGR&amp;style=GRB_WGR_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WGO</Name>
+					<Title>GRB - WGO - wegopdeling</Title>
+					<Abstract>De wegopdeling (wgo) is de fysieke begrenzing van goed identificeerbare functionele stroken binnen de wegbaan (wbn).</Abstract>
+					<KeywordList>
+						<Keyword>berm</Keyword>
+						<Keyword>boordsteen</Keyword>
+						<Keyword>circulatiezone zwakke weggebruiker</Keyword>
+						<Keyword>drempel</Keyword>
+						<Keyword>kantsteen</Keyword>
+						<Keyword>onverhard</Keyword>
+						<Keyword>onverharde zone</Keyword>
+						<Keyword>rijbaan</Keyword>
+						<Keyword>verhoging</Keyword>
+						<Keyword>wcz</Keyword>
+						<Keyword>wegbaaninrichting</Keyword>
+						<Keyword>weginrichting</Keyword>
+						<Keyword>wegopdeling</Keyword>
+						<Keyword>wgo</Keyword>
+						<Keyword>woz</Keyword>
+						<Keyword>wrb</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WGO</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WGO</Name>
+						<Title>GRB_WGO</Title>
+						<LegendURL width="241" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGO"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WGO_GREY</Name>
+						<Title>GRB_WGO_GREY</Title>
+						<LegendURL width="241" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WGO&amp;style=GRB_WGO_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WLI</Name>
+					<Title>GRB - WLI - longitudinale weginrichting</Title>
+					<Abstract>Een longitudinaal weginrichtingselement (wli) is een vast inrichtingselement binnen de wegbaan, met als doel de verkeersstromen in gescheiden stroken te leiden. Deze inrichtingselementen zijn overwegend parallel aan de lengteas van de wegbaan georiënteerd.</Abstract>
+					<KeywordList>
+						<Keyword>boordsteen</Keyword>
+						<Keyword>kantsteen</Keyword>
+						<Keyword>keermuur</Keyword>
+						<Keyword>kopmuur</Keyword>
+						<Keyword>longitudinale inrichting</Keyword>
+						<Keyword>muur</Keyword>
+						<Keyword>stootband</Keyword>
+						<Keyword>vangrail</Keyword>
+						<Keyword>verhoging</Keyword>
+						<Keyword>weginrichting</Keyword>
+						<Keyword>wli</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WLI</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WLI</Name>
+						<Title>GRB_WLI</Title>
+						<LegendURL width="220" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WLI"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WLI_GREY</Name>
+						<Title>GRB_WLI_GREY</Title>
+						<LegendURL width="220" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WLI&amp;style=GRB_WLI_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WTI</Name>
+					<Title>GRB - WTI - transversale weginrichting</Title>
+					<Abstract>Een transversaal weginrichtingselement (wti) is een vast inrichtingselement binnen de zone voor snelverkeer met als doel de normale verkeersstroom te remmen of te compartimenteren. Deze inrichtingselementen zijn overwegend dwars op de lengteas van de wegbaan (wbn) georiënteerd.</Abstract>
+					<KeywordList>
+						<Keyword>drempel</Keyword>
+						<Keyword>verkeersdrempel</Keyword>
+						<Keyword>verkeersplateau</Keyword>
+						<Keyword>wti</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WTI</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WTI</Name>
+						<Title>GRB_WTI</Title>
+						<LegendURL width="218" height="40">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WTI"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WTI_GREY</Name>
+						<Title>GRB_WTI_GREY</Title>
+						<LegendURL width="218" height="40">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WTI&amp;style=GRB_WTI_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WRL</Name>
+					<Title>GRB - WRL - spoorrail</Title>
+					<Abstract>Een spoorrail (wrl) is een metalen spoorstaaf die spoorverkeer mogelijk maakt binnen de wegbaan (wbn) en de direct aansluitende zone.</Abstract>
+					<KeywordList>
+						<Keyword>rail</Keyword>
+						<Keyword>spoor</Keyword>
+						<Keyword>tram</Keyword>
+						<Keyword>tramweg</Keyword>
+						<Keyword>trein</Keyword>
+						<Keyword>wrl</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WRL</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WRL</Name>
+						<Title>GRB_WRL</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WRL"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WRL_GREY</Name>
+						<Title>GRB_WRL_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WRL&amp;style=GRB_WRL_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WRI</Name>
+					<Title>GRB - WRI - putdeksel</Title>
+					<Abstract>Een putdeksel (wri) is een deksel of luik van ondergrondse leidingen en installaties.</Abstract>
+					<KeywordList>
+						<Keyword>deksel</Keyword>
+						<Keyword>luik</Keyword>
+						<Keyword>putdeksel</Keyword>
+						<Keyword>wri</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WRI</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WRI</Name>
+						<Title>GRB_WRI</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WRI"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WRI_GREY</Name>
+						<Title>GRB_WRI_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WRI&amp;style=GRB_WRI_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>937.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WPI</Name>
+					<Title>GRB - WPI - puntvormige inrichting</Title>
+					<Abstract>Een puntvormig weginrichtingselement (wpi) is een inrichtingselement behorende bij de wegbaan (wbn), waarvan het contact met het grondoppervlak onvoldoende groot is om als lijn of veelhoek gekarteerd te worden.</Abstract>
+					<KeywordList>
+						<Keyword>brandkraan</Keyword>
+						<Keyword>elektriciteitspaal</Keyword>
+						<Keyword>flitspaal</Keyword>
+						<Keyword>grenspaal</Keyword>
+						<Keyword>meerpaal</Keyword>
+						<Keyword>paal</Keyword>
+						<Keyword>praatpaal</Keyword>
+						<Keyword>puntvormige inrichting</Keyword>
+						<Keyword>verkeerslicht</Keyword>
+						<Keyword>verlichtingspaal</Keyword>
+						<Keyword>wpi</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WPI</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WPI</Name>
+						<Title>GRB_WPI</Title>
+						<LegendURL width="257" height="100">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WPI"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WPI_GREY</Name>
+						<Title>GRB_WPI_GREY</Title>
+						<LegendURL width="257" height="100">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WPI&amp;style=GRB_WPI_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>937.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_WKN</Name>
+					<Title>GRB - WKN - wegknoop</Title>
+					<Abstract>Een wegknoop (wkn) is een puntvormig element dat een wegverbinding (wvb) begrenst.</Abstract>
+					<KeywordList>
+						<Keyword>wegknoop</Keyword>
+						<Keyword>wkn</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7WKN</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WKN</Name>
+						<Title>GRB_WKN</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WKN"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WKN_GREY</Name>
+						<Title>GRB_WKN_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WKN&amp;style=GRB_WKN_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>937.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_ADT</Name>
+					<Title>GRB - ADT - verkorte kadastrale perceelsidentificatie</Title>
+					<Abstract>Elk perceel heeft een unieke sleutel van het kadastraal perseel (capakey)</Abstract>
+					<KeywordList>
+						<Keyword>administratief perceel</Keyword>
+						<Keyword>adp</Keyword>
+						<Keyword>capakey</Keyword>
+						<Keyword>kadastraal</Keyword>
+						<Keyword>niscode</Keyword>
+						<Keyword>perceel</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7ADT</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_ADT</Name>
+						<Title>GRB_ADT</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADT"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_ADT_GREY</Name>
+						<Title>GRB_ADT_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ADT&amp;style=GRB_ADT_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1200</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_HNR_ADP</Name>
+					<Title>GRB - HNR_ADP - huisnummerlabel administratief perceel</Title>
+					<Abstract>Een perceel kan geen, één of verschillende adressen hebben. Eén adres kan toegekend zijn aan één of aan verschillende percelen. Een adres wordt enkel gerelateerd aan een administratief perceel indien het een administratief perceel betreft waarop geen gebouwen aan de grond (gbg) of kunstwerken (knw) opgetrokken zijn</Abstract>
+					<KeywordList>
+						<Keyword>administratief perceel</Keyword>
+						<Keyword>adp</Keyword>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>huisnummer</Keyword>
+						<Keyword>kadastraal</Keyword>
+						<Keyword>perceel</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7HNR_ADP</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_HNR_ADP</Name>
+						<Title>GRB_HNR_ADP</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_ADP"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_HNR_ADP_GREY</Name>
+						<Title>GRB_HNR_ADP_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_ADP&amp;style=GRB_HNR_ADP_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>2300.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_HNR_KNW</Name>
+					<Title>GRB - HNR_KNW - huisnummerlabel kunstwerk</Title>
+					<Abstract>Een kunstwerk kan geen, één of verschillende adressen hebben. Een adres kan toegekend zijn aan één of aan verschillende kunstwerken.</Abstract>
+					<KeywordList>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>huisnummer</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7HNR_KNW</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_HNR_KNW</Name>
+						<Title>GRB_HNR_KNW</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_KNW"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_HNR_KNW_GREY</Name>
+						<Title>GRB_HNR_KNW_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_KNW&amp;style=GRB_HNR_KNW_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>2300.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_HNR_GBG</Name>
+					<Title>GRB - HNR_GBG - huisnummerlabel gebouw aan de grond</Title>
+					<Abstract>Een gebouw kan geen, één of verschillende adressen hebben. Eén adres kan toegekend zijn aan één of aan verschillende gebouwen.</Abstract>
+					<KeywordList>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>huisnummer</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7HNR_GBG</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_HNR_GBG</Name>
+						<Title>GRB_HNR_GBG</Title>
+						<LegendURL width="379" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_GBG"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_HNR_GBG_GREY</Name>
+						<Title>GRB_HNR_GBG_GREY</Title>
+						<LegendURL width="379" height="60">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_HNR_GBG&amp;style=GRB_HNR_GBG_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>2300.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_WNM</Name>
+					<Title>GRB - WNM - naam watergang</Title>
+					<Abstract>Naam die de VHA-waterloop draagt bij zijn monding, zgn. VHA-roepnaam van de waterloop</Abstract>
+					<KeywordList>
+						<Keyword>oppervlaktewater</Keyword>
+						<Keyword>VHA</Keyword>
+						<Keyword>Vlaamse Hydrografische Atlas</Keyword>
+						<Keyword>watergang</Keyword>
+						<Keyword>waterloop</Keyword>
+						<Keyword>wateroppervlak</Keyword>
+						<Keyword>waterweg</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">c1712ea6-fe36-4caf-9ecc-514f4d3c8563WNM</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_WNM</Name>
+						<Title>GRB_WNM</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WNM"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>GRB_WNM_GREY</Name>
+						<Title>GRB_WNM_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_WNM&amp;style=GRB_WNM_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>9050.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_SNM_RECHTS</Name>
+					<Title>GRB - SNM - straatnaam rechts</Title>
+					<Abstract>De registratie van de officiële straten volgens het Centraal Referentie Adressenbestand</Abstract>
+					<KeywordList>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>straatnaam</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7SNM_RECHTS</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_SNM_RECHTS</Name>
+						<Title>GRB_SNM_RECHTS</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_SNM_RECHTS"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>9050.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_SNM_LINKS</Name>
+					<Title>GRB - SNM - straatnaam links</Title>
+					<Abstract>De registratie van de officiële straten volgens het Centraal Referentie Adressenbestand</Abstract>
+					<KeywordList>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>straatnaam</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7SNM_LINKS</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_SNM_LINKS</Name>
+						<Title>GRB_SNM_LINKS</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_SNM_LINKS"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>9050.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="0" opaque="1">
+					<Name>GRB_SNM</Name>
+					<Title>GRB - SNM - straatnaam</Title>
+					<Abstract>De registratie van de officiële straten volgens het Centraal Referentie Adressenbestand</Abstract>
+					<KeywordList>
+						<Keyword>adres</Keyword>
+						<Keyword>CRAB</Keyword>
+						<Keyword>straatnaam</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7SNM</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_SNM</Name>
+						<Title>GRB_SNM</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_SNM"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>9050.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GEM_GRENS</Name>
+					<Title>GEM - gemeentegrens</Title>
+					<Abstract>Het voorlopig referentiebestand gemeentegrenzen doet dienst als geometrische en object-referentie voor de bestuurlijke indelingen in Vlaanderen. Voor het opbouwen van de geometrie van de gemeentegrenzen wordt de best beschikbare informatie gehanteerd. In vele gevallen is de geometrie van de adp's (administratieve percelen) van het GRB (Grootschalig Referentiebestand) gebruikt, tenzij er beter vastgestelde geometrische informatie (zoals bvb lijsten van coördinaten die in het Belgisch Staatsblad zijn gepubliceerd bij vaststelling van grenzen)voorhanden is.</Abstract>
+					<KeywordList>
+						<Keyword>administratieve grens</Keyword>
+						<Keyword>gemeente</Keyword>
+						<Keyword>gemeentegrens</Keyword>
+						<Keyword>niscode</Keyword>
+						<Keyword>referentiebestand</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">08cf8582-5275-4441-901e-98f79b11319a</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d7a37c9e-c7e1-41c7-8876-eccb535ac2ec&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d7a37c9e-c7e1-41c7-8876-eccb535ac2ec&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>Gem_Grens</Name>
+						<Title>Gem_Grens</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=d7a37c9e-c7e1-41c7-8876-eccb535ac2ec"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>Gem_Grens_GREY</Name>
+						<Title>Gem_Grens_GREY</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GEM_GRENS&amp;style=Gem_Grens_GREY"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="0" opaque="0">
+					<Name>TOPONIEM</Name>
+					<Title>TOPONIEM - toponiem</Title>
+					<Abstract>Deze laag bevat de namen van de Vlaamse steden en gemeenten en hun deelgemeenten </Abstract>
+					<KeywordList>
+						<Keyword>gemeente</Keyword>
+						<Keyword>toponiem</Keyword>
+						<Keyword>deelgemente</Keyword>
+						<Keyword>stad</Keyword>
+					</KeywordList>
+					<Style>
+						<Name>TOPONIEM</Name>
+						<Title>TOPONIEM</Title>
+						<LegendURL width="327" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=TOPONIEM&amp;scale=1"/>
+						</LegendURL>
+					</Style>
+					<Style>
+						<Name>TOPONIEM_GREY</Name>
+						<Title>TOPONIEM_GREY</Title>
+						<LegendURL width="327" height="80">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=TOPONIEM&amp;scale=1&amp;style=TOPONIEM_GREY"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>2000000</MaxScaleDenominator>
+				</Layer>
+			</Layer>
+			<Layer queryable="0">
+				<Name>GRB_EXTRA</Name>
+				<Title>GRB-extra</Title>
+				<Abstract>Deze laag omvat bijkomende GRB- entiteiten die niet zichtbaar zijn in de GRB-basiskaart</Abstract>
+				<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GRB_EXTRA</Identifier>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</MetadataURL>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</MetadataURL>
+				<Style>
+					<Name/>
+					<Title>GRB-extra</Title>
+					<LegendURL width="436" height="1744">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?request=GetLegendGraphic&amp;version=1.3.0&amp;format=image/png&amp;layer=GRB_EXTRA&amp;scale=1&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_GVL</Name>
+					<Title>GRB - GVL - gevellijn</Title>
+					<Abstract>Een gevellijn volgt de verticale projectie van het gevelvlak op het maaiveld en verbindt twee verschillende gevelpunten (gvp). In zijn meest eenvoudige vorm wordt een gebouw aan de grond beschreven door vier elementaire gevelvlakken (een voorgevel, een achtergevel en twee zijgevels).</Abstract>
+					<KeywordList>
+						<Keyword>gevel</Keyword>
+						<Keyword>gevellijn</Keyword>
+						<Keyword>gvl</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GVL</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_GVL</Name>
+						<Title>GRB_GVL</Title>
+						<LegendURL width="290" height="200">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GVL"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_GVP</Name>
+					<Title>GRB - GVP - gevelpunt</Title>
+					<Abstract>Een gevelpunt (gvp) is elk beduidend vormpunt van de gevellijn van een gebouw aan de grond (gbg).</Abstract>
+					<KeywordList>
+						<Keyword>gevelpunt</Keyword>
+						<Keyword>gvp</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7GVP</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_GVP</Name>
+						<Title>GRB_GVP</Title>
+						<LegendURL width="376" height="200">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_GVP"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>1874.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_MKV</Name>
+					<Title>GRB - MKV - lokaal referentiepunt</Title>
+					<Abstract>Een meetkundig referentiepunt van het lokale verdichtingsnet (mkv) is een gematerialiseerd punt van het verdichtingsnet, opgemeten met behulp van FLEPOS (Flemish Positioning Service). Dit wordt een FLEPOS-verdichtingspunt (FVP1) genoemd. Enkel de FVP1-punten die gebruikt zijn in het kader van karteringen voor het GRB worden bedoeld.</Abstract>
+					<KeywordList>
+						<Keyword>meetkundig verdichtingspunt</Keyword>
+						<Keyword>mkv</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7MKV</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_MKV</Name>
+						<Title>GRB_MKV</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_MKV"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>15000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_MKP</Name>
+					<Title>GRB - MKP - NGI referentiepunt</Title>
+					<Abstract>Een meetkundig referentiepunt van het planimetrische geodetische net (mkp) is een gematerialiseerd merkteken van een planimetrisch geodetisch punt aan de grond, zoals gedefinieerd, onderhouden en via GPS-meting bepaald door het Nationaal Geografisch Instituut.Het meetkundige referentiepunt van het planimetrische geodetische net (Mkp) wordt door het NGI aangeleverd en onderhouden, maar vormt samen met het meetkundige referentiepunt van het lokale verdichtingsnet (Mkv) één geheel van bruikbare referentiepunten.</Abstract>
+					<KeywordList>
+						<Keyword>mkp</Keyword>
+						<Keyword>planimetrisch referentiepunt</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7MKP</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_MKP</Name>
+						<Title>GRB_MKP</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_MKP"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>15000.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1" opaque="1">
+					<Name>GRB_ANO</Name>
+					<Title>GRB - ANO - anomalie</Title>
+					<Abstract>Een anomalie is een geverifieerde GRB afwijking . GRB-afwijkingen worden door een grote groep van gebruikers aan het AGIV gemeld, die ze controleert en beheert als anomalieën.</Abstract>
+					<KeywordList>
+						<Keyword>ano</Keyword>
+						<Keyword>anomalie</Keyword>
+						<Keyword>mutatie</Keyword>
+						<Keyword>fout</Keyword>
+						<Keyword>onvolledigheid</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7ANO</Identifier>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name>GRB_ANO</Name>
+						<Title>GRB_ANO</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_ANO"/>
+						</LegendURL>
+					</Style>
+					<MaxScaleDenominator>7500.0</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>GRB_LBZ</Name>
+					<Title>GRB - LBZ - Lokale bijhoudingszone</Title>
+					<Abstract>Een lokale bijhoudingszone (lbz) is de contour van een zone waar het GRB lokaal werd bijgewerkt.</Abstract>
+					<KeywordList>
+						<Keyword>as built</Keyword>
+						<Keyword>as-builtplan</Keyword>
+						<Keyword>bijhoudingszone</Keyword>
+						<Keyword>lbz</Keyword>
+						<Keyword>lokale bijhoudingszone</Keyword>
+					</KeywordList>
+					<CRS>EPSG:31370</CRS>
+					<EX_GeographicBoundingBox>
+						<westBoundLongitude>2.5243913848668256</westBoundLongitude>
+						<eastBoundLongitude>5.937507213139176</eastBoundLongitude>
+						<southBoundLatitude>50.64634806490403</southBoundLatitude>
+						<northBoundLatitude>51.5142169731878</northBoundLatitude>
+					</EX_GeographicBoundingBox>
+					<BoundingBox CRS="EPSG:31370" minx="22000.0" miny="150000.0" maxx="259000.0" maxy="245000.0"/>
+					<MetadataURL type="TC211">
+						<Format>text/html</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+					</MetadataURL>
+					<MetadataURL type="TC211">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+					</MetadataURL>
+					<Style>
+						<Name/>
+						<Title>GRB_LBZ</Title>
+						<LegendURL width="20" height="20">
+							<Format>image/png</Format>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_LBZ"/>
+						</LegendURL>
+					</Style>
+					<Layer queryable="1" opaque="1">
+						<Name>GRB_LBZ1</Name>
+						<Title>GRB - LBZ - Lokale bijhoudingszone - as-builtplan</Title>
+						<Abstract>Een lokale bijhoudingszone (lbz) type as-builtplan is de contour van een zone waar het GRB lokaal werd bijgewerkt op basis van een as-builtplan</Abstract>
+						<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7LBZ1</Identifier>
+						<MetadataURL type="TC211">
+							<Format>text/html</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+						</MetadataURL>
+						<MetadataURL type="TC211">
+							<Format>text/xml</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+						</MetadataURL>
+						<Style>
+							<Name>GRB_LBZ1</Name>
+							<Title>GRB_LBZ1</Title>
+							<LegendURL width="20" height="20">
+								<Format>image/png</Format>
+								<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_LBZ1"/>
+							</LegendURL>
+						</Style>
+						<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+					</Layer>
+					<Layer queryable="1" opaque="1">
+						<Name>GRB_LBZ2</Name>
+						<Title>GRB - LBZ - Lokale bijhoudingszone - lokale bijhouding terrein</Title>
+						<Abstract>Een lokale bijhoudingszone (lbz) type lokale bijhouding terrein is de contour van een zone waar de terreingegevens uit het GRB lokaal werden bijgewerkt</Abstract>
+						<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7LBZ2</Identifier>
+						<MetadataURL type="TC211">
+							<Format>text/html</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+						</MetadataURL>
+						<MetadataURL type="TC211">
+							<Format>text/xml</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+						</MetadataURL>
+						<Style>
+							<Name>GRB_LBZ2</Name>
+							<Title>GRB_LBZ2</Title>
+							<LegendURL width="20" height="20">
+								<Format>image/png</Format>
+								<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_LBZ2"/>
+							</LegendURL>
+						</Style>
+						<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+					</Layer>
+					<Layer queryable="1" opaque="1">
+						<Name>GRB_LBZ3</Name>
+						<Title>GRB - LBZ - Lokale bijhoudingszone - lokale bijhouding adp</Title>
+						<Abstract>Een lokale bijhoudingszone (lbz) type lokale bijhouding adp is de contour van een zone waar de administratieve percelen (adp) uit het GRB lokaal werden bijgewerkt.</Abstract>
+						<Identifier authority="agiv-be">E2707D13-B366-4D25-A286-E1B1330CADF7LBZ3</Identifier>
+						<MetadataURL type="TC211">
+							<Format>text/html</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut"/>
+						</MetadataURL>
+						<MetadataURL type="TC211">
+							<Format>text/xml</Format>
+							<OnlineResource xlink:type="simple" xlink:href="https://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd"/>
+						</MetadataURL>
+						<Style>
+							<Name>GRB_LBZ3</Name>
+							<Title>GRB_LBZ3</Title>
+							<LegendURL width="20" height="20">
+								<Format>image/png</Format>
+								<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms?service=WMS&amp;request=GetLegendGraphic&amp;scale=1&amp;format=image%2Fpng&amp;height=30&amp;width=40&amp;LEGEND_OPTIONS=forceLabels:on&amp;layer=GRB_LBZ3"/>
+							</LegendURL>
+						</Style>
+						<MaxScaleDenominator>80000.0</MaxScaleDenominator>
+					</Layer>
+				</Layer>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

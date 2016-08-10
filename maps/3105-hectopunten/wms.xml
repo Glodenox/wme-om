@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?><WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:srv="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd" xmlns:gmd="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" xmlns:gco="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:gml="http://schemas.opengis.net/gml" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="1913" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://geodata.nationaalgeoregister.nl/www/inspire/inspire_vs.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>Nationaal Wegen Bestand Wegen WMS</Title>
+    <Abstract>Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.</Abstract>
+    <KeywordList>
+      <Keyword>transport</Keyword>
+      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>KlantContactCenter PDOK</ContactPerson>
+        <ContactOrganization>PDOK</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>pointOfContact</ContactPosition>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address/>
+        <City>Apeldoorn</City>
+        <StateOrProvince/>
+        <PostCode/>
+        <Country>Nederland</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>otherRestrictions;
+        Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+    </Exception>
+    <inspire_vs:ExtendedCapabilities>
+      <inspire_common:MetadataUrl>
+        <inspire_common:URL>http://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=f2437a92-ddd3-4777-a1bc-fdf4b4a7fcb8</inspire_common:URL>
+        <inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+      </inspire_common:MetadataUrl>
+      <inspire_common:SupportedLanguages>
+        <inspire_common:DefaultLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:DefaultLanguage>
+        <inspire_common:SupportedLanguage>
+          <inspire_common:Language>dut</inspire_common:Language>
+        </inspire_common:SupportedLanguage>
+      </inspire_common:SupportedLanguages>
+      <inspire_common:ResponseLanguage>
+        <inspire_common:Language>dut</inspire_common:Language>
+      </inspire_common:ResponseLanguage>
+    </inspire_vs:ExtendedCapabilities>
+    <Layer>
+      <Title>Nationaal Wegen Bestand Wegen WMS</Title>
+      <Abstract>Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:25831</CRS>
+      <CRS>EPSG:25832</CRS>
+      <CRS>EPSG:28992</CRS>
+      <CRS>EPSG:3034</CRS>
+      <CRS>EPSG:3035</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>3.258</westBoundLongitude>
+        <eastBoundLongitude>7.242</eastBoundLongitude>
+        <southBoundLatitude>50.735</southBoundLatitude>
+        <northBoundLatitude>53.5</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="3.258" miny="50.735" maxx="7.242" maxy="53.5"/>
+      <BoundingBox CRS="EPSG:4326" minx="50.735" miny="3.258" maxx="53.5" maxy="7.242"/>
+      <BoundingBox CRS="EPSG:4258" minx="50.73500000092408" miny="3.2580000000000005" maxx="53.50000000090157" maxy="7.242000000000001"/>
+      <BoundingBox CRS="EPSG:3035" minx="3072930.454823708" miny="3845794.5202174555" maxx="3397702.6660426413" maxy="4138011.998563211"/>
+      <BoundingBox CRS="EPSG:3034" minx="2667599.997388251" miny="3541035.5559911383" maxx="2980995.597375082" maxy="3823120.5410198416"/>
+      <BoundingBox CRS="EPSG:3857" minx="362678.9010044853" miny="6574551.4831717545" maxx="806175.7523248873" maxy="7076025.276180581"/>
+      <BoundingBox CRS="EPSG:28992" minx="4615.292893520847" miny="304989.8747655342" maxx="285866.9946001788" maxy="614722.2789486384"/>
+      <BoundingBox CRS="EPSG:25831" minx="517113.7707495639" miny="5620388.296776848" maxx="799297.461976265" maxy="5936271.320269225"/>
+      <BoundingBox CRS="EPSG:25832" minx="94930.61942303512" miny="5621830.272107604" maxx="383392.78405361256" maxy="5943250.138379202"/>
+      <AuthorityURL name="PDOK">
+        <OnlineResource xlink:type="simple" xlink:href="http://www.pdok.nl"/>
+      </AuthorityURL>
+      <Layer queryable="1" opaque="0">
+        <Name>hectopunten</Name>
+        <Title>hectopunten</Title>
+        <Abstract>NWB Wegen hectopunten Vervoersnetwerken</Abstract>
+        <KeywordList>
+          <Keyword>Vervoersnetwerken</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.262</westBoundLongitude>
+          <eastBoundLongitude>7.239</eastBoundLongitude>
+          <southBoundLatitude>50.739</southBoundLatitude>
+          <northBoundLatitude>53.451</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.262" miny="50.739" maxx="7.239" maxy="53.451"/>
+        <BoundingBox CRS="EPSG:28992" minx="13701.678" miny="307344.521" maxx="277965.717" maxy="607185.053"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.73870357081282" miny="3.2611542334845933" maxx="53.4508208794289" maxy="7.2375694256603555"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73870357173688" miny="3.2611542334845933" maxx="53.45082088033096" maxy="7.2375694256603555"/>
+        <BoundingBox CRS="EPSG:3035" minx="3074115.407114575" miny="3854790.677913094" maxx="3390159.6330663497" maxy="4137446.7480132845"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668741.3957112785" miny="3549728.2707096715" maxx="2973706.7516703326" maxy="3822581.939718142"/>
+        <BoundingBox CRS="EPSG:3857" minx="363030.02866983326" miny="6575202.914170455" maxx="805682.5430454763" maxy="7066826.868343751"/>
+        <BoundingBox CRS="EPSG:25831" minx="517350.64781042194" miny="5620839.2516028555" maxx="791299.365104505" maxy="5929215.65751092"/>
+        <BoundingBox CRS="EPSG:25832" minx="103951.56212413328" miny="5622904.60012311" maxx="382924.8031629079" maxy="5935694.780206696"/>
+        <AuthorityURL name="Rijkswaterstaat">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.rws.nl"/>
+        </AuthorityURL>
+        <Identifier authority="Rijkswaterstaat">nl.rws.1</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=a9b7026e-0a81-4813-93bd-ba49e6f28502"/>
+        </MetadataURL>
+        <Style>
+          <Name>nwbwegen:hectopunten_met_labels</Name>
+          <Title>Hectopunten</Title>
+          <LegendURL width="95" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=hectopunten"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>inspire_common:DEFAULT</Name>
+          <Title>INSPIRE common default style</Title>
+          <Abstract>INSPIRE common default style</Abstract>
+          <LegendURL width="251" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=hectopunten&amp;style=inspire_common%3ADEFAULT"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>nwbwegen:hectopunten</Name>
+          <Title>NWB_wegen_hectopunten</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=hectopunten&amp;style=hectopunten"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>wegvakken</Name>
+        <Title>wegvakken</Title>
+        <Abstract>NWB Wegen wegvakken Vervoersnetwerken</Abstract>
+        <KeywordList>
+          <Keyword>Vervoersnetwerken</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.258</westBoundLongitude>
+          <eastBoundLongitude>7.242</eastBoundLongitude>
+          <southBoundLatitude>50.735</southBoundLatitude>
+          <northBoundLatitude>53.5</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.258" miny="50.735" maxx="7.242" maxy="53.5"/>
+        <BoundingBox CRS="EPSG:28992" minx="13592.698" miny="306956.0" maxx="278022.27" maxy="612627.88"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.735186209630655" miny="3.257090995033615" maxx="53.499722644150616" maxy="7.240530256922594"/>
+        <BoundingBox CRS="EPSG:4258" minx="50.73518621055474" miny="3.257090995033615" maxx="53.49972264505219" maxy="7.240530256922594"/>
+        <BoundingBox CRS="EPSG:3035" minx="3073724.1204150924" miny="3854657.759565164" maxx="3395600.1436453857" maxy="4137852.6536716186"/>
+        <BoundingBox CRS="EPSG:3034" minx="2668363.605873334" miny="3549599.9468563115" maxx="2978963.6772526815" maxy="3822968.2992538232"/>
+        <BoundingBox CRS="EPSG:3857" minx="362577.71103449876" miny="6574584.234853014" maxx="806012.1412739133" maxy="7075973.369946288"/>
+        <BoundingBox CRS="EPSG:25831" minx="517061.10371461516" miny="5620447.616232387" maxx="791368.376220111" maxy="5934659.669120156"/>
+        <BoundingBox CRS="EPSG:25832" minx="103823.6469313011" miny="5622513.9054010585" maxx="383255.62986064673" maxy="5941142.7040211195"/>
+        <AuthorityURL name="Rijkswaterstaat">
+          <OnlineResource xlink:type="simple" xlink:href="http://www.rws.nl"/>
+        </AuthorityURL>
+        <Identifier authority="Rijkswaterstaat">nl.rws.2</Identifier>
+        <MetadataURL type="TC211">
+          <Format>text/plain</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=60caa9e5-60c5-4072-a575-e11ef5a07c40"/>
+        </MetadataURL>
+        <Style>
+          <Name>nwbwegen:wegvakken</Name>
+          <Title>NWB_wegen_wegvakken</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=wegvakken"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>inspire_common:DEFAULT</Name>
+          <Title>INSPIRE common default style</Title>
+          <Abstract>INSPIRE common default style</Abstract>
+          <LegendURL width="251" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/nwbwegen/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=wegvakken&amp;style=inspire_common%3ADEFAULT"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

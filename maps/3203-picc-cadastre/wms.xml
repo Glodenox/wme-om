@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[Projet Informatique de Cartographie Continue (PICC) - Service de visualisation]]></Title>
+    <Abstract><![CDATA[Ce service permet de consulter la donnée Projet Informatique de Cartographie Continue (PICC). Consultez toutes les informations sur ce service sur http://geoportail.wallonie.be/geocatalogue?mdUUID=81d9fbe7-5384-4789-a9b6-f5924d29246f]]></Abstract>
+    <KeywordList><Keyword><![CDATA[A compléter]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[Service public de Wallonie]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[Belgium]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[helpdesk.carto@spw.wallonie.be]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[Consultez toutes les informations sur ce service sur http://geoportail.wallonie.be/geocatalogue?mdUUID=81d9fbe7-5384-4789-a9b6-f5924d29246f.]]></AccessConstraints>
+    <MaxWidth>2048</MaxWidth>
+    <MaxHeight>2048</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geojson</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[PICC_VDIFF]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Title><![CDATA[RELIEF]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[RELIEF_LIGNE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>1</Title>
+          <LegendURL width="100" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2362.351190</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[HYDROGRAPHIE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[HYDROG_BORD]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>3</Title>
+          <LegendURL width="124" height="48">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>14174.107143</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[HYDROG_AXE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>4</Title>
+          <LegendURL width="202" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>14174.107143</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[RESEAU FERROVIAIRE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[FERROV_LIGNE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>6</Title>
+          <LegendURL width="130" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[RESEAU ROUTIER]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[VOIRIE_AXE >= 5k]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>8</Title>
+          <LegendURL width="88" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>4724.702381</MinScaleDenominator>
+        <MaxScaleDenominator>14174.107143</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>9</Name>
+        <Title><![CDATA[VOIRIE_AXE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>9</Title>
+          <LegendURL width="88" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=9" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4723.757440</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title><![CDATA[VOIRIE_LIGNE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>10</Title>
+          <LegendURL width="274" height="176">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4723.757440</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[OCCUPATION DU SOL]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>12</Name>
+        <Title><![CDATA[OCCSOL_SURFACE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>12</Title>
+          <LegendURL width="118" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=12" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2361.406250</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>13</Name>
+        <Title><![CDATA[OCCSOL_BORD]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>13</Title>
+          <LegendURL width="64" height="48">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=13" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2361.406250</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>14</Name>
+        <Title><![CDATA[OCCSOL_LIGNE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>14</Title>
+          <LegendURL width="172" height="64">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=14" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2361.406250</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>15</Name>
+        <Title><![CDATA[OCCSOL_POINT]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>15</Title>
+          <LegendURL width="92" height="26">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=15" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>944.940476</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[CONSTRUCTIONS]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>17</Name>
+        <Title><![CDATA[CONSTR_BATIEMPRISE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>17</Title>
+          <LegendURL width="226" height="176">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=17" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>14174.107143</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>18</Name>
+        <Title><![CDATA[CONSTR_OUVRBORD]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>18</Title>
+          <LegendURL width="58" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=18" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>19</Name>
+        <Title><![CDATA[CONSTR_BATIBORD]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>19</Title>
+          <LegendURL width="148" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=19" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[EQUIPEMENTS]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+      <Layer queryable="1">
+        <Name>21</Name>
+        <Title><![CDATA[EQUIPE_SURFACE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>21</Title>
+          <LegendURL width="124" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=21" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>22</Name>
+        <Title><![CDATA[EQUIPE_AXE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>22</Title>
+          <LegendURL width="112" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=22" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>23</Name>
+        <Title><![CDATA[EQUIPE_LIGNE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>23</Title>
+          <LegendURL width="208" height="192">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=23" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>24</Name>
+        <Title><![CDATA[EQUIPE_POINT]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>24</Title>
+          <LegendURL width="130" height="176">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=24" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>472.470238</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>25</Name>
+        <Title><![CDATA[SYMBOLOGIE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>25</Title>
+          <LegendURL width="163" height="393">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=25" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2362.351190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>26</Name>
+        <Title><![CDATA[ADRESSES]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>26</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=26" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1417.410714</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>27</Name>
+        <Title><![CDATA[TOPONYMIE]]></Title>
+        <Abstract><![CDATA[Consultez toutes les informations sur cette donnée sur http://geoportail.wallonie.be/geocatalogue?mdUUID=b795de68-726c-4bdf-a62a-a42686aa5b6f.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2.654318</westBoundLongitude><eastBoundLongitude>6.651396</eastBoundLongitude><southBoundLatitude>49.426123</southBoundLatitude><northBoundLatitude>51.110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.654318" miny="49.426123" maxx="6.651396" maxy="51.110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000.000000" miny="15000.000000" maxx="310000.000000" maxy="200000.000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477.314255" miny="6347477.319654" maxx="740430.033845" maxy="6640885.073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49.426123" miny="2.654318" maxx="51.110623" maxy="6.651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>27</Title>
+          <LegendURL width="166" height="64">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=27" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>14174.107143</MaxScaleDenominator>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

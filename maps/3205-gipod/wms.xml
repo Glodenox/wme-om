@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2014 sp1 (x64) (http://www.altova.com) by AGIV (AGIV) -->
+<WMS_Capabilities version="1.3.0" xmlns="http://www.opengis.net/wms" xmlns:insp_com="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:insp_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>WMS GIPOD Publieke Informatie</Title>
+		<Abstract>Deze WMS geeft een overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.</Abstract>
+		<KeywordList>
+			<Keyword>GIPOD</Keyword>
+			<Keyword>hinder</Keyword>
+			<Keyword>openbaar domein</Keyword>
+			<Keyword>werkopdrachten</Keyword>
+			<Keyword>manifestaties</Keyword>
+			<Keyword>omleidingen</Keyword>
+			<Keyword>inname</Keyword>
+			<Keyword>contouren</Keyword>
+			<Keyword>iconen</Keyword>
+			<Keyword vocabulary="GDI-Vlaanderen Service Types">OGC:WMS</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Agentschap Informatie Vlaanderen</ContactPerson>
+				<ContactOrganization>AIV</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactAddress>
+				<AddressType>Postal</AddressType>
+				<Address>Koningin Maria Hendrikaplein 70</Address>
+				<City>Gent</City>
+				<StateOrProvince/>
+				<PostCode>9000</PostCode>
+				<Country>Belgium</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+32 9 276 15 00</ContactVoiceTelephone>
+			<ContactElectronicMailAddress>informatie.vlaanderen@vlaanderen.be</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>Het gebruik van de service is kosteloos.</Fees>
+		<AccessConstraints>Het gebruiksrecht is te vinden op https://overheid.vlaanderen.be/Webdiensten-Gebruiksrecht.</AccessConstraints>
+		<MaxWidth>2048</MaxWidth>
+		<MaxHeight>2048</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<insp_vs:ExtendedCapabilities>
+			<insp_com:ResourceLocator>
+				<insp_com:URL>http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms</insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.wms_xml</insp_com:MediaType>
+			</insp_com:ResourceLocator>
+			<insp_com:ResourceType>service</insp_com:ResourceType>
+			<insp_com:TemporalReference>
+				<insp_com:DateOfCreation>2015-07-01</insp_com:DateOfCreation>
+			</insp_com:TemporalReference>
+			<insp_com:Conformity>
+				<insp_com:Specification xsi:type="insp_com:citationInspireInteroperabilityRegulation_dut">
+					<insp_com:Title>VERORDENING (EU) Nr. 1089/2010 VAN DE COMMISSIE van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</insp_com:Title>
+					<insp_com:DateOfPublication>2010-12-08</insp_com:DateOfPublication>
+					<insp_com:URI>OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URI>
+					<insp_com:ResourceLocator>
+						<insp_com:URL>http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:NL:PDF</insp_com:URL>
+						<insp_com:MediaType>application/pdf</insp_com:MediaType>
+					</insp_com:ResourceLocator>
+				</insp_com:Specification>
+				<insp_com:Degree>notEvaluated</insp_com:Degree>
+			</insp_com:Conformity>
+			<insp_com:MetadataPointOfContact>
+				<insp_com:OrganisationName>AIV</insp_com:OrganisationName>
+				<insp_com:EmailAddress>informatie.vlaanderen@vlaanderen.be</insp_com:EmailAddress>
+			</insp_com:MetadataPointOfContact>
+			<insp_com:MetadataDate>2013-12-05</insp_com:MetadataDate>
+			<insp_com:SpatialDataServiceType>view</insp_com:SpatialDataServiceType>
+			<insp_com:MandatoryKeyword xsi:type="insp_com:classificationOfSpatialDataService">
+				<insp_com:KeywordValue>infoMapAccessService</insp_com:KeywordValue>
+			</insp_com:MandatoryKeyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Landgebruik</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Nutsdiensten en overheidsdiensten</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:Keyword xsi:type="insp_com:inspireTheme_dut">
+				<insp_com:OriginatingControlledVocabulary xsi:type="insp_com:originatingControlledVocabularyGemetInspireThemes">
+					<insp_com:Title>GEMET - INSPIRE themes</insp_com:Title>
+					<insp_com:DateOfPublication>2008-06-01</insp_com:DateOfPublication>
+				</insp_com:OriginatingControlledVocabulary>
+				<insp_com:KeywordValue>Vervoersnetwerken</insp_com:KeywordValue>
+			</insp_com:Keyword>
+			<insp_com:SupportedLanguages xsi:type="insp_com:supportedLanguagesType">
+				<insp_com:DefaultLanguage>
+					<insp_com:Language>dut</insp_com:Language>
+				</insp_com:DefaultLanguage>
+			</insp_com:SupportedLanguages>
+			<insp_com:ResponseLanguage>
+				<insp_com:Language>dut</insp_com:Language>
+			</insp_com:ResponseLanguage>
+			<insp_com:MetadataUrl xsi:type="insp_com:resourceLocatorType">
+				<insp_com:URL>http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=a4d619b8-44f7-4af0-806b-31c72fbab297&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmdinsp_com:URL</insp_com:URL>
+				<insp_com:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</insp_com:MediaType>
+			</insp_com:MetadataUrl>
+		</insp_vs:ExtendedCapabilities>
+		<Layer>
+			<Title>GIPOD Publieke Informatie</Title>
+			<Abstract>Overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.</Abstract>
+			<KeywordList>
+				<Keyword>GIPOD</Keyword>
+				<Keyword>hinder</Keyword>
+				<Keyword>openbaar domein</Keyword>
+				<Keyword>werkopdrachten</Keyword>
+				<Keyword>manifestaties</Keyword>
+				<Keyword>omleidingen</Keyword>
+				<Keyword>inname</Keyword>
+				<Keyword>contouren</Keyword>
+				<Keyword>iconen</Keyword>
+			</KeywordList>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:31370</CRS>
+			<CRS>EPSG:3812</CRS>
+			<CRS>EPSG:3043</CRS>
+			<CRS>EPSG:32631</CRS>
+			<CRS>EPSG:25831</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:102100</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>2.52</westBoundLongitude>
+				<eastBoundLongitude>5.94</eastBoundLongitude>
+				<southBoundLatitude>50.64</southBoundLatitude>
+				<northBoundLatitude>51.51</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="CRS:84"/>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="EPSG:4326"/>
+			<BoundingBox maxy="51.51" maxx="5.94" miny="50.64" minx="2.52" CRS="EPSG:4258"/>
+			<BoundingBox maxy="245000" maxx="259000" miny="150000" minx="22000" CRS="EPSG:31370"/>
+			<BoundingBox maxy="745000" maxx="759000" miny="650000" minx="552000" CRS="EPSG:3812"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:3043"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:32631"/>
+			<BoundingBox maxy="5710000" maxx="705700" miny="5610500" minx="466900" CRS="EPSG:25831"/>
+			<BoundingBox maxy="6712007" maxx="661237" miny="6557859" minx="280525" CRS="EPSG:3857"/>
+			<BoundingBox maxy="6712007" maxx="661237" miny="6557859" minx="280525" CRS="EPSG:102100"/>
+			<AuthorityURL name="agiv-be">
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.agiv.be"/>
+			</AuthorityURL>
+			<Layer>
+				<Title>Manifestaties</Title>
+				<Abstract>Deze lagen geven een overzicht van alle manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.</Abstract>
+				<KeywordList>
+					<Keyword>GIPOD</Keyword>
+					<Keyword>hinder</Keyword>
+					<Keyword>openbaar domein</Keyword>
+					<Keyword>manifestaties</Keyword>
+					<Keyword>omleidingen</Keyword>
+					<Keyword>inname</Keyword>
+				</KeywordList>
+				<Layer queryable="1">
+					<Name>ManOml</Name>
+					<Title>Omleidingen van de manifestaties</Title>
+					<Abstract>Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>manifestaties</Keyword>
+						<Keyword>omleidingen</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eManOml</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="79" height="16">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=ManOml" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="1">
+					<Name>ManCon</Name>
+					<Title>Manifestaties contour</Title>
+					<Abstract>Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>manifestaties</Keyword>
+						<Keyword>contouren</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eManCon</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="82" height="16">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=ManCon" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="1">
+					<Name>ManIcoon</Name>
+					<Title>Manifestaties icoon</Title>
+					<Abstract>Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>manifestaties</Keyword>
+						<Keyword>iconen</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eManIcoon</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="246" height="600">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=ManIcoon" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+			</Layer>
+			<Layer>
+				<Title>Werkopdrachten</Title>
+				<Abstract>Deze lagen geven een overzicht van alle werkopdrachten op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.</Abstract>
+				<KeywordList>
+					<Keyword>GIPOD</Keyword>
+					<Keyword>hinder</Keyword>
+					<Keyword>openbaar domein</Keyword>
+					<Keyword>werkopdrachten</Keyword>
+					<Keyword>omleidingen</Keyword>
+					<Keyword>inname</Keyword>
+				</KeywordList>
+				<Layer queryable="1">
+					<Name>WoOml</Name>
+					<Title>Omleidingen van de werkopdrachten</Title>
+					<Abstract>Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>werkopdrachten</Keyword>
+						<Keyword>omleidingen</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eWoOml</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="77" height="16">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=WoOml" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="1">
+					<Name>WoCon</Name>
+					<Title>Werkopdrachten contour</Title>
+					<Abstract>Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>werkopdrachten</Keyword>
+						<Keyword>contouren</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eWoCon</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="133" height="39">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=WoCon" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+				<Layer queryable="1">
+					<Name>WoIcoon</Name>
+					<Title>Werkopdrachten icoon</Title>
+					<Abstract>Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.</Abstract>
+					<KeywordList>
+						<Keyword>GIPOD</Keyword>
+						<Keyword>hinder</Keyword>
+						<Keyword>openbaar domein</Keyword>
+						<Keyword>werkopdrachten</Keyword>
+						<Keyword>iconen</Keyword>
+						<Keyword>inname</Keyword>
+					</KeywordList>
+					<Identifier authority="agiv-be">34523391-978a-4a32-b5d4-8c3f7360941eWoIcoon</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;hl=dut" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=d48f5a30-be85-4eb3-bcc5-e1266f348a1a&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>default</Title>
+						<LegendURL width="133" height="87">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=WoIcoon" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+				</Layer>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>
