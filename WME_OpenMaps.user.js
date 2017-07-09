@@ -59,6 +59,8 @@ function init(e) {
       tab_title: 'Open Maps',
       maps_title: 'Active Maps',
       no_local_maps: 'No maps found for this area',
+      hide_tooltips: 'Hide tooltips',
+      show_tooltips: 'Show tooltips',
       expand: 'Click to expand',
       collapse: 'Click to collapse',
       hideshow_layer: 'Hide/Show map',
@@ -121,6 +123,8 @@ function init(e) {
       tab_title: 'Open Maps',
       maps_title: 'Actieve kaarten',
       no_local_maps: 'Geen lokale kaarten gevonden',
+      hide_tooltips: 'Hulp verbergen',
+      show_tooltips: 'Hulp weergeven',
       expand: 'Klik om uit te breiden',
       collapse: 'Klik om te verbergen',
       hideshow_layer: 'Verberg/Toon kaart',
@@ -268,10 +272,86 @@ function init(e) {
     '3209': { id: 3209, title: 'Orthofotowerkbestand Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ofw/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', area: 'BE', abstract: 'WMS die de compilatie weergeeft van de meest recente orthofotowerkbestanden voor Vlaanderen', attribution: 'Agentschap Informatie Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OFW', 'OFW_vdc' ], layers: { 'OFW': { queryable: false, title: 'Orthofotowerkbestand', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotowerkbestanden die voor Vlaanderen  beschikbaar zijn. De compilatie heeft een grondresolutie van 25cm.' }, 'OFW_vdc': { queryable: true, title: 'Vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' } } },
     '5501': { id: 5501, title: 'Mapa basico Rio de Janeiro', url: 'http://pgeo3.rio.rj.gov.br/arcgis/services/Basicos/mapa_basico_UTM/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OL.Bounds(-4880971.388222,-2646821.763276,-4793897.282535,-2599308.315598), format: 'image/png', area: 'BR', abstract: 'Mapa urbano básico da Cidade do Rio de Janeiro', attribution: 'Cidade do Rio de Janeiro', queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'], layers: { '0': { queryable: false, title: 'Limite do Estado do Rio de Janeiro', abstract: 'Divisão Política do Estado do Rio de Janeiro' }, '1': { queryable: false, title: 'relevo' }, '2': { queryable: false, title: 'Quadras' }, '3': { queryable: true, title: 'Logradouros - Ruas' }, '4': { queryable: false, title: 'Praças' }, '5': { queryable: false, title: 'Areas Protegidas' }, '6': { queryable: true, title: 'Favelas' }, '7': { queryable: false, title: 'Loteamentos Irregulares e Clandestinos' }, '8': { queryable: false, title: 'edificações' }, '9': { queryable: false, title: 'Hidrografia - Rios' }, '10': { queryable: false, title: 'Limite de Bairros' }, '11': { queryable: false, title: 'Limite de Regiões Administrativas - RA' }, '12': { queryable: false, title: 'Áreas de Planejamento - AP' }, '13': { queryable: false, title: 'número de porta' }, '14': { queryable: true, title: 'principais logradouros' }, '15': { queryable: false, title: 'Locais de Referência' }, '16': { queryable: false, title: 'Escolas Municipais' }, '17': { queryable: false, title: 'Unidades de Saúde Estaduais e Federais' }, '18': { queryable: false, title: 'Unidades de Saúde Municipais' }, '19': { queryable: false, title: 'Corpo de Bombeiros' }, '20': { queryable: false, title: 'Delegacias Policiais' }, '21': { queryable: false, title: 'Estações de Bonde' }, '22': { queryable: false, title: 'Estações Hidroviárias' }, '23': { queryable: false, title: 'Estações Ferroviárias' }, '24': { queryable: false, title: 'Estações do Metrô' }, '25': { queryable: false, title: 'Aeroportos', abstract: 'principais aeroportos comerciais' } } }
   };
+  
+  var Settings = {
+    'get': function() {
+      var settings;
+      if (localStorage.OpenMaps) {
+        settings = JSON.parse(localStorage.OpenMaps);
+      }
+      if (!settings) {
+        settings = {};
+        settings.tooltips = true;
+      }
+      if (!settings.state) {
+        settings.state = {};
+      }
+      if (!settings.state.active) {
+        settings.state.active = [];
+      }
+      return settings;
+    },
+    'put': function(obj) {
+      localStorage.OpenMaps = JSON.stringify(obj);
+    },
+    'set': function(setting, value) {
+      var settings = this.get();
+      settings[setting] = value;
+      this.put(settings);      
+    },
+    'exists': function() {
+      return typeof localStorage.OpenMaps != 'undefined';
+    }
+  };
+  
+  var Tooltips = (function() {
+    var elements = [];
+    return {
+      'add': function(element, text) {
+        if (Settings.get().tooltips) {
+          element.title = text;
+          $(element).tooltip(cloneInto({
+            trigger: 'hover'
+          }, unsafeWindow));
+        }
+        element.dataset.title = text;
+        elements.push(element);
+      },
+      'remove': function(element) {
+        $(element).tooltip('destroy');
+        element.title = '';
+        var toRemoveIdx = elements.findIndex(function(el) { return el == element; });
+        if (toRemoveIdx !== -1) {
+          elements.splice(toRemoveIdx, 1);
+        }
+      },
+      'enabled': function() {
+        return Settings.get().tooltips;
+      },
+      'toggle': function() {
+        var isEnabled = Settings.get().tooltips;
+        Settings.set('tooltips', !isEnabled);
+        if (isEnabled) {
+          elements.forEach(function(element) {
+            $(element).tooltip('destroy');
+            element.title = '';
+          });
+        } else {
+          elements.forEach(function(element) {
+            element.title = element.dataset.title;
+            $(element).tooltip(cloneInto({
+              trigger: 'hover'
+            }, unsafeWindow));
+          });
+        }
+      }
+    };
+  })();
+  
   // One-off fix for PICC map as the layers got renamed - to remove in a couple of versions
-  if (localStorage.OpenMaps_version == '2.6.0' && typeof localStorage.OpenMaps != 'undefined') {
-    var storage = JSON.parse(localStorage.OpenMaps);
-    storage.state.active.forEach(function(map) {
+  if ((localStorage.OpenMaps_version == '2.6.0' || Settings.get().version == '2.6.0') && Settings.exists()) {
+    var settings = Settings.get();
+    settings.state.active.forEach(function(map) {
       if (map.mapId == 3203) {
         map.layers = [];
         Object.keys(maps['3203'].layers).forEach(function(layerKey) {
@@ -282,7 +362,7 @@ function init(e) {
         });
       }
     });
-    localStorage.OpenMaps = JSON.stringify(storage);
+    Settings.put(settings);
   }
   checkVersion();
 
@@ -369,6 +449,15 @@ function init(e) {
   tab.appendChild(addMap);
 
   var footer = document.createElement('p');
+  var hideTooltips = document.createElement('a');
+  hideTooltips.textContent = (Settings.get().tooltips ? I18n.t('openmaps.hide_tooltips') : I18n.t('openmaps.show_tooltips'));
+  hideTooltips.style.float = 'right';
+  hideTooltips.style.cursor = 'pointer';
+  hideTooltips.addEventListener('click', function() {
+    Tooltips.toggle();
+    hideTooltips.textContent = (Settings.get().tooltips ? I18n.t('openmaps.hide_tooltips') : I18n.t('openmaps.show_tooltips'));
+  });
+  footer.appendChild(hideTooltips);
   try {
     footer.appendChild(document.createTextNode(GM_info.script.name + ': v' + GM_info.script.version));
   } catch (e) {
@@ -386,22 +475,13 @@ function init(e) {
     };
   })();
 
-  // Try to convert any previous localStorage data
-  if (typeof localStorage.OM_previousMap != 'undefined' || typeof localStorage.OM_opacity != 'undefined') {
-    if (typeof maps[localStorage.OM_previousMap] != 'undefined') {
-      handles.push(new MapHandle(maps[localStorage.OM_previousMap], { opacity: localStorage.OM_opacity }));
-      saveMapState();
-    }
-    localStorage.removeItem('OM_previousMap');
-    localStorage.removeItem('OM_opacity');
-  }
   // Reload previous map(s)
-  if (typeof localStorage.OpenMaps != 'undefined') {
-    var storage = JSON.parse(localStorage.OpenMaps);
-    storage.state.active.forEach(function(mapHandle, i) {
+  if (Settings.exists()) {
+    var settings = Settings.get();
+    settings.state.active.forEach(function(mapHandle, i) {
       if (maps[mapHandle.mapId] == undefined) { // no strict equal as null should fail as well
-        storage.state.active.splice(i, 1);
-        localStorage.OpenMaps = JSON.stringify(storage);
+        settings.state.active.splice(i, 1);
+        Settings.put(settings);
         return;
       }
       handles.push(new MapHandle(maps[mapHandle.mapId], {
@@ -434,9 +514,7 @@ function init(e) {
   }, unsafeWindow));
   var styleObserver = new MutationObserver(function() {
     if (queryWindow.style.height != '') {
-      var storage = JSON.parse(localStorage.OpenMaps);
-      storage.queryWindowHeight = queryWindow.style.height;
-      localStorage.OpenMaps = JSON.stringify(storage);
+      Settings.set('queryWindowHeight', queryWindow.style.height);
     }
   });
   styleObserver.observe(queryWindow, { attributes: true, attributeFilter: ['style'] });
@@ -454,27 +532,22 @@ function init(e) {
   queryWindowSwitch.className = 'fa fa-fw fa-2x fa-retweet';
   queryWindowSwitch.style.float = 'left';
   queryWindowSwitch.style.cursor = 'pointer';
-  queryWindowSwitch.title = I18n.t('openmaps.query_window_switch');
   queryWindowSwitch.dataset.placement = 'right';
-  $(queryWindowSwitch).tooltip();
+  Tooltips.add(queryWindowSwitch, I18n.t('openmaps.query_window_switch'));
   queryWindowSwitch.addEventListener('click', exportFunction(function() {
     queryWindowOriginalContent.classList.toggle('hidden');
     queryWindowContent.classList.toggle('hidden');
-    if (localStorage.OpenMaps == undefined) {
-      localStorage.OpenMaps = '{}';
-    }
-    var storage = JSON.parse(localStorage.OpenMaps);
-    storage.queryWindowDisplay = (storage.queryWindowDisplay == undefined || storage.queryWindowDisplay == 'processed' ? 'original': 'processed' );
-    localStorage.OpenMaps = JSON.stringify(storage);
+    var settings = Settings.get();
+    settings.queryWindowDisplay = (settings.queryWindowDisplay == undefined || settings.queryWindowDisplay == 'processed' ? 'original': 'processed' );
+    Settings.put(settings);
   }, unsafeWindow));
   queryWindow.appendChild(queryWindowSwitch);
   var queryWindowQuery = document.createElement('span');
   queryWindowQuery.className = 'fa fa-fw fa-2x fa-question-circle';
   queryWindowQuery.style.float = 'left';
   queryWindowQuery.style.cursor = 'pointer';
-  queryWindowQuery.title = I18n.t('openmaps.query_window_query');
   queryWindowQuery.dataset.placement = 'right';
-  $(queryWindowQuery).tooltip();
+  Tooltips.add(queryWindowQuery, I18n.t('openmaps.query_window_query'));
   queryWindowQuery.addEventListener('click', exportFunction(function() {
     if (!getFeatureInfoControl.active) {
       if (getFeatureInfoControl.params) {
@@ -505,7 +578,7 @@ function init(e) {
   queryWindowMinimize.style.cursor = 'pointer';
   queryWindowMinimize.addEventListener('click', exportFunction(function() {
     var isMinimized = queryWindow.style.height != '';
-    queryWindow.style.height = (isMinimized ? '' : JSON.parse(localStorage.OpenMaps).queryWindowHeight || '185px');
+    queryWindow.style.height = (isMinimized ? '' : Settings.get().queryWindowHeight || '185px');
     queryWindow.style.resize = (isMinimized ? 'none' : 'vertical');
     queryWindowMinimize.classList.toggle('fa-toggle-up', isMinimized);
     queryWindowMinimize.classList.toggle('fa-toggle-down', !isMinimized);
@@ -527,10 +600,7 @@ function init(e) {
   queryWindow.appendChild(queryWindowLoading);
   queryWindowContent = document.createElement('div');
   queryWindowContent.style.fontSize = '14px';
-  if (localStorage.OpenMaps == undefined) {
-    localStorage.OpenMaps = '{}';
-  }
-  var queryWindowDisplay = JSON.parse(localStorage.OpenMaps).queryWindowDisplay;
+  var queryWindowDisplay = Settings.get().queryWindowDisplay;
   queryWindowContent.classList.toggle('hidden', queryWindowDisplay == 'original');
   queryWindow.appendChild(queryWindowContent);
   queryWindowOriginalContent = document.createElement('div');
@@ -540,9 +610,7 @@ function init(e) {
   queryWindow.appendChild(queryWindowOriginalContent);
   document.getElementById('WazeMap').appendChild(queryWindow);
   var querySymbol = document.createElement('span');
-  querySymbol.appendChild(document.createTextNode(''));
-  querySymbol.style.fontFamily = 'FontAwesome';
-  querySymbol.style.fontSize = '42px';
+  querySymbol.className = 'fa fa-exclamation-triangle fa-4x';
   querySymbol.style.float = 'left';
   querySymbol.style.margin = '0 15px 30px';
   var getFeatureInfoControl = new OL.Control(cloneInto({
@@ -757,6 +825,7 @@ function init(e) {
       '3206': [ 'OpnDatum' ],
       '3207': [ 'linksStraatnaam', 'rechtsStraatnaam', 'lblMorfologie', 'lblBeheerder', 'lblOrganisatie' ],
       '3208': [ 'NAAM' ],
+      '3209': [ 'OpnDatum' ],
       '5501': [ 'COMPLETO' ]
     };
     if (!propertyOrder[map.id]) {
@@ -860,21 +929,27 @@ function init(e) {
   }
 
   function checkVersion() {
-    var version = localStorage.OpenMaps_version,
+    // Convert from old storage object
+    if (localStorage.OpenMaps_version) {
+      Settings.set('version', localStorage.OpenMaps_version);
+      localStorage.removeItem('OpenMaps_version');
+    }
+    var version = Settings.get().version,
         scriptVersion = GM_info.script.version;
     if (!version) {
-      localStorage.OpenMaps_version = scriptVersion;
+      Settings.set('version', scriptVersion);
     } else if (version !== scriptVersion) {
       if (versions.indexOf(version) === -1) {
-        // There's tampering happening if we arrive here, just set to current version and ignore issue
-        localStorage.OpenMaps_version = scriptVersion;
+        // The version has been tampered with if we arrive here, just set to current version
+        log('The version number seems to have been tampered with? Ignoring and resetting');
+        Settings.set('version', scriptVersion);
         return;
       }
       var message = I18n.t('openmaps.update.message');
       for (var i = versions.indexOf(version)+1; i < versions.length; i++) {
         message += '\nv' + versions[i] + ':\n' + I18n.t('openmaps.update.v' + versions[i].replace(/\./g, '_'));
       }
-      localStorage.OpenMaps_version = scriptVersion;
+      Settings.set('version', scriptVersion);
       alert(message);
     }
   }
@@ -1052,17 +1127,8 @@ function init(e) {
   }
 
   function saveMapState() {
-    var storage;
-    if (localStorage.OpenMaps) {
-      storage = JSON.parse(localStorage.OpenMaps);
-    }
-    if (!storage) {
-      storage = {};
-    }
-    if (!storage.state) {
-      storage.state = {};
-    }
-    storage.state.active = [];
+    var settings = Settings.get();
+    settings.state.active = [];
     handles.forEach(function(handle) {
       var handleState = {
         mapId: handle.mapId,
@@ -1071,9 +1137,9 @@ function init(e) {
         hidden: handle.hidden,
         transparent: handle.transparent
       };
-      storage.state.active.push(handleState);
+      settings.state.active.push(handleState);
     });
-    localStorage.OpenMaps = JSON.stringify(storage);
+    Settings.put(settings);
   }
 
   function MapHandle(map, options) {
@@ -1090,12 +1156,7 @@ function init(e) {
     var title = document.createElement('p');
     var description = document.createElement('p');
     var editContainer = document.createElement('div');
-    var remove = document.createElement('span');
-    var visibility = document.createElement('span');
-    var query = document.createElement('span');
-    var edit = document.createElement('span');
-    var error = document.createElement('span');
-    var info = document.createElement('span');
+    var remove, visibility, query, edit, error, info;
     var loadedTiles = 0;
     var totalTiles = 0;
     var layerRedrawNeeded = false; // flag to set when a layer was made visibile/invisible
@@ -1130,7 +1191,7 @@ function init(e) {
     });
 
     function updateTileLoader() {
-      if (loadedTiles == totalTiles) {
+      if (loadedTiles == totalTiles || totalTiles == 0) {
         loadedTiles = 0;
         totalTiles = 0;
         title.style.borderImage = 'none';
@@ -1142,27 +1203,23 @@ function init(e) {
 
     function createIconButton(icon, title) {
       var button = document.createElement('button');
-      button.style.fontFamily = 'FontAwesome';
+      button.className = 'fa ' + icon;
       button.style.border = 'none';
       button.style.background = 'none';
-      button.style.padding = '0 3px';
+      button.style.padding = '3px';
       button.style.float = 'right';
       button.style.cursor = 'pointer';
       button.style.height = 'auto';
       button.style.outline = 'none';
-      button.appendChild(document.createTextNode(icon));
       if (title) {
-        button.title = title;
-        $(button).tooltip(cloneInto({
-          container: '#sidebar'
-        }, unsafeWindow));
+        button.dataset.container = '#sidebar';
+        Tooltips.add(button, title);
       }
       return button;
     }
 
     this.clearError = function() {
-      $(error).tooltip('destroy');
-      error.title = '';
+      Tooltips.remove(error);
       error.style.display = 'none';
     };
 
@@ -1212,15 +1269,13 @@ function init(e) {
             return;
           }
           error.style.display = 'inline';
-          error.title = I18n.t('openmaps.retrieving_error');
-          $(error).tooltip();
+          Tooltips.add(error, I18n.t('openmaps.retrieving_error'));
           loadTileError(obj.tile, function(msg) {
             if (msg.ok) {
               self.clearError();
             } else {
-              $(error).tooltip('destroy');
-              error.title = msg.title + ': ' + msg.description;
-              $(error).tooltip();
+              Tooltips.remove(error);
+              Tooltips.add(error, msg.title + ': ' + msg.description);
             }
           });
         }, unsafeWindow));
@@ -1247,21 +1302,22 @@ function init(e) {
       saveMapState();
     };
 
-    remove = createIconButton('', I18n.t('openmaps.remove_layer'));
+    remove = createIconButton('fa-times', I18n.t('openmaps.remove_layer'));
     remove.addEventListener('click', function(e) {
       Waze.map.removeLayer(self.layer);
+      Tooltips.remove(remove);
       layerToggler.parentNode.removeChild(layerToggler);
       handles.splice(handles.indexOf(self), 1);
       container.parentNode.removeChild(container);
       saveMapState();
     });
     container.appendChild(remove);
-    edit = createIconButton('', I18n.t('openmaps.edit_layer'));
+    edit = createIconButton('fa-pencil', I18n.t('openmaps.edit_layer'));
     edit.addEventListener('click', function() {
       editContainer.style.display = (editContainer.style.display == 'none' ? 'block' : 'none');
     });
     container.appendChild(edit);
-    visibility = createIconButton((self.hidden ? '' : ''), I18n.t('openmaps.hideshow_layer')); // icon-eye-open: , icon-eye-close: 
+    visibility = createIconButton((self.hidden ? 'fa-eye-slash' : 'fa-eye'), I18n.t('openmaps.hideshow_layer'));
     visibility.addEventListener('click', function() {
       self.hidden = self.layer.getVisibility();
       self.layer.setVisibility(!self.hidden);
@@ -1269,14 +1325,16 @@ function init(e) {
       saveMapState();
     });
     visibility.addEventListener('mouseenter', function() {
-      visibility.textContent = (self.hidden ? '' : '');
+      visibility.classList.toggle('fa-eye', self.hidden);
+      visibility.classList.toggle('fa-eye-slash', !self.hidden);
     });
     visibility.addEventListener('mouseleave', function() {
-      visibility.textContent = (self.hidden ? '' : '');
+      visibility.classList.toggle('fa-eye', !self.hidden);
+      visibility.classList.toggle('fa-eye-slash', self.hidden);
     });
     container.appendChild(visibility);
     if (map.queryable) {
-      query = createIconButton('', I18n.t('openmaps.query_layer'));
+      query = createIconButton('fa-question-circle', I18n.t('openmaps.query_layer'));
       query.addEventListener('click', function() {
         if (!getFeatureInfoControl.active) {
           this.style.color = 'blue';
@@ -1302,24 +1360,23 @@ function init(e) {
       });
       container.appendChild(query);
     }
-    info = createIconButton('', I18n.t('openmaps.layer_out_of_range'));
+    info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'));
     info.style.color = '#337ab7';
     info.style.cursor = 'help';
     info.style.display = 'none';
     container.appendChild(info);
-    error = createIconButton('');
+    error = createIconButton('fa-exclamation-triangle');
     error.style.color = 'red';
     error.style.display = 'none';
     error.addEventListener('click', this.clearError);
     container.appendChild(error);
     title.className = 'title';
     var handle = document.createElement('span');
-    handle.style.fontFamily = 'FontAwesome';
-    handle.style.letterSpacing = '1px';
+    handle.className = 'fa fa-reorder';
     handle.style.color = '#c2c2c2';
     handle.style.cursor = 'move';
     handle.style.fontSize = '11px';
-    handle.appendChild(document.createTextNode(' '));
+    handle.style.padding = '3px';
     title.appendChild(handle);
     title.style.cursor = 'default';
     title.style.borderTop = '2px solid transparent';
@@ -1339,11 +1396,13 @@ function init(e) {
     });
     description.appendChild(document.createTextNode(map.abstract));
     container.appendChild(description);
+    editContainer.style.borderLeft = '5px solid #eee';
+    editContainer.style.marginTop = '2px';
+    editContainer.style.paddingLeft = '4px';
     var opacityLabel = document.createElement('span');
     opacityLabel.appendChild(document.createTextNode(I18n.t('openmaps.opacity_label') + ':'));
     opacityLabel.style.marginRight = '5px';
-    opacityLabel.title = I18n.t('openmaps.opacity_label_tooltip');
-    $(opacityLabel).tooltip();
+    Tooltips.add(opacityLabel, I18n.t('openmaps.opacity_label_tooltip'));
     editContainer.appendChild(opacityLabel);
     var opacitySlider = document.createElement('input');
     opacitySlider.type = 'range';
@@ -1375,8 +1434,7 @@ function init(e) {
       }, unsafeWindow));
       transparentContainer.appendChild(transparentCheck);
       var transparentLabel = document.createElement('label');
-      transparentLabel.title = I18n.t('openmaps.transparent_label_tooltip');
-      $(transparentLabel).tooltip();
+      Tooltips.add(transparentLabel, I18n.t('openmaps.transparent_label_tooltip'));
       transparentLabel.htmlFor = 'transparent' + checkId;
       transparentLabel.appendChild(document.createTextNode(I18n.t('openmaps.transparent_label')));
       transparentContainer.appendChild(transparentLabel);
@@ -1392,7 +1450,7 @@ function init(e) {
       var layerHandle = document.createElement('span');
       var layerTitle = document.createElement('span');
       var visibility = document.createElement('span');
-      visibility = createIconButton('');
+      visibility = createIconButton('fa-eye');
       visibility.addEventListener("click", exportFunction(function() {
         var subjectLayer = self.mapLayers.find(function(mapLayer) { return mapLayer.name == layerItem.name; });
         subjectLayer.visible = !subjectLayer.visible;
@@ -1403,7 +1461,7 @@ function init(e) {
       item.appendChild(visibility);
       if (mapLayer.queryable) {
         var layerQuery = document.createElement('span');
-        layerQuery = createIconButton('');
+        layerQuery = createIconButton('fa-question-circle');
         layerQuery.addEventListener('click', function() {
           this.style.color = 'blue';
           getFeatureInfoControl.params = {
@@ -1418,12 +1476,11 @@ function init(e) {
         });
         item.appendChild(layerQuery);
       }
-      layerHandle.style.fontFamily = 'FontAwesome';
-      layerHandle.style.letterSpacing = '1px';
+      layerHandle.className = 'fa fa-reorder';
       layerHandle.style.color = '#c2c2c2';
       layerHandle.style.cursor = 'move';
       layerHandle.style.fontSize = '11px';
-      layerHandle.appendChild(document.createTextNode(' '));
+      layerHandle.style.padding = '3px';
       layerTitle.appendChild(layerHandle);
       layerTitle.className = 'title';
       layerTitle.style.cursor = 'default';
