@@ -8,12 +8,11 @@
 // @connect     informatievlaanderen.be
 // @connect     irisnet.be
 // @connect     nationaalgeoregister.nl
-// @connect     gbo-provincies.nl
 // @connect     rj.gov.br
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     2.7.7
+// @version     2.8.0
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -21,11 +20,6 @@ function init(e) {
   if (e && e.user == null) {
     return;
   }
-  // Variables needed in their 'unsafe' context
-  var OL = unsafeWindow.OL,
-      W = unsafeWindow.W,
-      I18n = unsafeWindow.I18n,
-      $ = unsafeWindow.$;
   if (typeof W === 'undefined' || typeof W.map === 'undefined' || typeof W.prefs === 'undefined' || typeof W.app.modeController === 'undefined') {
     setTimeout(init, 800);
     log('Waze object unavailable, map still loading');
@@ -41,8 +35,8 @@ function init(e) {
     return;
   }
   if (!W.loginManager.user) {
-    W.loginManager.events.register("login", null, exportFunction(init, unsafeWindow));
-    W.loginManager.events.register("loginStatus", null, exportFunction(init, unsafeWindow));
+    W.loginManager.events.register("login", null, init);
+    W.loginManager.events.register("loginStatus", null, init);
     if (!W.loginManager.user) {
       return;
     }
@@ -53,7 +47,7 @@ function init(e) {
     return;
   }
 
-  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7'];
+  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0'];
   // set up language string
   var translations = {
     en: {
@@ -126,7 +120,8 @@ function init(e) {
         v2_7_4: '- Recover from changing distance unit\n- Updated Orthofotomozaïek Tijdsreeksen map (Belgium)',
         v2_7_5: '- Added new CRAB Adrespunten map\n- Fixed tooltips being partially covered in new layout\n- Attempt at fixing maps invisible at zoom 100%\n- Recover layers menu when using the events mode',
         v2_7_6: '- Fix BAG map constraints\n- Fix opacity slider that was stuck at 100%',
-        v2_7_7: '- Fix an internal issue that would otherwise pop up in two months'
+        v2_7_7: '- Fix an internal issue that would otherwise pop up in two months',
+        v2_8_0: '- Adjust query window location\n- Replace GBO Provincies map with PDOK\n- Remove unsafeWindow code'
       }
     },
     nl: {
@@ -198,7 +193,8 @@ function init(e) {
         v2_7_4: '- Herstel van een verandering van afstandseenheid\n- Orthofotomozaïek Tijdsreeksen bijgewerkt (België)',
         v2_7_5: '- Nieuwe CRAB Adrespunten kaart\n- Het gedeeltelijk verbergen van tooltips in de nieuwe layout werd opgelost\n- Poging om probleem van onzichtbare kaart bij 100% zichtbaarheid op te lossen\n- Genereer laagmenu opnieuw bij gebruik van evenementmodus',
         v2_7_6: '- Gebied van BAG kaart bijstellen\n- De doorzichtigheid van kaarten zat vast op 100%',
-        v2_7_7: '- Een intern probleem opgelost dat over 2 maanden zichtbaar zou worden'
+        v2_7_7: '- Een intern probleem opgelost dat over 2 maanden zichtbaar zou worden',
+        v2_8_0: '- Locatie van zoekvenster aangepast\n- GBO Provincies kaart werd vervangen door PDOK\n- Code met unsafeWindow verwijderd'
       }
     },
     fr: {
@@ -255,11 +251,11 @@ function init(e) {
     }
   };
   translations['en-GB'] = translations['en-US'] = translations.en;
-  I18n.translations[I18n.currentLocale()].openmaps = cloneInto(translations.en, unsafeWindow);
+  I18n.translations[I18n.currentLocale()].openmaps = translations.en;
   Object.keys(translations).forEach(function(locale) {
     if (I18n.currentLocale() == locale) {
       addFallbacks(translations[locale], translations.en);
-      I18n.translations[locale].openmaps = cloneInto(translations[locale], unsafeWindow);
+      I18n.translations[locale].openmaps = translations[locale];
     }
   });
   function addFallbacks(localeStrings, fallbackStrings) {
@@ -275,10 +271,10 @@ function init(e) {
   // List of available maps
   var maps = {
     '3101': { id: 3101, title: 'BAG', url: 'https://geodata.nationaalgeoregister.nl/bag/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(356916.5535717521, 6574306.47835481, 806538.4617637838, 7091569.760104523), format: 'image/png', area: 'NL', abstract: 'De gegevens bestaan uit BAG-panden en een deelselectie van BAG-gegevens van deze panden en de zich daarin bevindende verblijfsobjecten. Ook de ligplaatsen en standplaatsen zijn hierin opgenomen met een deelselectie van BAG-gegevens. De gegevens van de nummeraanduiding zijn in deze services onderdeel van de adresseerbare objecten, hierbij wordt slechts 1 adres opgenomen, dus objecten met meerdere adressen (hoofd- en nevenadressen) zijn niet compleet. In deze services zitten dus niet alle BAG adressen. Wij adviseren u, aangezien er sprake is van beperkte gegevens, om in de webservice BAG Bevragen de actuele gegevens te controleren. Dit kan ook in een van de andere BAG producten: BAG Web, BAG Extract of BAG Compact. BAG Bevragen: http://www.kadaster.nl/web/artikel/productartikel/BAG-Bevragen.htm Andere BAG producten: http://www.kadaster.nl/web/Themas/Registraties/BAG/BAGartikelen/BAG-producten.htm De service wordt dagelijks geactualiseerd.', attribution: 'BAG', getExternalUrl: function() { return 'https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html'; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'bag','ligplaats','pand','verblijfsobject','woonplaats','standplaats' ], layers: { 'bag': { queryable: false, title: 'bag' }, 'ligplaats': { queryable: false, title: 'ligplaats' }, 'pand': { queryable: false, title: 'pand' }, 'standplaats': { queryable: false, title: 'standplaats' }, 'verblijfsobject': { queryable: true, title: 'verblijfsobject' }, 'woonplaats': { queryable: false, title: 'woonplaats' } } },
-    '3102': { id: 3102, title: 'Luchtfoto (GBO provincies)', url: 'http://webservices.gbo-provincies.nl/lufo/services/wms', crs: 'EPSG:28992', bbox: new OL.Bounds(332126.70701065, 6575606.8651319705, 837006.18392751, 7070731.52499591), format: 'image/jpeg', area: 'NL', abstract: 'Luchtfoto wms door GBO provincies', attribution: 'GBO provincies', queryable: false, default_layers: [ 'actueel_winter' ], layers: { 'actueel_winter': { queryable: false, title: 'Luchtfoto actueel (winter)' }, 'actueel_zomer': { queryable: false, title: 'Luchtfoto actueel (zomer)' }, 'luchtfoto_2015_winter': { queryable: false, title: 'Luchtfoto 2015 (winter)' }, 'luchtfoto_2015_zomer': { queryable: false, title: 'Luchtfoto 2015 (zomer)' }, 'luchtfoto_2014_winter': { queryable: false, title: 'Luchtfoto 2014 (winter)' }, 'luchtfoto_2014_zomer': { queryable: false, title: 'Luchtfoto 2014 (zomer)' }, 'luchtfoto_2013_winter': { queryable: false, title: 'Luchtfoto 2013 (winter)' }, 'luchtfoto_2013_zomer': { queryable: false, title: 'Luchtfoto 2013 (zomer)' }, 'luchtfoto_2012_winter': { queryable: false, title: 'Luchtfoto 2012 (winter)' }, 'luchtfoto_2012_zomer': { queryable: false, title: 'Luchtfoto 2012 (zomer)' }, 'luchtfoto_2011': { queryable: false, title: 'Luchtfoto 2011' }, 'luchtfoto_2010': { queryable: false, title: 'Luchtfoto 2010' }, 'luchtfoto_2009': { queryable: false, title: 'Luchtfoto 2009' }, 'luchtfoto_2008': { queryable: false, title: 'Luchtfoto 2008' } } },
     '3103': { id: 3103, title: 'Weggegevens WMS', url: 'https://geodata.nationaalgeoregister.nl/weggeg/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(385276.75763551984, 6575606.8651319705, 805841.7938525073, 7065365.041596532), format: 'image/png', area: 'NL', abstract: 'De service van Weggegevens bevat op dit moment de lagen maximum snelheden en rijstroken van de rijkswegen.', attribution: 'PDOK', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'weggegaantalrijbanen','weggegmaximumsnelheden' ], layers: { 'weggegaantalrijbanen': { queryable: true, title: 'Weggegevens aantal rijbanen' }, 'weggegmaximumsnelheden': { queryable: true, title: 'Weggegevens maximumsnelheden' } } },
     '3104': { id: 3104, title: 'INSPIRE View Service PDOK', url: 'https://geodata.nationaalgeoregister.nl/bgt/wms', crs: 'EPSG:28992', bbox: new OL.Bounds(333958.4723798207, 6575606.8651319705, 779236.435552915, 6982997.920389788), zoomRange: [5, 10], format: 'image/png', area: 'NL', abstract: 'De INSPIRE View Service PDOK is een overkoepelende View Service die voor de volgende datasets INSPIRE datasets ontsluit: Hydrografie, Vervoersnetwerken, Beschermde gebieden, Geografische namen', attribution: 'PDOK', getExternalUrl: function() { return 'http://pdokviewer.pdok.nl/'; }, queryable: true, query_filters: [], default_layers: [ 'bgtstandaard' ], layers: { 'bgtstandaard': { queryable: true, title: 'BGT standaard', abstract: 'Weergave met gevulde vlakken om een schematische aanduiding van het gebruik van het grondgebied te omschrijven' }, 'bgtomtrekgericht': { queryable: true, title: 'BGT omtrekgericht', abstract: 'Weergave in lijnen die goed combineerbaar is met satellietbeelden' } } },
     '3105': { id: 3105, title: 'Hectopunten Rijkswaterstaat', url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms', crs: 'EPSG:28992', bbox: new OL.Bounds(333958.4723798207, 6575606.8651319705, 779236.435552915, 6982997.920389788), zoomRange: [2, 10], format: 'image/png', area: 'NL', abstract: 'Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.', attribution: 'PDOK', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'hectopunten', 'wegvakken' ], layers: { 'hectopunten': { queryable: true, title: 'NWB Wegen hectopunten' }, 'wegvakken': { queryable: true, title: 'NWB Wegen wegvakken' } } },
+    '3106': { id: 3106, title: 'Luchtfoto (PDOK)', url: 'https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(-184488.85727, 6113595.5499, 1383893.54886, 7580462.49937), format: 'image/jpeg', area: 'NL', abstract: 'Een jaarlijks te vernieuwen dataset van luchtopnamen van Nederland met een resolutie van 25cm.', attribution: 'PDOK', queryable: false, default_layers: [ 'Actueel_ortho25' ], layers: { 'Actueel_ortho25': { queryable: false, title: 'Luchtfoto Actueel Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van de meest recente jaargang.' }, '2016_ortho25': { queryable: false, title: 'Luchtfoto 2016 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2016.' } } },
     '3201': { id: 3201, title: 'GRB Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/png', area: 'BE', abstract: 'Via de WMS GRB kan je het Grootschalig Referentiebestand (GRB) opvragen en visualiseren als een kaart. De WMS GRB omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Basiskaart - GRB: volledige kaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: false, default_layers: [ 'GRB_BSK' ], layers: { 'GRB_BSK': { queryable: false, title: 'GRB-basiskaart', abstract: 'Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart' } } },
     '3202': { id: 3202, title: 'Orthomozaïek Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', area: 'BE', abstract: 'WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Opnamedatum meest recente luchtfoto in achtergrondkaart (winteropnamen)&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Ortho', 'Vliegdagcontour' ], layers: { 'Ortho': { queryable: false, title: 'Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.' }, 'Vliegdagcontour': { queryable: true, title: 'Vliegdagcontour Orthofotomozaïek', abstract: 'Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.' } } },
     '3203': { id: 3203, title: 'PICC, Service de visualisation', url: 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OL.Bounds(295477.314255, 740430.033845, 6347477.319654, 6640885.073618), zoomRange: [4, 10], format: 'image/png', area: 'BE', abstract: 'Service de visualisation du Projet Informatique de Cartographie Continue (PICC)', attribution: 'Service public de Wallonie', getExternalUrl: function() { return 'http://geoportail.wallonie.be/walonmap'; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ '3', '4', '6', '8', '9', '10', '11', '12', '19', '20', '21', '27', '28', '29' ], layers: { '1': { queryable: true, title: 'Relief: ligne' }, '3': { queryable: true, title: 'Hydrographie: bord' }, '4': { queryable: true, title: 'Hydrographie: axe' }, '6': { queryable: true, title: 'Reseau ferroviaire: ligne' }, '8': { queryable: true, title: 'Voirie: axe >= 5k' }, '9': { queryable: true, title: 'Voirie: axe' }, '10': { queryable: true, title: 'Voirie: axe (5k-50k)' }, '11': { queryable: true, title: 'Voirie: axe' }, '12': { queryable: true, title: 'Voirie: ligne' }, '14': { queryable: true, title: 'Occupation du sol: surface' }, '15': { queryable: true, title: 'Occupation du sol: bord' }, '16': { queryable: true, title: 'Occupation du sol: ligne' }, '17': { queryable: true, title: 'Occupation du sol: point' }, '19': { queryable: true, title: 'Construction: emprise du batiment' }, '20': { queryable: true, title: 'Construction: ouvrage d\'art: bord' }, '21': { queryable: true, title: 'Construction: bord du batiment' }, '23': { queryable: true, title: 'Equipement: surface' }, '24': { queryable: true, title: 'Equipement: axe' }, '25': { queryable: true, title: 'Equipement: ligne' }, '26': { queryable: true, title: 'Equipement: point' }, '27': { queryable: true, title: 'Symbologie' }, '28': { queryable: true, title: 'Adresses' }, '29': { queryable: true, title: 'Toponymie' } } },
@@ -331,9 +327,9 @@ function init(e) {
       'add': function(element, text, force) {
         if (Settings.get().tooltips || force) {
           element.title = text;
-          $(element).tooltip(cloneInto({
+          $(element).tooltip({
             trigger: 'hover'
-          }, unsafeWindow));
+          });
         }
         if (!force) {
           element.dataset.title = text;
@@ -362,9 +358,9 @@ function init(e) {
         } else {
           elements.forEach(function(element) {
             element.title = element.dataset.title;
-            $(element).tooltip(cloneInto({
+            $(element).tooltip({
               trigger: 'hover'
-            }, unsafeWindow));
+            });
           });
         }
       }
@@ -383,15 +379,15 @@ function init(e) {
   // New map layer drawer group
   var omGroup = createLayerToggler(null, true, 'Open Maps', null);
 
-  W.app.modeController.model.bind('change:mode', exportFunction(function(model, modeId) {
+  W.app.modeController.model.bind('change:mode', function(model, modeId) {
     if (modeId == 0) {
       addOpenMapsTab(tab);
     }
     document.querySelector('.list-unstyled.togglers').appendChild(omGroup);
-  }, unsafeWindow));
-  W.prefs.on('change:isImperial', exportFunction(function() {
+  });
+  W.prefs.on('change:isImperial', function() {
     addOpenMapsTab(tab);
-  }, unsafeWindow));
+  });
 
   // Satellite imagery toggle
   var satImageryDiv = document.createElement('div');
@@ -403,9 +399,9 @@ function init(e) {
   satImagery.addEventListener('click', function() {
     W.map.layers[0].setVisibility(this.checked);
   });
-  W.map.layers[0].events.register('visibilitychanged', null, exportFunction(function() {
+  W.map.layers[0].events.register('visibilitychanged', null, function() {
     satImagery.checked = W.map.layers[0].getVisibility();
-  }, unsafeWindow));
+  });
   satImageryDiv.appendChild(satImagery);
   var satImageryLabel = document.createElement('label');
   satImageryLabel.htmlFor = 'satImagery-on';
@@ -419,11 +415,11 @@ function init(e) {
   title.style.marginBottom = '5px';
   tab.appendChild(title);
   var handleList = document.createElement('ul');
-  sortable(handleList, cloneInto({
+  sortable(handleList, {
     forcePlaceholderSize: true,
     placeholderClass: 'result',
     handle: '.title'
-  }, unsafeWindow))[0].addEventListener('sortupdate', exportFunction(function(e) {
+  })[0].addEventListener('sortupdate', function(e) {
     var movedHandle = handles.splice(e.detail.oldElementIndex, 1)[0];
     handles.splice(e.detail.elementIndex, 0, movedHandle);
     var layerGroups = omGroup.querySelectorAll('ul.children li');
@@ -437,7 +433,7 @@ function init(e) {
       W.map.setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + e.detail.elementIndex + 1);
     }
     saveMapState();
-  }, unsafeWindow));
+  });
   handleList.className = 'result-list';
   tab.appendChild(handleList);
 
@@ -446,7 +442,7 @@ function init(e) {
   addMap.className = 'form-control';
   addMap.style.margin = '8px 0';
   updateMapSelector();
-  W.map.events.register('moveend', null, exportFunction(updateMapSelector, unsafeWindow));
+  W.map.events.register('moveend', null, updateMapSelector);
   addMap.addEventListener('change', function() {
     if (addMap.selectedIndex != 0) {
       var mapId = addMap.options[addMap.selectedIndex].value;
@@ -506,10 +502,10 @@ function init(e) {
   var queryWindowContent, queryWindowOriginalContent;
   var queryWindow = document.createElement('div');
   queryWindow.style.display = 'none';
-  queryWindow.style.top = '10px';
+  queryWindow.style.top = '40px';
   queryWindow.style.left = '100px';
   queryWindow.style.right = '60px';
-  queryWindow.style.maxHeight = 'calc(100% - 50px)';
+  queryWindow.style.maxHeight = 'calc(100% - 80px)';
   queryWindow.style.overflowY = 'auto';
   queryWindow.style.backgroundColor = '#fff';
   queryWindow.style.border = '2px solid #ddd';
@@ -518,9 +514,9 @@ function init(e) {
   queryWindow.style.cursor = 'auto';
   queryWindow.style.zIndex = '2000';
   queryWindow.style.position = 'absolute';
-  queryWindow.addEventListener('click', exportFunction(function(e) {
+  queryWindow.addEventListener('click', function(e) {
     e.stopPropagation();
-  }, unsafeWindow));
+  });
   var styleObserver = new MutationObserver(function() {
     if (queryWindow.style.height != '') {
       Settings.set('queryWindowHeight', queryWindow.style.height);
@@ -543,13 +539,13 @@ function init(e) {
   queryWindowSwitch.style.cursor = 'pointer';
   queryWindowSwitch.dataset.placement = 'right';
   Tooltips.add(queryWindowSwitch, I18n.t('openmaps.query_window_switch'));
-  queryWindowSwitch.addEventListener('click', exportFunction(function() {
+  queryWindowSwitch.addEventListener('click', function() {
     queryWindowOriginalContent.classList.toggle('hidden');
     queryWindowContent.classList.toggle('hidden');
     var settings = Settings.get();
     settings.queryWindowDisplay = (settings.queryWindowDisplay == undefined || settings.queryWindowDisplay == 'processed' ? 'original': 'processed' );
     Settings.put(settings);
-  }, unsafeWindow));
+  });
   queryWindow.appendChild(queryWindowSwitch);
   var queryWindowQuery = document.createElement('span');
   queryWindowQuery.className = 'fa fa-fw fa-2x fa-hand-pointer-o';
@@ -557,7 +553,7 @@ function init(e) {
   queryWindowQuery.style.cursor = 'pointer';
   queryWindowQuery.dataset.placement = 'right';
   Tooltips.add(queryWindowQuery, I18n.t('openmaps.query_window_query'));
-  queryWindowQuery.addEventListener('click', exportFunction(function() {
+  queryWindowQuery.addEventListener('click', function() {
     if (!getFeatureInfoControl.active) {
       if (getFeatureInfoControl.params) {
         queryWindowQuery.style.color = 'blue';
@@ -571,27 +567,27 @@ function init(e) {
     } else {
       getFeatureInfoControl.deactivate();
     }
-  }, unsafeWindow));
+  });
   queryWindow.appendChild(queryWindowQuery);
   var queryWindowClose = document.createElement('span');
   queryWindowClose.className = 'fa fa-fw fa-2x fa-window-close';
   queryWindowClose.style.float = 'right';
   queryWindowClose.style.cursor = 'pointer';
-  queryWindowClose.addEventListener('click', exportFunction(function() {
+  queryWindowClose.addEventListener('click', function() {
     queryWindow.style.display = 'none';
-  }, unsafeWindow));
+  });
   queryWindow.appendChild(queryWindowClose);
   var queryWindowMinimize = document.createElement('span');
   queryWindowMinimize.className = 'fa fa-fw fa-2x fa-toggle-up';
   queryWindowMinimize.style.float = 'right';
   queryWindowMinimize.style.cursor = 'pointer';
-  queryWindowMinimize.addEventListener('click', exportFunction(function() {
+  queryWindowMinimize.addEventListener('click', function() {
     var isMinimized = queryWindow.style.height != '';
     queryWindow.style.height = (isMinimized ? '' : Settings.get().queryWindowHeight || '185px');
     queryWindow.style.resize = (isMinimized ? 'none' : 'vertical');
     queryWindowMinimize.classList.toggle('fa-toggle-up', isMinimized);
     queryWindowMinimize.classList.toggle('fa-toggle-down', !isMinimized);
-  }, unsafeWindow));
+  });
   queryWindow.appendChild(queryWindowMinimize);
   var queryWindowTitle = document.createElement('h2');
   queryWindowTitle.style.textAlign = 'center';
@@ -622,7 +618,7 @@ function init(e) {
   querySymbol.className = 'fa fa-exclamation-triangle fa-4x';
   querySymbol.style.float = 'left';
   querySymbol.style.margin = '0 15px 30px';
-  var getFeatureInfoControl = new OL.Control(cloneInto({
+  var getFeatureInfoControl = new OL.Control({
     id: 'GetFeatureInfoControl',
     eventListeners: {
       'activate': function() {
@@ -632,9 +628,9 @@ function init(e) {
         document.getElementById('WazeMap').style.cursor = '';
       }
     }
-  }, unsafeWindow, { cloneFunctions: true }));
+  });
   W.map.addControl(getFeatureInfoControl);
-  var clickHandler = new OL.Handler.Click(getFeatureInfoControl, cloneInto({
+  var clickHandler = new OL.Handler.Click(getFeatureInfoControl, {
     'click': function(e) {
       getFeatureInfoControl.deactivate();
       getFeatureInfoControl.params.callback();
@@ -680,7 +676,7 @@ function init(e) {
                 func(queryWindowContent, maps[mapId]);
               });
               queryWindow.style.display = 'block';
-              var escHandler = exportFunction(function(e) {
+              var escHandler = function(e) {
                 if (e.keyCode == 27) { // Esc key
                   if (queryWindow.style.display == 'block') {
                     queryWindow.style.display = 'none';
@@ -688,7 +684,7 @@ function init(e) {
                   }
                   document.removeEventListener('keydown', escHandler);
                 }
-              }, unsafeWindow);
+              };
               document.addEventListener('keydown', escHandler);
             } else {
               querySymbol.style.color = '#999';
@@ -731,7 +727,7 @@ function init(e) {
         }
       });
     }
-  }, unsafeWindow, { cloneFunctions: true }));
+  });
   getFeatureInfoControl.handler = clickHandler;
 
   function removeUnsafeAttributes(node) {
@@ -911,9 +907,9 @@ function init(e) {
       var layerContainer = document.createElement('div');
       containers.push(layerContainer);
       var layerTab = document.createElement('li');
-      layerTab.addEventListener('click', exportFunction(function() {
+      layerTab.addEventListener('click', function() {
         setActiveTab(layerTab);
-      }, unsafeWindow));
+      });
       layerTab.appendChild(layerName);
       handles.appendChild(layerTab);
     }
@@ -1252,16 +1248,16 @@ function init(e) {
       if (visibleLayers && visibleLayers.length == 0 && this.layer) { // Hide map as it has no more layers
         this.layer.setVisibility(false);
       } else if (visibleLayers.length > 0 && !this.layer) { // Add map that received layers
-        var params = cloneInto({
+        var params = {
           layers: visibleLayers.join(),
           transparent: self.transparent,
           format: map.format
-        }, unsafeWindow);
-        var options = cloneInto({
+        };
+        var options = {
           transitionEffect: 'resize',
           attribution: map.attribution,
           isBaseLayer: false
-        }, unsafeWindow);
+        };
         options.projection = new OL.Projection(map.crs);
         options.tileSize = (map.tile_size ? new OL.Size(map.tile_size, map.tile_size) : new OL.Size(512, 512));
         this.layer = new OL.Layer.WMS(map.title, map.url, params, options);
@@ -1269,15 +1265,15 @@ function init(e) {
         this.layer.setVisibility(!this.hidden && !this.outOfArea);
 
         if (map.zoomRange) {
-          this.layer.events.register('moveend', null, exportFunction(function(obj) {
+          this.layer.events.register('moveend', null, function(obj) {
             if (obj.zoomChanged) {
               var zoom = W.map.getZoom();
               info.style.display = (zoom < map.zoomRange[0] || zoom > map.zoomRange[1] ? 'inline' : 'none');
             }
-          }, unsafeWindow));
+          });
         }
 
-        this.layer.events.register('tileerror', null, exportFunction(function(obj) {
+        this.layer.events.register('tileerror', null, function(obj) {
           if (error.title != '') {
             return;
           }
@@ -1291,25 +1287,25 @@ function init(e) {
               Tooltips.add(error, msg.title + ': ' + msg.description, true);
             }
           });
-        }, unsafeWindow));
-        this.layer.events.register('tileloadstart', null, exportFunction(function(evt) {
+        });
+        this.layer.events.register('tileloadstart', null, function(evt) {
           totalTiles++;
           updateTileLoader();
-        }, unsafeWindow));
-        this.layer.events.register('tileloaded', null, exportFunction(function(evt) {
+        });
+        this.layer.events.register('tileloaded', null, function(evt) {
           loadedTiles++;
           updateTileLoader();
-        }, unsafeWindow));
+        });
         W.map.addLayer(this.layer);
         var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayersBy('uniqueName', 'satellite_imagery')[0]);
         W.map.setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
-        this.layer.events.register('visibilitychanged', null, exportFunction(function() {
+        this.layer.events.register('visibilitychanged', null, function() {
           self.updateVisibility();
-        }, unsafeWindow));
+        });
       } else if (layerRedrawNeeded) { // Update layers if there's a change
-        this.layer.mergeNewParams(cloneInto({
+        this.layer.mergeNewParams({
           layers: visibleLayers.join()
-        }, unsafeWindow));
+        });
         layerRedrawNeeded = false;
       }
       saveMapState();
@@ -1445,13 +1441,13 @@ function init(e) {
       transparentCheck.type = 'checkbox';
       transparentCheck.checked = this.transparent;
       transparentCheck.id = 'transparent' + checkId;
-      transparentCheck.addEventListener('click', exportFunction(function() {
-        self.layer.mergeNewParams(cloneInto({
+      transparentCheck.addEventListener('click', function() {
+        self.layer.mergeNewParams({
           transparent: this.checked
-        }, unsafeWindow));
+        });
         self.transparent = this.checked;
         saveMapState();
-      }, unsafeWindow));
+      });
       transparentContainer.appendChild(transparentCheck);
       var transparentLabel = document.createElement('label');
       Tooltips.add(transparentLabel, I18n.t('openmaps.transparent_label_tooltip'));
@@ -1471,13 +1467,13 @@ function init(e) {
       var layerTitle = document.createElement('span');
       var visibility = document.createElement('span');
       visibility = createIconButton('fa-eye');
-      visibility.addEventListener("click", exportFunction(function() {
+      visibility.addEventListener("click", function() {
         var subjectLayer = self.mapLayers.find(function(mapLayer) { return mapLayer.name == layerItem.name; });
         subjectLayer.visible = !subjectLayer.visible;
         layerTitle.style.color = (subjectLayer.visible ? '' : '#999');
         layerRedrawNeeded = true;
         self.updateLayers.call(self);
-      }, unsafeWindow));
+      });
       item.appendChild(visibility);
       if (mapLayer.queryable) {
         var layerQuery = document.createElement('span');
@@ -1506,9 +1502,9 @@ function init(e) {
       layerTitle.style.cursor = 'default';
       layerTitle.style.color = (layerItem.visible ? '' : '#999');
       layerTitle.appendChild(document.createTextNode(mapLayer.title));
-      layerTitle.addEventListener('click', exportFunction(function(e) {
+      layerTitle.addEventListener('click', function(e) {
         visibility.dispatchEvent(new MouseEvent('click'));
-      }, unsafeWindow));
+      });
       item.appendChild(layerTitle);
       if (mapLayer.abstract) {
         var description = document.createElement('p');
@@ -1533,11 +1529,11 @@ function init(e) {
     container.className = 'result';
     handleList.appendChild(container);
     sortable(handleList); // refresh HTML5Sortable
-    sortable(layerContainer, cloneInto({
+    sortable(layerContainer, {
       forcePlaceholderSize: true,
       placeholderClass: 'result',
       handle: '.title'
-    }, unsafeWindow))[0].addEventListener('sortupdate', exportFunction(function(e) {
+    })[0].addEventListener('sortupdate', function(e) {
       if (e.detail.elementIndex < 0 || e.detail.elementIndex >= self.mapLayers.length || e.detail.oldElementIndex < 0 || e.detail.oldElementIndex >= self.mapLayers.length) { // Sanity check
         log('Received an invalid element index when reordering map layers. Old index: ' + e.detail.oldElementIndex + ', new index: ' + e.detail.elementIndex);
         return;
@@ -1545,7 +1541,7 @@ function init(e) {
       self.mapLayers.splice(e.detail.elementIndex, 0, self.mapLayers.splice(e.detail.oldElementIndex, 1)[0]);
       layerRedrawNeeded = self.mapLayers[e.detail.elementIndex].visible; // Only redraw if it was a visible layer
       self.updateLayers.call(self);
-    }, unsafeWindow));
+    });
 
     this.updateLayers();
     this.updateVisibility();
@@ -1561,8 +1557,3 @@ function log(message) {
 }
 
 init();
-
-// Fix tooltip z-index issue
-var styleElement = document.createElement('style');
-document.head.appendChild(styleElement);
-styleElement.sheet.insertRule('.tooltip { z-index: 1000 !important; }', 0);
