@@ -535,7 +535,7 @@ function init(e) {
       queryWindow.style.top = '';
       queryWindow.style.bottom = '35px';
     } else {
-      queryWindow.style.top = '10px';
+      queryWindow.style.top = '40px';
       queryWindow.style.bottom = '';
     }
   });
