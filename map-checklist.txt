@@ -8,7 +8,6 @@ Template:
 	title: '',
 	abstract: '',
 	attribution: '',
-	capabilities: ['GetCapabilities', 'GetMap', 'GetFeatureInfo'],
 	default_layers: [ ],
 	layers: {
 		'': {
@@ -24,3 +23,5 @@ Template:
 2. Clean up URL (HTTPS? Removed arguments?)
 3. Calculate BBOX: (new OL.Bounds(0, 0, 0, 0)).transform(new OL.Projection('EPSG:'), Waze.map.getProjection())
 4. Layers: put all layer groups as first in the array, followed by other layers
+default_layers = XPath [  concat("'", string-join(//Layer/Layer/Name, "', '"), "'")  ] on the GetDescription
+layers = apply D:\Projects\WME-OpenMaps\description2layers.xsl on the GetDescription
