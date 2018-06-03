@@ -32,6 +32,10 @@ function init(e) {
     log('user-info element not yet available, map still loading');
     return;
   }
+  if (typeof OL === 'undefined') {
+    setTimeout(init, 300);
+    return;
+  }
   if (typeof W.loginManager === 'undefined') {
     setTimeout(init, 300);
     return;
@@ -275,6 +279,13 @@ function init(e) {
       }
     });
   }
+  // Add missing map layer types
+  OL.Layer.TMS=OL.Class(OL.Layer.Grid,{serviceVersion:"1.0.0",layername:null,type:null,isBaseLayer:!0,tileOrigin:null,serverResolutions:null,zoomOffset:0,initialize:function(a,b,c){var d=[];d.push(a,b,{},c);OpenLayers.Layer.Grid.prototype.initialize.apply(this,d)},clone:function(a){null==a&&(a=new OpenLayers.Layer.TMS(this.name,this.url,this.getOptions()));return a=OpenLayers.Layer.Grid.prototype.clone.apply(this,[a])},getURL:function(a){var a=this.adjustBounds(a),b=this.getServerResolution(),c=Math.round((a.left-this.tileOrigin.lon)/(b*this.tileSize.w)),a=Math.round((a.bottom-this.tileOrigin.lat)/(b*this.tileSize.h)),c=this.serviceVersion+"/"+this.layername+"/"+this.getServerZoom()+"/"+c+"/"+a+"."+this.type,a=this.url;OpenLayers.Util.isArray(a)&&(a=this.selectUrl(c,a));return a+c},setMap:function(a){OpenLayers.Layer.Grid.prototype.setMap.apply(this,arguments);this.tileOrigin||(this.tileOrigin=new OpenLayers.LonLat(this.map.maxExtent.left,this.map.maxExtent.bottom))},CLASS_NAME:"OpenLayers.Layer.TMS"});
+
+  // Add missing coordinate systems, using proj4js
+  Proj4js.defs["EPSG:31370"] = "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +towgs84=-106.869,52.2978,-103.724,0.3366,-0.457,1.8422,-1.2747 +units=m +no_defs";
+  // Fix the baselayer projection (without proj4js it is missing the proj attribute)
+  W.map.baseLayer.projection = new OL.Projection(W.map.baseLayer.projection.projCode);
 
   // List of available maps
   var maps = {
@@ -1573,6 +1584,13 @@ function log(message) {
   } else {
     console.log('%cWME Open Maps:', 'color:black', message);
   }
+}
+
+if (!Proj4js) {
+  var proj4jsScript = document.createElement('script');
+  proj4jsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.min.js';
+  proj4jsScript.type = 'text/javascript';
+  document.head.appendChild(proj4jsScript);
 }
 
 init();
