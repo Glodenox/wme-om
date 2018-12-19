@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[Réseau routier régional]]></Title>
+    <Abstract><![CDATA[Ce service WMS permet la consultation, recherche et identification des données relatives au Réseau routier régional wallon et aux bornes kilométriques.]]></Abstract>
+    <KeywordList><Keyword><![CDATA[réseau;routes]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[Service publique de Wallonie]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[Belgique]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[helpdesk.carto@spw.wallonie.be]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[http://geoportail.wallonie.be/files/LicServicesSPW.pdf]]></AccessConstraints>
+    <MaxWidth>2048</MaxWidth>
+    <MaxHeight>2048</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geojson</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[RES_ROUTIER_REGIONAL]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,654318</westBoundLongitude><eastBoundLongitude>6,651396</eastBoundLongitude><southBoundLatitude>49,426123</southBoundLatitude><northBoundLatitude>51,110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,654318" miny="49,426123" maxx="6,651396" maxy="51,110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000,000000" miny="15000,000000" maxx="310000,000000" maxy="200000,000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477,314255" miny="6347477,319654" maxx="740430,033845" maxy="6640885,073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+      <Layer queryable="1">
+        <Title><![CDATA[Réseau régional]]></Title>
+        <Abstract><![CDATA[Cette donnée reprend le tracé des voiries constituant le réseau routier géré par la Région wallonne.
+
+La Région wallonne dispose d’un réseau routier très dense, qui permet de drainer d’importants flux commerciaux mais aussi culturels et humains. Ce réseau est constitué des autoroutes, des routes régionales (communément appelées les "Nationales"), des rings autoroutiers et routiers, des branches d'échangeurs et des bretelles. 
+
+Le réseau routier régional wallon est géré par la Direction générale opérationnelle Routes et Bâtiments (SPW - DGO1). Dans le cadre de la gestion du réseau, une répartition géographique est effectuée entre les services décentralisés de cette Direction. On distingue les Directions territoriales et les Districts routiers et autoroutiers (cf. Districts routiers).
+
+Complémentairement, à un niveau plus local, les communes de Wallonie disposent également de leurs propres réseaux routiers, sur lesquels elles exercent elles-mêmes les compétences de gestion.
+
+Toutes les routes relevant de la compétence de la Région wallonne sont désignées par une lettre ("A" pour les autoroutes, "R" pour les rings et "N" pour les routes régionales) et un numéro allant de 1 à 3 chiffres : ex : A54, R0, N25, N238, etc. Cette numérotation est dite "nationale", dans la mesure où elle est antérieure à la régionalisation et où elle est compatible avec la numérotation en vigueur dans les autres Régions.
+
+Par ailleurs, certaines routes, principalement des autoroutes, s'inscrivent dans un réseau européen de route et sont donc désignées par une numérotation commune à l'ensemble de l'Europe. Ces routes sont désignées par la lettre "E" suivie d'un numéro. Les numéros impairs sont utilisés pour désigner les routes allant globalement du Nord au Sud (telle la E25), et les nombres pairs pour les routes partant de l'Ouest et allant vers l'Est (comme la E40). De cette manière, l'autoroute Liège-Bruxelles est numérotée "A3" tant en Wallonie qu'en Flandre et constitue un tronçon de l'itinéraire européen E40.
+
+La base géométrique et attributaire du réseau routier régional est acquise et maintenue à jour sur une base régulière. Elle est intégrée à la Banque de données routières (BDR).
+
+Cette donnée est utilisée non seulement pour la création de cartes de service, c'est-à-dire des cartes présentant le réseau en gestion et réalisées pour chaque service (Districts, Directions territoriales routières et Directions électromécaniques) et de cartes thématiques, c'est-à-dire des cartes réalisées à la demande (carrefours, revêtements, glissières, service hivernal, réseau éclairé, etc.). Elle est également utilisée dans de nombreuses applications informatiques de la Direction Générale des Routes et Bâtiments (DGO1).
+
+En 2016, la Région wallonne gère +/- 8300km de voiries.
+
+Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,654318</westBoundLongitude><eastBoundLongitude>6,651396</eastBoundLongitude><southBoundLatitude>49,426123</southBoundLatitude><northBoundLatitude>51,110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,654318" miny="49,426123" maxx="6,651396" maxy="51,110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000,000000" miny="15000,000000" maxx="310000,000000" maxy="200000,000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477,314255" miny="6347477,319654" maxx="740430,033845" maxy="6640885,073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>1417410,714286</MaxScaleDenominator>
+      <Layer queryable="1">
+        <Name>Nationales</Name>
+        <Title><![CDATA[Nationales]]></Title>
+        <Abstract><![CDATA[Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,875032</westBoundLongitude><eastBoundLongitude>6,402915</eastBoundLongitude><southBoundLatitude>49,498821</southBoundLatitude><northBoundLatitude>50,815822</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,875032" miny="49,498821" maxx="6,402915" maxy="50,815822"/>
+<BoundingBox CRS="EPSG:4326" minx="49,498821" miny="2,875032" maxx="50,815822" maxy="6,402915"/>
+<BoundingBox CRS="EPSG:31370" minx="44805,269000" miny="22623,880800" maxx="293482,534100" maxy="167203,941100"/>
+<BoundingBox CRS="EPSG:3857" minx="320047,130200" miny="6359928,645490" maxx="712769,185010" maxy="6588779,128326"/>
+<BoundingBox CRS="EPSG:4258" minx="49,498821" miny="2,875032" maxx="50,815822" maxy="6,402915"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Nationales</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Nationales" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>944940,476190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>Rings</Name>
+        <Title><![CDATA[Rings]]></Title>
+        <Abstract><![CDATA[Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>3,373394</westBoundLongitude><eastBoundLongitude>5,880279</eastBoundLongitude><southBoundLatitude>49,563417</southBoundLatitude><northBoundLatitude>50,736589</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="3,373394" miny="49,563417" maxx="5,880279" maxy="50,736589"/>
+<BoundingBox CRS="EPSG:4326" minx="49,563417" miny="3,373394" maxx="50,736589" maxy="5,880279"/>
+<BoundingBox CRS="EPSG:31370" minx="79819,222000" miny="28957,035100" maxx="256808,222900" maxy="158389,979600"/>
+<BoundingBox CRS="EPSG:3857" minx="375524,484646" miny="6371007,856457" maxx="654589,609360" maxy="6574830,992752"/>
+<BoundingBox CRS="EPSG:4258" minx="49,563417" miny="3,373394" maxx="50,736589" maxy="5,880279"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Rings</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Rings" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>944940,476190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>Autoroutes</Name>
+        <Title><![CDATA[Autoroutes]]></Title>
+        <Abstract><![CDATA[Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,654318</westBoundLongitude><eastBoundLongitude>6,651396</eastBoundLongitude><southBoundLatitude>49,426123</southBoundLatitude><northBoundLatitude>51,110623</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,654318" miny="49,426123" maxx="6,651396" maxy="51,110623"/>
+<BoundingBox CRS="EPSG:4326" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+<BoundingBox CRS="EPSG:31370" minx="30000,000000" miny="15000,000000" maxx="310000,000000" maxy="200000,000000"/>
+<BoundingBox CRS="EPSG:3857" minx="295477,314255" miny="6347477,319654" maxx="740430,033845" maxy="6640885,073618"/>
+<BoundingBox CRS="EPSG:4258" minx="49,426123" miny="2,654318" maxx="51,110623" maxy="6,651396"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Autoroutes</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Autoroutes" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>2834821,428571</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[Bornes]]></Title>
+        <Abstract><![CDATA[Ce jeu de données ponctuel reprend la localisation des bornes kilométriques (BK) placées en bordure des routes et autoroutes gérées par la Région wallonne. 
+Les bornes kilométriques sont des éléments signalétiques routiers matérialisés sur le bord droit de la chaussée. Les bornes reprennent le numéro de l’autoroute ou de la route, le numéro de l'éventuel itinéraire européen (ex: E411) ainsi que le kilométrage cumulé. 
+Un bornage complet du réseau à grand gabarit (RGG) et du réseau interurbain (RESI) constitue un outil de travail très utile pour le gestionnaire du réseau. Il facilite la tâche de tous ceux qui doivent repérer des équipements ou des évènements survenus sur le réseau (localisation des accidents, etc.) et peut également, en diverses circonstances, aider l’usager de la route. 
+Le terme "borne" est employé dans le sens général et signifie selon le cas, un panneau, une plaquette ou une numérette. Le type de bornage utilisé dépend du réseau considéré. De par son principe, la numérette au sol est située à son point métrique précis. Elle constitue donc le point de référence à considérer pour tout positionnement et repérage. Dans les cas où le placement des bornes kilométriques en milieu urbain est rendu difficile voire impossible pour diverses raisons (Vitrines, trottoirs très étroits,etc.), l’usage des plaquettes peut être envisagé. Elles sont destinées à être placées sur les supports solides existant (habitations, bâtiments publics, etc.). 
+Les données alphanumériques de référence sont intégrées à la Banque de données routières (BDR). 
+
+Pour plus d'informations sur cette série, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,875069</westBoundLongitude><eastBoundLongitude>6,402498</eastBoundLongitude><southBoundLatitude>49,498828</southBoundLatitude><northBoundLatitude>50,815427</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,875069" miny="49,498828" maxx="6,402498" maxy="50,815427"/>
+<BoundingBox CRS="EPSG:4326" minx="49,498828" miny="2,875069" maxx="50,815427" maxy="6,402498"/>
+<BoundingBox CRS="EPSG:31370" minx="44807,000000" miny="22623,880800" maxx="293454,388600" maxy="167160,000000"/>
+<BoundingBox CRS="EPSG:3857" minx="320051,257997" miny="6359929,802181" maxx="712722,859537" maxy="6588709,533082"/>
+<BoundingBox CRS="EPSG:4258" minx="49,498828" miny="2,875069" maxx="50,815427" maxy="6,402498"/>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>47247,023810</MaxScaleDenominator>
+      <Layer queryable="1">
+        <Name>Bornes kilométriques</Name>
+        <Title><![CDATA[Bornes kilométriques]]></Title>
+        <Abstract><![CDATA[Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,876688</westBoundLongitude><eastBoundLongitude>6,390852</eastBoundLongitude><southBoundLatitude>49,501532</southBoundLatitude><northBoundLatitude>50,815427</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,876688" miny="49,501532" maxx="6,390852" maxy="50,815427"/>
+<BoundingBox CRS="EPSG:4326" minx="49,501532" miny="2,876688" maxx="50,815427" maxy="6,390852"/>
+<BoundingBox CRS="EPSG:31370" minx="44921,086900" miny="22903,000000" maxx="292633,000000" maxy="167160,000000"/>
+<BoundingBox CRS="EPSG:3857" minx="320231,391124" miny="6360393,424580" maxx="711426,404797" maxy="6588709,533459"/>
+<BoundingBox CRS="EPSG:4258" minx="49,501532" miny="2,876688" maxx="50,815427" maxy="6,390852"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Bornes kilométriques</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Bornes kilométriques" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>47247,023810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>Bornes hectométriques</Name>
+        <Title><![CDATA[Bornes hectométriques]]></Title>
+        <Abstract><![CDATA[Pour plus d'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:31370</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<CRS>EPSG:4258</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>2,875098</westBoundLongitude><eastBoundLongitude>6,402459</eastBoundLongitude><southBoundLatitude>49,498828</southBoundLatitude><northBoundLatitude>50,814509</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2,875098" miny="49,498828" maxx="6,402459" maxy="50,814509"/>
+<BoundingBox CRS="EPSG:4326" minx="49,498828" miny="2,875098" maxx="50,814509" maxy="6,402459"/>
+<BoundingBox CRS="EPSG:31370" minx="44807,000000" miny="22623,880800" maxx="293454,388600" maxy="167057,947600"/>
+<BoundingBox CRS="EPSG:3857" minx="320054,497023" miny="6359929,802181" maxx="712718,443928" maxy="6588547,902365"/>
+<BoundingBox CRS="EPSG:4258" minx="49,498828" miny="2,875098" maxx="50,814509" maxy="6,402459"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Bornes hectométriques</Title>
+          <LegendURL width="16" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Bornes hectométriques" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>236,235119</MinScaleDenominator>
+        <MaxScaleDenominator>9449,404762</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

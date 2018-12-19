@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<WMS_Capabilities version="1.3.0" xmlns="http://www.opengis.net/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:esri_wms="http://www.esri.com/wms" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd http://www.esri.com/wms http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+	<Service>
+		<Name><![CDATA[WMS]]></Name>
+		<Title><![CDATA[Orthophotos 2016]]></Title>
+		<Abstract><![CDATA[Service de visualisation INSPIRE permettant la visualisation de l'image orthorectifiée et mosaïquée couvrant l'entièreté du territoire wallon à une résolution de 25 cm pour l'année 2016.
+Les prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.
+Ce service n'est pas tuilé.]]></Abstract>
+		<KeywordList>
+			<!-- Mot clés du thème INSPIRE - Cf. http://inspire.ec.europa.eu/theme/theme.fr.iso19135xml -->
+			<Keyword vocabulary="GEMET - INSPIRE themes">Ortho-imagerie</Keyword>
+			<!-- OBLIGATOIRE dans les inspire_extended et conseillé de le répéter ici - mot-clé nécessaire pour la classification du service -->
+			<Keyword vocabulary="INSPIRE service Taxonomy">infoMapAccessService</Keyword>
+			<!--Mots-clés INFRASIG -->
+			<Keyword vocabulary="INFRASIG">Reporting INSPIRE</Keyword>
+			<!--Mots-clés Géoportail de la Wallonie et autres -->
+			<Keyword>(50) Données de base</Keyword>
+			<Keyword> (5030) Photos et imagerie</Keyword>
+			<Keyword>Vue aérienne</Keyword>
+			<Keyword>Orthophotoplan</Keyword>
+			<Keyword>Image aérienne</Keyword>
+			<Keyword>Ortho</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>DIG</ContactPerson>
+				<ContactOrganization><![CDATA[Direction de l'Intégration des géodonnées (SPW - SG - Département de la Géomatique - DIG)]]></ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>custodian</ContactPosition>
+			<ContactAddress>
+				<AddressType>Postal</AddressType>
+				<Address>Chaussée de Charleroi 83b</Address>
+				<City>Namur</City>
+				<StateOrProvince>Wallonie</StateOrProvince>
+				<PostCode>5000</PostCode>
+				<Country>Belgique&gt;</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+32 81 71 59 13</ContactVoiceTelephone>
+			<ContactFacsimileTelephone>+32 81 71 59 37</ContactFacsimileTelephone>
+			<ContactElectronicMailAddress>helpdesk.carto@spw.wallonie.be</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees><![CDATA[Les conditions d&apos;utilisation du service sont régies par les Conditions d’accès et d’utilisation des services web géographiques de visualisation du Service public de Wallonie consultables à l&apos;adresse http://geoportail.wallonie.be/files/LicServicesSPW.pdf]]></Fees>
+		<AccessConstraints><![CDATA[Accès libre et gratuit au service pour tout public]]></AccessConstraints>
+		<MaxWidth>4096</MaxWidth>
+		<MaxHeight>4096</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?"/></Get></HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?"/></Get></HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>application/geojson</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?"/></Get></HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+			<esri_wms:GetStyles>
+				<Format>application/vnd.ogc.sld+xml</Format>
+				<DCPType>
+					<HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?"/></Get></HTTP>
+				</DCPType>
+			</esri_wms:GetStyles>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<inspire_vs:ExtendedCapabilities>
+			<!-- Lien Web vers la ressource (le service en réseau). 
+				Cela peut être un lien URL public vers (i) le Capabilities du service ou (ii) le document WSDL ou (iii) une page Web qui décrit les instruction pour accéder au service ou (iv) vers une application où le service est directement visualisable -->
+			<inspire_common:ResourceLocator>
+				<inspire_common:URL>http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?version=1.3.0%26request=GetCapabilities%26service=WMS</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.ogc.wms_xml</inspire_common:MediaType>
+			</inspire_common:ResourceLocator>
+			<inspire_common:ResourceType>service</inspire_common:ResourceType>
+			<inspire_common:TemporalReference>
+				<!-- au moins l'un des sous-éléments: inspire_common:DateOfCreation, inspire_common:DateOfLastRevision ou inspire_common:DateOfPublication à remplir, avec une préférence pour DateOfLastRevision. -->
+				<!-- METAWAL -->
+				<inspire_common:DateOfLastRevision>2017-04-13</inspire_common:DateOfLastRevision>
+			</inspire_common:TemporalReference>
+			<!-- METAWAL -->
+			<!-- Conformité du service en réseau -->
+			<inspire_common:Conformity>
+				<inspire_common:Specification xsi:type="inspire_common:citationInspireInteroperabilityRegulation_fre">
+					<inspire_common:Title>RÈGLEMENT (UE) N o 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</inspire_common:Title>
+					<inspire_common:DateOfPublication>2010-12-08</inspire_common:DateOfPublication>
+					<inspire_common:URI>OJ:L:2010:323:0011:0102:FR:PDF</inspire_common:URI>
+					<inspire_common:ResourceLocator>
+						<inspire_common:URL>http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:FR:PDF</inspire_common:URL>
+						<inspire_common:MediaType>application/pdf</inspire_common:MediaType>
+					</inspire_common:ResourceLocator>
+				</inspire_common:Specification>
+				<inspire_common:Degree>notEvaluated</inspire_common:Degree>
+			</inspire_common:Conformity>
+			<!-- Les IR INSPIRE exigent que l'organisme responsable des métadonnées du service en réseau soit mentionné dans inspire_vs:ExtendedCapabilities>-->
+			<!-- METAWAL -->
+			<inspire_common:MetadataPointOfContact>
+				<inspire_common:OrganisationName>Direction de l'intégration des géodonnées (SPW - SG - DGM - DIG)</inspire_common:OrganisationName>
+				<inspire_common:EmailAddress>helpdesk.carto@spw.wallonie.be</inspire_common:EmailAddress>
+			</inspire_common:MetadataPointOfContact>
+			<!-- METAWAL -->
+			<!-- Date de création des métadonnées du service en réseau -->
+			<inspire_common:MetadataDate>2011-12-01</inspire_common:MetadataDate>
+			<!-- Type de service en réseau -->
+			<inspire_common:SpatialDataServiceType>view</inspire_common:SpatialDataServiceType>
+			<!-- Mots clés obligatoires et spécifiques -->
+			<inspire_common:MandatoryKeyword xsi:type="inspire_common:classificationOfSpatialDataService">
+				<!-- OBLIGATOIRE - mot-clé nécessaire pour la classification du service-->
+				<inspire_common:KeywordValue>infoMapAccessService</inspire_common:KeywordValue>
+			</inspire_common:MandatoryKeyword>
+			<!-- thème INSPIRE tel que défini dans le thésaurus GEMET -->
+			<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_fre">
+				<inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+					<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+				</inspire_common:OriginatingControlledVocabulary>
+				<!-- En FR : Cf. http://inspire.ec.europa.eu/theme ou http://inspire.ec.europa.eu/theme/theme.fr.iso19135xml-->
+				<inspire_common:KeywordValue>Ortho-imagerie</inspire_common:KeywordValue>
+			</inspire_common:Keyword>
+			<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_eng">
+				<inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+					<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+				</inspire_common:OriginatingControlledVocabulary>
+				<!-- En EN, Cf. Cf http://inspire.ec.europa.eu/theme ou http://inspire.ec.europa.eu/theme/theme.en.iso19135xml-->
+				<inspire_common:KeywordValue>Orthoimagery</inspire_common:KeywordValue>
+			</inspire_common:Keyword>
+			<!-- Langue prise en charge : langue du Capibiliy retourné par la requête GetCapabilities, mais aussi des métadonnées liées au service en réseau.
+				Doit être un code de trois lettres tel que défini dans l'ISO 639-2/B. 
+				Si plusieurs langues, alors un GetCapabilies par langue. En pratique la valeur de l'élément inspire_common:SupportedLanguages doit correspondre à la valeur de l'élément inspire_common:DefaultLanguage	-->
+			<inspire_common:SupportedLanguages>
+				<inspire_common:DefaultLanguage>
+					<inspire_common:Language>fre</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+			</inspire_common:SupportedLanguages>
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>fre</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+			<!-- *********************************************************************
+				 TODO : A VALIDER SI MANDATORY et SI DANS STRATEGIE DOCUMENTATION DES RESSOURCES			
+				********************************************************************* -->
+			<inspire_common:MetadataUrl>
+				<inspire_common:URL>http://metawal.wallonie.be/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=7d64f3d6-2960-4899-84df-f3b9c777cc1c</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
+			</inspire_common:MetadataUrl>
+		</inspire_vs:ExtendedCapabilities>
+		<!-- Info sur les Couches -->
+		<Layer>
+			<Title><![CDATA[Layers]]></Title>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:31370</CRS>
+			<CRS>EPSG:3857</CRS>
+			<!-- alias 3857 -->
+			<CRS>EPSG:102100</CRS>
+			<EX_GeographicBoundingBox><westBoundLongitude>2.832013</westBoundLongitude><eastBoundLongitude>6.465491</eastBoundLongitude><southBoundLatitude>49.434307</southBoundLatitude><northBoundLatitude>50.880203</northBoundLatitude></EX_GeographicBoundingBox>
+			<BoundingBox CRS="CRS:84" minx="2.832013" miny="49.434307" maxx="6.465491" maxy="50.880203"/>
+			<BoundingBox CRS="EPSG:4326" minx="49.434307" miny="2.832013" maxx="50.880203" maxy="6.465491"/>
+			<BoundingBox CRS="EPSG:31370" minx="41920.390285" miny="15559.090208" maxx="297693.575583" maxy="174366.038914"/>
+			<BoundingBox CRS="EPSG:3857" minx="315258.298753" miny="6348878.084715" maxx="719735.123495" maxy="6600130.400179"/>
+			<!-- REMARQUE à ajouter suite à la déclaration de l'alias hors INSPIRE exige un boundinbox pour chaque CRS déclaré-->
+			<BoundingBox CRS="EPSG:102100" minx="315258.298753" miny="6348878.084715" maxx="719735.123495" maxy="6600130.400179"/>
+			<!-- Identifier authority attribute and/or AuthorityURL have to be present.-->
+			<AuthorityURL name="BE.WALLONIE">
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoportail.wallonie.be/ressources/id/"/>
+			</AuthorityURL>
+			<Layer queryable="1">
+				<Name>0</Name>
+				<Title><![CDATA[ORTHO_2016]]></Title>
+				<Abstract><![CDATA[Imagerie orthorectifiée et mosaïquée couvrant l'entièreté du territoire wallon à une résolution de 25 cm.
+
+Les prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).
+
+Le recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.
+
+Les métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2016 - Tuilage".]]></Abstract>
+				<!-- Toutes les couches avec un Name doivent avoir au moins un keyword, des BoundingBox pour chaque CRS déclarés, un Idenfiant et une authorité pour cet identifiant -->
+				<KeywordList>
+					<!-- Mot clés du thème INSPIRE - Cf. http://inspire.ec.europa.eu/theme/theme.fr.iso19135xml -->
+					<Keyword vocabulary="GEMET - INSPIRE themes">Ortho-imagerie</Keyword>
+					<!--Mots-clés INFRASIG -->
+					<Keyword vocabulary="INFRASIG">Reporting INSPIRE</Keyword>
+					<!--Mots-clés Géoportail de la Wallonie et autres -->
+					<Keyword>(50) Données de base</Keyword>
+					<Keyword> (5030) Photos et imagerie </Keyword>
+					<Keyword>Vue aérienne</Keyword>
+					<Keyword>Orthophotoplan</Keyword>
+					<Keyword>Image aérienne</Keyword>
+					<Keyword>Ortho</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:31370</CRS>
+				<CRS>EPSG:3857</CRS>
+				<!-- alias 3857 -->
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox><westBoundLongitude>2.835012</westBoundLongitude><eastBoundLongitude>6.438925</eastBoundLongitude><southBoundLatitude>49.474631</southBoundLatitude><northBoundLatitude>50.822977</northBoundLatitude></EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="2.835012" miny="49.474631" maxx="6.438925" maxy="50.822977"/>
+				<BoundingBox CRS="EPSG:4326" minx="49.474631" miny="2.835012" maxx="50.822977" maxy="6.438925"/>
+				<BoundingBox CRS="EPSG:31370" minx="42000.105342" miny="19999.916622" maxx="296000.105342" maxy="167999.916622"/>
+				<BoundingBox CRS="EPSG:3857" minx="315592.096003" miny="6355783.429661" maxx="716777.862299" maxy="6590039.913594"/>
+				<!-- REMARQUE à ajouter suite à la déclaration de l'alias hors INSPIRE exige un boundinbox pour chaque CRS déclaré-->
+				<BoundingBox CRS="EPSG:102100" minx="315258.298753" miny="6348878.084715" maxx="719735.123495" maxy="6600130.400179"/>
+				<!-- Identifiant de la ressource -->
+				<Identifier authority="BE.WALLONIE">647e383d-c74b-4ee6-bf48-a5ebc746e8bf</Identifier>
+				<!-- Metadonnée sur la couche affichée par le service
+				Lien vers les métadonnées de l'ensemble de données qui forme cette couche 
+				Deux possibilités, (i) Lien vers le service de découverte et l'utilisation du GetRecordByID ou (ii) lien direct vers le document de métadonnées ISO19115/19139 -->
+				<MetadataURL type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="http://metawal.wallonie.be/geonetwork/srv/fre/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=647e383d-c74b-4ee6-bf48-a5ebc746e8bf" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>0</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>
