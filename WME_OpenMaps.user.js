@@ -4,6 +4,7 @@
 // @namespace   http://www.tomputtemans.com/
 // @description Add additional maps that are released as open data to the Waze Map Editor
 // @include     /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor.*$/
+// @run-at      document-start
 // @connect     wallonie.be
 // @connect     informatievlaanderen.be
 // @connect     www.mercator.vlaanderen.be
@@ -31,6 +32,10 @@ function init(e) {
   if (document.getElementById('user-info') == null) {
     setTimeout(init, 500);
     log('user-info element not yet available, map still loading');
+    return;
+  }
+  if (typeof OL === 'undefined') {
+    setTimeout(init, 300);
     return;
   }
   if (typeof W.loginManager === 'undefined') {
@@ -286,6 +291,14 @@ function init(e) {
       }
     });
   }
+  // Add missing map layer types
+  OL.Layer.TMS=OL.Class(OL.Layer.Grid,{serviceVersion:"1.0.0",layername:null,type:null,isBaseLayer:!0,tileOrigin:null,serverResolutions:null,zoomOffset:0,initialize:function(a,b,c){var d=[];d.push(a,b,{},c);OpenLayers.Layer.Grid.prototype.initialize.apply(this,d)},clone:function(a){null==a&&(a=new OpenLayers.Layer.TMS(this.name,this.url,this.getOptions()));return a=OpenLayers.Layer.Grid.prototype.clone.apply(this,[a])},getURL:function(a){var a=this.adjustBounds(a),b=this.getServerResolution(),c=Math.round((a.left-this.tileOrigin.lon)/(b*this.tileSize.w)),a=Math.round((a.bottom-this.tileOrigin.lat)/(b*this.tileSize.h)),c=this.serviceVersion+"/"+this.layername+"/"+this.getServerZoom()+"/"+c+"/"+a+"."+this.type,a=this.url;OpenLayers.Util.isArray(a)&&(a=this.selectUrl(c,a));return a+c},setMap:function(a){OpenLayers.Layer.Grid.prototype.setMap.apply(this,arguments);this.tileOrigin||(this.tileOrigin=new OpenLayers.LonLat(this.map.maxExtent.left,this.map.maxExtent.bottom))},CLASS_NAME:"OpenLayers.Layer.TMS"});
+
+  // Add coordinate systems, using proj4js
+  Proj4js.defs["EPSG:3857"] = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs";
+  Proj4js.defs["EPSG:31370"] = "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +towgs84=-106.869,52.2978,-103.724,0.3366,-0.457,1.8422,-1.2747 +units=m +no_defs";
+  // WMS services generally support EPSG:3857, but not EPSG:900913 - which is the default projection for the satellite imagery layer
+  W.map.baseLayer.projection = new OL.Projection('EPSG:3857');
 
   // List of available maps
   var maps = {
@@ -1583,6 +1596,13 @@ function log(message) {
   } else {
     console.log('%cWME Open Maps:', 'color:black', message);
   }
+}
+
+if (typeof Proj4js === 'undefined') {
+  var proj4jsScript = document.createElement('script');
+  proj4jsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.min.js';
+  proj4jsScript.type = 'text/javascript';
+  document.head.appendChild(proj4jsScript);
 }
 
 init();
