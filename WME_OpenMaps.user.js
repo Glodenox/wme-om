@@ -16,10 +16,15 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     2.8.8
+// @version     3.0.0
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
+
+/* global W, I18n, sortable, OL, OpenLayers, Proj4js, $ */
+
+var styleElement;
+
 function init(e) {
   if (e && e.user == null) {
     return;
@@ -55,7 +60,7 @@ function init(e) {
     return;
   }
 
-  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8'];
+  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0'];
   // set up language string
   var translations = {
     en: {
@@ -147,7 +152,8 @@ function init(e) {
         v2_8_5: '- Updated CIRB map (BE)',
         v2_8_6: '- Added GIPOD Actueel (BE)',
         v2_8_7: '- Updated Orthomozaïek Vlaanderen (BE)',
-        v2_8_8: '- Added Orthophotos 2016 and Réseau routier régional (BE)'
+        v2_8_8: '- Added Orthophotos 2016 and Réseau routier régional (BE)',
+        v3_0_0: '- Added support for new map types\n- Adjusted to new layer menu layout'
       }
     },
     nl: {
@@ -228,7 +234,8 @@ function init(e) {
         v2_8_5: '- CIRB kaart geüpdatet (BE)',
         v2_8_6: '- GIPOD Actueel toegevoegd (BE)',
         v2_8_7: '- Orthomozaïek Vlaanderen bijgewerkt (BE)',
-        v2_8_8: '- Orthophotos 2016 en Réseau routier régional toegevoegd (BE)'
+        v2_8_8: '- Orthophotos 2016 en Réseau routier régional toegevoegd (BE)',
+        v3_0_0: '- Ondersteuning voor nieuwe maptypes\n- Ondersteunen nieuwe layer menu layout'
       }
     },
     fr: {
@@ -331,7 +338,7 @@ function init(e) {
     '3209': { id: 3209, title: 'Orthofotowerkbestand Vlaanderen', type: 'WMS', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ofw/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', area: 'BE', abstract: 'WMS die de compilatie weergeeft van de meest recente orthofotowerkbestanden voor Vlaanderen', attribution: 'Agentschap Informatie Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OFW', 'OFW_vdc' ], layers: { 'OFW': { queryable: false, title: 'Orthofotowerkbestand', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotowerkbestanden die voor Vlaanderen  beschikbaar zijn. De compilatie heeft een grondresolutie van 25cm.' }, 'OFW_vdc': { queryable: true, title: 'Vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' } } },
     '3210': { id: 3210, title: 'Adrespunten Vlaanderen', type: 'WMS', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Adressen/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525, 6557859, 661237, 6712007), zoomRange: [6, 10], format: 'image/png', area: 'BE', abstract: 'Overzicht van in CRAB opgenomen adressen (huisnummers met bijhorende straat en gemeente) van Vlaanderen, met hun locatie. Deze dataset is een bevraging van de CRAB-gegevens, bedoeld om tot een eenvoudige en vlot toegankelijke adressenlijst te komen.', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Adrespunten - CRAB&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Adrespos' ], layers: { 'Adrespos': { queryable: true, title: 'CRAB - Adrespunt' } } },
     '3211': { id: 3211, title: 'Ortho Vl. 2013-2015 Grootschalig', type: 'WMS', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ogw/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', area: 'BE', abstract: 'WMS met de tijdsreeks van grootschalige orthofotomozaïeken met een resolutie van 10cm, gebiedsdekkend voor Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Luchtfoto Vlaanderen, winter 2013-2015 - kleur&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, attribution: 'Agentschap Informatie Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OGWRGB13_15VL', 'OGWRGB13_15VL_vdc' ], layers: { 'OGWRGB13_15VL': { queryable: false, title: 'Orthofotomozaïek, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de grootschalige orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2013-2015 werden aangemaakt. De compilatie heeft een grondresolutie van 10cm.' }, 'OGWRGB13_15VL_vdc': { queryable: true, title: 'Vliegdagcontour, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen' } } },
-    '3212': { id: 3212, title: 'Snelheidsregimes en referentiepunten AWV', type: 'WMS', url: 'https://www.mercator.vlaanderen.be/raadpleegdienstenmercatorpubliek/ows', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/png', area: 'BE', abstract: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Snelheidsregimes&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, attribution: 'Agentschap Informatie Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'tn:tn_snelhrg_awv', 'tn:tn_refpt_awv' ], layers: { 'tn:tn_snelhrg_awv': { queryable: true, title: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', abstract: 'Snelheidsregimes zijn delen van een genummerde weg met een uniforme maximale snelheid. De snelheidsregimes zijn lineaire weergaves van een (deel van) de wegen met aanduiding van een uniforme maximum snelheid.' }, 'tn:tn_refpt_awv': { queryable: true, title: 'Km en hm referentiepunten', abstract: 'Posities van de km en hm referentiepunten langs de Vlaamse autosnelwegen en gewestwegen met de bijbehorende kilometer-/ hectometeraanduidingen' } } },
+    //'3212': { id: 3212, title: 'Snelheidsregimes en referentiepunten AWV', type: 'WMS', url: 'https://www.mercator.vlaanderen.be/raadpleegdienstenmercatorpubliek/ows', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/png', area: 'BE', abstract: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Snelheidsregimes&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, attribution: 'Agentschap Informatie Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'tn:tn_snelhrg_awv', 'tn:tn_refpt_awv' ], layers: { 'tn:tn_snelhrg_awv': { queryable: true, title: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', abstract: 'Snelheidsregimes zijn delen van een genummerde weg met een uniforme maximale snelheid. De snelheidsregimes zijn lineaire weergaves van een (deel van) de wegen met aanduiding van een uniforme maximum snelheid.' }, 'tn:tn_refpt_awv': { queryable: true, title: 'Km en hm referentiepunten', abstract: 'Posities van de km en hm referentiepunten langs de Vlaamse autosnelwegen en gewestwegen met de bijbehorende kilometer-/ hectometeraanduidingen' } } },
     '3215': { id: 3215, title: 'GIPOD Actueel', type: 'WMS', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', area: 'BE', abstract: 'Deze WMS geeft een overzicht van momenteel actief zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'ManOmlVndg', 'ManConVndg', 'ManIcoonVndg', 'WoOmlVndg', 'WoConVndg', 'WoIcoonVndg' ], layers: { 'ManOmlVndg': { queryable: false, title: 'Omleidingen van de manifestaties', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.' }, 'ManConVndg': { queryable: true, title: 'Manifestaties contour', abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'ManIcoonVndg': { queryable: false, title: 'Manifestaties icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoOmlVndg': { queryable: false, title: 'Omleidingen van de werkopdrachten', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.' }, 'WoConVndg': { queryable: true, title: 'Werkopdrachten contour', abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoIcoonVndg': { queryable: false, title: 'Werkopdrachten icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' } } },
     '3216': { id: 3216, title: 'Orthophotos 2016', type: 'WMS', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OL.Bounds(315258.245036,6348878.094483,719735.165748,6600130.314225), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2016.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.', attribution: 'Direction de l\'Intégration des géodonnées (SPW - SG - Département de la Géomatique - DIG)', queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO_2016', abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.' } } },
     '3217': { id: 3217, title: 'Réseau routier régional', type: 'WMS', url: 'https://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OL.Bounds(295477.328122,6347477.301859,740430.015681,6640885.026555), format: 'image/png', area: 'BE', abstract: 'Ce service WMS permet la consultation, recherche et identification des données relatives au Réseau routier régional wallon et aux bornes kilométriques.', attribution: 'Service publique de Wallonie', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Nationales', 'Rings', 'Autoroutes', 'Bornes kilométriques', 'Bornes hectométriques' ], layers: { 'Nationales': { queryable: true, title: 'Nationales', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, 'Rings': { queryable: true, title: 'Rings', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, 'Autoroutes': { queryable: true, title: 'Autoroutes', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, 'Bornes kilométriques': { queryable: true, title: 'Bornes kilométriques', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html' }, 'Bornes hectométriques': { queryable: true, title: 'Bornes hectométriques', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html' } } },
@@ -442,19 +449,13 @@ function init(e) {
     addOpenMapsTab(tab);
   });
 
-  // Maximum layers warning message
-  var layerLimitDiv = document.createElement('div');
-  layerLimitDiv.className = 'hidden';
-  layerLimitDiv.style.borderRadius = '8px';
-  layerLimitDiv.style.padding = '8px';
-  layerLimitDiv.style.backgroundColor = '#fff';
+  // Maximum layers warning message - seems to have been fixed?
+  /*var layerLimitDiv = document.createElement('div');
+  layerLimitDiv.className = 'hidden open-maps-maximum-layers';
   var exclamationMark = document.createElement('i');
   exclamationMark.className = 'fa fa-fw fa-3x fa-exclamation-triangle pull-right';
   layerLimitDiv.appendChild(exclamationMark);
   var layerLimitTitle = document.createElement('h3');
-  layerLimitTitle.style.marginBottom = '15px';
-  layerLimitTitle.style.fontSize = '13px';
-  layerLimitTitle.style.fontWeight = '700';
   layerLimitTitle.textContent = I18n.t('openmaps.layer_overflow_warning_title');
   layerLimitDiv.appendChild(layerLimitTitle);
   var layerLimitMessage = document.createElement('p');
@@ -472,7 +473,7 @@ function init(e) {
   W.map.events.on({
     'addlayer': verifyMapLayerOverflow,
     'removelayer': verifyMapLayerOverflow
-  });
+  });*/
 
   // Satellite imagery toggle
   var satImageryDiv = document.createElement('div');
@@ -497,7 +498,6 @@ function init(e) {
   // List of maps visible in Open Maps
   var title = document.createElement('h4');
   title.appendChild(document.createTextNode(I18n.t('openmaps.maps_title')));
-  title.style.marginBottom = '5px';
   tab.appendChild(title);
   var handleList = document.createElement('ul');
   sortable(handleList, {
@@ -525,7 +525,6 @@ function init(e) {
   // Select box to add new Open Maps maps
   var addMap = document.createElement('select');
   addMap.className = 'form-control';
-  addMap.style.margin = '8px 0';
   updateMapSelector();
   W.map.events.register('moveend', null, updateMapSelector);
   addMap.addEventListener('change', function() {
@@ -586,19 +585,7 @@ function init(e) {
   // Add the control to catch a click on the map area for retrieving map information
   var queryWindowContent, queryWindowOriginalContent;
   var queryWindow = document.createElement('div');
-  queryWindow.style.display = 'none';
-  queryWindow.style.top = '40px';
-  queryWindow.style.left = '100px';
-  queryWindow.style.right = '60px';
-  queryWindow.style.maxHeight = 'calc(100% - 80px)';
-  queryWindow.style.overflowY = 'auto';
-  queryWindow.style.backgroundColor = '#fff';
-  queryWindow.style.border = '2px solid #ddd';
-  queryWindow.style.padding = '5px';
-  queryWindow.style.color = '#000';
-  queryWindow.style.cursor = 'auto';
-  queryWindow.style.zIndex = '2000';
-  queryWindow.style.position = 'absolute';
+  queryWindow.className = 'open-maps-query-window';
   queryWindow.addEventListener('click', function(e) {
     e.stopPropagation();
   });
@@ -675,9 +662,6 @@ function init(e) {
   });
   queryWindow.appendChild(queryWindowMinimize);
   var queryWindowTitle = document.createElement('h2');
-  queryWindowTitle.style.textAlign = 'center';
-  queryWindowTitle.style.fontWeight = 'bold';
-  queryWindowTitle.style.marginBottom = '0.5em';
   queryWindowTitle.appendChild(document.createTextNode(I18n.t('openmaps.query_window_title')));
   queryWindow.appendChild(queryWindowTitle);
   var queryWindowLoading = document.createElement('p');
@@ -1021,8 +1005,9 @@ function init(e) {
     tabifyLayerBlocks(body, map);
   }
 
+  /* This seems to have been fixed somehow?
   function verifyMapLayerOverflow() {
-    var highestZIndex = parseInt(W.map.layers.slice(-1)[0].getZIndex());
+    var highestZIndex = parseInt(W.map.layers.filter(layer => !layer.featureType).pop().getZIndex());
     layerLimitDiv.classList.toggle('hidden', highestZIndex < W.map.Z_INDEX_BASE['Feature'] - 25);
     layerLimitMessage.textContent = I18n.t('openmaps.layer_overflow_warning_message_' + (highestZIndex < W.map.Z_INDEX_BASE['Feature'] ? 'nearby' : 'overflow'), { count: Math.max(1, Math.abs(highestZIndex - W.map.Z_INDEX_BASE['Feature']) / 5) });
     while (layerLimitList.firstChild) {
@@ -1033,7 +1018,7 @@ function init(e) {
       li.textContent = layer.name ? layer.name : (layer.uniqueName ? layer.uniqueName : layer.id);
       layerLimitList.appendChild(li);
     });
-  }
+  }*/
 
   function checkVersion() {
     // Convert from old storage object
@@ -1063,42 +1048,73 @@ function init(e) {
 
   function createLayerToggler(parentGroup, checked, name, toggleCallback) {
     var normalizedName = name.toLowerCase().replace(/\s/g, '');
-    var group = document.createElement('li');
-    var groupToggler = document.createElement('div');
-    groupToggler.className = 'controls-container toggler';
-    var groupSwitch = document.createElement('input');
-    groupSwitch.id = 'layer-switcher-group_' + normalizedName;
-    groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' toggle';
-    groupSwitch.type = 'checkbox';
-    groupSwitch.checked = checked;
-    groupSwitch.addEventListener('click', function() { toggleCallback(groupSwitch.checked); });
-    groupToggler.appendChild(groupSwitch);
-    var groupLabel = document.createElement('label');
-    groupLabel.htmlFor = groupSwitch.id;
-    groupLabel.style.display = 'block';
-    var groupLabelText = document.createElement('div');
-    groupLabelText.className = 'label-text';
-    groupLabelText.style.textOverflow = 'ellipsis';
-    groupLabelText.style.overflowX = 'hidden';
-    groupLabelText.appendChild(document.createTextNode(name));
-    groupLabel.appendChild(groupLabelText);
-    groupToggler.appendChild(groupLabel);
-    group.appendChild(groupToggler);
     if (parentGroup != null) {
-      parentGroup.querySelector('input.toggle').addEventListener('click', function(e) {
-        groupSwitch.disabled = !e.target.checked;
-        toggleCallback && toggleCallback(groupSwitch.checked && e.target.checked);
+      var groupItem = document.createElement('li');
+      var checkboxContainer = document.createElement('div');
+      checkboxContainer.className = 'wz-checkbox';
+      var itemSwitcher = document.createElement('input');
+      itemSwitcher.id = 'layer-switcher-' + normalizedName;
+      itemSwitcher.className = 'toggle';
+      itemSwitcher.type = 'checkbox';
+      itemSwitcher.checked = checked;
+      itemSwitcher.addEventListener('click', function() { toggleCallback(itemSwitcher.checked); });
+      checkboxContainer.appendChild(itemSwitcher);
+      var itemSwitcherLabel = document.createElement('label');
+      itemSwitcherLabel.htmlFor = itemSwitcher.id;
+      itemSwitcherLabel.textContent = name;
+      checkboxContainer.appendChild(itemSwitcherLabel);
+      groupItem.appendChild(checkboxContainer);
+      parentGroup.querySelector('.toggleSwitch').addEventListener('click', function(e) {
+        itemSwitcher.disabled = !e.target.checked;
+        toggleCallback && toggleCallback(itemSwitcher.checked && e.target.checked);
       });
-      parentGroup.childNodes[1].appendChild(group);
+      parentGroup.querySelector('ul').appendChild(groupItem);
+      return groupItem;
     } else {
+      var group = document.createElement('li');
       group.className = 'group';
-      groupToggler.classList.add('main');
       var groupChildren = document.createElement('ul');
-      groupChildren.className = 'children';
+      var groupToggler = document.createElement('div');
+      groupToggler.className = 'layer-switcher-toggler-tree-category';
+      var groupCaret = document.createElement('i');
+      groupCaret.className = 'toggle-category w-icon-caret-down';
+      if (!checked) {
+        groupCaret.classList.add('upside-down');
+      }
+      groupCaret.dataset.groupId = 'GROUP_' + normalizedName;
+      groupCaret.addEventListener('click', function() {
+        groupCaret.classList.toggle('upside-down');
+        groupChildren.classList.toggle('collapse-layer-switcher-group');
+      });
+      groupToggler.appendChild(groupCaret);
+      var groupSwitchContainer = document.createElement('span');
+      groupSwitchContainer.className = 'wz-toggle-switch';
+      var groupSwitchLabel = document.createElement('label');
+      groupSwitchLabel.className = 'wz-switch';
+      var groupSwitch = document.createElement('input');
+      groupSwitch.id = 'layer-switcher-group_' + normalizedName;
+      groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' toggleSwitch';
+      groupSwitch.type = 'checkbox';
+      groupSwitch.checked = checked;
+      groupSwitchLabel.appendChild(groupSwitch);
+      var groupWZSlider = document.createElement('span');
+      groupWZSlider.className = 'wz-slider';
+      groupSwitchLabel.appendChild(groupWZSlider);
+      groupSwitchContainer.appendChild(groupSwitchLabel);
+      groupToggler.appendChild(groupSwitchContainer);
+      var groupLabel = document.createElement('label');
+      groupLabel.htmlFor = groupSwitch.id;
+      groupLabel.className = 'label-text';
+      groupLabel.style.textOverflow = 'ellipsis';
+      groupLabel.style.overflowX = 'hidden';
+      groupLabel.textContent = name;
+      groupToggler.appendChild(groupLabel);
+      group.appendChild(groupToggler);
+      groupChildren.className = 'collapsible-GROUP_' + normalizedName;
       group.appendChild(groupChildren);
       document.querySelector('.list-unstyled.togglers').appendChild(group);
+      return group;
     }
-    return group;
   }
 
   function updateMapSelector() {
@@ -1314,14 +1330,7 @@ function init(e) {
 
     function createIconButton(icon, title, forceTooltip) {
       var button = document.createElement('button');
-      button.className = 'fa ' + icon;
-      button.style.border = 'none';
-      button.style.background = 'none';
-      button.style.padding = '3px';
-      button.style.float = 'right';
-      button.style.cursor = 'pointer';
-      button.style.height = 'auto';
-      button.style.outline = 'none';
+      button.className = 'fa ' + icon + ' open-maps-icon-button';
       if (title) {
         button.dataset.container = '#sidebar';
         Tooltips.add(button, title, forceTooltip);
@@ -1499,9 +1508,6 @@ function init(e) {
       container.appendChild(query);
     }
     info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'), true);
-    info.style.color = '#337ab7';
-    info.style.cursor = 'help';
-    info.style.display = 'none';
     container.appendChild(info);
     error = createIconButton('fa-exclamation-triangle');
     error.style.color = 'red';
@@ -1511,22 +1517,10 @@ function init(e) {
     title.className = 'title';
     var handle = document.createElement('span');
     handle.className = 'fa fa-reorder';
-    handle.style.color = '#c2c2c2';
-    handle.style.cursor = 'move';
-    handle.style.fontSize = '11px';
-    handle.style.padding = '3px';
     title.appendChild(handle);
-    title.style.cursor = 'default';
-    title.style.borderTop = '2px solid transparent';
-    title.style.borderWidth = '2px 0 0 0';
     title.appendChild(document.createTextNode(map.title));
     container.appendChild(title);
     description.className = 'additional-info';
-    description.style.fontStyle = 'italic';
-    description.style.whiteSpace = 'nowrap';
-    description.style.textOverflow = 'ellipsis';
-    description.style.overflow = 'hidden';
-    description.style.cursor = 'pointer';
     description.title = I18n.t('openmaps.expand');
     description.addEventListener('click', function() {
       this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
@@ -1534,9 +1528,6 @@ function init(e) {
     });
     description.appendChild(document.createTextNode(map.abstract));
     container.appendChild(description);
-    editContainer.style.borderLeft = '5px solid #eee';
-    editContainer.style.marginTop = '2px';
-    editContainer.style.paddingLeft = '4px';
     var opacityLabel = document.createElement('span');
     opacityLabel.appendChild(document.createTextNode(I18n.t('openmaps.opacity_label') + ':'));
     opacityLabel.style.marginRight = '5px';
@@ -1615,10 +1606,6 @@ function init(e) {
         item.appendChild(layerQuery);
       }
       layerHandle.className = 'fa fa-reorder';
-      layerHandle.style.color = '#c2c2c2';
-      layerHandle.style.cursor = 'move';
-      layerHandle.style.fontSize = '11px';
-      layerHandle.style.padding = '3px';
       layerTitle.appendChild(layerHandle);
       layerTitle.className = 'title';
       layerTitle.style.cursor = 'default';
@@ -1631,10 +1618,6 @@ function init(e) {
       if (mapLayer.abstract) {
         var description = document.createElement('p');
         description.className = 'additional-info';
-        description.style.whiteSpace = 'nowrap';
-        description.style.textOverflow = 'ellipsis';
-        description.style.overflow = 'hidden';
-        description.style.cursor = 'pointer';
         description.title = I18n.t('openmaps.expand');
         description.addEventListener('click', function() {
           this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
@@ -1648,7 +1631,7 @@ function init(e) {
     editContainer.appendChild(layerContainer);
     editContainer.style.display = 'none';
     container.appendChild(editContainer);
-    container.className = 'result';
+    container.className = 'result maps-menu-item';
     handleList.appendChild(container);
     sortable(handleList); // refresh HTML5Sortable
     sortable(layerContainer, {
@@ -1667,6 +1650,104 @@ function init(e) {
 
     this.updateLayers();
     this.updateVisibility();
+  }
+
+  // Add style
+  if (!styleElement) {
+    styleElement = document.createElement('style');
+    styleElement.textContent = `
+#sidepanel-openMaps h4 {
+  margin-bottom: 5px;
+}
+
+#sidePanel-openMaps select {
+  margin: 8px 0;
+}
+
+.open-maps-query-window {
+  display: none;
+  top: 40px;
+  left: 100px;
+  right: 60px;
+  max-height: calc(100% - 80px);
+  overflow-y: auto;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  padding: 5px;
+  color: #000;
+  cursor: auto;
+  z-index: 2000;
+  position: absolute;
+}
+
+.open-maps-query-window h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.open-maps-query-window table td {
+  user-select: text;
+}
+
+.open-maps-maximum-layers {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.open-maps-maximum-layers h3 {
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.open-maps-icon-button {
+  border: none;
+  background: none;
+  padding: 3px;
+  float: right;
+  cursor: pointer;
+  height: auto;
+  outline: none;
+}
+
+.open-maps-icon-button.fa-info-circle {
+  color: #337ab7;
+  cursor: help;
+  display: none;
+}
+
+#sidepanel-openMaps .title .fa-reorder {
+  color: #c2c2c2;
+  cursor: move;
+  font-size: 11px;
+  padding: 3px;
+}
+
+#sidepanel-openMaps .additional-info {
+  font-style: italic;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#sidepanel-openMaps .maps-menu-item > div {
+  border-left: 5px solid #eee;
+  margin-top: 2px;
+  padding-left: 4px;
+}
+
+#sidepanel-openMaps .title {
+  cursor: default';
+  border-top: 2px solid transparent;
+  border-width: 2px 0 0 0;
+}
+`;
+  }
+  if (!styleElement.parentNode) {
+    document.head.appendChild(styleElement);
   }
 }
 
