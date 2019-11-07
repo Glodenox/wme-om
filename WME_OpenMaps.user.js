@@ -19,6 +19,11 @@
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
+
+/* global W, I18n, sortable, OL, OpenLayers, Proj4js, $ */
+
+var styleElement;
+
 function init(e) {
   if (e && e.user == null) {
     return;
@@ -31,6 +36,10 @@ function init(e) {
   if (document.getElementById('user-info') == null) {
     setTimeout(init, 500);
     log('user-info element not yet available, map still loading');
+    return;
+  }
+  if (typeof OL === 'undefined') {
+    setTimeout(init, 300);
     return;
   }
   if (typeof W.loginManager === 'undefined') {
@@ -444,7 +453,6 @@ function init(e) {
   // List of maps visible in Open Maps
   var title = document.createElement('h4');
   title.appendChild(document.createTextNode(I18n.t('openmaps.maps_title')));
-  title.style.marginBottom = '5px';
   tab.appendChild(title);
   var handleList = document.createElement('ul');
   sortable(handleList, {
@@ -472,7 +480,6 @@ function init(e) {
   // Select box to add new Open Maps maps
   var addMap = document.createElement('select');
   addMap.className = 'form-control';
-  addMap.style.margin = '8px 0';
   updateMapSelector();
   W.map.events.register('moveend', null, updateMapSelector);
   addMap.addEventListener('change', function() {
@@ -533,19 +540,7 @@ function init(e) {
   // Add the control to catch a click on the map area for retrieving map information
   var queryWindowContent, queryWindowOriginalContent;
   var queryWindow = document.createElement('div');
-  queryWindow.style.display = 'none';
-  queryWindow.style.top = '40px';
-  queryWindow.style.left = '100px';
-  queryWindow.style.right = '60px';
-  queryWindow.style.maxHeight = 'calc(100% - 80px)';
-  queryWindow.style.overflowY = 'auto';
-  queryWindow.style.backgroundColor = '#fff';
-  queryWindow.style.border = '2px solid #ddd';
-  queryWindow.style.padding = '5px';
-  queryWindow.style.color = '#000';
-  queryWindow.style.cursor = 'auto';
-  queryWindow.style.zIndex = '2000';
-  queryWindow.style.position = 'absolute';
+  queryWindow.className = 'open-maps-query-window';
   queryWindow.addEventListener('click', function(e) {
     e.stopPropagation();
   });
@@ -622,9 +617,6 @@ function init(e) {
   });
   queryWindow.appendChild(queryWindowMinimize);
   var queryWindowTitle = document.createElement('h2');
-  queryWindowTitle.style.textAlign = 'center';
-  queryWindowTitle.style.fontWeight = 'bold';
-  queryWindowTitle.style.marginBottom = '0.5em';
   queryWindowTitle.appendChild(document.createTextNode(I18n.t('openmaps.query_window_title')));
   queryWindow.appendChild(queryWindowTitle);
   var queryWindowLoading = document.createElement('p');
@@ -996,42 +988,73 @@ function init(e) {
 
   function createLayerToggler(parentGroup, checked, name, toggleCallback) {
     var normalizedName = name.toLowerCase().replace(/\s/g, '');
-    var group = document.createElement('li');
-    var groupToggler = document.createElement('div');
-    groupToggler.className = 'controls-container toggler';
-    var groupSwitch = document.createElement('input');
-    groupSwitch.id = 'layer-switcher-group_' + normalizedName;
-    groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' toggle';
-    groupSwitch.type = 'checkbox';
-    groupSwitch.checked = checked;
-    groupSwitch.addEventListener('click', function() { toggleCallback(groupSwitch.checked); });
-    groupToggler.appendChild(groupSwitch);
-    var groupLabel = document.createElement('label');
-    groupLabel.htmlFor = groupSwitch.id;
-    groupLabel.style.display = 'block';
-    var groupLabelText = document.createElement('div');
-    groupLabelText.className = 'label-text';
-    groupLabelText.style.textOverflow = 'ellipsis';
-    groupLabelText.style.overflowX = 'hidden';
-    groupLabelText.appendChild(document.createTextNode(name));
-    groupLabel.appendChild(groupLabelText);
-    groupToggler.appendChild(groupLabel);
-    group.appendChild(groupToggler);
     if (parentGroup != null) {
-      parentGroup.querySelector('input.toggle').addEventListener('click', function(e) {
-        groupSwitch.disabled = !e.target.checked;
-        toggleCallback && toggleCallback(groupSwitch.checked && e.target.checked);
+      var groupItem = document.createElement('li');
+      var checkboxContainer = document.createElement('div');
+      checkboxContainer.className = 'wz-checkbox';
+      var itemSwitcher = document.createElement('input');
+      itemSwitcher.id = 'layer-switcher-' + normalizedName;
+      itemSwitcher.className = 'toggle';
+      itemSwitcher.type = 'checkbox';
+      itemSwitcher.checked = checked;
+      itemSwitcher.addEventListener('click', function() { toggleCallback(itemSwitcher.checked); });
+      checkboxContainer.appendChild(itemSwitcher);
+      var itemSwitcherLabel = document.createElement('label');
+      itemSwitcherLabel.htmlFor = itemSwitcher.id;
+      itemSwitcherLabel.textContent = name;
+      checkboxContainer.appendChild(itemSwitcherLabel);
+      groupItem.appendChild(checkboxContainer);
+      parentGroup.querySelector('.toggleSwitch').addEventListener('click', function(e) {
+        itemSwitcher.disabled = !e.target.checked;
+        toggleCallback && toggleCallback(itemSwitcher.checked && e.target.checked);
       });
-      parentGroup.childNodes[1].appendChild(group);
+      parentGroup.querySelector('ul').appendChild(groupItem);
+      return groupItem;
     } else {
+      var group = document.createElement('li');
       group.className = 'group';
-      groupToggler.classList.add('main');
       var groupChildren = document.createElement('ul');
-      groupChildren.className = 'children';
+      var groupToggler = document.createElement('div');
+      groupToggler.className = 'layer-switcher-toggler-tree-category';
+      var groupCaret = document.createElement('i');
+      groupCaret.className = 'toggle-category w-icon-caret-down';
+      if (!checked) {
+        groupCaret.classList.add('upside-down');
+      }
+      groupCaret.dataset.groupId = 'GROUP_' + normalizedName;
+      groupCaret.addEventListener('click', function() {
+        groupCaret.classList.toggle('upside-down');
+        groupChildren.classList.toggle('collapse-layer-switcher-group');
+      });
+      groupToggler.appendChild(groupCaret);
+      var groupSwitchContainer = document.createElement('span');
+      groupSwitchContainer.className = 'wz-toggle-switch';
+      var groupSwitchLabel = document.createElement('label');
+      groupSwitchLabel.className = 'wz-switch';
+      var groupSwitch = document.createElement('input');
+      groupSwitch.id = 'layer-switcher-group_' + normalizedName;
+      groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' toggleSwitch';
+      groupSwitch.type = 'checkbox';
+      groupSwitch.checked = checked;
+      groupSwitchLabel.appendChild(groupSwitch);
+      var groupWZSlider = document.createElement('span');
+      groupWZSlider.className = 'wz-slider';
+      groupSwitchLabel.appendChild(groupWZSlider);
+      groupSwitchContainer.appendChild(groupSwitchLabel);
+      groupToggler.appendChild(groupSwitchContainer);
+      var groupLabel = document.createElement('label');
+      groupLabel.htmlFor = groupSwitch.id;
+      groupLabel.className = 'label-text';
+      groupLabel.style.textOverflow = 'ellipsis';
+      groupLabel.style.overflowX = 'hidden';
+      groupLabel.textContent = name;
+      groupToggler.appendChild(groupLabel);
+      group.appendChild(groupToggler);
+      groupChildren.className = 'collapsible-GROUP_' + normalizedName;
       group.appendChild(groupChildren);
       document.querySelector('.list-unstyled.togglers').appendChild(group);
+      return group;
     }
-    return group;
   }
 
   function updateMapSelector() {
@@ -1245,14 +1268,7 @@ function init(e) {
 
     function createIconButton(icon, title, forceTooltip) {
       var button = document.createElement('button');
-      button.className = 'fa ' + icon;
-      button.style.border = 'none';
-      button.style.background = 'none';
-      button.style.padding = '3px';
-      button.style.float = 'right';
-      button.style.cursor = 'pointer';
-      button.style.height = 'auto';
-      button.style.outline = 'none';
+      button.className = 'fa ' + icon + ' open-maps-icon-button';
       if (title) {
         button.dataset.container = '#sidebar';
         Tooltips.add(button, title, forceTooltip);
@@ -1275,12 +1291,12 @@ function init(e) {
 
     this.updateLayers = function() {
       var visibleLayers = [];
-      for (var i = 0; i < self.mapLayers.length; i++) {
-        if (self.mapLayers[i].visible) {
-          visibleLayers.push(self.mapLayers[i].name);
+      for (var i = 0; i < this.mapLayers.length; i++) {
+        if (this.mapLayers[i].visible) {
+          visibleLayers.push(this.mapLayers[i].name);
         }
       }
-      if (visibleLayers && visibleLayers.length == 0 && this.layer) { // Hide map as it has no more layers
+      if (visibleLayers && visibleLayers.length == 0 && this.layer && map.type == 'WMS') { // Hide map as it has no more layers
         this.layer.setVisibility(false);
       } else if (visibleLayers.length > 0 && !this.layer) { // Add map that received layers
         var params = {
@@ -1348,7 +1364,9 @@ function init(e) {
 
     remove = createIconButton('fa-times', I18n.t('openmaps.remove_layer'));
     remove.addEventListener('click', function(e) {
-      W.map.removeLayer(self.layer);
+      if (self.layer != null) {
+		  W.map.removeLayer(self.layer);
+	  }
       Tooltips.remove(remove);
       layerToggler.parentNode.removeChild(layerToggler);
       handles.splice(handles.indexOf(self), 1);
@@ -1396,7 +1414,7 @@ function init(e) {
             }
           });
           getFeatureInfoControl.params = {
-            url: map.url,
+            url: map.queryUrl || map.url,
             id: map.id,
             layers: queryLayers.join(),
             callback: function() {
@@ -1412,9 +1430,6 @@ function init(e) {
       container.appendChild(query);
     }
     info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'), true);
-    info.style.color = '#337ab7';
-    info.style.cursor = 'help';
-    info.style.display = 'none';
     container.appendChild(info);
     error = createIconButton('fa-exclamation-triangle');
     error.style.color = 'red';
@@ -1424,22 +1439,10 @@ function init(e) {
     title.className = 'title';
     var handle = document.createElement('span');
     handle.className = 'fa fa-reorder';
-    handle.style.color = '#c2c2c2';
-    handle.style.cursor = 'move';
-    handle.style.fontSize = '11px';
-    handle.style.padding = '3px';
     title.appendChild(handle);
-    title.style.cursor = 'default';
-    title.style.borderTop = '2px solid transparent';
-    title.style.borderWidth = '2px 0 0 0';
     title.appendChild(document.createTextNode(map.title));
     container.appendChild(title);
     description.className = 'additional-info';
-    description.style.fontStyle = 'italic';
-    description.style.whiteSpace = 'nowrap';
-    description.style.textOverflow = 'ellipsis';
-    description.style.overflow = 'hidden';
-    description.style.cursor = 'pointer';
     description.title = I18n.t('openmaps.expand');
     description.addEventListener('click', function() {
       this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
@@ -1447,9 +1450,6 @@ function init(e) {
     });
     description.appendChild(document.createTextNode(map.abstract));
     container.appendChild(description);
-    editContainer.style.borderLeft = '5px solid #eee';
-    editContainer.style.marginTop = '2px';
-    editContainer.style.paddingLeft = '4px';
     var opacityLabel = document.createElement('span');
     opacityLabel.appendChild(document.createTextNode(I18n.t('openmaps.opacity_label') + ':'));
     opacityLabel.style.marginRight = '5px';
@@ -1528,10 +1528,6 @@ function init(e) {
         item.appendChild(layerQuery);
       }
       layerHandle.className = 'fa fa-reorder';
-      layerHandle.style.color = '#c2c2c2';
-      layerHandle.style.cursor = 'move';
-      layerHandle.style.fontSize = '11px';
-      layerHandle.style.padding = '3px';
       layerTitle.appendChild(layerHandle);
       layerTitle.className = 'title';
       layerTitle.style.cursor = 'default';
@@ -1544,10 +1540,6 @@ function init(e) {
       if (mapLayer.abstract) {
         var description = document.createElement('p');
         description.className = 'additional-info';
-        description.style.whiteSpace = 'nowrap';
-        description.style.textOverflow = 'ellipsis';
-        description.style.overflow = 'hidden';
-        description.style.cursor = 'pointer';
         description.title = I18n.t('openmaps.expand');
         description.addEventListener('click', function() {
           this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
@@ -1561,7 +1553,7 @@ function init(e) {
     editContainer.appendChild(layerContainer);
     editContainer.style.display = 'none';
     container.appendChild(editContainer);
-    container.className = 'result';
+    container.className = 'result maps-menu-item';
     handleList.appendChild(container);
     sortable(handleList); // refresh HTML5Sortable
     sortable(layerContainer, {
@@ -1580,6 +1572,104 @@ function init(e) {
 
     this.updateLayers();
     this.updateVisibility();
+  }
+
+  // Add style
+  if (!styleElement) {
+    styleElement = document.createElement('style');
+    styleElement.textContent = `
+#sidepanel-openMaps h4 {
+  margin-bottom: 5px;
+}
+
+#sidePanel-openMaps select {
+  margin: 8px 0;
+}
+
+.open-maps-query-window {
+  display: none;
+  top: 40px;
+  left: 100px;
+  right: 60px;
+  max-height: calc(100% - 80px);
+  overflow-y: auto;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  padding: 5px;
+  color: #000;
+  cursor: auto;
+  z-index: 2000;
+  position: absolute;
+}
+
+.open-maps-query-window h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.open-maps-query-window table td {
+  user-select: text;
+}
+
+.open-maps-maximum-layers {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.open-maps-maximum-layers h3 {
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.open-maps-icon-button {
+  border: none;
+  background: none;
+  padding: 3px;
+  float: right;
+  cursor: pointer;
+  height: auto;
+  outline: none;
+}
+
+.open-maps-icon-button.fa-info-circle {
+  color: #337ab7;
+  cursor: help;
+  display: none;
+}
+
+#sidepanel-openMaps .title .fa-reorder {
+  color: #c2c2c2;
+  cursor: move;
+  font-size: 11px;
+  padding: 3px;
+}
+
+#sidepanel-openMaps .additional-info {
+  font-style: italic;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#sidepanel-openMaps .maps-menu-item > div {
+  border-left: 5px solid #eee;
+  margin-top: 2px;
+  padding-left: 4px;
+}
+
+#sidepanel-openMaps .title {
+  cursor: default';
+  border-top: 2px solid transparent;
+  border-width: 2px 0 0 0;
+}
+`;
+  }
+  if (!styleElement.parentNode) {
+    document.head.appendChild(styleElement);
   }
 }
 
