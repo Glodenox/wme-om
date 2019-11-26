@@ -1461,7 +1461,6 @@ function init(e) {
     container.appendChild(edit);
     visibility = createIconButton((self.hidden ? 'fa-eye-slash' : 'fa-eye'), I18n.t('openmaps.hideshow_layer'));
     visibility.addEventListener('click', function() {
-        console.log(self);
       self.hidden = self.layer.getVisibility();
       self.layer.setVisibility(!self.hidden);
       layerToggler.querySelector('input[type=checkbox]').checked = !self.hidden;
