@@ -9,6 +9,7 @@
 // @connect     www.mercator.vlaanderen.be
 // @connect     irisnet.be
 // @connect     nationaalgeoregister.nl
+// @connect     geoservices.rijkswaterstaat.nl
 // @connect     clearly-dashboard.com
 // @connect     rj.gov.br
 // @connect     ccff02.minfin.fgov.be
@@ -60,7 +61,7 @@ function init(e) {
     return;
   }
 
-  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0', '3.0.1', '3.0.2', '3.0.3'];
+  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0', '3.0.1', '3.0.2', '3.0.3', '3.0.4'];
   // set up language string
   var translations = {
     en: {
@@ -148,7 +149,7 @@ function init(e) {
         v3_0_1: '- Revert BAG map (NL)',
         v3_0_2: '- Reverted release 3.0 as there were too many breaking bugs',
         v3_0_3: '- Adjusted to new layer menu layout\n- Allow proper removal of broken map layers',
-        v3_0_4: '- Added West Virginia Leaves Off map (US)'
+        v3_0_4: '- Added West Virginia Leaves Off map (US)\n- Added Maximumsnelheden map (NL)\n- Fixes for recent WME update\n- Fixed map loading progress bar'
       }
     },
     nl: {
@@ -235,7 +236,7 @@ function init(e) {
         v3_0_1: '- Aanpassingen aan BAG-kaart ongedaan gemaakt (NL)',
         v3_0_2: '- Reverted release 3.0 as there were too many breaking bugs',
         v3_0_3: '- Ondersteunen nieuwe layer menu layout\n- Verwijderen van defecte kaartlagen mogelijk gemaakt',
-        v3_0_4: '- West Virginia Leaves Off kaart toegevoegd (US)'
+        v3_0_4: '- West Virginia Leaves Off kaart toegevoegd (US)\n- Maximumsnelhedenkaart toegevoegd (NL)\n- Correctie aanpassingen laatste WME update\n- Laadbalken voor inladen kaarttegels hersteld'
       }
     },
     fr: {
@@ -318,6 +319,7 @@ function init(e) {
     '3105': { id: 3105, title: 'Hectopunten Rijkswaterstaat', url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(333958.4723798207, 6575606.8651319705, 779236.435552915, 6982997.920389788), zoomRange: [2, 10], format: 'image/png', area: 'NL', abstract: 'Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.', attribution: 'PDOK', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'hectopunten', 'wegvakken' ], layers: { 'hectopunten': { queryable: true, title: 'NWB Wegen hectopunten' }, 'wegvakken': { queryable: true, title: 'NWB Wegen wegvakken' } } },
     '3106': { id: 3106, title: 'Luchtfoto (PDOK)', url: 'https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(-184488.85727, 6113595.5499, 1383893.54886, 7580462.49937), format: 'image/jpeg', area: 'NL', abstract: 'Een jaarlijks te vernieuwen dataset van luchtopnamen van Nederland met een resolutie van 25cm.', attribution: 'PDOK', queryable: false, default_layers: [ 'Actueel_ortho25' ], layers: { 'Actueel_ortho25': { queryable: false, title: 'Luchtfoto Actueel Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van de meest recente jaargang.' }, '2016_ortho25': { queryable: false, title: 'Luchtfoto 2016 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2016.' } } },
     '3107': { id: 3107, title: 'Kadastrale kaart', url: 'https://geodata.nationaalgeoregister.nl/kadastralekaartv3/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(385276.75763551984, 6575606.8651319705, 805841.7938525073, 7065365.041596532), format: 'image/png', area: 'NL', abstract: 'Overzicht van de ligging van de kadastrale percelen in Nederland. Fungeert als schakel tussen terrein en registratie, vervult voor externe gebruiker vaak een referentiefunctie, een ondergrond ten opzichte waarvan de gebruiker eigen informatie kan vastleggen en presenteren.', attribution: 'PDOK', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'kadastralekaart' ], layers: { 'kadastralekaart': { queryable: true, title: 'Kadastrale Kaart' }, 'annotatie': { queryable: true, title: 'Annotatie' }, 'bebouwing': { queryable: true, title: 'Bebouwing' }, 'kadastralegrens': { queryable: true, title: 'Kadastrale Grens' }, 'perceel': { queryable: true, title: 'Perceel' } } },
+    '3108': { id: 3108, title: 'Maximumsnelheden', url: 'https://geoservices.rijkswaterstaat.nl/apps/geoserver/maximum_snelheden_wegen/ows', crs: 'EPSG:3857', bbox: new OL.Bounds(385276.75763551984, 6575606.8651319705, 805841.7938525073, 7065365.041596532), format: 'image/png', area: 'NL', abstract: 'Maximumsnelhedenkaart van alle wegen in Nederland, voorzien door Rijkswaterstaat', attribution: 'Rijkswaterstaat', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'maximum_snelheden_wegen:max_snelheden_per_wegvak' ], layers: { 'maximum_snelheden_wegen:max_snelheden_per_wegvak': { title: 'Maximumsnelheden per wegvak', queryable: true } } },
     '3199': { id: 3199, title: 'N23 Westfrisiaweg', url: 'https://clearly-dashboard.com/geoserver/n23_ontwerp/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(539572.6982788238, 6915895.970537368, 583797.8358067342, 6926222.872828067), format: 'image/png', area: 'NL', abstract: 'In opdracht van de provincie Noord-Holland bouwt bouwbedrijf Heijmans de N23 Westfrisiaweg, waarmee gezorgd wordt voor een betere verbinding tussen Alkmaar en Enkhuizen.', attribution: 'Future Insight / Heijmans', queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['bo_amoveren_bebouwing_v', 'bo_kant_verharding_v', 'bo_kunstwerk_v', 'bo_markering_l', 'bo_markeringen_v', 'bo_middengeleider_v', 'bo_natuurvriendelijke_oever_v', 'bo_stuw_v', 'bo_taluds_l', 'bo_water_v', 'duiker', 'geluidsscherm', 'hoofdwatergang'], layers: { 'bo_amoveren_bebouwing_v': { queryable: true, title: 'bebouwing te amoveren' }, 'bo_kant_verharding_v': { queryable: true, title: 'asfalt vlakken' }, 'bo_kunstwerk_v': { queryable: true, title: 'kunstwerk' }, 'bo_markering_l': { queryable: true, title: 'wegmarkering - lijnen' }, 'bo_markeringen_v': { queryable: true, title: 'wegmarkeringen - vlakken' }, 'bo_middengeleider_v': { queryable: true, title: 'middengeleider' }, 'bo_natuurvriendelijke_oever_v': { queryable: true, title: 'natuurvriendelijke oever' }, 'bo_stuw_v': { queryable: true, title: 'stuwen' }, 'bo_taluds_l': { queryable: true, title: 'taluds' }, 'bo_water_v': { queryable: true, title: 'water' }, 'duiker': { queryable: true, title: 'duiker' }, 'geluidsscherm': { queryable: true, title: 'geluidsscherm' }, 'hoofdwatergang': { queryable: true, title: 'hoofdwatergang' } } },
     '3201': { id: 3201, title: 'GRB Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/png', area: 'BE', abstract: 'Via de WMS GRB kan je het Grootschalig Referentiebestand (GRB) opvragen en visualiseren als een kaart. De WMS GRB omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Basiskaart - GRB: volledige kaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: false, default_layers: [ 'GRB_BSK' ], layers: { 'GRB_BSK': { queryable: false, title: 'GRB-basiskaart', abstract: 'Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart' } } },
     '3202': { id: 3202, title: 'Orthomozaïek Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(280525.11676, 6557859.253174342, 661237.77522, 6712007.501374752), format: 'image/jpeg', area: 'BE', abstract: 'WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Opnamedatum meest recente luchtfoto in achtergrondkaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Ortho', 'Vliegdagcontour' ], layers: { 'Ortho': { queryable: false, title: 'Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.' }, 'Vliegdagcontour': { queryable: true, title: 'Vliegdagcontour Orthofotomozaïek', abstract: 'Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.' } } },
@@ -480,7 +482,7 @@ function init(e) {
     }
     if (e.detail.elementIndex >= 0 && e.detail.elementIndex < handles.length) { // sanity check
       var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayerByUniqueName('satellite_imagery'));
-      W.map.setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + e.detail.elementIndex + 1);
+      W.map.getOLMap().setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + e.detail.elementIndex + 1);
     }
     saveMapState();
   });
@@ -860,6 +862,7 @@ function init(e) {
     var propertyOrder = {
       '3101': [ 'openbare_ruimte', 'huisnummer', 'huisletter', 'woonplaats' ],
       '3105': [ 'stt_naam', 'gme_naam' ],
+      '3108': [ 'HDE_SHT' ],
       '3202': [ 'OpnDatum' ],
       '3206': [ 'OpnDatum' ],
       '3207': [ 'linksStraatnaam', 'rechtsStraatnaam', 'lblMorfologie', 'lblBeheerder', 'lblOrganisatie' ],
@@ -1359,7 +1362,7 @@ function init(e) {
         });
         W.map.addLayer(this.layer);
         var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayersBy('uniqueName', 'satellite_imagery')[0]);
-        W.map.setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
+        W.map.getOLMap().setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
         this.layer.events.register('visibilitychanged', null, function() {
           self.updateVisibility();
         });
@@ -1672,7 +1675,7 @@ function init(e) {
 }
 
 #sidepanel-openMaps .title {
-  cursor: default';
+  cursor: default;
   border-top: 2px solid transparent;
   border-width: 2px 0 0 0;
 }
