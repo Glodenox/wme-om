@@ -1626,7 +1626,7 @@ function init(e) {
   padding: 5px;
   color: #000;
   cursor: auto;
-  z-index: 2000;
+  z-index: 10000;
   position: absolute;
 }
 
