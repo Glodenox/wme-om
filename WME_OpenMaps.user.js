@@ -4,6 +4,7 @@
 // @namespace   http://www.tomputtemans.com/
 // @description Add additional maps that are released as open data to the Waze Map Editor
 // @include     /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor.*$/
+// @run-at      document-start
 // @connect     wallonie.be
 // @connect     informatievlaanderen.be
 // @connect     opendata.apps.mow.vlaanderen.be
@@ -346,6 +347,16 @@ function init(e) {
       }
     });
   }
+  // Add missing map layer types
+  OL.Layer.TMS=OL.Class(OL.Layer.Grid,{serviceVersion:"1.0.0",layername:null,type:null,isBaseLayer:!0,tileOrigin:null,serverResolutions:null,zoomOffset:0,initialize:function(a,b,c){var d=[];d.push(a,b,{},c);OpenLayers.Layer.Grid.prototype.initialize.apply(this,d)},clone:function(a){null==a&&(a=new OpenLayers.Layer.TMS(this.name,this.url,this.getOptions()));return a=OpenLayers.Layer.Grid.prototype.clone.apply(this,[a])},getURL:function(a){var a=this.adjustBounds(a),b=this.getServerResolution(),c=Math.round((a.left-this.tileOrigin.lon)/(b*this.tileSize.w)),a=Math.round((a.bottom-this.tileOrigin.lat)/(b*this.tileSize.h)),c=this.serviceVersion+"/"+this.layername+"/"+this.getServerZoom()+"/"+c+"/"+a+"."+this.type,a=this.url;OpenLayers.Util.isArray(a)&&(a=this.selectUrl(c,a));return a+c},setMap:function(a){OpenLayers.Layer.Grid.prototype.setMap.apply(this,arguments);this.tileOrigin||(this.tileOrigin=new OpenLayers.LonLat(this.map.maxExtent.left,this.map.maxExtent.bottom))},CLASS_NAME:"OpenLayers.Layer.TMS"});
+  OL.Layer.WMTS=OL.Class(OL.Layer.Grid,{isBaseLayer:!0,version:"1.0.0",requestEncoding:"KVP",url:null,layer:null,matrixSet:null,style:null,format:"image/jpeg",tileOrigin:null,tileFullExtent:null,formatSuffix:null,matrixIds:null,dimensions:null,params:null,zoomOffset:0,serverResolutions:null,formatSuffixMap:{"image/png":"png","image/png8":"png","image/png24":"png","image/png32":"png",png:"png","image/jpeg":"jpg","image/jpg":"jpg",jpeg:"jpg",jpg:"jpg"},matrix:null,initialize:function(a){var b={url:!0,layer:!0,style:!0,matrixSet:!0},c;for(c in b)if(!(c in a))throw Error("Missing property '"+c+"' in layer configuration.");a.params=OL.Util.upperCaseObject(a.params);OL.Layer.Grid.prototype.initialize.apply(this,[a.name,a.url,a.params,a]);this.formatSuffix||(this.formatSuffix=this.formatSuffixMap[this.format]||this.format.split("/").pop());if(this.matrixIds&&(a=this.matrixIds.length)&&"string"===typeof this.matrixIds[0])for(b=this.matrixIds,this.matrixIds=Array(a),c=0;c<a;++c)this.matrixIds[c]={identifier:b[c]}},setMap:function(){OL.Layer.Grid.prototype.setMap.apply(this,arguments)},updateMatrixProperties:function(){if(this.matrix=this.getMatrix())this.matrix.topLeftCorner&&(this.tileOrigin=this.matrix.topLeftCorner),this.matrix.tileWidth&&this.matrix.tileHeight&&(this.tileSize=new OL.Size(this.matrix.tileWidth,this.matrix.tileHeight)),this.tileOrigin||(this.tileOrigin=new OL.LonLat(this.maxExtent.left,this.maxExtent.top)),this.tileFullExtent||(this.tileFullExtent=this.maxExtent)},moveTo:function(a,b,c){!b&&this.matrix||this.updateMatrixProperties();return OL.Layer.Grid.prototype.moveTo.apply(this,arguments)},clone:function(a){null==a&&(a=new OL.Layer.WMTS(this.options));return a=OL.Layer.Grid.prototype.clone.apply(this,[a])},getIdentifier:function(){return this.getServerZoom()},getMatrix:function(){var a;if(this.matrixIds&&0!==this.matrixIds.length)if("scaleDenominator"in this.matrixIds[0])for(var b=OL.METERS_PER_INCH*OL.INCHES_PER_UNIT[this.units]*this.getServerResolution()/2.8E-4,c=Number.POSITIVE_INFINITY,d,e=0,f=this.matrixIds.length;e<f;++e)d=Math.abs(1-this.matrixIds[e].scaleDenominator/b),d<c&&(c=d,a=this.matrixIds[e]);else a=this.matrixIds[this.getIdentifier()];else a={identifier:this.getIdentifier()};return a},getTileInfo:function(a){var b=this.getServerResolution(),c=(a.lon-this.tileOrigin.lon)/(b*this.tileSize.w);a=(this.tileOrigin.lat-a.lat)/(b*this.tileSize.h);var b=Math.floor(c),d=Math.floor(a);return{col:b,row:d,i:Math.floor((c-b)*this.tileSize.w),j:Math.floor((a-d)*this.tileSize.h)}},getURL:function(a){a=this.adjustBounds(a);var b="";if(!this.tileFullExtent||this.tileFullExtent.intersectsBounds(a)){a=a.getCenterLonLat();var c=this.getTileInfo(a);a=this.dimensions;var d,b=OL.Util.isArray(this.url)?this.selectUrl([this.version,this.style,this.matrixSet,this.matrix.identifier,c.row,c.col].join(),this.url):this.url;if("REST"===this.requestEncoding.toUpperCase())if(d=this.params,-1!==b.indexOf("{")){b=b.replace(/\{/g,"${");c={style:this.style,Style:this.style,TileMatrixSet:this.matrixSet,TileMatrix:this.matrix.identifier,TileRow:c.row,TileCol:c.col};if(a){var e,f;for(f=a.length-1;0<=f;--f)e=a[f],c[e]=d[e.toUpperCase()]}b=OL.String.format(b,c)}else{e=this.version+"/"+this.layer+"/"+this.style+"/";if(a)for(f=0;f<a.length;f++)d[a[f]]&&(e=e+d[a[f]]+"/");e=e+this.matrixSet+"/"+this.matrix.identifier+"/"+c.row+"/"+c.col+"."+this.formatSuffix;b.match(/\/$/)||(b+="/");b+=e}else"KVP"===this.requestEncoding.toUpperCase()&&(d={SERVICE:"WMTS",REQUEST:"GetTile",VERSION:this.version,LAYER:this.layer,STYLE:this.style,TILEMATRIXSET:this.matrixSet,TILEMATRIX:this.matrix.identifier,TILEROW:c.row,TILECOL:c.col,FORMAT:this.format},b=OL.Layer.Grid.prototype.getFullRequestString.apply(this,[d]))}return b},mergeNewParams:function(a){if("KVP"===this.requestEncoding.toUpperCase())return OL.Layer.Grid.prototype.mergeNewParams.apply(this,[OL.Util.upperCaseObject(a)])},CLASS_NAME:"OpenLayers.Layer.WMTS"});
+
+  // Add coordinate systems, using proj4js
+  Proj4js.defs["EPSG:3857"] = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs";
+  Proj4js.defs["EPSG:31370"] = "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +towgs84=-106.869,52.2978,-103.724,0.3366,-0.457,1.8422,-1.2747 +units=m +no_defs";
+  Proj4js.defs["EPSG:28992"] = "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +no_defs";
+  // WMS services generally support EPSG:3857, but not its alias EPSG:900913 - which is the default projection for the satellite imagery layer
+  W.map.baseLayer.projection = new OL.Projection('EPSG:3857');
 
   // List of available maps
   var mapList = [
@@ -1448,28 +1459,30 @@ function init(e) {
     var totalTiles = 0;
     var layerRedrawNeeded = false; // flag to set when a layer was made visibile/invisible
     // Deal with layers within map
-    var layerKeys = Object.keys(map.layers);
-    if (options && options.layers) {
-      options.layers.forEach(function(oldLayer) { // Necessary if the map no longer contains certain layers that were still stored
-        if (layerKeys.indexOf(oldLayer.name) != -1) {
-          self.mapLayers.push(oldLayer);
-          // Remove layer from map layers
-          layerKeys.splice(layerKeys.indexOf(oldLayer.name), 1);
-        }
-      });
-      layerKeys.forEach(function(layerKey) { // Add any new layers at the end of the checkboxes
-        self.mapLayers.push({
-          name: layerKey,
-          visible: false
+    if (map.layers) {
+      var layerKeys = Object.keys(map.layers);
+      if (options && options.layers) {
+        options.layers.forEach(function(oldLayer) { // Necessary if the map no longer contains certain layers that were still stored
+          if (layerKeys.indexOf(oldLayer.name) != -1) {
+            self.mapLayers.push(oldLayer);
+            // Remove layer from map layers
+            layerKeys.splice(layerKeys.indexOf(oldLayer.name), 1);
+          }
         });
-      });
-    } else { // Nothing found, apply its default layer(s)
-      layerKeys.forEach(function(layerKey) {
-        self.mapLayers.push({
-          name: layerKey,
-          visible: (map.default_layers.indexOf(layerKey) != -1)
+        layerKeys.forEach(function(layerKey) { // Add any new layers at the end of the checkboxes
+          self.mapLayers.push({
+            name: layerKey,
+            visible: false
+          });
         });
-      });
+      } else { // Nothing found, apply its default layer(s)
+        layerKeys.forEach(function(layerKey) {
+          self.mapLayers.push({
+            name: layerKey,
+            visible: (map.default_layers.indexOf(layerKey) != -1)
+          });
+        });
+      }
     }
     var layerToggler = createLayerToggler(omGroup, !this.hidden, map.title, function(visible) {
       if (self.layer) {
@@ -1521,16 +1534,36 @@ function init(e) {
       }
       if (visibleLayers && visibleLayers.length == 0 && this.layer && map.type == 'WMS') { // Hide map as it has no more layers
         this.layer.setVisibility(false);
-      } else if (visibleLayers.length > 0 && !this.layer) { // Add map that received layers
-        var params = {
-          layers: visibleLayers.join(),
-          transparent: self.transparent,
-          format: map.format
-        };
-        var options = {
-          transitionEffect: 'resize',
-          attribution: map.attribution,
-          isBaseLayer: false
+      } else if (visibleLayers.length > 0 && !this.layer || map.type == 'WMTS' && !this.layer) { // Add map that received layers
+        if (map.type == 'WMS') {
+          this.layer = new OL.Layer.WMS(map.title, map.url, {
+            layers: visibleLayers.join(),
+            transparent: self.transparent,
+            format: map.format
+          }, {
+            transitionEffect: 'resize',
+            attribution: map.attribution,
+            isBaseLayer: false,
+            projection: new OL.Projection(map.crs),
+            tileSize: (map.tile_size ? new OL.Size(map.tile_size, map.tile_size) : new OL.Size(512, 512))
+          });
+        } else if (map.type == 'WMTS') {
+          this.layer = new OL.Layer.WMTS({
+            name: map.title,
+            url: map.url,
+            layer: map.layer,
+            style: map.style,
+            matrixSet: map.matrixSetId,
+            tileOrigin: map.tileOrigin || undefined,
+            //tileFullExtent: map.tileFullExtent || undefined,
+            matrixIds: map.matrixIds || undefined,
+            serverResolutions: map.serverResolutions || undefined,
+            format: map.format,
+            zoomOffset: map.zoomOffset || 0,
+            projection: new OL.Projection(map.crs),
+            transitionEffect: 'resize',
+            attribution: map.attribution,
+            isBaseLayer: false
         };
         options.projection = new OpenLayers.Projection(map.crs);
         options.tileSize = (map.tile_size ? new OpenLayers.Size(map.tile_size, map.tile_size) : new OpenLayers.Size(512, 512));
@@ -1592,8 +1625,8 @@ function init(e) {
     remove = createIconButton('fa-times', I18n.t('openmaps.remove_layer'));
     remove.addEventListener('click', function(e) {
       if (self.layer != null) {
-        W.map.removeLayer(self.layer);
-      }
+		  W.map.removeLayer(self.layer);
+	  }
       Tooltips.remove(remove);
       layerToggler.parentNode.removeChild(layerToggler);
       handles.splice(handles.indexOf(self), 1);
@@ -1734,15 +1767,15 @@ function init(e) {
       var mapLayersTitle = document.createElement('p');
       mapLayersTitle.textContent = I18n.t('openmaps.map_layers_title') + ':';
       editContainer.appendChild(mapLayersTitle);
-      layerContainer.className = 'result-list';
-      self.mapLayers.forEach(function(layerItem) {
-        var mapLayer = map.layers[layerItem.name];
-        var item = document.createElement('li');
-        item.className = 'result';
+    layerContainer.className = 'result-list';
+    self.mapLayers.forEach(function(layerItem) {
+      var mapLayer = map.layers[layerItem.name];
+      var item = document.createElement('li');
+      item.className = 'result';
         var layerHandleIcon = document.createElement('span');
         var layerTitle = document.createElement('p');
         var layerDescription = document.createElement('p');
-        var visibility = document.createElement('span');
+      var visibility = document.createElement('span');
         visibility = createIconButton((layerItem.visible ? 'fa-eye' : 'fa-eye-slash'), I18n.t('openmaps.hideshow_layer'));
         visibility.addEventListener('mouseenter', function() {
           visibility.classList.toggle('fa-eye', !layerItem.visible);
@@ -1756,53 +1789,53 @@ function init(e) {
           layerItem.visible = !layerItem.visible;
           layerTitle.style.color = (layerItem.visible ? '' : '#999');
           layerDescription.style.color = (layerItem.visible ? '' : '#999');
-          layerRedrawNeeded = true;
-          self.updateLayers.call(self);
+        layerRedrawNeeded = true;
+        self.updateLayers.call(self);
+      });
+      item.appendChild(visibility);
+      if (mapLayer.queryable) {
+        var layerQuery = document.createElement('span');
+        layerQuery = createIconButton('fa-hand-pointer-o');
+        layerQuery.addEventListener('click', function() {
+          this.style.color = 'blue';
+          getFeatureInfoControl.params = {
+            url: map.url,
+            id: map.id,
+            layers: layerItem.name,
+            callback: function() {
+              layerQuery.style.color = '';
+            }
+          };
+          getFeatureInfoControl.activate();
         });
-        item.appendChild(visibility);
-        if (mapLayer.queryable) {
-          var layerQuery = document.createElement('span');
-          layerQuery = createIconButton('fa-hand-pointer-o');
-          layerQuery.addEventListener('click', function() {
-            this.style.color = 'blue';
-            getFeatureInfoControl.params = {
-              url: map.url,
-              id: map.id,
-              layers: layerItem.name,
-              callback: function() {
-                layerQuery.style.color = '';
-              }
-            };
-            getFeatureInfoControl.activate();
-          });
-          item.appendChild(layerQuery);
-        }
+        item.appendChild(layerQuery);
+      }
         layerHandleIcon.className = 'fa fa-reorder';
         item.appendChild(layerHandleIcon);
-        layerTitle.className = 'title';
-        layerTitle.style.cursor = 'default';
-        layerTitle.style.color = (layerItem.visible ? '' : '#999');
+      layerTitle.className = 'title';
+      layerTitle.style.cursor = 'default';
+      layerTitle.style.color = (layerItem.visible ? '' : '#999');
         layerTitle.textContent = mapLayer.title;
         layerTitle.addEventListener('click', (event) => {
-          visibility.dispatchEvent(new MouseEvent('click'));
+        visibility.dispatchEvent(new MouseEvent('click'));
           visibility.classList.toggle('fa-eye');
           visibility.classList.toggle('fa-eye-slash');
-        });
-        item.appendChild(layerTitle);
-        if (mapLayer.abstract) {
+      });
+      item.appendChild(layerTitle);
+      if (mapLayer.abstract) {
           layerDescription.className = 'additional-info';
           layerDescription.title = I18n.t('openmaps.expand');
           layerDescription.style.color = (layerItem.visible ? '' : '#999');
           layerDescription.addEventListener('click', function() {
-            this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
+          this.title = (this.style.whiteSpace == 'nowrap' ? I18n.t('openmaps.collapse') : I18n.t('openmaps.expand'));
             this.style.whiteSpace = (this.style.whiteSpace == 'nowrap' || this.style.whiteSpace == '' ? 'normal' : 'nowrap');
-          });
+        });
           layerDescription.textContent = mapLayer.abstract;
           item.appendChild(layerDescription);
-        }
-        layerContainer.appendChild(item);
-      });
-      editContainer.appendChild(layerContainer);
+      }
+      layerContainer.appendChild(item);
+    });
+    editContainer.appendChild(layerContainer);
     }
     editContainer.style.display = 'none';
     container.appendChild(editContainer);
@@ -1972,4 +2005,10 @@ function log(message) {
   }
 }
 
+if (typeof Proj4js === 'undefined') {
+  var proj4jsScript = document.createElement('script');
+  proj4jsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.min.js';
+  proj4jsScript.type = 'text/javascript';
+  document.head.appendChild(proj4jsScript);
+}
 init();
