@@ -1073,8 +1073,6 @@ function init(e) {
       var groupLabel = document.createElement('label');
       groupLabel.htmlFor = groupSwitch.id;
       groupLabel.className = 'label-text';
-      groupLabel.style.textOverflow = 'ellipsis';
-      groupLabel.style.overflowX = 'hidden';
       groupLabel.textContent = name;
       groupToggler.appendChild(groupLabel);
       group.appendChild(groupToggler);
