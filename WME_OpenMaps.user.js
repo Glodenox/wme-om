@@ -1211,6 +1211,38 @@ function init(e) {
     });
   }
 
+  // Handle tileloaded event
+  function adjustTile(event) {
+    if (event.aborted || !event.tile || !event.tile.imgDiv) {
+      return;
+    }
+    var newTile = document.createElement('canvas');
+    newTile.width = event.tile.imgDiv.width;
+    newTile.height = event.tile.imgDiv.height;
+    var context = newTile.getContext('2d');
+    context.drawImage(event.tile.imgDiv, 0, 0);
+    var imageData = context.getImageData(0, 0, newTile.width, newTile.height);
+    // change all black pixels to white
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      if (imageData.data[i + 0] == 0 && imageData.data[i + 1] == 0 && imageData.data[i + 2] == 0) {
+        imageData.data[i + 0] = 255;
+        imageData.data[i + 1] = 255;
+        imageData.data[i + 2] = 255;
+      }
+    }
+    /* Remove transparency, calculate colour as if it were on a white background
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      if (imageData.data[i + 3] > 0) {
+        imageData.data[i + 0] = Math.floor(255 - imageData.data[i + 3] + (imageData.data[i + 3] / 255) * imageData.data[i + 0] + 0.5);
+        imageData.data[i + 1] = Math.floor(255 - imageData.data[i + 3] + (imageData.data[i + 3] / 255) * imageData.data[i + 1] + 0.5);
+        imageData.data[i + 2] = Math.floor(255 - imageData.data[i + 3] + (imageData.data[i + 3] / 255) * imageData.data[i + 2] + 0.5);
+        imageData.data[i + 3] = 255;
+      }
+    }*/
+    context.putImageData(imageData, 0, 0);
+    event.tile.imgDiv.src = newTile.toDataURL('image/png');
+  }
+
   function saveMapState() {
     var settings = Settings.get();
     settings.state.active = [];
@@ -1331,6 +1363,7 @@ function init(e) {
         };
         options.projection = new OL.Projection(map.crs);
         options.tileSize = (map.tile_size ? new OL.Size(map.tile_size, map.tile_size) : new OL.Size(512, 512));
+        options.tileOptions = {crossOriginKeyword: 'anonymous'};
         this.layer = new OL.Layer.WMS(map.title, map.url, params, options);
         this.layer.setOpacity(this.opacity / 100);
         this.layer.setVisibility(!this.hidden && !this.outOfArea);
@@ -1366,6 +1399,7 @@ function init(e) {
         this.layer.events.register('tileloaded', null, function(evt) {
           loadedTiles++;
           updateTileLoader();
+          adjustTile(evt);
         });
         W.map.addLayer(this.layer);
         var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayersBy('uniqueName', 'satellite_imagery')[0]);
