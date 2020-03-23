@@ -1018,23 +1018,18 @@ function init(e) {
     var normalizedName = name.toLowerCase().replace(/\s/g, '');
     if (parentGroup != null) {
       var groupItem = document.createElement('li');
-      var checkboxContainer = document.createElement('div');
-      checkboxContainer.className = 'wz-checkbox';
-      var itemSwitcher = document.createElement('input');
-      itemSwitcher.id = 'layer-switcher-' + normalizedName;
-      itemSwitcher.className = 'toggle';
-      itemSwitcher.type = 'checkbox';
-      itemSwitcher.checked = checked;
-      itemSwitcher.addEventListener('click', function() { toggleCallback(itemSwitcher.checked); });
-      checkboxContainer.appendChild(itemSwitcher);
-      var itemSwitcherLabel = document.createElement('label');
-      itemSwitcherLabel.htmlFor = itemSwitcher.id;
-      itemSwitcherLabel.textContent = name;
-      checkboxContainer.appendChild(itemSwitcherLabel);
-      groupItem.appendChild(checkboxContainer);
-      parentGroup.querySelector('.toggleSwitch').addEventListener('click', function(e) {
-        itemSwitcher.disabled = !e.target.checked;
-        toggleCallback && toggleCallback(itemSwitcher.checked && e.target.checked);
+      var groupSwitcher = document.createElement('wz-checkbox');
+      groupSwitcher.className = 'hydrated';
+      groupSwitcher.id = 'layer-switcher-' + normalizedName;
+      if (checked) {
+        groupSwitcher.setAttribute('checked', '');
+      }
+      groupSwitcher.textContent = name;
+      groupSwitcher.addEventListener('click', function() { toggleCallback(!groupSwitcher.checked); });
+      groupItem.appendChild(groupSwitcher);
+      parentGroup.querySelector('wz-toggle-switch').addEventListener('click', function(e) {
+        groupSwitcher.disabled = !e.target.checked;
+        toggleCallback && toggleCallback(groupSwitcher.checked && e.target.checked);
       });
       parentGroup.querySelector('ul').appendChild(groupItem);
       return groupItem;
@@ -1055,26 +1050,18 @@ function init(e) {
         groupChildren.classList.toggle('collapse-layer-switcher-group');
       });
       groupToggler.appendChild(groupCaret);
-      var groupSwitchContainer = document.createElement('span');
-      groupSwitchContainer.className = 'wz-toggle-switch';
-      var groupSwitchLabel = document.createElement('label');
-      groupSwitchLabel.className = 'wz-switch';
-      var groupSwitch = document.createElement('input');
+      var groupSwitch = document.createElement('wz-toggle-switch');
+      groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' hydrated';
       groupSwitch.id = 'layer-switcher-group_' + normalizedName;
-      groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' toggleSwitch';
-      groupSwitch.type = 'checkbox';
-      groupSwitch.checked = checked;
-      groupSwitchLabel.appendChild(groupSwitch);
-      var groupWZSlider = document.createElement('span');
-      groupWZSlider.className = 'wz-slider';
-      groupSwitchLabel.appendChild(groupWZSlider);
-      groupSwitchContainer.appendChild(groupSwitchLabel);
-      groupToggler.appendChild(groupSwitchContainer);
-      var groupLabel = document.createElement('label');
-      groupLabel.htmlFor = groupSwitch.id;
-      groupLabel.className = 'label-text';
-      groupLabel.textContent = name;
-      groupToggler.appendChild(groupLabel);
+      if (checked) {
+        groupSwitch.setAttribute('checked', '');
+      }
+      groupToggler.appendChild(groupSwitch);
+      var groupSwitchLabel = document.createElement('label');
+      groupSwitchLabel.className = 'label-text';
+      groupSwitchLabel.htmlFor = groupSwitch.id;
+      groupSwitchLabel.textContent = name;
+      groupToggler.appendChild(groupSwitchLabel);
       group.appendChild(groupToggler);
       groupChildren.className = 'collapsible-GROUP_' + normalizedName;
       group.appendChild(groupChildren);
@@ -1409,7 +1396,7 @@ function init(e) {
     visibility.addEventListener('click', function() {
       self.hidden = self.layer.getVisibility();
       self.layer.setVisibility(!self.hidden);
-      layerToggler.querySelector('input[type=checkbox]').checked = !self.hidden;
+      layerToggler.querySelector('wz-checkbox').checked = !self.hidden;
       saveMapState();
     });
     visibility.addEventListener('mouseenter', function() {
