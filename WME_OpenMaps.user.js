@@ -1226,52 +1226,68 @@ function init(e) {
   var tileManipulations = {
     // Replace all fully black pixels with white pixels
     'black2white': bitmap => {
+      var dirty = false;
       for (let i = 0; i < bitmap.data.length; i += 4) {
         if (bitmap.data[i + 0] == 0 && bitmap.data[i + 1] == 0 && bitmap.data[i + 2] == 0) {
           bitmap.data[i + 0] = bitmap.data[i + 1] = bitmap.data[i + 2] = 255;
+          dirty = true;
         }
       }
+      return dirty;
     },
     // For the Oman map: change the beige colour to transparent
     'omanTransparent': bitmap => {
+      var dirty = false;
       for (let i = 0; i < bitmap.data.length; i += 4) {
         if (bitmap.data[i + 0] == 235 && bitmap.data[i + 1] == 232 && bitmap.data[i + 2] == 222) {
           bitmap.data[i + 3] = 0;
+          dirty = true;
         }
       }
+      return dirty;
     },
     // For the Rio de Janeiro map: change the beige colour to transparent
     'rioTransparent': bitmap => {
+      var dirty = false;
       for (let i = 0; i < bitmap.data.length; i += 4) {
         if (bitmap.data[i + 0] == 235 && bitmap.data[i + 1] == 255 && bitmap.data[i + 2] == 242) {
           bitmap.data[i + 3] = 0;
+          dirty = true;
         }
       }
+      return dirty;
     },
     // Remove partial transparency, calculate colour as if it were on a white background
     'removePartialTransparency': bitmap => {
+      var dirty = false;
       for (let i = 0; i < bitmap.data.length; i += 4) {
         if (bitmap.data[i + 3] > 0) {
           bitmap.data[i + 0] = Math.floor(255 - bitmap.data[i + 3] + (bitmap.data[i + 3] / 255) * bitmap.data[i + 0] + 0.5);
           bitmap.data[i + 1] = Math.floor(255 - bitmap.data[i + 3] + (bitmap.data[i + 3] / 255) * bitmap.data[i + 1] + 0.5);
           bitmap.data[i + 2] = Math.floor(255 - bitmap.data[i + 3] + (bitmap.data[i + 3] / 255) * bitmap.data[i + 2] + 0.5);
           bitmap.data[i + 3] = 255;
+          dirty = true;
         }
       }
+      return dirty;
     },
     // Remove partial transparency for black pixels, calculate colour as if it were on a white background
     'removePartialBlackTransparency': bitmap => {
+      var dirty = false;
       for (let i = 0; i < bitmap.data.length; i += 4) {
         if (bitmap.data[i] < 5 && bitmap.data[i + 1] < 5 && bitmap.data[i + 2] < 5 && bitmap.data[i + 3] > 0) {
           bitmap.data[i + 0] = 255 - bitmap.data[i + 3];
           bitmap.data[i + 1] = 255 - bitmap.data[i + 3];
           bitmap.data[i + 2] = 255 - bitmap.data[i + 3];
           bitmap.data[i + 3] = 255;
+          dirty = true;
         }
       }
+      return dirty;
     },
     // Add white pixels around any grayscale pixels
     'traceGrayscalePixels': bitmap => {
+      var dirty = false;
       var surroundingPixels = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
       var pixelsSinceTrace = 2; // How many pixels ago did we trace around a pixel?
       for (let i = 0; i < bitmap.data.length; i += 4) {
@@ -1287,14 +1303,17 @@ function init(e) {
             if (x >= 0 && x < bitmap.width && y >= 0 && y < bitmap.height && bitmap.data[offset + 3] == 0) {
               bitmap.data[offset + 0] = bitmap.data[offset + 1] = bitmap.data[offset + 2] = 255;
               bitmap.data[offset + 3] = 200;
+              dirty = true;
             }
           });
           pixelsSinceTrace = 0;
         }
       }
+      return dirty;
     },
     // Turn white tiles transparent
     'whiteTiles2transparent': bitmap => {
+      var dirty = false;
       var pixelArray = new Uint32Array(bitmap.data.buffer);
       var white = 0xFFFFFFFF;
       var transparent = 0x00FFFFFF;
@@ -1314,9 +1333,11 @@ function init(e) {
         pixelArray.forEach((pixel, idx) => {
           if (pixel == white) {
             pixelArray[idx] = transparent;
+            dirty = true;
           }
         });
       }
+      return dirty;
     }
   }
 
@@ -1331,13 +1352,16 @@ function init(e) {
     var context = newTile.getContext('2d');
     context.drawImage(event.tile.imgDiv, 0, 0);
     var imageData = context.getImageData(0, 0, newTile.width, newTile.height);
+    var replaceNeeded = false;
     manipulations.forEach(manipulation => {
       if (tileManipulations.hasOwnProperty(manipulation)) {
-        tileManipulations[manipulation](imageData);
+        replaceNeeded = replaceNeeded || tileManipulations[manipulation](imageData);
       }
     });
-    context.putImageData(imageData, 0, 0);
-    event.tile.imgDiv.src = newTile.toDataURL('image/png');
+    if (replaceNeeded) {
+      context.putImageData(imageData, 0, 0);
+      event.tile.imgDiv.src = newTile.toDataURL('image/png');
+    }
   }
 
   function saveMapState() {
