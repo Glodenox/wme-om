@@ -9,16 +9,17 @@
 // @connect     opendata.apps.mow.vlaanderen.be
 // @connect     www.mercator.vlaanderen.be
 // @connect     irisnet.be
+// @connect     data-mobility.brussels
+// @connect     ccff02.minfin.fgov.be
 // @connect     nationaalgeoregister.nl
 // @connect     geoservices.rijkswaterstaat.nl
 // @connect     rj.gov.br
-// @connect     ccff02.minfin.fgov.be
 // @connect     wvgis.wvu.edu
 // @connect     nsdig2gapps.ncsi.gov.om
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.1.2
+// @version     3.1.3
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -62,7 +63,7 @@ function init(e) {
     return;
   }
 
-  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0', '3.0.1', '3.0.2', '3.0.3', '3.0.4', '3.0.5', '3.0.6', '3.0.7', '3.1.0', '3.1.1', '3.1.2'];
+  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0', '3.0.1', '3.0.2', '3.0.3', '3.0.4', '3.0.5', '3.0.6', '3.0.7', '3.1.0', '3.1.1', '3.1.2', '3.1.3'];
   // set up language string
   var translations = {
     en: {
@@ -160,7 +161,8 @@ function init(e) {
         v3_0_7: '- Several UI fixes\n- Updated West Virginia Leaves Off map (US)',
         v3_1_0: '- Added Oman map\n- Added various graphical improvements\n- Improved layout\n- Updated/fixed various other maps',
         v3_1_1: '- Hide blank map tiles\n- Various minor layout changes and bugfixes',
-        v3_1_2: '- Small performance improvements'
+        v3_1_2: '- Small performance improvements',
+        v3_1_3: '- Added a couple of maps for Brussels (BE)'
       }
     },
     nl: {
@@ -257,7 +259,8 @@ function init(e) {
         v3_0_7: '- Meerdere UI verbeteringen\n- West Virginia Leaves Off kaart bijgewerkt (US)',
         v3_1_0: '- Kaart voor Oman toegevoegd\n- Meedere verbeteringen in kaartweergave\n- Verbeterde layout\n- Andere kaarten aangepast/hersteld',
         v3_1_1: '- Verberg lege kaarttegels\n- Meerdere kleine lay-out en bug fixes',
-        v3_1_2: '- Kleine verbeteringen in performantie toegepast'
+        v3_1_2: '- Kleine verbeteringen in performantie toegepast',
+        v3_1_3: '- Enkele kaarten toegevoegd voor Brussel (BE)'
       }
     },
     fr: {
@@ -367,7 +370,10 @@ function init(e) {
     { id: 3220, title: 'Verkeersborden Vlaanderen', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows', crs: 'EPSG:3857', bbox: new OL.Bounds(279108, 6561687, 663162, 6713720), format: 'image/png', area: 'BE', abstract: 'Grafische voorstelling van de verkeersborden uit de toepassing Verkeersborden.Vlaanderen', attribution: 'MOW Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'awv:Verkeersborden.Vlaanderen_Borden' ], layers: { 'awv:Verkeersborden.Vlaanderen_Borden': { title: 'Verkeersborden.Vlaanderen', queryable: true } } },
     { id: 3221, title: 'Afgeleide snelheidsregimes', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows', crs: 'EPSG:3857', bbox: new OL.Bounds(281625, 6555960, 664720, 6711205), format: 'image/png', area: 'BE', abstract: 'Kaart van de afgeleide snelheidsregimes op wegen gelegen in het Vlaams gewest. Het basis van het wegenbestand waarop de snelheidsregimes zijn geprojecteerd is steeds de laatste versie van het Wegenregister zoals gepubliceerd op de website van Informatie Vlaanderen. De opstellingen in de Verkeersborden.Vlaanderen databank dienen als basisbestand voor de afgeleide data. De kwaliteit van de afgeleide data hangt af van de correctheid van zowel het Wegenregister als de data is Verkeersborden.Vlaanderen.', attribution: 'MOW Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'awv:Afgeleide_snelheidsregimes' ], layers: { 'awv:Afgeleide_snelheidsregimes': { title: 'Afgeleide snelheidsregimes', queryable: true } } },
     { id: 3222, title: 'CIRB FR', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Données de carte Bruxelloises', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'urbisFR' ], layers: { 'urbisFR': { queryable: false, title: 'Urbis Base Map FR', abstract: 'This layer represents the base map in french.' }, 'urbisFRGray': { queryable: false, title: 'Urbis Base Map Gray FR', abstract: 'This layer represents the gray base map in french.' }, 'urbis:LabeledStreetAxe': { queryable: false, title: 'Labeled Street Axe', abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building' }, 'urbis:URB_A_ADPT': { queryable: false, title: 'Address points', abstract: 'This layer is the localization of address points of the Brussels Region' }, 'urbis:URB_A_BU': { queryable: true, title: 'Buildings', abstract: 'This layer represents the buildings of the Brussels Region' }, 'urbis:URB_A_MD': { queryable: true, title: 'Monitoring districts', abstract: 'This layer reprensent the monitoring districts of the Brussels Region' }, 'urbis:URB_A_MU': { queryable: true, title: 'Municipalities', abstract: 'This layer represents the municipalities of the Brussels Region' }, 'urbis:URB_A_MY_SA': { queryable: false, title: 'Street axes', abstract: 'This layer represents the axes of the street of the Brussels Region' }, 'urbis:URB_A_MY_SS': { queryable: false, title: 'Street sections', abstract: 'This layer represents the street sections of the Brussels Region' }, 'urbis:URB_A_MZ': { queryable: true, title: 'Municipal zips', abstract: 'This layer is the zip of the municipality of the Brussels Region' }, 'urbis:URB_A_POL': { queryable: true, title: 'Police districts', abstract: 'This layer is the police districts of the Brussels Region' }, 'urbis:URB_A_RE': { queryable: false, title: 'Region', abstract: 'This layer is the Brussels Region' }, 'urbis:URB_A_SD': { queryable: true, title: 'Statistical districts', abstract: 'This layer represents the limit of the statistical districts of the Brussels Region' }, 'urbis:URB_A_SN': { queryable: false, title: 'Street nodes', abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe' }, 'urbis:URB_M_RTLINE': { queryable: false, title: 'Rail tracks', abstract: 'This layer represents the rails tracks.' }, 'urbis:URB_M_SHAPE': { queryable: true, title: 'UrbisMap shapes', abstract: 'This layer represents the shapes of UrbisMap.' }, 'urbis:URB_M_TONAME_LIN': { queryable: true, title: 'Toponymy', abstract: 'This layer represents the toponymy of public places.' }, 'urbis:URB_M_ZIPOINT': { queryable: true, title: 'Points of interest', abstract: 'This layer represents the point of zone of interest.' }, 'urbis:URB_T_LINE': { queryable: false, title: 'Urbis Topo Lines', abstract: 'This layer represents the topo lines.' }, 'urbis:URB_T_POINT': { queryable: true, title: 'Urbis Topo Points', abstract: 'This layer represents the topo points.' }, 'urbis:URB_A_SI_POINT_VW': { queryable: false, title: 'Street sides' }, 'urbis:MuNeighbour': { queryable: true, title: 'Neighbour Municipalities' }, 'urbis:Highways': { queryable: false, title: 'Highways' } } },
-    { id: 3223, title: 'CIRB Ortho', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Orthographic map of Brussels', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ 'Urbis:Ortho' ], layers: { 'Urbis:Ortho': { queryable: false, title: 'Urbis Ortho', abstract: 'This layer always shows the most recent available orthographic images' }, 'Urbis:Ortho2019': { queryable: false, title: 'Ortho 2019', abstract: 'Orthographic imagery for the year 2019 within the Brussels region' }, 'Urbis:Ortho2018': { queryable: false, title: 'Ortho 2018', abstract: 'Orthographic imagery for the year 2018 within the Brussels region' }, 'Urbis:Ortho2017': { queryable: false, title: 'Ortho 2017', abstract: 'Orthographic imagery for the year 2017 within the Brussels region' }, 'Urbis:Ortho2016': { queryable: false, title: 'Ortho 2016', abstract: 'Orthographic imagery for the year 2016 within the Brussels region' }, 'Urbis:Ortho2015': { queryable: false, title: 'Ortho 2015', abstract: 'Orthographic imagery for the year 2015 within the Brussels region' }, 'Urbis:Ortho2014': { queryable: false, title: 'Ortho 2014', abstract: 'Orthographic imagery for the year 2014 within the Brussels region' }, 'Urbis:Ortho2012': { queryable: false, title: 'Ortho 2012', abstract: 'Orthographic imagery for the year 2012 within the Brussels region' }, 'Urbis:Ortho2009': { queryable: false, title: 'Ortho 2009', abstract: 'Orthographic imagery for the year 2009 within the Brussels region' }, 'Urbis:Ortho2004': { queryable: false, title: 'Ortho 2004', abstract: 'Orthographic imagery for the year 2004 within the Brussels region' } } },
+    { id: 3223, title: 'Ortho Brussels', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Orthographic map of Brussels', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ 'Urbis:Ortho' ], layers: { 'Urbis:Ortho': { queryable: false, title: 'Urbis Ortho', abstract: 'This layer always shows the most recent available orthographic images' }, 'Urbis:Ortho2019': { queryable: false, title: 'Ortho 2019', abstract: 'Orthographic imagery for the year 2019 within the Brussels region' }, 'Urbis:Ortho2018': { queryable: false, title: 'Ortho 2018', abstract: 'Orthographic imagery for the year 2018 within the Brussels region' }, 'Urbis:Ortho2017': { queryable: false, title: 'Ortho 2017', abstract: 'Orthographic imagery for the year 2017 within the Brussels region' }, 'Urbis:Ortho2016': { queryable: false, title: 'Ortho 2016', abstract: 'Orthographic imagery for the year 2016 within the Brussels region' }, 'Urbis:Ortho2015': { queryable: false, title: 'Ortho 2015', abstract: 'Orthographic imagery for the year 2015 within the Brussels region' }, 'Urbis:Ortho2014': { queryable: false, title: 'Ortho 2014', abstract: 'Orthographic imagery for the year 2014 within the Brussels region' }, 'Urbis:Ortho2012': { queryable: false, title: 'Ortho 2012', abstract: 'Orthographic imagery for the year 2012 within the Brussels region' }, 'Urbis:Ortho2009': { queryable: false, title: 'Ortho 2009', abstract: 'Orthographic imagery for the year 2009 within the Brussels region' }, 'Urbis:Ortho2004': { queryable: false, title: 'Ortho 2004', abstract: 'Orthographic imagery for the year 2004 within the Brussels region' } } },
+    { id: 3224, title: 'Brussels Road Hierarchy', url: 'https://data-mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Road hierarchy maintained by Brussels Mobility', attribution: 'Brussels Mobility', pixelManipulations: [ 'brusselsSwapColours' ], queryable: false, default_layers: [ 'specialisation_vp' ], layers: { 'specialisation_vp': { queryable: false, title: 'Road hierarchy' } } },
+    { id: 3225, title: 'Brussels Zone 30', url: 'https://data-mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Road speed limit data maintained by Brussels Mobility', attribution: 'Brussels Mobility', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Zones_30' ], layers: { 'Zones_30': { queryable: true, title: 'Road speeds' } } },
+    { id: 3226, title: 'Brussels Low Emission Zone', url: 'https://data-mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OL.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Defines the contours of the low emission zone active in Brussels', attribution: 'Brussels Mobility', queryable: false, default_layers: [ 'lez_zone' ], layers: { 'lez_zone': { queryable: false, title: 'Low Emission Zone' } } },
     { id: 5501, title: 'Mapa basico Rio de Janeiro', url: 'http://pgeo3.rio.rj.gov.br/arcgis/services/Basicos/mapa_basico_UTM/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OL.Bounds(-4880972, -2646822, -4793898, -2599308), format: 'image/png', area: 'BR', abstract: 'Mapa urbano básico da Cidade do Rio de Janeiro', attribution: 'Cidade do Rio de Janeiro', pixelManipulations: [ 'rioTransparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'], layers: { '0': { queryable: false, title: 'Limite do Estado do Rio de Janeiro', abstract: 'Divisão Política do Estado do Rio de Janeiro' }, '1': { queryable: false, title: 'relevo' }, '2': { queryable: false, title: 'Quadras' }, '3': { queryable: true, title: 'Logradouros - Ruas' }, '4': { queryable: false, title: 'Praças' }, '5': { queryable: false, title: 'Areas Protegidas' }, '6': { queryable: true, title: 'Favelas' }, '7': { queryable: false, title: 'Loteamentos Irregulares e Clandestinos' }, '8': { queryable: false, title: 'edificações' }, '9': { queryable: false, title: 'Hidrografia - Rios' }, '10': { queryable: false, title: 'Limite de Bairros' }, '11': { queryable: false, title: 'Limite de Regiões Administrativas - RA' }, '12': { queryable: false, title: 'Áreas de Planejamento - AP' }, '13': { queryable: false, title: 'número de porta' }, '14': { queryable: true, title: 'principais logradouros' }, '15': { queryable: false, title: 'Locais de Referência' }, '16': { queryable: false, title: 'Escolas Municipais' }, '17': { queryable: false, title: 'Unidades de Saúde Estaduais e Federais' }, '18': { queryable: false, title: 'Unidades de Saúde Municipais' }, '19': { queryable: false, title: 'Corpo de Bombeiros' }, '20': { queryable: false, title: 'Delegacias Policiais' }, '21': { queryable: false, title: 'Estações de Bonde' }, '22': { queryable: false, title: 'Estações Hidroviárias' }, '23': { queryable: false, title: 'Estações Ferroviárias' }, '24': { queryable: false, title: 'Estações do Metrô' }, '25': { queryable: false, title: 'Aeroportos', abstract: 'principais aeroportos comerciais' } } },
     { id: 96801, title: 'Oman Base Map', url: 'https://nsdig2gapps.ncsi.gov.om/arcgis/services/Base_Map_EN/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OL.Bounds(5147047, 1459394, 7435614, 3520164), format: 'image/png', area: 'OM', abstract: 'National Basemap without Major Landmarks', attribution: 'NCSI', pixelManipulations: [ 'omanTransparent', 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '16', '17', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '35', '36', '37', '38', '39', '41', '42', '43', '44', '45', '47', '49', '50', '51'], layers: { '5': { queryable: false, title: 'Country Boundary', abstract: 'Country Boundary' }, '6': { queryable: false, title: 'Governorate', abstract: 'Governorate' }, '7': { queryable: false, title: 'Willayat', abstract: 'Willayat' }, '8': { queryable: false, title: 'Governorate Center', abstract: 'Governorate Center' }, '9': { queryable: false, title: 'Willayat Center', abstract: 'Willayat Center' }, '10': { queryable: false, title: 'Town Center', abstract: 'Town Center' }, '12': { queryable: false, title: 'Rock', abstract: 'Rock' }, '13': { queryable: false, title: 'Sand Dunes_3D', abstract: 'Sand Dunes_3D' }, '14': { queryable: false, title: 'Sand Dunes', abstract: 'Sand Dunes' }, '15': { queryable: false, title: 'Builtup Area', abstract: 'Builtup Area' }, '16': { queryable: false, title: 'Vegetation', abstract: 'Vegetation' }, '17': { queryable: false, title: 'Country Boundary', abstract: 'Country Boundary' }, '19': { queryable: false, title: 'Reservoir', abstract: 'Reservoir' }, '20': { queryable: false, title: 'Marsh Swamp', abstract: 'Marsh Swamp' }, '21': { queryable: false, title: 'Sabkha', abstract: 'Sabkha' }, '22': { queryable: false, title: 'Lake Pond', abstract: 'Lake Pond' }, '23': { queryable: false, title: 'Lagoon', abstract: 'Lagoon' }, '24': { queryable: false, title: 'Wadi Stream', abstract: 'Wadi Stream' }, '25': { queryable: false, title: 'Wadi Spread', abstract: 'Wadi Spread' }, '26': { queryable: false, title: 'Dam', abstract: 'Dam' }, '27': { queryable: false, title: 'Foreshore', abstract: 'Foreshore' }, '28': { queryable: false, title: 'Beach', abstract: 'Beach' }, '29': { queryable: false, title: 'Ditch', abstract: 'Ditch' }, '30': { queryable: false, title: 'Weir', abstract: 'Weir' }, '31': { queryable: false, title: 'Sluice Gate', abstract: 'Sluice Gate' }, '32': { queryable: false, title: 'Waterfall', abstract: 'Waterfall' }, '33': { queryable: false, title: 'Spring', abstract: 'Spring' }, '35': { queryable: false, title: 'Road Centre Lines', abstract: 'Road Centre Lines' }, '36': { queryable: false, title: 'Road Centre Lines', abstract: 'Road Centre Lines' }, '37': { queryable: false, title: 'Streets', abstract: 'Streets' }, '38': { queryable: false, title: 'Minor Roads', abstract: 'Minor Roads' }, '39': { queryable: false, title: 'Major Roads', abstract: 'Major Roads' }, '41': { queryable: false, title: 'Amusement Parks', abstract: 'Amusement Parks' }, '42': { queryable: false, title: 'Golf Courses', abstract: 'Golf Courses' }, '43': { queryable: false, title: 'Parks', abstract: 'Parks' }, '44': { queryable: false, title: 'Racing Tracks', abstract: 'Racing Tracks' }, '45': { queryable: false, title: 'Sports Fields', abstract: 'Sports Fields' }, '47': { queryable: false, title: 'Archeological Sites', abstract: 'Archeological Sites' }, '49': { queryable: false, title: 'Buildings_3D', abstract: 'Buildings_3D' }, '50': { queryable: false, title: 'Buildings', abstract: 'Buildings' }, '51 ': { queryable: false, title: 'Wall and Fences', abstract: 'Wall and Fences' } } }
   ];
@@ -1038,24 +1044,7 @@ function init(e) {
 
   function createLayerToggler(parentGroup, checked, name, toggleCallback) {
     var normalizedName = name.toLowerCase().replace(/\s/g, '');
-    if (parentGroup != null) {
-      var groupItem = document.createElement('li');
-      var groupSwitcher = document.createElement('wz-checkbox');
-      groupSwitcher.className = 'hydrated';
-      groupSwitcher.id = 'layer-switcher-' + normalizedName;
-      if (checked) {
-        groupSwitcher.setAttribute('checked', '');
-      }
-      groupSwitcher.textContent = name;
-      groupSwitcher.addEventListener('click', function() { toggleCallback(groupSwitcher.checked); });
-      groupItem.appendChild(groupSwitcher);
-      parentGroup.querySelector('wz-toggle-switch').addEventListener('click', function(e) {
-        groupSwitcher.disabled = !e.target.checked;
-        toggleCallback && toggleCallback(groupSwitcher.checked && e.target.checked);
-      });
-      parentGroup.querySelector('ul').appendChild(groupItem);
-      return groupItem;
-    } else {
+    if (parentGroup == null) {
       var group = document.createElement('li');
       group.className = 'group';
       var groupChildren = document.createElement('ul');
@@ -1067,17 +1056,10 @@ function init(e) {
         groupCaret.classList.add('upside-down');
       }
       groupCaret.dataset.groupId = 'GROUP_' + normalizedName;
-      groupCaret.addEventListener('click', function() {
-        groupCaret.classList.toggle('upside-down');
-        groupChildren.classList.toggle('collapse-layer-switcher-group');
-      });
       groupToggler.appendChild(groupCaret);
       var groupSwitch = document.createElement('wz-toggle-switch');
-      groupSwitch.className = 'layer-switcher-group_' + normalizedName + ' hydrated';
+      groupSwitch.className = 'layer-switcher-group_' + normalizedName;
       groupSwitch.id = 'layer-switcher-group_' + normalizedName;
-      if (checked) {
-        groupSwitch.setAttribute('checked', '');
-      }
       groupToggler.appendChild(groupSwitch);
       var groupSwitchLabel = document.createElement('label');
       groupSwitchLabel.className = 'label-text';
@@ -1088,7 +1070,26 @@ function init(e) {
       groupChildren.className = 'collapsible-GROUP_' + normalizedName;
       group.appendChild(groupChildren);
       document.querySelector('.list-unstyled.togglers').appendChild(group);
+      groupCaret.addEventListener('click', function(e) {
+        groupCaret.classList.toggle('upside-down');
+        groupChildren.classList.toggle('collapse-layer-switcher-group');
+      });
+      groupSwitch.checked = checked;
       return group;
+    } else {
+      var layerItem = document.createElement('li');
+      var layerToggle = document.createElement('wz-checkbox');
+      layerToggle.id = 'layer-switcher-' + normalizedName;
+      layerToggle.textContent = name;
+      layerItem.appendChild(layerToggle);
+      parentGroup.querySelector('ul').appendChild(layerItem);
+      parentGroup.querySelector('wz-toggle-switch').addEventListener('click', function(e) {
+        layerToggle.disabled = !e.target.checked;
+        toggleCallback && toggleCallback(layerToggle.checked && e.target.checked);
+      });
+      layerToggle.addEventListener('click', e => toggleCallback(e.target.checked));
+      layerToggle.checked = checked;
+      return layerItem;
     }
   }
 
@@ -1268,6 +1269,29 @@ function init(e) {
           bitmap.data[i + 1] = Math.floor(255 - bitmap.data[i + 3] + (bitmap.data[i + 3] / 255) * bitmap.data[i + 1] + 0.5);
           bitmap.data[i + 2] = Math.floor(255 - bitmap.data[i + 3] + (bitmap.data[i + 3] / 255) * bitmap.data[i + 2] + 0.5);
           bitmap.data[i + 3] = 255;
+          dirty = true;
+        }
+      }
+      return dirty;
+    },
+    // Replace the colours for the Brussels map with the corresponding colours used in the WME for road types
+    'brusselsSwapColours': bitmap => {
+      var dirty = false;
+      for (let i = 0; i < bitmap.data.length; i += 4) {
+        if (bitmap.data[i + 3] > 0 && bitmap.data[i] == bitmap.data[i + 1] && bitmap.data[i + 1] == bitmap.data[i + 2]) {
+          bitmap.data[i + 0] = 255;
+          bitmap.data[i + 1] = 252;
+          bitmap.data[i + 2] = 208;
+          dirty = true;
+        } else if (bitmap.data[i + 3] > 0 && bitmap.data[i] >= bitmap.data[i + 2]) {
+          bitmap.data[i + 0] = 69;
+          bitmap.data[i + 1] = 184;
+          bitmap.data[i + 2] = 209;
+          dirty = true;
+        } else if (bitmap.data[i + 3] > 0 && bitmap.data[i] < bitmap.data[i + 2]) {
+          bitmap.data[i + 0] = 105;
+          bitmap.data[i + 1] = 191;
+          bitmap.data[i + 2] = 136;
           dirty = true;
         }
       }
