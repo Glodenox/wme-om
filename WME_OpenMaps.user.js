@@ -274,7 +274,7 @@ function init(e) {
         v3_1_7: '- USDA NAIP kaart toegevoegd',
         v3_1_8: '- Gecorrigeerde WV Leaves Off-lagen en transparantie toegevoegd aan WV Leaves Off\n- Meer recente Orthophoto-kaarten toegevoegd voor Wallonië (BE)',
         v3_1_9: '- WV Leaves Off laag updates\n- Enkele Brusselse kaarten hernoemd',
-        v3_1_10: '- WV Leaves Off lang updates\n- Enkele Brusselse kaarten hersteld'
+        v3_1_10: '- WV Leaves Off laag updates\n- Enkele Brusselse kaarten hersteld'
       }
     },
     fr: {
