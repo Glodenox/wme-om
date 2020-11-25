@@ -280,7 +280,7 @@ function init(e) {
         v3_1_9: '- WV Leaves Off laag updates\n- Enkele Brusselse kaarten hernoemd',
         v3_1_10: '- WV Leaves Off laag updates\n- Enkele Brusselse kaarten hersteld',
         v3_1_11: '- Kaart met kadastrale grenzen toegevoegd (BE)',
-        v3_1_12: 'Luchtfoto\'s van Maryland toegevoegd'
+        v3_1_12: '- Luchtfoto\'s van Maryland toegevoegd'
       }
     },
     fr: {
