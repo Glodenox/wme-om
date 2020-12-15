@@ -1390,28 +1390,32 @@ function init(e) {
             pixelArray[idx] = transparent;
             dirty = true;
           }
-        },
+        });
+      }
+      return dirty;
+    },
     // Turn blank tiles transparent - tuned to 0xFFFDFDFD for Virginia
     'vaBlankTiles2Transparent': bitmap => {
       var dirty = false;
       var pixelArray = new Uint32Array(bitmap.data.buffer);
+      var white = 0xFFFFFFFF;
       var offwhite = 0xFFFDFDFD;
       var transparent = 0x00FFFFFF;
       var whitePixels = 0;
       // Do some analysis of the top and bottom borders to see whether this run is actually needed?
       for (var i = 0; i < bitmap.width; i++) {
-        if (pixelArray[i] == offwhite) {
+        if (pixelArray[i] == white || pixelArray[i] == offwhite) {
           whitePixels++;
         }
       }
       for (var i = pixelArray.length - bitmap.width; i < pixelArray.length; i++) {
-        if (pixelArray[i] == offwhite) {
+        if (pixelArray[i] == white || pixelArray[i] == offwhite) {
           whitePixels++;
         }
       }
       if (whitePixels > bitmap.width / 2) { // More than a quarter of the pixels are white
         pixelArray.forEach((pixel, idx) => {
-          if (pixel == offwhite) {
+          if (pixel == white || pixel == offwhite) {
             pixelArray[idx] = transparent;
             dirty = true;
           }
