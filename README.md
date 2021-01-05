@@ -4,19 +4,19 @@ This userscript augments the [Waze Map Editor](https://www.waze.com/editor/) by 
 
 ## How to use
 
-![Open Maps layers](https://tomputtemans.com/waze-scripts/images/Sidebar.png)
+![Open Maps layers](https://www.tomputtemans.com/waze-scripts/images/Sidebar.png)
 
 The script adds a tab with a selection list that will contain any maps that are available for the current view of the map. It is also possible to easily disable the satellite imagery in Waze from here should you have an alternative source of imagery active.
 
-![Open Maps map attributes](https://tomputtemans.com/waze-scripts/images/LayerAttributes.png)
+![Open Maps map attributes](https://www.tomputtemans.com/waze-scripts/images/LayerAttributes.png)
 
 In the sidebar you can add, reorder and remove maps, change how transparent a map should be, decide which map layers should be loaded and query the map or a specific layer to retrieve more information from the map service (if available).
 
-![Open Maps layer drawer](https://tomputtemans.com/waze-scripts/images/LayerChooser.png)
+![Open Maps layer drawer](https://www.tomputtemans.com/waze-scripts/images/LayerChooser.png)
 
 It is also possible to adjust the visibility of these maps within the usual layer drawer. These changes are considered to be temporary and will not be preserved over sessions.
 
-![Open Maps overview](https://tomputtemans.com/waze-scripts/images/Overview.png)
+![Open Maps overview](https://www.tomputtemans.com/waze-scripts/images/Overview.png)
 
 ## Installation instructions
 
