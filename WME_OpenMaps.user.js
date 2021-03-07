@@ -67,7 +67,6 @@ function init(e) {
     return;
   }
 
-  var versions = ['2.3.0', '2.3.1', '2.3.2', '2.3.3', '2.3.4', '2.3.5', '2.3.6', '2.3.7', '2.3.8', '2.3.9', '2.3.10', '2.3.11', '2.4.0', '2.5.0', '2.5.1', '2.5.2', '2.6.0', '2.6.1', '2.6.2', '2.7.0', '2.7.1', '2.7.2', '2.7.3', '2.7.4', '2.7.5', '2.7.6', '2.7.7', '2.8.0', '2.8.1', '2.8.2', '2.8.3', '2.8.4', '2.8.5', '2.8.6', '2.8.7', '2.8.8', '3.0.0', '3.0.1', '3.0.2', '3.0.3', '3.0.4', '3.0.5', '3.0.6', '3.0.7', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7', '3.1.8', '3.1.9', '3.1.10', '3.1.11', '3.1.12', '3.1.13', '3.1.14', '3.1.15', '3.1.16', '3.1.17'];
   // set up language string
   var translations = {
     en: {
@@ -292,7 +291,7 @@ function init(e) {
         v3_1_14: '- WV Leaves Off laag updates',
         v3_1_15: '- Verbetering voor toekomstige versie van WME',
         v3_1_16: '- Verplaats de kaart van Virginia naar de nieuwe server (US)',
-        v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie van begrenzingskaders van de kaart van Tennessee',
+        v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie aan de begrenzing van de kaart van Tennessee',
       }
     },
     fr: {
@@ -375,51 +374,3521 @@ function init(e) {
 
   // List of available maps
   var mapList = [
-    { id: 101, title: 'WV Leaves Off', url: 'https://services.wvgis.wvu.edu/arcgis/services/Imagery_BaseMaps_EarthCover/wv_imagery_WVGISTC_leaf_off_mosaic/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-9208722, 4457863, -8641129, 4962223), format: 'image/jpeg', area: 'US', abstract: 'Satellite imagery of West Virginia', attribution: 'West Virginia University', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '1', '4', '5', '6', '8', '11', '12', '13', '15', '18', '19', '21', '25', '29', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71' ], layers: { '1': { queryable: true, title: 'Image', abstract: 'wv_statewide_12_inches' }, '4': { queryable: true, title: 'Upshur_2016', abstract: '' }, '5': { queryable: true, title: 'Preston_2016', abstract: '' }, '6': { queryable: true, title: 'Kanawha_2017', abstract: '' }, '8': { queryable: true, title: 'Wyoming_2018', abstract: '' }, '11': { queryable: true, title: 'Ritchie_2018', abstract: '' }, '12': { queryable: true, title: 'Raleigh_2018', abstract: '' }, '13': { queryable: true, title: 'Randolph_2018', abstract: '' }, '15': { queryable: true, title: 'Nicholas_2018', abstract: '' }, '18': { queryable: true, title: 'Morgan_2018', abstract: '' }, '19': { queryable: true, title: 'Monroe_2018', abstract: '' }, '21': { queryable: true, title: 'Mercer_2018', abstract: '' }, '25': { queryable: true, title: 'McDowell_2018', abstract: '' }, '29': { queryable: true, title: 'Mason_2018', abstract: '' }, '32': { queryable: true, title: 'Marshall_2019', abstract: '' }, '33': { queryable: true, title: 'Logan_2018', abstract: '' }, '34': { queryable: true, title: 'Lincoln_2018', abstract: '' }, '35': { queryable: true, title: 'Hardy_2018', abstract: '' }, '36': { queryable: true, title: 'Hampshire_2018', abstract: '' }, '37': { queryable: true, title: 'Brooke_2018', abstract: '' }, '38': { queryable: true, title: 'Berkeley_2018', abstract: '' }, '39': { queryable: true, title: 'Barbour_2018', abstract: '' }, '40': { queryable: true, title: 'Wetzel_2019', abstract: '' }, '41': { queryable: true, title: 'Tyler_2019', abstract: '' }, '42': { queryable: true, title: 'Tucker_2019', abstract: '' }, '43': { queryable: true, title: 'Taylor_2019', abstract: '' }, '44': { queryable: true, title: 'Roane_2019', abstract: '' }, '45': { queryable: true, title: 'Pocahontas_2019', abstract: '' }, '46': { queryable: true, title: 'Ohio_2019', abstract: '' }, '47': { queryable: true, title: 'Monongalia_2019', abstract: '' }, '48': { queryable: true, title: 'Jackson_2019', abstract: '' }, '49': { queryable: true, title: 'Gilmer_2019', abstract: '' }, '50': { queryable: true, title: 'Doddridge_2019', abstract: '' }, '51': { queryable: true, title: 'Clay_2019', abstract: '' }, '52': { queryable: true, title: 'Calhoun_2019', abstract: '' }, '53': { queryable: true, title: 'Cabell_2019', abstract: '' }, '54': { queryable: true, title: 'Braxton_2019', abstract: '' }, '55': { queryable: true, title: 'Mineral_2019', abstract: '' }, '56': { queryable: true, title: 'Hancock_2019', abstract: '' }, '57': { queryable: true, title: 'Grant_2019', abstract: '' }, '58': { queryable: true, title: 'Pleasants_2020', abstract: '' }, '59': { queryable: true, title: 'Marion_2020', abstract: '' }, '60': { queryable: true, title: 'Lewis_2020', abstract: '' }, '61': { queryable: true, title: 'Jefferson_2020', abstract: '' }, '62': { queryable: true, title: 'Summers_2020', abstract: '' }, '63': { queryable: true, title: 'Wirt_Wood_2020', abstract: '' }, '64': { queryable: true, title: 'Harrison_2020', abstract: '' }, '65': { queryable: true, title: 'Putnam_2020', abstract: '' }, '66': { queryable: true, title: 'Webster_2020', abstract: '' }, '67': { queryable: true, title: 'Mingo_2020', abstract: '' }, '68': { queryable: true, title: 'Boone_2020', abstract: '' }, '69': { queryable: true, title: 'Greenbrier_2020', abstract: '' }, '70': { queryable: true, title: 'Fayette_2020', abstract: '' }, '71': { queryable: true, title: 'CountiesImagery_Year', abstract: '' } } },
-    { id: 102, title: 'USDA NAIP Imagery', url: 'https://gis.apfo.usda.gov/arcgis/services/NAIP/USDA_CONUS_PRIME/ImageServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-13894064.421927, -9798.681263, 7587.578073, 6349425.318737), format: 'image/jpeg', area: 'US', abstract: 'USDA NAIP Imagery of the Continuous US', attribution: 'USDA', queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'USDA NAIP Imagery', abstract: 'USDA NAIP Imagery of the Continuous US' } } },
-    { id: 104, title: 'Virginia Aerial Imagery', url: 'https://gismaps.vdem.virginia.gov/arcgis/services/VBMP_Imagery/MostRecentImagery_WGS/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-9361643.048590, 4309484.932005, -8328992.055810, 4855443.863795), format: 'image/jpeg', area: 'US', abstract: 'Most recent aerial imagery from Virginia Geographic Information Network', attribution: 'Virginia Geographic Information Network', pixelManipulations: [ 'vaBlankTiles2Transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': {queryable:false, title: 'VBMP most recent imagery', abstract: 'Orthoimagery collected in Spring 2013, 2014, 2015 and 2017 (whichever is most recently available) by the VBMP program for Virginia. The imagery is displayed in true color (RED, GREEN, BLUE). The spatial reference is WGS 1984 Web Mercator (Auxiliary Sphere). The imagery is tiled at 12 levels from 1:4,622,324 to 1:2,257. The imagery was collected to meet ASPRS Class 1 orthoimagery standards. Most areas were collected at a 1-ft ground sample distance (GSD), with some urban areas upgraded to 6-inch and 3-inch GSD. - "Any determination of topography or contours, or any depiction of physical improvements, property lines or boundaries is for general information only and shall not be used for the design, modification, or construction of improvements to real property or for flood plain determination." Subsection C of § 54.1-402.' } } },
-    { id: 105, title: 'Tennessee Aerial Imagery', url: 'https://tnmap.tn.gov/arcgis/services/BASEMAPS/IMAGERY_WEB_MERCATOR/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-10057766.986981, 4158672.701419, -9084779.566164, 4395439.512689), format: 'image/png', area: 'US', abstract: 'Tennessee Department of Transportation(TDOT) Imagery Product', attribution: 'TDOT', queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'TDOT Imagery', abstract: 'TDOT Imagery Product' } } },
-    { id: 106, title: 'Pennsylvania Aerial Imagery', url: 'https://apps.pasda.psu.edu/arcgis/services/PEMAImagery2018_WEB/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-8971206.199541, 4819536.202226, -8313616.658373, 5204939.354014), format: 'image/png', area: 'US', abstract: 'Aerial Imagery from PEMA, 2018-2020', attribution: 'PASDA', queryable: false, default_layers: [ '1', '5', '9', '13', '17', '21', '25', '29', '33', '37', '41', '45', '49', '53', '57', '61', '65', '69', '73', '77', '81', '85', '89', '93', '97', '101', '105', '109', '113', '117', '121', '125', '129', '133', '137', '141', '145', '149', '153', '157', '161', '165', '169', '173', '177', '181', '185', '189', '193', '197', '201', '205', '209', '213', '217' ], layers: {'1': { queryable: true, title: 'Image', abstract: 'PEMA_YorkCounty_Mosaic2018_1'},'5': { queryable: true, title: 'Image', abstract: 'PEMA_WyomingCounty_Mosaic2020'},'9': { queryable: true, title: 'Image', abstract: 'PEMA_WayneCounty_Mosaic2020'},'13': { queryable: true, title: 'Image', abstract: 'PEMA_WashingtonCounty_Mosaic2018'},'17': { queryable: true, title: 'Image', abstract: 'PEMA_UnionCounty_Mosaic2020'},'21': { queryable: true, title: 'Image', abstract: 'PEMA_SusquehannaCounty_Mosaic2020'},'25': { queryable: true, title: 'Image', abstract: 'PEMA_SullivanCounty_Mosaic2020'},'29': { queryable: true, title: 'Image', abstract: 'PEMA_SomersetCounty_Mosaic2020'},'33': { queryable: true, title: 'Image', abstract: 'PEMA_SnyderCounty_Mosaic2020'},'37': { queryable: true, title: 'Image', abstract: 'PEMA_SchuylkillCounty_Mosaic2018'},'41': { queryable: true, title: 'Image', abstract: 'PEMA_PotterCounty_Mosaic2020'},'45': { queryable: true, title: 'Image', abstract: 'PEMA_PhiladelphiaCounty_Mosaic2018'},'49': { queryable: true, title: 'Image', abstract: 'PEMA_PerryCounty_Mosaic2018'},'53': { queryable: true, title: 'Image', abstract: 'PEMA_NorthumberlandCounty_Mosaic2018'},'57': { queryable: true, title: 'Image', abstract: 'PEMA_NorthamptonCounty_Mosaic'},'61': { queryable: true, title: 'Image', abstract: 'PEMA_MontourCounty_Mosaic2018_gdb'},'65': { queryable: true, title: 'Image', abstract: 'PEMA_MontgomeryCounty_Mosaic2018'},'69': { queryable: true, title: 'Image', abstract: 'PEMA_MonroeCounty_Mosaic2018'},'73': { queryable: true, title: 'Image', abstract: 'PEMA_McKeanCounty_Mosaic2019_JP2'},'77': { queryable: true, title: 'Image', abstract: 'PEMA_MifflinCounty_Mosaic2020'},'81': { queryable: true, title: 'Image', abstract: 'PEMA_LycomingCounty_Mosaic2020'},'85': { queryable: true, title: 'Image', abstract: 'PEMA_LuzerneCounty_Mosaic2018'},'89': { queryable: true, title: 'Image', abstract: 'PEMA_LehighCounty_Mosaic2018'},'93': { queryable: true, title: 'Image', abstract: 'PEMA_LebanonCounty_Mosaic2018'},'97': { queryable: true, title: 'Image', abstract: 'PEMA_LawrenceCounty_Mosaic2020'},'101': { queryable: true, title: 'Image', abstract: 'PEMA_LancasterCounty_Mosaic2018'},'105': { queryable: true, title: 'Image', abstract: 'PEMA_LackawannaCounty_Mosaic2020'},'109': { queryable: true, title: 'Image', abstract: 'PEMA_JuniataCounty_Mosaic2020'},'113': { queryable: true, title: 'Image', abstract: 'PEMA_JeffersonCounty_Mosaic2018'},'117': { queryable: true, title: 'Image', abstract: 'PEMA_HuntingdonCounty_Mosaic2020'},'121': { queryable: true, title: 'Image', abstract: 'PEMA_GreeneCounty_Mosaic2018_gdb'},'125': { queryable: true, title: 'Image', abstract: 'PEMA_FultonCounty_Mosaic2020'},'129': { queryable: true, title: 'Image', abstract: 'PEMA_FranklinCounty_Mosaic2018'},'133': { queryable: true, title: 'Image', abstract: 'PEMA_FayetteCounty_Mosaic2020'},'137': { queryable: true, title: 'Image', abstract: 'PEMA_ErieCounty_Mosaic2018_JP2'},'141': { queryable: true, title: 'Image', abstract: 'PEMA_ElkCounty_Mosaic2019_JP2'},'145': { queryable: true, title: 'Image', abstract: 'PEMA_DelawareCounty_Mosaic2018'},'149': { queryable: true, title: 'Image', abstract: 'PEMA_DauphinCounty_Mosaic2018'},'153': { queryable: true, title: 'Image', abstract: 'PEMA_CumberlandCounty_Mosaic2018_JP2'},'157': { queryable: true, title: 'Image', abstract: 'PEMA_CrawfordCounty_Mosaic2018_JP2'},'161': { queryable: true, title: 'Image', abstract: 'PEMA_ColumbiaCounty_Mosaic2018'},'165': { queryable: true, title: 'Image', abstract: 'PEMA_ClintonCounty_Mosaic2020'},'169': { queryable: true, title: 'Image', abstract: 'PEMA_ClearfieldCounty_Mosaic2018'},'173': { queryable: true, title: 'Image', abstract: 'PEMA_ChesterCounty_Mosaic2020'},'177': { queryable: true, title: 'Image', abstract: 'PEMA_CentreCounty_Mosaic2020'},'181': { queryable: true, title: 'Image', abstract: 'PEMA_CarbonCounty_Mosaic2018'},'185': { queryable: true, title: 'Image', abstract: 'PEMA_CameronCounty_Mosaic2019_JP2'},'189': { queryable: true, title: 'Image', abstract: 'PEMA_CambriaCounty_Mosaic2018'},'193': { queryable: true, title: 'Image', abstract: 'PEMA_BucksCounty_Mosaic'},'197': { queryable: true, title: 'Image', abstract: 'PEMA_BradfordCounty_Mosaic2020'},'201': { queryable: true, title: 'Image', abstract: 'PEMA_BlairCounty_Mosaic2020'},'205': { queryable: true, title: 'Image', abstract: 'PEMA_BerksCounty_Mosaic2020'},'209': { queryable: true, title: 'Image', abstract: 'PEMA_BeaverCounty_Mosaic2020'},'213': { queryable: true, title: 'Image', abstract: 'PEMA_AlleghenyCounty_Mosaic2018'},'217': { queryable: true, title: 'Image', abstract: 'PEMA_AdamsCounty_Mosaic2018_JP2'} } },
-    { id: 3101, title: 'BAG', url: 'https://geodata.nationaalgeoregister.nl/bag/wms/v1_1', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(356916, 6574306, 806539, 7091570), format: 'image/png', area: 'NL', abstract: 'De gegevens bestaan uit BAG-panden en een deelselectie van BAG-gegevens van deze panden en de zich daarin bevindende verblijfsobjecten. Ook de ligplaatsen en standplaatsen zijn hierin opgenomen met een deelselectie van BAG-gegevens. De gegevens van de nummeraanduiding zijn in deze services onderdeel van de adresseerbare objecten, hierbij wordt slechts 1 adres opgenomen, dus objecten met meerdere adressen (hoofd- en nevenadressen) zijn niet compleet. In deze services zitten dus niet alle BAG adressen. Wij adviseren u, aangezien er sprake is van beperkte gegevens, om in de webservice BAG Bevragen de actuele gegevens te controleren. Dit kan ook in een van de andere BAG producten: BAG Web, BAG Extract of BAG Compact. BAG Bevragen: http://www.kadaster.nl/web/artikel/productartikel/BAG-Bevragen.htm Andere BAG producten: http://www.kadaster.nl/web/Themas/Registraties/BAG/BAGartikelen/BAG-producten.htm De service wordt dagelijks geactualiseerd.', attribution: 'BAG', getExternalUrl: function() { return 'https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html'; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'ligplaats','pand','verblijfsobject','woonplaats','standplaats' ], layers: { 'ligplaats': { queryable: false, title: 'ligplaats' }, 'pand': { queryable: false, title: 'pand' }, 'standplaats': { queryable: false, title: 'standplaats' }, 'verblijfsobject': { queryable: true, title: 'verblijfsobject' }, 'woonplaats': { queryable: false, title: 'woonplaats' } } },
-    { id: 3103, title: 'Weggegevens', url: 'https://geodata.nationaalgeoregister.nl/weggeg/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(385276, 6575606, 805842, 7065366), format: 'image/png', area: 'NL', abstract: 'De service van Weggegevens bevat op dit moment de lagen maximum snelheden en rijstroken van de rijkswegen.', attribution: 'PDOK', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'weggegaantalrijbanen','weggegmaximumsnelheden' ], layers: { 'weggegaantalrijbanen': { queryable: true, title: 'Weggegevens aantal rijbanen' }, 'weggegmaximumsnelheden': { queryable: true, title: 'Weggegevens maximumsnelheden' } } },
-    { id: 3105, title: 'Hectopunten Rijkswaterstaat', url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(333958, 6575606, 779237, 6982998), zoomRange: [2, 10], format: 'image/png', area: 'NL', abstract: 'Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.', attribution: 'PDOK', pixelManipulations: [ 'removePartialBlackTransparency', 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'hectopunten', 'wegvakken' ], layers: { 'hectopunten': { queryable: true, title: 'NWB Wegen hectopunten' }, 'wegvakken': { queryable: true, title: 'NWB Wegen wegvakken' } } },
-    { id: 3106, title: 'Luchtfoto (PDOK)', url: 'https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-184489, 6113595, 1383894, 7580463), format: 'image/jpeg', area: 'NL', abstract: 'Een jaarlijks te vernieuwen dataset van luchtopnamen van Nederland met een resolutie van 25cm.', attribution: 'PDOK', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ 'Actueel_ortho25' ], layers: { 'Actueel_ortho25': { queryable: false, title: 'Luchtfoto Actueel Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van de meest recente jaargang.' }, '2019_ortho25': { queryable: false, title: 'Luchtfoto 2019 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2019.' }, '2018_ortho25': { queryable: false, title: 'Luchtfoto 2018 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2018.' }, '2017_ortho25': { queryable: false, title: 'Luchtfoto 2017 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2017.' }, '2016_ortho25': { queryable: false, title: 'Luchtfoto 2016 Ortho 25cm RGB', abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2016.' } } },
-    { id: 3107, title: 'Kadastrale kaart', url: 'https://geodata.nationaalgeoregister.nl/kadastralekaart/wms/v4_0', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(385276, 6575606, 805842, 7065366), format: 'image/png', area: 'NL', abstract: 'Overzicht van de ligging van de kadastrale percelen in Nederland. Fungeert als schakel tussen terrein en registratie, vervult voor externe gebruiker vaak een referentiefunctie, een ondergrond ten opzichte waarvan de gebruiker eigen informatie kan vastleggen en presenteren.', attribution: 'PDOK', pixelManipulations: [ 'removePartialBlackTransparency', 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'KadastraleKaart' ], layers: { 'KadastraleKaart': { queryable: true, title: 'Kadastrale Kaart' }, 'Bebouwing': { queryable: true, title: 'Bebouwing' }, 'Label': { queryable: true, title: 'Label' }, 'Bebouwingvlak': { queryable: true, title: 'Bebouwingvlak' }, 'KadastraleGrens': { queryable: true, title: 'Kadastrale Grens' }, 'Bijpijling': { queryable: true, title: 'Bijpijling' }, 'Perceel': { queryable: true, title: 'Perceel' }, 'Perceelvlak': { queryable: true, title: 'Perceelvlak' }, 'Nummeraanduidingreeks': { queryable: true, title: 'Nummeraanduidingreeks' } } },
-    { id: 3108, title: 'Maximumsnelheden', url: 'https://geoservices.rijkswaterstaat.nl/apps/geoserver/maximum_snelheden_wegen/ows', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(362161, 6574365, 806630, 7085234), format: 'image/png', area: 'NL', abstract: 'Maximumsnelhedenkaart van alle wegen in Nederland, voorzien door Rijkswaterstaat', attribution: 'Rijkswaterstaat', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'maximum_snelheden_wegen:max_snelheden_per_wegvak' ], layers: { 'maximum_snelheden_wegen:max_snelheden_per_wegvak': { title: 'Maximumsnelheden per wegvak', queryable: true } } },
-    { id: 3109, title: 'Nationaal Wegen Bestand', url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(355925, 809871, 6563443, 7096826), format: 'image/png', area: 'NL', abstract: 'Nationaal Wegen Bestand met alle gegevens van de Nederlandse wegen', attribution: 'Nationaal Wegen Bestand', pixelManipulations: [ 'removePartialTransparency' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'wegvakken' ], layers: { 'wegvakken': { title: 'Nationaal Wegen Bestand Wegvakken', queryable: true } } },
-    { id: 3201, title: 'GRB Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008), format: 'image/png', area: 'BE', abstract: 'Opvragen en visualiseren van het Grootschalig Referentiebestand (GRB) als een kaart. Omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Basiskaart - GRB: volledige kaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: false, default_layers: [ 'GRB_BSK' ], layers: { 'GRB_BSK': { queryable: false, title: 'GRB-basiskaart', abstract: 'Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart' } } },
-    { id: 3202, title: 'Orthomozaïek Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008), format: 'image/jpeg', area: 'BE', abstract: 'WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.', attribution: 'Agentschap Informatie Vlaanderen', pixelManipulations: [ 'whiteTiles2transparent' ], getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Opnamedatum meest recente luchtfoto in achtergrondkaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Ortho', 'Vliegdagcontour' ], layers: { 'Ortho': { queryable: false, title: 'Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.' }, 'Vliegdagcontour': { queryable: true, title: 'Vliegdagcontour Orthofotomozaïek', abstract: 'Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.' } } },
-    { id: 3203, title: 'PICC, Service de visualisation', url: 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(295477, 740430, 6347478, 6640886), zoomRange: [4, 10], format: 'image/png', area: 'BE', abstract: 'Service de visualisation du Projet Informatique de Cartographie Continue (PICC)', attribution: 'Service public de Wallonie', pixelManipulations: [ 'traceGrayscalePixels' ], getExternalUrl: function() { return 'http://geoportail.wallonie.be/walonmap'; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ '3', '4', '5', '7', '9', '10', '11', '12', '19', '20', '21', '27', '28', '29' ], layers: { '1': { queryable: true, title: 'Relief: ligne' }, '3': { queryable: true, title: 'Hydrographie: emprise' }, '4': { queryable: true, title: 'Hydrographie: bord' }, '5': { queryable: true, title: 'Hydrographie: axe' }, '7': { queryable: true, title: 'Reseau ferroviaire: ligne' }, '9': { queryable: true, title: 'Voirie: axe >= 50k' }, '10': { queryable: true, title: 'Voirie: axe (5k-50k)' }, '11': { queryable: true, title: 'Voirie: axe' }, '12': { queryable: true, title: 'Voirie: ligne' }, '14': { queryable: true, title: 'Occupation du sol: surface' }, '15': { queryable: true, title: 'Occupation du sol: bord' }, '16': { queryable: true, title: 'Occupation du sol: ligne' }, '17': { queryable: true, title: 'Occupation du sol: point' }, '19': { queryable: true, title: 'Construction: emprise du batiment' }, '20': { queryable: true, title: 'Construction: ouvrage d\'art: bord' }, '21': { queryable: true, title: 'Construction: bord du batiment' }, '23': { queryable: true, title: 'Equipement: surface' }, '24': { queryable: true, title: 'Equipement: axe' }, '25': { queryable: true, title: 'Equipement: ligne' }, '26': { queryable: true, title: 'Equipement: point' }, '27': { queryable: true, title: 'Symbologie' }, '28': { queryable: true, title: 'Adresses' }, '29': { queryable: true, title: 'Toponymie' } } },
-    { id: 3204, title: 'Brussels CIRB (NL)', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Brusselse kaartgegevens', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'urbisNL' ], layers: { 'urbisNL': { queryable: false, title: 'Urbis Base Map NL', abstract: 'This layer represents the base map in dutch.' }, 'urbisNLGray': { queryable: false, title: 'Urbis Base Map Gray NL', abstract: 'This layer represents the gray base map in dutch.' }, 'urbis:LabeledStreetAxe': { queryable: false, title: 'Labeled Street Axe', abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building' }, 'urbis:URB_A_ADPT': { queryable: false, title: 'Address points', abstract: 'This layer is the localization of address points of the Brussels Region' }, 'urbis:URB_A_BU': { queryable: true, title: 'Buildings', abstract: 'This layer represents the buildings of the Brussels Region' }, 'urbis:URB_A_MD': { queryable: true, title: 'Monitoring districts', abstract: 'This layer reprensent the monitoring districts of the Brussels Region' }, 'urbis:URB_A_MU': { queryable: true, title: 'Municipalities', abstract: 'This layer represents the municipalities of the Brussels Region' }, 'urbis:URB_A_MY_SA': { queryable: false, title: 'Street axes', abstract: 'This layer represents the axes of the street of the Brussels Region' }, 'urbis:URB_A_MY_SS': { queryable: false, title: 'Street sections', abstract: 'This layer represents the street sections of the Brussels Region' }, 'urbis:URB_A_MZ': { queryable: true, title: 'Municipal zips', abstract: 'This layer is the zip of the municipality of the Brussels Region' }, 'urbis:URB_A_POpenLayers': { queryable: true, title: 'Police districts', abstract: 'This layer is the police districts of the Brussels Region' }, 'urbis:URB_A_RE': { queryable: false, title: 'Region', abstract: 'This layer is the Brussels Region' }, 'urbis:URB_A_SD': { queryable: true, title: 'Statistical districts', abstract: 'This layer represents the limit of the statistical districts of the Brussels Region' }, 'urbis:URB_A_SN': { queryable: false, title: 'Street nodes', abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe' }, 'urbis:URB_M_RTLINE': { queryable: false, title: 'Rail tracks', abstract: 'This layer represents the rails tracks.' }, 'urbis:URB_M_SHAPE': { queryable: true, title: 'UrbisMap shapes', abstract: 'This layer represents the shapes of UrbisMap.' }, 'urbis:URB_M_TONAME_LIN': { queryable: true, title: 'Toponymy', abstract: 'This layer represents the toponymy of public places.' }, 'urbis:URB_M_ZIPOINT': { queryable: true, title: 'Points of interest', abstract: 'This layer represents the point of zone of interest.' }, 'urbis:URB_T_LINE': { queryable: false, title: 'Urbis Topo Lines', abstract: 'This layer represents the topo lines.' }, 'urbis:URB_T_POINT': { queryable: true, title: 'Urbis Topo Points', abstract: 'This layer represents the topo points.' }, 'urbis:URB_A_SI_POINT_VW': { queryable: false, title: 'Street sides' }, 'urbis:MuNeighbour': { queryable: true, title: 'Neighbour Municipalities' }, 'urbis:Highways': { queryable: false, title: 'Highways' } } },
-    { id: 3205, title: 'GIPOD Nu + 1 maand', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', area: 'BE', abstract: 'Overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'ManOml', 'ManCon', 'ManIcoon', 'WoOml', 'WoCon', 'WoIcoon' ], layers: { 'ManOml': { queryable: false, title: 'Omleidingen van de manifestaties', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.' }, 'ManCon': { queryable: true, title: 'Manifestaties contour', abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'ManIcoon': { queryable: false, title: 'Manifestaties icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoOml': { queryable: false, title: 'Omleidingen van de werkopdrachten', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.' }, 'WoCon': { queryable: true, title: 'Werkopdrachten contour', abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoIcoon': { queryable: false, title: 'Werkopdrachten icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' } } },
-    { id: 3206, title: 'Ortho Vlaanderen Tijdsreeksen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omw/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008), format: 'image/jpeg', area: 'BE', abstract: 'Tijdsreeks van middenschalige orthofotomozaïeken met een resolutie van 25cm, gebiedsdekkend voor Vlaanderen', attribution: 'Agentschap Informatie Vlaanderen', pixelManipulations: [ 'whiteTiles2transparent' ], getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OMWRGB18VL', 'OMWRGB18VL_VDC' ], layers: { 'OMWRGB18VL': { queryable: false, title: 'Winteropnamen, 2018', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2018 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB18VL_VDC': { queryable: true, title: 'Winteropnamen, 2018, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB17VL': { queryable: false, title: 'Winteropnamen, 2017', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2017 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB17VL_VDC': { queryable: true, title: 'Winteropnamen, 2017, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB16VL': { queryable: false, title: 'Winteropnamen, 2016', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2016 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB16VL_VDC': { queryable: true, title: 'Winteropnamen, 2016, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB15VL': { queryable: false, title: 'Winteropnamen, 2015', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2015 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB15VL_VDC': { queryable: true, title: 'Winteropnamen, 2015, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB14VL': { queryable: false, title: 'Winteropnamen, 2014', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2014 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB14VL_VDC': { queryable: true, title: 'Winteropnamen, 2014, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB13VL': { queryable: false, title: 'Winteropnamen, 2013', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2013 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB13VL_VDC': { queryable: true, title: 'Winteropnamen, 2013, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB12VL': { queryable: false, title: 'Winteropnamen, 2012', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2012 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB12VL_VDC': { queryable: true, title: 'Winteropnamen, 2012, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB08_11VL': { queryable: false, title: 'Winteropnamen, 2008-2011', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2008-2011 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB08_11VL_VDC': { queryable: true, title: 'Winteropnamen, 2008-2011, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB05_07VL': { queryable: false, title: 'Winteropnamen, 2005-2007', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2005-2007 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB05_07VL_VDC': { queryable: true, title: 'Winteropnamen, 2005-2007, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' }, 'OMWRGB00_03VL': { queryable: false, title: 'Winteropnamen, 2000-2003', abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2000-2003 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.' }, 'OMWRGB00_03VL_VDC': { queryable: true, title: 'Winteropnamen, 2000-2003, vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' } } },
-    { id: 3207, title: 'Wegenregister', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Wegenregister/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', area: 'BE', abstract: 'De wegen in het Wegenregister. Het Wegenregister is een middenschalig referentiebestand van de wegen in Vlaanderen. Het bevat alle wegen van Vlaanderen, met bijhorende attribuutgegevens.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=wegennet&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'AUTOSWEG', 'WEGGESCH', 'WEGEEN', 'ROT', 'SPECSIT', 'VERKPLEIN', 'OPAFOGKR', 'OPAFGGKR', 'PLLWEG', 'VENTWEG', 'INUITP', 'INUITD', 'VOETGANGERSZONE', 'WANDFIETS', 'TRAMWEG', 'DIENSTWEG', 'AARDEWEG', 'VEER', 'TYPENTG', 'LABELS' ], layers: { 'AUTOSWEG': { queryable: true, title: 'Autosnelweg', abstract: 'Een "autosnelweg" heeft typisch twee gescheiden parallelle rijbanen met tegengestelde toegelaten rijrichtingen. Op een autosnelweg komen geen gelijkgrondse kruisingen voor. Kruisingen met andere wegen gebeuren steeds ofwel over bruggen of in tunnels.' }, 'WEGGESCH': { queryable: true, title: 'Weg met gescheiden rijbanen', abstract: '"Een weg met gescheiden rijbanen die geen autosnelweg is" wordt gekenmerkt door de aanwezigheid van minstens twee rijbanen (onafhankelijk van het aantal rijstroken) die fysiek gescheiden zijn en tegengestelde toegelaten rijrichtingen hebben.' }, 'WEGEEN': { queryable: true, title: 'Weg met één rijbaan', abstract: 'Wegsegmenten die behoren tot een hoofdcirculatiezone die gekenmerkt wordt door de aanwezigheid van slechts één circulatievak in de dwarsrichting.' }, 'ROT': { queryable: true, title: 'Rotonde', abstract: 'Wegsegmenten die tot de rotonde behoren vormen een gesloten ringvormige structuur. Op deze wegsegmenten is enkel éénrichtingsverkeer toegelaten.' }, 'SPECSIT': { queryable: true, title: 'Speciale verkeerssituatie', abstract: 'Wegsegmenten die behoren tot een min of meer cirkelvormige constructie die geen rotonde is.' }, 'VERKPLEIN': { queryable: true, title: 'Verkeersplein', abstract: 'Wegsegmenten die worden opgenomen in gebieden waar het verkeer ongestructureerd verloopt. Het gaat typisch om marktpleinen, parkeerterreinen of terreinen met een andere functie dan een zuivere verkeersfunctie' }, 'OPAFOGKR': { queryable: true, title: 'Oprit of afrit behorende tot een nietgelijkgrondse kruising', abstract: 'Een "op- of afrit, behorende tot een niet-gelijkgrondse kruising" verzorgt de verbinding tussen twee wegen die zich niet-gelijkgronds kruisen. Alle op- en afritten van autosnelwegen en verkeerswisselaars worden eveneens tot deze klasse gerekend.' }, 'OPAFGGKR': { queryable: true, title: 'Oprit of afrit  behorende tot een gelijkgrondse kruising', abstract: 'Een "op- of afrit, behorende tot een gelijkgrondse kruising" verzorgt de verbinding tussen twee wegen die geen autosnelweg zijn. Zonder de op- of afrit bestaat er nog steeds een topologische verbinding tussen de wegsegmenten waarbij de op- of afrit hoort.' }, 'PLLWEG': { queryable: true, title: 'Parallelweg', abstract: 'Een "parallelweg" is een op- of afrit waarvan de begin- en eindpositie verbonden is met dezelfde autosnelweg. Een "parallelweg" heeft een rechtstreekse verbinding of een verbinding via op- of afritten van een ander type met de bijhorende autosnelweg.' }, 'VENTWEG': { queryable: true, title: 'Ventweg', abstract: 'Een "ventweg" loopt parallel aan een weg met een belangrijke verkeersfunctie die geen autosnelweg is. De weg biedt toegang tot minder belangrijke aanpalende wegen, bestemmingen of adressen en wordt van de hoofdweg gescheiden door kleine constructies.' }, 'INUITP': { queryable: true, title: 'Inrit of uitrit van een parking', abstract: 'Een "in- of uitrit van een parking" is een weg die speciaal ontworpen is om een parkeerterrein of parkeergarage te bereiken of te verlaten.' }, 'INUITD': { queryable: true, title: 'Inrit of uitrit van een dienst', abstract: 'Een "in- of uitrit van een dienst" is een weg die speciaal ontworpen is om een dienst (voorbeeld: luchthaven, station, ziekenhuis, brandweerkazerne, politie, openbare dienst, hotel, restaurant) te bereiken of te verlaten.' }, 'VOETGANGERSZONE': { queryable: true, title: 'Voetgangerszone', abstract: 'Gebied met een wegennet dat speciaal ontworpen is voor gebruik door voetgangers (meestal gesitueerd in stedelijke gebieden). In voetgangerszones is enkel voetgangersverkeer toegelaten (uitzondering: prioritaire voertuigen en leveringen).' }, 'WANDFIETS': { queryable: true, title: 'Wandel- of fietsweg', abstract: 'Op een "wandel- en/of fietsweg" is de verkeerstoegang beperkt tot voetgangers en/of fietsers. De fysieke kenmerken van een "wandel- en/of fietsweg" laten de toegang van andere voertuigen niet toe (smaller dan 2.5m).' }, 'TRAMWEG': { queryable: true, title: 'Tramweg', abstract: 'Een "tramweg" is een weg die speciaal ontworpen is voor het tramverkeer. De fysieke kenmerken van een "tramweg" laten de toegang van andere voertuigen niet toe.' }, 'DIENSTWEG': { queryable: true, title: 'Dienstweg', abstract: 'Een "tramweg" is een weg die speciaal ontworpen is voor het tramverkeer. De fysieke kenmerken van een "tramweg" laten de toegang van andere voertuigen niet toe.' }, 'AARDEWEG': { queryable: true, title: 'Aardeweg', abstract: 'Een "aardeweg" is een weg zonder wegverharding die op zijn minst berijdbaar is voor bepaalde vierwielige motorvoertuigen (bv. terreinwagens, landbouwvoertuigen,...)' }, 'VEER': { queryable: true, title: 'Veer', abstract: 'Een "veer" is bedoeld voor het transport van passagiers, voertuigen of vracht over het water en verbindt vaak twee of meerdere landwegen' }, 'TYPENTG': { queryable: true, title: 'Type weg niet gekend', abstract: 'Wegtype is niet gekend' }, 'LABELS': { queryable: false, title: 'Straatnamen', abstract: 'Straatnamen volgens CRAB' } } },
-    { id: 3208, title: 'Administratieve eenheden', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Administratieve_Eenheden/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', area: 'BE', abstract: 'Vlaamse administratieve eenheden', attribution: 'AIV', pixelManipulations: [ 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Refarr', 'Refprv', 'Refgew', 'RefgemGrens', 'RefgemBron', 'RefgemLabel' ], layers: { 'Refgem': { queryable: true, title: 'Gemeenten', abstract: 'Ligging en afgrenzing van de vastgestelde territoria van gemeenten. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.' }, 'Refarr': { queryable: true, title: 'Arrondissementen - Grenzen', abstract: 'Afgrenzing van bestuurlijke arrondissementen in Vlaanderen. Bestuurlijke arrondissementen vormen een administratieve indeling van de provincies. Het gaat om een groepering van een aantal gemeenten. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied met de begrenzing van Vlaamse bestuurlijke indelingen.' }, 'Refprv': { queryable: true, title: 'Provincies - Grenzen', abstract: 'Afgrenzing van provincies in Vlaanderen. Provincies vormen een administratieve indeling van het Vlaams Gewest. De provincies vormen het bestuurlijke niveau tussen de gemeenten en arrondissementen enerzijds en het Vlaams Gewest anderzijds. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met bestuurlijke indelingen.' }, 'Refgew': { queryable: true, title: 'Gewest - Grens', abstract: 'Grens van het Vlaams Gewest. Door het samenwerkingsverband GDI-Vlaanderen als voorlopig referentie gehanteerde geografische dataset van het grondgebied en de afgrenzing van het Vlaams Gewest' }, 'RefgemGrens': { queryable: true, title: 'Gemeenten - Grenzen', abstract: 'Grenzen van de vastgestelde territoria van gemeenten. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.' }, 'RefgemBron': { queryable: true, title: 'Gemeenten - Grenzen - Bron Geometrie', abstract: 'Informatie over de herkomst van de geometrische informatie van (een deel van) een gemeentegrens.' }, 'RefgemLabel': { queryable: true, title: 'Gemeenten - Namen', abstract: 'Label met de naam van de gemeente. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.' } } },
-    { id: 3209, title: 'Orthofotowerkbestand Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ofw/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008), format: 'image/jpeg', area: 'BE', abstract: 'Compilatie van de meest recente orthofotowerkbestanden voor Vlaanderen', attribution: 'Agentschap Informatie Vlaanderen', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OFW', 'OFW_vdc' ], layers: { 'OFW': { queryable: false, title: 'Orthofotowerkbestand', abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotowerkbestanden die voor Vlaanderen  beschikbaar zijn. De compilatie heeft een grondresolutie van 25cm.' }, 'OFW_vdc': { queryable: true, title: 'Vliegdagcontour', abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.' } } },
-    { id: 3210, title: 'Adrespunten Vlaanderen', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Adressen/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007), zoomRange: [6, 10], format: 'image/png', area: 'BE', abstract: 'Overzicht van in CRAB opgenomen adressen (huisnummers met bijhorende straat en gemeente) van Vlaanderen, met hun lokatie. Deze dataset is een bevraging van de CRAB-gegevens, bedoeld om tot een eenvoudige en vlot toegankelijke adressenlijst te komen.', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Adrespunten - CRAB&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Adrespos' ], layers: { 'Adrespos': { queryable: true, title: 'CRAB - Adrespunt' } } },
-    { id: 3211, title: 'Ortho Vl. 2013-2015 Grootschalig', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ogw/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008), format: 'image/jpeg', area: 'BE', abstract: 'Tijdsreeks van grootschalige orthofotomozaïeken met een resolutie van 10cm, gebiedsdekkend voor Vlaanderen', attribution: 'Agentschap Informatie Vlaanderen', pixelManipulations: [ 'whiteTiles2transparent' ], getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Luchtfoto Vlaanderen, winter 2013-2015 - kleur&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'OGWRGB13_15VL', 'OGWRGB13_15VL_vdc' ], layers: { 'OGWRGB13_15VL': { queryable: false, title: 'Orthofotomozaïek, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen', abstract: 'Deze rasterlaag is een compilatie van de grootschalige orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2013-2015 werden aangemaakt. De compilatie heeft een grondresolutie van 10cm.' }, 'OGWRGB13_15VL_vdc': { queryable: true, title: 'Vliegdagcontour, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen' } } },
-    { id: 3212, title: 'Snelheidsregimes en referentiepunten AWV', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(282692, 6565133, 655962, 6710236), format: 'image/png', area: 'BE', abstract: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Snelheidsregimes&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, attribution: 'Agentschap Informatie Vlaanderen', pixelManipulations: [ 'removePartialBlackTransparency', 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'awv:Snelheidsregimes', 'awv:Referentiepunten' ], layers: { 'awv:Snelheidsregimes': { queryable: true, title: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV', abstract: 'Snelheidsregimes zijn delen van een genummerde weg met een uniforme maximale snelheid. De snelheidsregimes zijn lineaire weergaves van een (deel van) de wegen met aanduiding van een uniforme maximum snelheid.' }, 'awv:Referentiepunten': { queryable: true, title: 'Km en hm referentiepunten', abstract: 'Posities van de km en hm referentiepunten langs de Vlaamse autosnelwegen en gewestwegen met de bijbehorende kilometer-/ hectometeraanduidingen' } } },
-    { id: 3214, title: 'Administrative Borders', url: 'https://ccff02.minfin.fgov.be/geoservices/arcgis/services/INSPIRE/AU_wms/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134), format: 'image/png', area: 'BE', abstract: 'Administrative borders for Belgium', attribution: 'FPS Finances - General Administration of Patrimonial Documentation', default_layers: ['5', '4', '3', '2', '1'], layers: { '1': { title: 'Country Boundary' }, '2': { title: 'Region Boundary' }, '3': { title: 'Province Boundary' }, '4': { title: 'Arrondissement Boundary' }, '5': { title: 'Town Boundary' }, '7': { title: 'Country' }, '8': { title: 'Region' }, '9': { title: 'Province' }, '10': { title: 'Arrondissement' }, '11': { title: 'Town' } } },
-    { id: 3215, title: 'GIPOD Actueel', url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007), format: 'image/png', area: 'BE', abstract: 'Overzicht van momenteel actief zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder.', attribution: 'Agentschap Informatie Vlaanderen', getExternalUrl: function() { var extent = W.map.getExtent(); return 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top; }, queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'ManOmlVndg', 'ManConVndg', 'ManIcoonVndg', 'WoOmlVndg', 'WoConVndg', 'WoIcoonVndg' ], layers: { 'ManOmlVndg': { queryable: false, title: 'Omleidingen van de manifestaties', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.' }, 'ManConVndg': { queryable: true, title: 'Manifestaties contour', abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'ManIcoonVndg': { queryable: false, title: 'Manifestaties icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoOmlVndg': { queryable: false, title: 'Omleidingen van de werkopdrachten', abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.' }, 'WoConVndg': { queryable: true, title: 'Werkopdrachten contour', abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' }, 'WoIcoonVndg': { queryable: false, title: 'Werkopdrachten icoon', abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.' } } },
-    { id: 3216, title: 'Orthophotos 2016', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2016.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.', attribution: 'Service public de Wallonie', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO_2016', abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2016 - Tuilage".' } } },
-    { id: 3217, title: 'Réseau routier régional', url: 'https://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(295477, 6347477, 740431, 6640886), format: 'image/png', area: 'BE', abstract: 'Consultation, recherche et identification des données relatives au Réseau routier régional wallon et aux bornes kilométriques.', attribution: 'Service publique de Wallonie', pixelManipulations: [ 'traceGrayscalePixels' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ '1', '2', '3', '5', '6' ], layers: { '1': { queryable: true, title: 'Nationales', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, '2': { queryable: true, title: 'Rings', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, '3': { queryable: true, title: 'Autoroutes', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html' }, '5': { queryable: true, title: 'Bornes kilométriques', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html' }, '6': { queryable: true, title: 'Bornes hectométriques', abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html' } } },
-    { id: 3220, title: 'Verkeersborden Vlaanderen', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(279108, 6561687, 663162, 6713720), format: 'image/png', area: 'BE', abstract: 'Puntvoorstelling van de verkeersborden uit de toepassing Verkeersborden.Vlaanderen', attribution: 'MOW Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'awv:Verkeersborden.Vlaanderen_Borden' ], layers: { 'awv:Verkeersborden.Vlaanderen_Borden': { title: 'Verkeersborden.Vlaanderen', queryable: true } } },
-    { id: 3221, title: 'Afgeleide snelheidsregimes', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(281625, 6555960, 664720, 6711205), format: 'image/png', area: 'BE', abstract: 'Kaart van de afgeleide snelheidsregimes op wegen gelegen in het Vlaams gewest. Het basis van het wegenbestand waarop de snelheidsregimes zijn geprojecteerd is steeds de laatste versie van het Wegenregister zoals gepubliceerd op de website van Informatie Vlaanderen. De opstellingen in de Verkeersborden.Vlaanderen databank dienen als basisbestand voor de afgeleide data. De kwaliteit van de afgeleide data hangt af van de correctheid van zowel het Wegenregister als de data is Verkeersborden.Vlaanderen.', attribution: 'MOW Vlaanderen', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'awv:Afgeleide_snelheidsregimes' ], layers: { 'awv:Afgeleide_snelheidsregimes': { title: 'Afgeleide snelheidsregimes', queryable: true } } },
-    { id: 3222, title: 'Brussels CIRB (FR)', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Données de carte Bruxelloises', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'urbisFR' ], layers: { 'urbisFR': { queryable: false, title: 'Urbis Base Map FR', abstract: 'This layer represents the base map in french.' }, 'urbisFRGray': { queryable: false, title: 'Urbis Base Map Gray FR', abstract: 'This layer represents the gray base map in french.' }, 'urbis:LabeledStreetAxe': { queryable: false, title: 'Labeled Street Axe', abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building' }, 'urbis:URB_A_ADPT': { queryable: false, title: 'Address points', abstract: 'This layer is the localization of address points of the Brussels Region' }, 'urbis:URB_A_BU': { queryable: true, title: 'Buildings', abstract: 'This layer represents the buildings of the Brussels Region' }, 'urbis:URB_A_MD': { queryable: true, title: 'Monitoring districts', abstract: 'This layer reprensent the monitoring districts of the Brussels Region' }, 'urbis:URB_A_MU': { queryable: true, title: 'Municipalities', abstract: 'This layer represents the municipalities of the Brussels Region' }, 'urbis:URB_A_MY_SA': { queryable: false, title: 'Street axes', abstract: 'This layer represents the axes of the street of the Brussels Region' }, 'urbis:URB_A_MY_SS': { queryable: false, title: 'Street sections', abstract: 'This layer represents the street sections of the Brussels Region' }, 'urbis:URB_A_MZ': { queryable: true, title: 'Municipal zips', abstract: 'This layer is the zip of the municipality of the Brussels Region' }, 'urbis:URB_A_POpenLayers': { queryable: true, title: 'Police districts', abstract: 'This layer is the police districts of the Brussels Region' }, 'urbis:URB_A_RE': { queryable: false, title: 'Region', abstract: 'This layer is the Brussels Region' }, 'urbis:URB_A_SD': { queryable: true, title: 'Statistical districts', abstract: 'This layer represents the limit of the statistical districts of the Brussels Region' }, 'urbis:URB_A_SN': { queryable: false, title: 'Street nodes', abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe' }, 'urbis:URB_M_RTLINE': { queryable: false, title: 'Rail tracks', abstract: 'This layer represents the rails tracks.' }, 'urbis:URB_M_SHAPE': { queryable: true, title: 'UrbisMap shapes', abstract: 'This layer represents the shapes of UrbisMap.' }, 'urbis:URB_M_TONAME_LIN': { queryable: true, title: 'Toponymy', abstract: 'This layer represents the toponymy of public places.' }, 'urbis:URB_M_ZIPOINT': { queryable: true, title: 'Points of interest', abstract: 'This layer represents the point of zone of interest.' }, 'urbis:URB_T_LINE': { queryable: false, title: 'Urbis Topo Lines', abstract: 'This layer represents the topo lines.' }, 'urbis:URB_T_POINT': { queryable: true, title: 'Urbis Topo Points', abstract: 'This layer represents the topo points.' }, 'urbis:URB_A_SI_POINT_VW': { queryable: false, title: 'Street sides' }, 'urbis:MuNeighbour': { queryable: true, title: 'Neighbour Municipalities' }, 'urbis:Highways': { queryable: false, title: 'Highways' } } },
-    { id: 3223, title: 'Brussels Ortho', url: 'https://geoservices-urbis.irisnet.be/geoserver/ows', crs: 'EPSG:31370', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Orthographic map of Brussels', attribution: 'Irisnet GIS', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ 'Urbis:Ortho' ], layers: { 'Urbis:Ortho': { queryable: false, title: 'Urbis Ortho', abstract: 'This layer always shows the most recent available orthographic images' }, 'Urbis:Ortho2019': { queryable: false, title: 'Ortho 2019', abstract: 'Orthographic imagery for the year 2019 within the Brussels region' }, 'Urbis:Ortho2018': { queryable: false, title: 'Ortho 2018', abstract: 'Orthographic imagery for the year 2018 within the Brussels region' }, 'Urbis:Ortho2017': { queryable: false, title: 'Ortho 2017', abstract: 'Orthographic imagery for the year 2017 within the Brussels region' }, 'Urbis:Ortho2016': { queryable: false, title: 'Ortho 2016', abstract: 'Orthographic imagery for the year 2016 within the Brussels region' }, 'Urbis:Ortho2015': { queryable: false, title: 'Ortho 2015', abstract: 'Orthographic imagery for the year 2015 within the Brussels region' }, 'Urbis:Ortho2014': { queryable: false, title: 'Ortho 2014', abstract: 'Orthographic imagery for the year 2014 within the Brussels region' }, 'Urbis:Ortho2012': { queryable: false, title: 'Ortho 2012', abstract: 'Orthographic imagery for the year 2012 within the Brussels region' }, 'Urbis:Ortho2009': { queryable: false, title: 'Ortho 2009', abstract: 'Orthographic imagery for the year 2009 within the Brussels region' }, 'Urbis:Ortho2004': { queryable: false, title: 'Ortho 2004', abstract: 'Orthographic imagery for the year 2004 within the Brussels region' } } },
-    { id: 3224, title: 'Brussels Road Hierarchy', url: 'https://data.mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Road hierarchy maintained by Brussels Mobility', attribution: 'Brussels Mobility', pixelManipulations: [ 'brusselsSwapColours' ], queryable: false, default_layers: [ 'specialisation_vp' ], layers: { 'specialisation_vp': { queryable: false, title: 'Road hierarchy' } } },
-    { id: 3225, title: 'Brussels Zone 30', url: 'https://data.mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Road speed limit data maintained by Brussels Mobility', attribution: 'Brussels Mobility', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'Zones_30' ], layers: { 'Zones_30': { queryable: true, title: 'Road speeds' } } },
-    { id: 3226, title: 'Brussels Low Emission Zone', url: 'https://data.mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), format: 'image/png', area: 'BE', abstract: 'Defines the contours of the low emission zone active in Brussels', attribution: 'Brussels Mobility', queryable: false, default_layers: [ 'lez_zone' ], layers: { 'lez_zone': { queryable: false, title: 'Low Emission Zone' } } },
-    { id: 3227, title: 'Verkeersborden Vlaanderen Visualisatie', url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geowebcache/service/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(279108, 6561687, 663162, 6713720), format: 'image/png', area: 'BE', abstract: 'Grafische voorstelling van de verkeersborden uit de toepassing Verkeersborden.Vlaanderen', attribution: 'MOW Vlaanderen', pixelManipulations: [ 'addTranslucentOverlay' ], queryable: false, default_layers: [ 'verkeersborden' ], layers: { 'verkeersborden': { title: 'Grafische voorstelling verkeersborden', queryable: false } } },
-    { id: 3228, title: 'Orthophotos Récentes', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_LAST/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation WMS référençant la dernière campagne disponible des images orthorectifiées couvrant le territoire de la Région Wallonne.', attribution: 'Service public de Wallonie', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO', abstract: 'Dernière campagne disponible d\'imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm. Leur but initial était de servir de base au contrôles liés à la mise en oeuvre de la Politique Agricole Commune (PAC). Quatre bandes spectrales sont disponibles (Rouge, Vert, Bleu et Infra-rouge).' } } },
-    { id: 3229, title: 'Orthophotos 2017', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2017/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2017.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2017 et le 1er novembre 2017. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.', attribution: 'Service public de Wallonie', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO_2017', abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2017 et le 1er novembre 2017. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2017 - Tuilage".' } } },
-    { id: 3230, title: 'Orthophotos 2018', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2018/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2018.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2018 et le 1er novembre 2018. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.', attribution: 'Service public de Wallonie', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO_2018', abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2018 et le 1er novembre 2018. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2018 - Tuilage".' } } },
-    { id: 3231, title: 'Orthophotos 2019', url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2019/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131), format: 'image/jpeg', area: 'BE', abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2019.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2019 et le 1er novembre 2019. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.', attribution: 'Service public de Wallonie', pixelManipulations: [ 'whiteTiles2transparent' ], queryable: false, default_layers: [ '0' ], layers: { '0': { queryable: false, title: 'ORTHO_2019', abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2019 et le 1er novembre 2019. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2019 - Tuilage".' } } },
-    { id: 3232, title: 'Ville 30/Stad 30', url: 'https://data.mobility.brussels/geoserver/bm_network/wms', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337), zoomRange: [3, 10], format: 'image/png', area: 'BE', abstract: 'Future speed limits in Brussels Mobility (green/blue: 30, orange: 50, pink: 70, black: 90/120)', attribution: 'Brussels Mobility', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ 'ville30_detailed' ], layers: { 'ville30_detailed': { queryable: true, title: 'Road speeds' } } },
-    { id: 3233, title: 'Cadastral Borders', url: 'https://eservices.minfin.fgov.be/arcgis/services/R2C/OtherLimits/MapServer/WMSServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134), format: 'image/png', area: 'BE', abstract: 'Map of cadastral borders as they are defined at FPS Finances. This can often be used to find town borders.', attribution: 'FPS Finances - General Administration of Patrimonial Documentation', queryable: true, query_filters: [ applyAllTransformations ], default_layers: [ '1', '2', '5' ], layers: { '1': { queryable: false, title: 'Cadastral Sections' }, '2': { queryable: true, title: 'Cadastral Divisions' }, '3': { queryable: false, title: 'Cadastral Blocks' }, '4': { queryable: false, title: 'Administrative Stones' }, '5': { queryable: false, title: 'Administrative Lines' } } },
-    { id: 5501, title: 'Mapa basico Rio de Janeiro', url: 'http://pgeo3.rio.rj.gov.br/arcgis/services/Basicos/mapa_basico_UTM/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(-4880972, -2646822, -4793898, -2599308), format: 'image/png', area: 'BR', abstract: 'Mapa urbano básico da Cidade do Rio de Janeiro', attribution: 'Cidade do Rio de Janeiro', pixelManipulations: [ 'rioTransparent' ], queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'], layers: { '0': { queryable: false, title: 'Limite do Estado do Rio de Janeiro', abstract: 'Divisão Política do Estado do Rio de Janeiro' }, '1': { queryable: false, title: 'relevo' }, '2': { queryable: false, title: 'Quadras' }, '3': { queryable: true, title: 'Logradouros - Ruas' }, '4': { queryable: false, title: 'Praças' }, '5': { queryable: false, title: 'Areas Protegidas' }, '6': { queryable: true, title: 'Favelas' }, '7': { queryable: false, title: 'Loteamentos Irregulares e Clandestinos' }, '8': { queryable: false, title: 'edificações' }, '9': { queryable: false, title: 'Hidrografia - Rios' }, '10': { queryable: false, title: 'Limite de Bairros' }, '11': { queryable: false, title: 'Limite de Regiões Administrativas - RA' }, '12': { queryable: false, title: 'Áreas de Planejamento - AP' }, '13': { queryable: false, title: 'número de porta' }, '14': { queryable: true, title: 'principais logradouros' }, '15': { queryable: false, title: 'Locais de Referência' }, '16': { queryable: false, title: 'Escolas Municipais' }, '17': { queryable: false, title: 'Unidades de Saúde Estaduais e Federais' }, '18': { queryable: false, title: 'Unidades de Saúde Municipais' }, '19': { queryable: false, title: 'Corpo de Bombeiros' }, '20': { queryable: false, title: 'Delegacias Policiais' }, '21': { queryable: false, title: 'Estações de Bonde' }, '22': { queryable: false, title: 'Estações Hidroviárias' }, '23': { queryable: false, title: 'Estações Ferroviárias' }, '24': { queryable: false, title: 'Estações do Metrô' }, '25': { queryable: false, title: 'Aeroportos', abstract: 'principais aeroportos comerciais' } } },
-    { id: 96801, title: 'Oman National Basemap (EN) Transparent with Major Landmarks', url: 'https://nsdig2gapps.ncsi.gov.om/arcgis1/services/Geoportal/BaseMapTransparentLandmarksEN/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(5147047, 1459394, 7435614, 3520164), format: 'image/png', area: 'OM', abstract: 'National Basemap Transparent with Major Landmarks', attribution: 'NCSI', queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'], layers: { '1': { queryable: true, title: 'Name of Ocean', abstract: 'Name of Ocean' }, '2': { queryable: true, title: 'World Ocean', abstract: 'World Ocean' }, '3': { queryable: true, title: 'World Countries', abstract: 'World Countries' }, '5': { queryable: true, title: 'Country Boundary', abstract: 'Country Boundary' }, '6': { queryable: true, title: 'Governorate ', abstract: 'Governorate ' }, '7': { queryable: true, title: 'Willayat', abstract: 'Willayat' }, '8': { queryable: true, title: 'Governorate Center', abstract: 'Governorate Center' }, '9': { queryable: true, title: 'Willayat Center', abstract: 'Willayat Center' }, '10': { queryable: true, title: 'Town Center', abstract: 'Town Center' }, '12': { queryable: true, title: 'Rock', abstract: 'Rock' }, '13': { queryable: true, title: 'Sand Dunes', abstract: 'Sand Dunes' }, '14': { queryable: true, title: 'Builtup Area', abstract: 'Builtup Area' }, '15': { queryable: true, title: 'Vegetation', abstract: 'Vegetation' }, '17': { queryable: true, title: 'Reservoir', abstract: 'Reservoir' }, '18': { queryable: true, title: 'Marsh Swamp', abstract: 'Marsh Swamp' }, '19': { queryable: true, title: 'Sabkha', abstract: 'Sabkha' }, '20': { queryable: true, title: 'Lake Pond', abstract: 'Lake Pond' }, '21': { queryable: true, title: 'Lagoon', abstract: 'Lagoon' }, '22': { queryable: true, title: 'Wadi Stream', abstract: 'Wadi Stream' }, '23': { queryable: true, title: 'Wadi Spread', abstract: 'Wadi Spread' }, '24': { queryable: true, title: 'Dam', abstract: 'Dam' }, '25': { queryable: true, title: 'Foreshore', abstract: 'Foreshore' }, '26': { queryable: true, title: 'Beach', abstract: 'Beach' }, '27': { queryable: true, title: 'Ditch', abstract: 'Ditch' }, '28': { queryable: true, title: 'Weir', abstract: 'Weir' }, '29': { queryable: true, title: 'Sluice Gate', abstract: 'Sluice Gate' }, '30': { queryable: true, title: 'Waterfall', abstract: 'Waterfall' }, '31': { queryable: true, title: 'Spring', abstract: 'Spring' }, '33': { queryable: true, title: 'Road Centre Lines', abstract: 'Road Centre Lines' }, '34': { queryable: true, title: 'Road Centre Lines', abstract: 'Road Centre Lines' }, '35': { queryable: true, title: 'Streets', abstract: 'Streets' }, '36': { queryable: true, title: 'Minor Roads', abstract: 'Minor Roads' }, '37': { queryable: true, title: 'Major Roads', abstract: 'Major Roads' }, '39': { queryable: true, title: 'Amusement Parks', abstract: 'Amusement Parks' }, '40': { queryable: true, title: 'Golf Courses', abstract: 'Golf Courses' }, '41': { queryable: true, title: 'Parks', abstract: 'Parks' }, '42': { queryable: true, title: 'Racing Tracks', abstract: 'Racing Tracks' }, '43': { queryable: true, title: 'Sports Fields', abstract: 'Sports Fields' }, '45': { queryable: true, title: 'Archeological Sites', abstract: 'Archeological Sites' }, '47': { queryable: true, title: 'Buildings', abstract: 'Buildings' }, '48': { queryable: true, title: 'Wall and Fences', abstract: 'Wall and Fences' }, '50': { queryable: true, title: 'Consulates', abstract: 'Consulates' }, '51': { queryable: true, title: 'International Missions', abstract: 'International Missions' }, '52': { queryable: true, title: 'Embassies', abstract: 'Embassies' }, '53': { queryable: true, title: 'Money Exchange', abstract: 'Money Exchange' }, '54': { queryable: true, title: 'Stock Exchange', abstract: 'Stock Exchange' }, '55': { queryable: true, title: 'Banks', abstract: 'Banks' }, '56': { queryable: true, title: 'Fuel Stations', abstract: 'Fuel Stations' }, '57': { queryable: true, title: 'Department Stores', abstract: 'Department Stores' }, '58': { queryable: true, title: 'Shopping Mall Locations', abstract: 'Shopping Mall Locations' }, '59': { queryable: true, title: 'Market Locations', abstract: 'Market Locations' }, '60': { queryable: true, title: 'Ambulance Station', abstract: 'Ambulance Station' }, '61': { queryable: true, title: 'Civil Defense Centers', abstract: 'Civil Defense Centers' }, '62': { queryable: true, title: 'Police Station', abstract: 'Police Station' }, '63': { queryable: true, title: 'Government Offices', abstract: 'Government Offices' }, '64': { queryable: true, title: 'College Locations', abstract: 'College Locations' }, '65': { queryable: true, title: 'Training Centers', abstract: 'Training Centers' }, '66': { queryable: true, title: 'University Locations', abstract: 'University Locations' }, '67': { queryable: true, title: 'School Locations', abstract: 'School Locations' }, '68': { queryable: true, title: 'Health Centers', abstract: 'Health Centers' }, '69': { queryable: true, title: 'Hospital Locations', abstract: 'Hospital Locations' }, '70': { queryable: true, title: 'Diagnostic Centers', abstract: 'Diagnostic Centers' }, '71': { queryable: true, title: 'Churches', abstract: 'Churches' }, '72': { queryable: true, title: 'Temples', abstract: 'Temples' }, '73': { queryable: true, title: 'Shrines', abstract: 'Shrines' }, '74': { queryable: true, title: 'Mosques', abstract: 'Mosques' }, '75': { queryable: true, title: 'Amusement Parks', abstract: 'Amusement Parks' }, '76': { queryable: true, title: 'Beach Location', abstract: 'Beach Location' }, '77': { queryable: true, title: 'Cinema Theaters', abstract: 'Cinema Theaters' }, '78': { queryable: true, title: 'Skating Centers', abstract: 'Skating Centers' }, '79': { queryable: true, title: 'Bowling Centers', abstract: 'Bowling Centers' }, '80': { queryable: true, title: 'Theaters', abstract: 'Theaters' }, '81': { queryable: true, title: 'Cultural Facilities', abstract: 'Cultural Facilities' }, '82': { queryable: true, title: 'Museums', abstract: 'Museums' }, '83': { queryable: true, title: 'Park Locations', abstract: 'Park Locations' }, '84': { queryable: true, title: 'Convention Centers', abstract: 'Convention Centers' }, '85': { queryable: true, title: 'Resturants', abstract: 'Resturants' }, '86': { queryable: true, title: 'Hotels', abstract: 'Hotels' }, '87': { queryable: true, title: 'Archeological Site Locations', abstract: 'Archeological Site Locations' }, '88': { queryable: true, title: 'FerryTerminals', abstract: 'FerryTerminals' }, '89': { queryable: true, title: 'Airport Locations', abstract: 'Airport Locations' }, '91': { queryable: true, title: 'Consulates', abstract: 'Consulates' }, '92': { queryable: true, title: 'International Missions', abstract: 'International Missions' }, '93': { queryable: true, title: 'Embassies', abstract: 'Embassies' }, '94': { queryable: true, title: 'Money Exchange', abstract: 'Money Exchange' }, '95': { queryable: true, title: 'Stock Exchange', abstract: 'Stock Exchange' }, '96': { queryable: true, title: 'Banks', abstract: 'Banks' }, '97': { queryable: true, title: 'Fuel Stations', abstract: 'Fuel Stations' }, '98': { queryable: true, title: 'Department Stores', abstract: 'Department Stores' }, '99': { queryable: true, title: 'Shopping Mall Locations', abstract: 'Shopping Mall Locations' }, '100': { queryable: true, title: 'Market Locations', abstract: 'Market Locations' }, '101': { queryable: true, title: 'Ambulance Station', abstract: 'Ambulance Station' }, '102': { queryable: true, title: 'Civil Defense Centers', abstract: 'Civil Defense Centers' }, '103': { queryable: true, title: 'Police Station', abstract: 'Police Station' }, '104': { queryable: true, title: 'Government Offices', abstract: 'Government Offices' }, '105': { queryable: true, title: 'College Locations', abstract: 'College Locations' }, '106': { queryable: true, title: 'Training Centers', abstract: 'Training Centers' }, '107': { queryable: true, title: 'University Locations', abstract: 'University Locations' }, '108': { queryable: true, title: 'School Locations', abstract: 'School Locations' }, '109': { queryable: true, title: 'Health Centers', abstract: 'Health Centers' }, '110': { queryable: true, title: 'Hospital Locations', abstract: 'Hospital Locations' }, '111': { queryable: true, title: 'Diagnostic Centers', abstract: 'Diagnostic Centers' }, '112': { queryable: true, title: 'Churches', abstract: 'Churches' }, '113': { queryable: true, title: 'Temples', abstract: 'Temples' }, '114': { queryable: true, title: 'Shrines', abstract: 'Shrines' }, '115': { queryable: true, title: 'Mosques', abstract: 'Mosques' }, '116': { queryable: true, title: 'Amusement Parks', abstract: 'Amusement Parks' }, '117': { queryable: true, title: 'Beach Location', abstract: 'Beach Location' }, '118': { queryable: true, title: 'Cinema Theaters', abstract: 'Cinema Theaters' }, '119': { queryable: true, title: 'Skating Centers', abstract: 'Skating Centers' }, '120': { queryable: true, title: 'Bowling Centers', abstract: 'Bowling Centers' }, '121': { queryable: true, title: 'Theaters', abstract: 'Theaters' }, '122': { queryable: true, title: 'Cultural Facilities', abstract: 'Cultural Facilities' }, '123': { queryable: true, title: 'Museums', abstract: 'Museums' }, '124': { queryable: true, title: 'Park Locations', abstract: 'Park Locations' }, '125': { queryable: true, title: 'Convention Centers', abstract: 'Convention Centers' }, '126': { queryable: true, title: 'Resturants', abstract: 'Resturants' }, '127': { queryable: true, title: 'Hotels', abstract: 'Hotels' }, '128': { queryable: true, title: 'Archeological Site Locations', abstract: 'Archeological Site Locations' }, '129': { queryable: true, title: 'FerryTerminals', abstract: 'FerryTerminals' }, '130': { queryable: true, title: 'Airport Locations', abstract: 'Airport Locations' } } },
-    { id: 96802, title: 'Oman National Basemap (AR) Transparent with Major Landmarks', url: 'https://nsdig2gapps.ncsi.gov.om/arcgis1/services/Geoportal/BaseMapTransparentLandmarksAR/MapServer/WmsServer', crs: 'EPSG:3857', bbox: new OpenLayers.Bounds(5147047, 1459394, 7435614, 3520164), format: 'image/png', area: 'OM', abstract: 'National Basemap Transparent with Major Landmarks', attribution: 'NCSI', queryable: true, query_filters: [ applyAllTransformations ], default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'], layers: { '1': { queryable: true, title: 'Name of Ocean', abstract: 'أسماء المحيطات' }, '2': { queryable: true, title: 'World Ocean', abstract: 'المحيطات' }, '3': { queryable: true, title: 'World Countries', abstract: 'دول العالم' }, '5': { queryable: true, title: 'Country Boundary', abstract: 'حدود السلطنة' }, '6': { queryable: true, title: 'Governorate ', abstract: 'المحافظات' }, '7': { queryable: true, title: 'Willayat', abstract: 'الولايات' }, '8': { queryable: true, title: 'Governorate Center', abstract: 'مركز المحافظة' }, '9': { queryable: true, title: 'Willayat Center', abstract: 'مركز الولاية' }, '10': { queryable: true, title: 'Town Center', abstract: 'مركز المدينة' }, '12': { queryable: true, title: 'Rock', abstract: 'تجمعات صخرية' }, '13': { queryable: true, title: 'Sand Dunes', abstract: 'الكثبان الرملية' }, '14': { queryable: true, title: 'Builtup Area', abstract: 'الإمتدادات العمرانية' }, '15': { queryable: true, title: 'Vegetation', abstract: 'الغطاء النباتي' }, '17': { queryable: true, title: 'Reservoir', abstract: 'خزانات المياه' }, '18': { queryable: true, title: 'Marsh Swamp', abstract: 'مستنقعات' }, '19': { queryable: true, title: 'Sabkha', abstract: 'السبخات' }, '20': { queryable: true, title: 'Lake Pond', abstract: 'برك المياه' }, '21': { queryable: true, title: 'Lagoon', abstract: 'بحيرات ملحية' }, '22': { queryable: true, title: 'Wadi Stream', abstract: 'مسارات الأودية' }, '23': { queryable: true, title: 'Wadi Spread', abstract: 'الأودية' }, '24': { queryable: true, title: 'Dam', abstract: 'سدود' }, '25': { queryable: true, title: 'Foreshore', abstract: 'حد الساحل' }, '26': { queryable: true, title: 'Beach', abstract: 'الشواطئ' }, '27': { queryable: true, title: 'Ditch', abstract: 'خنادق' }, '28': { queryable: true, title: 'Weir', abstract: 'مصدات المياه' }, '29': { queryable: true, title: 'Sluice Gate', abstract: 'بوابات التصريف' }, '30': { queryable: true, title: 'Waterfall', abstract: 'الشلالات' }, '31': { queryable: true, title: 'Spring', abstract: 'ينابيع' }, '33': { queryable: true, title: 'Road Centre Lines', abstract: 'خطوط منتصف الطرق' }, '34': { queryable: true, title: 'Road Centre Lines', abstract: 'خطوط منتصف الطرق' }, '35': { queryable: true, title: 'Streets', abstract: 'الشوارع' }, '36': { queryable: true, title: 'Minor Roads', abstract: 'الطرق الثانوية' }, '37': { queryable: true, title: 'Major Roads', abstract: 'الطرق الرئيسية' }, '39': { queryable: true, title: 'Amusement Parks', abstract: 'المتنزهات الترفيهية' }, '40': { queryable: true, title: 'Golf Courses', abstract: 'ملاعب الجولف' }, '41': { queryable: true, title: 'Parks', abstract: 'الحدائق' }, '42': { queryable: true, title: 'Racing Tracks', abstract: 'مضامير السباق' }, '43': { queryable: true, title: 'Sports Fields', abstract: 'الملاعب الرياضية' }, '45': { queryable: true, title: 'Archeological Sites', abstract: 'المواقع الأثرية' }, '47': { queryable: true, title: 'Buildings', abstract: 'المباني' }, '48': { queryable: true, title: 'Wall and Fences', abstract: 'الأسوار والأسيجة' }, '50': { queryable: true, title: 'Consulates', abstract: 'الهيئات الدبلوماسية' }, '51': { queryable: true, title: 'International Missions', abstract: 'السفارات' }, '52': { queryable: true, title: 'Embassies', abstract: 'القنصليات' }, '53': { queryable: true, title: 'Money Exchange', abstract: 'سوق الأوراق المالية' }, '54': { queryable: true, title: 'Stock Exchange', abstract: 'شركات الصرافة' }, '55': { queryable: true, title: 'Banks', abstract: 'البنوك' }, '56': { queryable: true, title: 'Fuel Stations', abstract: 'محطات الوقود' }, '57': { queryable: true, title: 'Department Stores', abstract: 'مواقع الاسواق' }, '58': { queryable: true, title: 'Shopping Mall Locations', abstract: 'المتاجر متعددة الأقسام' }, '59': { queryable: true, title: 'Market Locations', abstract: 'مواقع المراكز التجارية' }, '60': { queryable: true, title: 'Ambulance Station', abstract: 'مراكز الاسعاف' }, '61': { queryable: true, title: 'Civil Defense Centers', abstract: 'مراكز الدفاع المدني' }, '62': { queryable: true, title: 'Police Station', abstract: 'مراكز الشرطة' }, '63': { queryable: true, title: 'Government Offices', abstract: 'مواقع الجهات الحكومية' }, '64': { queryable: true, title: 'College Locations', abstract: 'مراكز التدريب والتأهيل' }, '65': { queryable: true, title: 'Training Centers', abstract: 'مواقع الكليات' }, '66': { queryable: true, title: 'University Locations', abstract: 'مواقع الجامعات' }, '67': { queryable: true, title: 'School Locations', abstract: 'مواقع المدارس' }, '68': { queryable: true, title: 'Health Centers', abstract: 'المراكز الصحية' }, '69': { queryable: true, title: 'Hospital Locations', abstract: 'مواقع المستشفيات' }, '70': { queryable: true, title: 'Diagnostic Centers', abstract: 'مراكز التشخيص الطبي' }, '71': { queryable: true, title: 'Churches', abstract: 'الأضرحة' }, '72': { queryable: true, title: 'Temples', abstract: 'الكنائس' }, '73': { queryable: true, title: 'Shrines', abstract: 'المعابد' }, '74': { queryable: true, title: 'Mosques', abstract: 'المساجد' }, '75': { queryable: true, title: 'Amusement Parks', abstract: 'المتنزهات الترفيهية' }, '76': { queryable: true, title: 'Beach Location', abstract: 'مواقع الشواطئ' }, '77': { queryable: true, title: 'Cinema Theaters', abstract: 'دور السينما' }, '78': { queryable: true, title: 'Skating Centers', abstract: 'مراكز التزلج' }, '79': { queryable: true, title: 'Bowling Centers', abstract: 'مراكز البولينج' }, '80': { queryable: true, title: 'Theaters', abstract: 'المسارح' }, '81': { queryable: true, title: 'Cultural Facilities', abstract: 'المواقع الثقافية' }, '82': { queryable: true, title: 'Museums', abstract: 'المتاحف' }, '83': { queryable: true, title: 'Park Locations', abstract: 'مواقع الحدائق' }, '84': { queryable: true, title: 'Convention Centers', abstract: 'مراكز المؤتمرات' }, '85': { queryable: true, title: 'Resturants', abstract: 'المطاعم' }, '86': { queryable: true, title: 'Hotels', abstract: 'الفنادق' }, '87': { queryable: true, title: 'Archeological Site Locations', abstract: 'المواقع الأثرية - النقاط' }, '88': { queryable: true, title: 'FerryTerminals', abstract: 'محطات العبارات' }, '89': { queryable: true, title: 'Airport Locations', abstract: 'المطارات' }, '91': { queryable: true, title: 'Consulates', abstract: 'الهيئات الدبلوماسية' }, '92': { queryable: true, title: 'International Missions', abstract: 'السفارات' }, '93': { queryable: true, title: 'Embassies', abstract: 'القنصليات' }, '94': { queryable: true, title: 'Money Exchange', abstract: 'سوق الأوراق المالية' }, '95': { queryable: true, title: 'Stock Exchange', abstract: 'شركات الصرافة' }, '96': { queryable: true, title: 'Banks', abstract: 'البنوك' }, '97': { queryable: true, title: 'Fuel Stations', abstract: 'محطات الوقود' }, '98': { queryable: true, title: 'Department Stores', abstract: 'مواقع الاسواق' }, '99': { queryable: true, title: 'Shopping Mall Locations', abstract: 'المتاجر متعددة الأقسام' }, '100': { queryable: true, title: 'Market Locations', abstract: 'مواقع المراكز التجارية' }, '101': { queryable: true, title: 'Ambulance Station', abstract: 'مراكز الاسعاف' }, '102': { queryable: true, title: 'Civil Defense Centers', abstract: 'مراكز الدفاع المدني' }, '103': { queryable: true, title: 'Police Station', abstract: 'مراكز الشرطة' }, '104': { queryable: true, title: 'Government Offices', abstract: 'مواقع الجهات الحكومية' }, '105': { queryable: true, title: 'College Locations', abstract: 'مراكز التدريب والتأهيل' }, '106': { queryable: true, title: 'Training Centers', abstract: 'مواقع الكليات' }, '107': { queryable: true, title: 'University Locations', abstract: 'مواقع الجامعات' }, '108': { queryable: true, title: 'School Locations', abstract: 'مواقع المدارس' }, '109': { queryable: true, title: 'Health Centers', abstract: 'المراكز الصحية' }, '110': { queryable: true, title: 'Hospital Locations', abstract: 'مواقع المستشفيات' }, '111': { queryable: true, title: 'Diagnostic Centers', abstract: 'مراكز التشخيص الطبي' }, '112': { queryable: true, title: 'Churches', abstract: 'الأضرحة' }, '113': { queryable: true, title: 'Temples', abstract: 'الكنائس' }, '114': { queryable: true, title: 'Shrines', abstract: 'المعابد' }, '115': { queryable: true, title: 'Mosques', abstract: 'المساجد' }, '116': { queryable: true, title: 'Amusement Parks', abstract: 'المتنزهات الترفيهية' }, '117': { queryable: true, title: 'Beach Location', abstract: 'مواقع الشواطئ' }, '118': { queryable: true, title: 'Cinema Theaters', abstract: 'دور السينما' }, '119': { queryable: true, title: 'Skating Centers', abstract: 'مراكز التزلج' }, '120': { queryable: true, title: 'Bowling Centers', abstract: 'مراكز البولينج' }, '121': { queryable: true, title: 'Theaters', abstract: 'المسارح' }, '122': { queryable: true, title: 'Cultural Facilities', abstract: 'المواقع الثقافية' }, '123': { queryable: true, title: 'Museums', abstract: 'المتاحف' }, '124': { queryable: true, title: 'Park Locations', abstract: 'مواقع الحدائق' }, '125': { queryable: true, title: 'Convention Centers', abstract: 'مراكز المؤتمرات' }, '126': { queryable: true, title: 'Resturants', abstract: 'المطاعم' }, '127': { queryable: true, title: 'Hotels', abstract: 'الفنادق' }, '128': { queryable: true, title: 'Archeological Site Locations', abstract: 'المواقع الأثرية - النقاط' }, '129': { queryable: true, title: 'FerryTerminals', abstract: 'محطات العبارات' }, '130': { queryable: true, title: 'Airport Locations', abstract: 'المطارات' } } }
+    {
+      id: 101,
+      title: 'WV Leaves Off',
+      url: 'https://services.wvgis.wvu.edu/arcgis/services/Imagery_BaseMaps_EarthCover/wv_imagery_WVGISTC_leaf_off_mosaic/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-9208722, 4457863, -8641129, 4962223),
+      format: 'image/jpeg',
+      area: 'US',
+      abstract: 'Satellite imagery of West Virginia',
+      attribution: 'West Virginia University',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['1', '4', '5', '6', '8', '11', '12', '13', '15', '18', '19', '21', '25', '29', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'wv_statewide_12_inches'
+        },
+        '4': {
+          queryable: true,
+          title: 'Upshur_2016',
+          abstract: ''
+        },
+        '5': {
+          queryable: true,
+          title: 'Preston_2016',
+          abstract: ''
+        },
+        '6': {
+          queryable: true,
+          title: 'Kanawha_2017',
+          abstract: ''
+        },
+        '8': {
+          queryable: true,
+          title: 'Wyoming_2018',
+          abstract: ''
+        },
+        '11': {
+          queryable: true,
+          title: 'Ritchie_2018',
+          abstract: ''
+        },
+        '12': {
+          queryable: true,
+          title: 'Raleigh_2018',
+          abstract: ''
+        },
+        '13': {
+          queryable: true,
+          title: 'Randolph_2018',
+          abstract: ''
+        },
+        '15': {
+          queryable: true,
+          title: 'Nicholas_2018',
+          abstract: ''
+        },
+        '18': {
+          queryable: true,
+          title: 'Morgan_2018',
+          abstract: ''
+        },
+        '19': {
+          queryable: true,
+          title: 'Monroe_2018',
+          abstract: ''
+        },
+        '21': {
+          queryable: true,
+          title: 'Mercer_2018',
+          abstract: ''
+        },
+        '25': {
+          queryable: true,
+          title: 'McDowell_2018',
+          abstract: ''
+        },
+        '29': {
+          queryable: true,
+          title: 'Mason_2018',
+          abstract: ''
+        },
+        '32': {
+          queryable: true,
+          title: 'Marshall_2019',
+          abstract: ''
+        },
+        '33': {
+          queryable: true,
+          title: 'Logan_2018',
+          abstract: ''
+        },
+        '34': {
+          queryable: true,
+          title: 'Lincoln_2018',
+          abstract: ''
+        },
+        '35': {
+          queryable: true,
+          title: 'Hardy_2018',
+          abstract: ''
+        },
+        '36': {
+          queryable: true,
+          title: 'Hampshire_2018',
+          abstract: ''
+        },
+        '37': {
+          queryable: true,
+          title: 'Brooke_2018',
+          abstract: ''
+        },
+        '38': {
+          queryable: true,
+          title: 'Berkeley_2018',
+          abstract: ''
+        },
+        '39': {
+          queryable: true,
+          title: 'Barbour_2018',
+          abstract: ''
+        },
+        '40': {
+          queryable: true,
+          title: 'Wetzel_2019',
+          abstract: ''
+        },
+        '41': {
+          queryable: true,
+          title: 'Tyler_2019',
+          abstract: ''
+        },
+        '42': {
+          queryable: true,
+          title: 'Tucker_2019',
+          abstract: ''
+        },
+        '43': {
+          queryable: true,
+          title: 'Taylor_2019',
+          abstract: ''
+        },
+        '44': {
+          queryable: true,
+          title: 'Roane_2019',
+          abstract: ''
+        },
+        '45': {
+          queryable: true,
+          title: 'Pocahontas_2019',
+          abstract: ''
+        },
+        '46': {
+          queryable: true,
+          title: 'Ohio_2019',
+          abstract: ''
+        },
+        '47': {
+          queryable: true,
+          title: 'Monongalia_2019',
+          abstract: ''
+        },
+        '48': {
+          queryable: true,
+          title: 'Jackson_2019',
+          abstract: ''
+        },
+        '49': {
+          queryable: true,
+          title: 'Gilmer_2019',
+          abstract: ''
+        },
+        '50': {
+          queryable: true,
+          title: 'Doddridge_2019',
+          abstract: ''
+        },
+        '51': {
+          queryable: true,
+          title: 'Clay_2019',
+          abstract: ''
+        },
+        '52': {
+          queryable: true,
+          title: 'Calhoun_2019',
+          abstract: ''
+        },
+        '53': {
+          queryable: true,
+          title: 'Cabell_2019',
+          abstract: ''
+        },
+        '54': {
+          queryable: true,
+          title: 'Braxton_2019',
+          abstract: ''
+        },
+        '55': {
+          queryable: true,
+          title: 'Mineral_2019',
+          abstract: ''
+        },
+        '56': {
+          queryable: true,
+          title: 'Hancock_2019',
+          abstract: ''
+        },
+        '57': {
+          queryable: true,
+          title: 'Grant_2019',
+          abstract: ''
+        },
+        '58': {
+          queryable: true,
+          title: 'Pleasants_2020',
+          abstract: ''
+        },
+        '59': {
+          queryable: true,
+          title: 'Marion_2020',
+          abstract: ''
+        },
+        '60': {
+          queryable: true,
+          title: 'Lewis_2020',
+          abstract: ''
+        },
+        '61': {
+          queryable: true,
+          title: 'Jefferson_2020',
+          abstract: ''
+        },
+        '62': {
+          queryable: true,
+          title: 'Summers_2020',
+          abstract: ''
+        },
+        '63': {
+          queryable: true,
+          title: 'Wirt_Wood_2020',
+          abstract: ''
+        },
+        '64': {
+          queryable: true,
+          title: 'Harrison_2020',
+          abstract: ''
+        },
+        '65': {
+          queryable: true,
+          title: 'Putnam_2020',
+          abstract: ''
+        },
+        '66': {
+          queryable: true,
+          title: 'Webster_2020',
+          abstract: ''
+        },
+        '67': {
+          queryable: true,
+          title: 'Mingo_2020',
+          abstract: ''
+        },
+        '68': {
+          queryable: true,
+          title: 'Boone_2020',
+          abstract: ''
+        },
+        '69': {
+          queryable: true,
+          title: 'Greenbrier_2020',
+          abstract: ''
+        },
+        '70': {
+          queryable: true,
+          title: 'Fayette_2020',
+          abstract: ''
+        },
+        '71': {
+          queryable: true,
+          title: 'CountiesImagery_Year',
+          abstract: ''
+        }
+      }
+    }, {
+      id: 102,
+      title: 'USDA NAIP Imagery',
+      url: 'https://gis.apfo.usda.gov/arcgis/services/NAIP/USDA_CONUS_PRIME/ImageServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-13894064.421927, -9798.681263, 7587.578073, 6349425.318737),
+      format: 'image/jpeg',
+      area: 'US',
+      abstract: 'USDA NAIP Imagery of the Continuous US',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'USDA NAIP Imagery',
+          abstract: 'USDA NAIP Imagery of the Continuous US'
+        }
+      }
+    }, {
+      id: 104,
+      title: 'Virginia Aerial Imagery',
+      url: 'https://gismaps.vdem.virginia.gov/arcgis/services/VBMP_Imagery/MostRecentImagery_WGS/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-9361643.048590, 4309484.932005, -8328992.055810, 4855443.863795),
+      format: 'image/jpeg',
+      area: 'US',
+      abstract: 'Most recent aerial imagery from Virginia Geographic Information Network',
+      attribution: 'Virginia Geographic Information Network',
+      pixelManipulations: ['vaBlankTiles2Transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'VBMP most recent imagery',
+          abstract: 'Orthoimagery collected in Spring 2013, 2014, 2015 and 2017 (whichever is most recently available) by the VBMP program for Virginia. The imagery is displayed in true color (RED, GREEN, BLUE). The spatial reference is WGS 1984 Web Mercator (Auxiliary Sphere). The imagery is tiled at 12 levels from 1:4,622,324 to 1:2,257. The imagery was collected to meet ASPRS Class 1 orthoimagery standards. Most areas were collected at a 1-ft ground sample distance (GSD), with some urban areas upgraded to 6-inch and 3-inch GSD. - "Any determination of topography or contours, or any depiction of physical improvements, property lines or boundaries is for general information only and shall not be used for the design, modification, or construction of improvements to real property or for flood plain determination." Subsection C of § 54.1-402.'
+        }
+      }
+    }, {
+      id: 105,
+      title: 'Tennessee Aerial Imagery',
+      url: 'https://tnmap.tn.gov/arcgis/services/BASEMAPS/IMAGERY_WEB_MERCATOR/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-10057766.986981, 4158672.701419, -9084779.566164, 4395439.512689),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'Tennessee Department of Transportation(TDOT) Imagery Product',
+      attribution: 'TDOT',
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'TDOT Imagery',
+          abstract: 'TDOT Imagery Product'
+        }
+      }
+    }, {
+      id: 106,
+      title: 'Pennsylvania Aerial Imagery',
+      url: 'https://apps.pasda.psu.edu/arcgis/services/PEMAImagery2018_WEB/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-8971206.199541, 4819536.202226, -8313616.658373, 5204939.354014),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'Aerial Imagery from PEMA, 2018-2020',
+      attribution: 'PASDA',
+      queryable: false,
+      default_layers: ['1', '5', '9', '13', '17', '21', '25', '29', '33', '37', '41', '45', '49', '53', '57', '61', '65', '69', '73', '77', '81', '85', '89', '93', '97', '101', '105', '109', '113', '117', '121', '125', '129', '133', '137', '141', '145', '149', '153', '157', '161', '165', '169', '173', '177', '181', '185', '189', '193', '197', '201', '205', '209', '213', '217'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_YorkCounty_Mosaic2018_1'
+        },
+        '5': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_WyomingCounty_Mosaic2020'
+        },
+        '9': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_WayneCounty_Mosaic2020'
+        },
+        '13': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_WashingtonCounty_Mosaic2018'
+        },
+        '17': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_UnionCounty_Mosaic2020'
+        },
+        '21': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_SusquehannaCounty_Mosaic2020'
+        },
+        '25': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_SullivanCounty_Mosaic2020'
+        },
+        '29': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_SomersetCounty_Mosaic2020'
+        },
+        '33': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_SnyderCounty_Mosaic2020'
+        },
+        '37': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_SchuylkillCounty_Mosaic2018'
+        },
+        '41': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_PotterCounty_Mosaic2020'
+        },
+        '45': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_PhiladelphiaCounty_Mosaic2018'
+        },
+        '49': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_PerryCounty_Mosaic2018'
+        },
+        '53': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_NorthumberlandCounty_Mosaic2018'
+        },
+        '57': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_NorthamptonCounty_Mosaic'
+        },
+        '61': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_MontourCounty_Mosaic2018_gdb'
+        },
+        '65': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_MontgomeryCounty_Mosaic2018'
+        },
+        '69': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_MonroeCounty_Mosaic2018'
+        },
+        '73': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_McKeanCounty_Mosaic2019_JP2'
+        },
+        '77': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_MifflinCounty_Mosaic2020'
+        },
+        '81': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LycomingCounty_Mosaic2020'
+        },
+        '85': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LuzerneCounty_Mosaic2018'
+        },
+        '89': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LehighCounty_Mosaic2018'
+        },
+        '93': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LebanonCounty_Mosaic2018'
+        },
+        '97': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LawrenceCounty_Mosaic2020'
+        },
+        '101': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LancasterCounty_Mosaic2018'
+        },
+        '105': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_LackawannaCounty_Mosaic2020'
+        },
+        '109': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_JuniataCounty_Mosaic2020'
+        },
+        '113': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_JeffersonCounty_Mosaic2018'
+        },
+        '117': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_HuntingdonCounty_Mosaic2020'
+        },
+        '121': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_GreeneCounty_Mosaic2018_gdb'
+        },
+        '125': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_FultonCounty_Mosaic2020'
+        },
+        '129': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_FranklinCounty_Mosaic2018'
+        },
+        '133': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_FayetteCounty_Mosaic2020'
+        },
+        '137': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ErieCounty_Mosaic2018_JP2'
+        },
+        '141': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ElkCounty_Mosaic2019_JP2'
+        },
+        '145': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_DelawareCounty_Mosaic2018'
+        },
+        '149': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_DauphinCounty_Mosaic2018'
+        },
+        '153': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CumberlandCounty_Mosaic2018_JP2'
+        },
+        '157': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CrawfordCounty_Mosaic2018_JP2'
+        },
+        '161': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ColumbiaCounty_Mosaic2018'
+        },
+        '165': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ClintonCounty_Mosaic2020'
+        },
+        '169': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ClearfieldCounty_Mosaic2018'
+        },
+        '173': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_ChesterCounty_Mosaic2020'
+        },
+        '177': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CentreCounty_Mosaic2020'
+        },
+        '181': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CarbonCounty_Mosaic2018'
+        },
+        '185': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CameronCounty_Mosaic2019_JP2'
+        },
+        '189': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_CambriaCounty_Mosaic2018'
+        },
+        '193': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_BucksCounty_Mosaic'
+        },
+        '197': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_BradfordCounty_Mosaic2020'
+        },
+        '201': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_BlairCounty_Mosaic2020'
+        },
+        '205': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_BerksCounty_Mosaic2020'
+        },
+        '209': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_BeaverCounty_Mosaic2020'
+        },
+        '213': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_AlleghenyCounty_Mosaic2018'
+        },
+        '217': {
+          queryable: true,
+          title: 'Image',
+          abstract: 'PEMA_AdamsCounty_Mosaic2018_JP2'
+        }
+      }
+    }, {
+      id: 3101,
+      title: 'BAG',
+      url: 'https://geodata.nationaalgeoregister.nl/bag/wms/v1_1',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(356916, 6574306, 806539, 7091570),
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'De gegevens bestaan uit BAG-panden en een deelselectie van BAG-gegevens van deze panden en de zich daarin bevindende verblijfsobjecten. Ook de ligplaatsen en standplaatsen zijn hierin opgenomen met een deelselectie van BAG-gegevens. De gegevens van de nummeraanduiding zijn in deze services onderdeel van de adresseerbare objecten, hierbij wordt slechts 1 adres opgenomen, dus objecten met meerdere adressen (hoofd- en nevenadressen) zijn niet compleet. In deze services zitten dus niet alle BAG adressen. Wij adviseren u, aangezien er sprake is van beperkte gegevens, om in de webservice BAG Bevragen de actuele gegevens te controleren. Dit kan ook in een van de andere BAG producten: BAG Web, BAG Extract of BAG Compact. BAG Bevragen: http://www.kadaster.nl/web/artikel/productartikel/BAG-Bevragen.htm Andere BAG producten: http://www.kadaster.nl/web/Themas/Registraties/BAG/BAGartikelen/BAG-producten.htm De service wordt dagelijks geactualiseerd.',
+      attribution: 'BAG',
+      getExternalUrl: () => 'https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['ligplaats', 'pand', 'verblijfsobject', 'woonplaats', 'standplaats'],
+      layers: {
+        'ligplaats': {
+          queryable: false,
+          title: 'ligplaats'
+        },
+        'pand': {
+          queryable: false,
+          title: 'pand'
+        },
+        'standplaats': {
+          queryable: false,
+          title: 'standplaats'
+        },
+        'verblijfsobject': {
+          queryable: true,
+          title: 'verblijfsobject'
+        },
+        'woonplaats': {
+          queryable: false,
+          title: 'woonplaats'
+        }
+      }
+    }, {
+      id: 3103,
+      title: 'Weggegevens',
+      url: 'https://geodata.nationaalgeoregister.nl/weggeg/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(385276, 6575606, 805842, 7065366),
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'De service van Weggegevens bevat op dit moment de lagen maximum snelheden en rijstroken van de rijkswegen.',
+      attribution: 'PDOK',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['weggegaantalrijbanen', 'weggegmaximumsnelheden'],
+      layers: {
+        'weggegaantalrijbanen': {
+          queryable: true,
+          title: 'Weggegevens aantal rijbanen'
+        },
+        'weggegmaximumsnelheden': {
+          queryable: true,
+          title: 'Weggegevens maximumsnelheden'
+        }
+      }
+    }, {
+      id: 3105,
+      title: 'Hectopunten Rijkswaterstaat',
+      url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(333958, 6575606, 779237, 6982998),
+      zoomRange: [2, 10],
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.',
+      attribution: 'PDOK',
+      pixelManipulations: ['removePartialBlackTransparency', 'traceGrayscalePixels'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['hectopunten', 'wegvakken'],
+      layers: {
+        'hectopunten': {
+          queryable: true,
+          title: 'NWB Wegen hectopunten'
+        },
+        'wegvakken': {
+          queryable: true,
+          title: 'NWB Wegen wegvakken'
+        }
+      }
+    }, {
+      id: 3106,
+      title: 'Luchtfoto (PDOK)',
+      url: 'https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-184489, 6113595, 1383894, 7580463),
+      format: 'image/jpeg',
+      area: 'NL',
+      abstract: 'Een jaarlijks te vernieuwen dataset van luchtopnamen van Nederland met een resolutie van 25cm.',
+      attribution: 'PDOK',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['Actueel_ortho25'],
+      layers: {
+        'Actueel_ortho25': {
+          queryable: false,
+          title: 'Luchtfoto Actueel Ortho 25cm RGB',
+          abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van de meest recente jaargang.'
+        },
+        '2019_ortho25': {
+          queryable: false,
+          title: 'Luchtfoto 2019 Ortho 25cm RGB',
+          abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2019.'
+        },
+        '2018_ortho25': {
+          queryable: false,
+          title: 'Luchtfoto 2018 Ortho 25cm RGB',
+          abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2018.'
+        },
+        '2017_ortho25': {
+          queryable: false,
+          title: 'Luchtfoto 2017 Ortho 25cm RGB',
+          abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2017.'
+        },
+        '2016_ortho25': {
+          queryable: false,
+          title: 'Luchtfoto 2016 Ortho 25cm RGB',
+          abstract: 'Landsdekkende dataset 25cm resolutie kleuren luchtfoto\'s van 2016.'
+        }
+      }
+    }, {
+      id: 3107,
+      title: 'Kadastrale kaart',
+      url: 'https://geodata.nationaalgeoregister.nl/kadastralekaart/wms/v4_0',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(385276, 6575606, 805842, 7065366),
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'Overzicht van de ligging van de kadastrale percelen in Nederland. Fungeert als schakel tussen terrein en registratie, vervult voor externe gebruiker vaak een referentiefunctie, een ondergrond ten opzichte waarvan de gebruiker eigen informatie kan vastleggen en presenteren.',
+      attribution: 'PDOK',
+      pixelManipulations: ['removePartialBlackTransparency', 'traceGrayscalePixels'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['KadastraleKaart'],
+      layers: {
+        'KadastraleKaart': {
+          queryable: true,
+          title: 'Kadastrale Kaart'
+        },
+        'Bebouwing': {
+          queryable: true,
+          title: 'Bebouwing'
+        },
+        'Label': {
+          queryable: true,
+          title: 'Label'
+        },
+        'Bebouwingvlak': {
+          queryable: true,
+          title: 'Bebouwingvlak'
+        },
+        'KadastraleGrens': {
+          queryable: true,
+          title: 'Kadastrale Grens'
+        },
+        'Bijpijling': {
+          queryable: true,
+          title: 'Bijpijling'
+        },
+        'Perceel': {
+          queryable: true,
+          title: 'Perceel'
+        },
+        'Perceelvlak': {
+          queryable: true,
+          title: 'Perceelvlak'
+        },
+        'Nummeraanduidingreeks': {
+          queryable: true,
+          title: 'Nummeraanduidingreeks'
+        }
+      }
+    }, {
+      id: 3108,
+      title: 'Maximumsnelheden',
+      url: 'https://geoservices.rijkswaterstaat.nl/apps/geoserver/maximum_snelheden_wegen/ows',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(362161, 6574365, 806630, 7085234),
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'Maximumsnelhedenkaart van alle wegen in Nederland, voorzien door Rijkswaterstaat',
+      attribution: 'Rijkswaterstaat',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['maximum_snelheden_wegen:max_snelheden_per_wegvak'],
+      layers: {
+        'maximum_snelheden_wegen:max_snelheden_per_wegvak': {
+          title: 'Maximumsnelheden per wegvak',
+          queryable: true
+        }
+      }
+    }, {
+      id: 3109,
+      title: 'Nationaal Wegen Bestand',
+      url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(355925, 809871, 6563443, 7096826),
+      format: 'image/png',
+      area: 'NL',
+      abstract: 'Nationaal Wegen Bestand met alle gegevens van de Nederlandse wegen',
+      attribution: 'Nationaal Wegen Bestand',
+      pixelManipulations: ['removePartialTransparency'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['wegvakken'],
+      layers: {
+        'wegvakken': {
+          title: 'Nationaal Wegen Bestand Wegvakken',
+          queryable: true
+        }
+      }
+    }, {
+      id: 3201,
+      title: 'GRB Vlaanderen',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/GRB/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Opvragen en visualiseren van het Grootschalig Referentiebestand (GRB) als een kaart. Omvat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens gevisualiseerd moeten worden en in welke volgorde. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Basiskaart - GRB: volledige kaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: false,
+      default_layers: ['GRB_BSK'],
+      layers: {
+        'GRB_BSK': {
+          queryable: false,
+          title: 'GRB-basiskaart',
+          abstract: 'Deze laag omvat alle (GRB-) entiteiten die zichtbaar zijn in de GRB-basiskaart'
+        }
+      }
+    }, {
+      id: 3202,
+      title: 'Orthomozaïek Vlaanderen',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omwrgbmrvl/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'WMS die de compilatie weergeeft van de meest recente middenschalige orthofotomozaïeken uit de wintervluchten die voor ieder deel van Vlaanderen beschikbaar zijn die wordt bijgewerkt telkens er een nieuw deel beschikbaar is.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      pixelManipulations: ['whiteTiles2transparent'],
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Opnamedatum meest recente luchtfoto in achtergrondkaart&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['Ortho', 'Vliegdagcontour'],
+      layers: {
+        'Ortho': {
+          queryable: false,
+          title: 'Orthofotomozaïek, middenschalig, winteropnamen, kleur, meest recent, Vlaanderen',
+          abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotomozaëken (winteropnamen) die voor ieder deel  van Vlaanderen beschikbaar zijn en wordt  bijgewerkt telkens er een nieuw deel ingewonnen is. De compilatie heeft een grondresolutie van 25 cm.'
+        },
+        'Vliegdagcontour': {
+          queryable: true,
+          title: 'Vliegdagcontour Orthofotomozaïek',
+          abstract: 'Deze vectorlaag geeft voor ieder deel van de rastercompilatie de opnamedatum weer.'
+        }
+      }
+    }, {
+      id: 3203,
+      title: 'PICC, Service de visualisation',
+      url: 'https://geoservices.wallonie.be/arcgis/services/TOPOGRAPHIE/PICC_VDIFF/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(295477, 740430, 6347478, 6640886),
+      zoomRange: [4, 10],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Service de visualisation du Projet Informatique de Cartographie Continue (PICC)',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['traceGrayscalePixels'],
+      getExternalUrl: () => 'http://geoportail.wallonie.be/walonmap',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['3', '4', '5', '7', '9', '10', '11', '12', '19', '20', '21', '27', '28', '29'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Relief: ligne'
+        },
+        '3': {
+          queryable: true,
+          title: 'Hydrographie: emprise'
+        },
+        '4': {
+          queryable: true,
+          title: 'Hydrographie: bord'
+        },
+        '5': {
+          queryable: true,
+          title: 'Hydrographie: axe'
+        },
+        '7': {
+          queryable: true,
+          title: 'Reseau ferroviaire: ligne'
+        },
+        '9': {
+          queryable: true,
+          title: 'Voirie: axe >= 50k'
+        },
+        '10': {
+          queryable: true,
+          title: 'Voirie: axe (5k-50k)'
+        },
+        '11': {
+          queryable: true,
+          title: 'Voirie: axe'
+        },
+        '12': {
+          queryable: true,
+          title: 'Voirie: ligne'
+        },
+        '14': {
+          queryable: true,
+          title: 'Occupation du sol: surface'
+        },
+        '15': {
+          queryable: true,
+          title: 'Occupation du sol: bord'
+        },
+        '16': {
+          queryable: true,
+          title: 'Occupation du sol: ligne'
+        },
+        '17': {
+          queryable: true,
+          title: 'Occupation du sol: point'
+        },
+        '19': {
+          queryable: true,
+          title: 'Construction: emprise du batiment'
+        },
+        '20': {
+          queryable: true,
+          title: 'Construction: ouvrage d\'art: bord'
+        },
+        '21': {
+          queryable: true,
+          title: 'Construction: bord du batiment'
+        },
+        '23': {
+          queryable: true,
+          title: 'Equipement: surface'
+        },
+        '24': {
+          queryable: true,
+          title: 'Equipement: axe'
+        },
+        '25': {
+          queryable: true,
+          title: 'Equipement: ligne'
+        },
+        '26': {
+          queryable: true,
+          title: 'Equipement: point'
+        },
+        '27': {
+          queryable: true,
+          title: 'Symbologie'
+        },
+        '28': {
+          queryable: true,
+          title: 'Adresses'
+        },
+        '29': {
+          queryable: true,
+          title: 'Toponymie'
+        }
+      }
+    }, {
+      id: 3204,
+      title: 'Brussels CIRB (NL)',
+      url: 'https://geoservices-urbis.irisnet.be/geoserver/ows',
+      crs: 'EPSG:31370',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Brusselse kaartgegevens',
+      attribution: 'Irisnet GIS',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['urbisNL'],
+      layers: {
+        'urbisNL': {
+          queryable: false,
+          title: 'Urbis Base Map NL',
+          abstract: 'This layer represents the base map in dutch.'
+        },
+        'urbisNLGray': {
+          queryable: false,
+          title: 'Urbis Base Map Gray NL',
+          abstract: 'This layer represents the gray base map in dutch.'
+        },
+        'urbis:LabeledStreetAxe': {
+          queryable: false,
+          title: 'Labeled Street Axe',
+          abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building'
+        },
+        'urbis:URB_A_ADPT': {
+          queryable: false,
+          title: 'Address points',
+          abstract: 'This layer is the localization of address points of the Brussels Region'
+        },
+        'urbis:URB_A_BU': {
+          queryable: true,
+          title: 'Buildings',
+          abstract: 'This layer represents the buildings of the Brussels Region'
+        },
+        'urbis:URB_A_MD': {
+          queryable: true,
+          title: 'Monitoring districts',
+          abstract: 'This layer reprensent the monitoring districts of the Brussels Region'
+        },
+        'urbis:URB_A_MU': {
+          queryable: true,
+          title: 'Municipalities',
+          abstract: 'This layer represents the municipalities of the Brussels Region'
+        },
+        'urbis:URB_A_MY_SA': {
+          queryable: false,
+          title: 'Street axes',
+          abstract: 'This layer represents the axes of the street of the Brussels Region'
+        },
+        'urbis:URB_A_MY_SS': {
+          queryable: false,
+          title: 'Street sections',
+          abstract: 'This layer represents the street sections of the Brussels Region'
+        },
+        'urbis:URB_A_MZ': {
+          queryable: true,
+          title: 'Municipal zips',
+          abstract: 'This layer is the zip of the municipality of the Brussels Region'
+        },
+        'urbis:URB_A_POpenLayers': {
+          queryable: true,
+          title: 'Police districts',
+          abstract: 'This layer is the police districts of the Brussels Region'
+        },
+        'urbis:URB_A_RE': {
+          queryable: false,
+          title: 'Region',
+          abstract: 'This layer is the Brussels Region'
+        },
+        'urbis:URB_A_SD': {
+          queryable: true,
+          title: 'Statistical districts',
+          abstract: 'This layer represents the limit of the statistical districts of the Brussels Region'
+        },
+        'urbis:URB_A_SN': {
+          queryable: false,
+          title: 'Street nodes',
+          abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe'
+        },
+        'urbis:URB_M_RTLINE': {
+          queryable: false,
+          title: 'Rail tracks',
+          abstract: 'This layer represents the rails tracks.'
+        },
+        'urbis:URB_M_SHAPE': {
+          queryable: true,
+          title: 'UrbisMap shapes',
+          abstract: 'This layer represents the shapes of UrbisMap.'
+        },
+        'urbis:URB_M_TONAME_LIN': {
+          queryable: true,
+          title: 'Toponymy',
+          abstract: 'This layer represents the toponymy of public places.'
+        },
+        'urbis:URB_M_ZIPOINT': {
+          queryable: true,
+          title: 'Points of interest',
+          abstract: 'This layer represents the point of zone of interest.'
+        },
+        'urbis:URB_T_LINE': {
+          queryable: false,
+          title: 'Urbis Topo Lines',
+          abstract: 'This layer represents the topo lines.'
+        },
+        'urbis:URB_T_POINT': {
+          queryable: true,
+          title: 'Urbis Topo Points',
+          abstract: 'This layer represents the topo points.'
+        },
+        'urbis:URB_A_SI_POINT_VW': {
+          queryable: false,
+          title: 'Street sides'
+        },
+        'urbis:MuNeighbour': {
+          queryable: true,
+          title: 'Neighbour Municipalities'
+        },
+        'urbis:Highways': {
+          queryable: false,
+          title: 'Highways'
+        }
+      }
+    }, {
+      id: 3205,
+      title: 'GIPOD Nu + 1 maand',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['ManOml', 'ManCon', 'ManIcoon', 'WoOml', 'WoCon', 'WoIcoon'],
+      layers: {
+        'ManOml': {
+          queryable: false,
+          title: 'Omleidingen van de manifestaties',
+          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.'
+        },
+        'ManCon': {
+          queryable: true,
+          title: 'Manifestaties contour',
+          abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'ManIcoon': {
+          queryable: false,
+          title: 'Manifestaties icoon',
+          abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'WoOml': {
+          queryable: false,
+          title: 'Omleidingen van de werkopdrachten',
+          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.'
+        },
+        'WoCon': {
+          queryable: true,
+          title: 'Werkopdrachten contour',
+          abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'WoIcoon': {
+          queryable: false,
+          title: 'Werkopdrachten icoon',
+          abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
+        }
+      }
+    }, {
+      id: 3206,
+      title: 'Ortho Vlaanderen Tijdsreeksen',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/omw/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Tijdsreeks van middenschalige orthofotomozaïeken met een resolutie van 25cm, gebiedsdekkend voor Vlaanderen',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      pixelManipulations: ['whiteTiles2transparent'],
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['OMWRGB18VL', 'OMWRGB18VL_VDC'],
+      layers: {
+        'OMWRGB18VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2018',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2018 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB18VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2018, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB17VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2017',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2017 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB17VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2017, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB16VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2016',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2016 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB16VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2016, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB15VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2015',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2015 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB15VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2015, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB14VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2014',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2014 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB14VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2014, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB13VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2013',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2013 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB13VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2013, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB12VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2012',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2012 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB12VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2012, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB08_11VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2008-2011',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2008-2011 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB08_11VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2008-2011, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB05_07VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2005-2007',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2005-2007 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB05_07VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2005-2007, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB00_03VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2000-2003',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2000-2003 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB00_03VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2000-2003, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        }
+      }
+    }, {
+      id: 3207,
+      title: 'Wegenregister',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Wegenregister/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'De wegen in het Wegenregister. Het Wegenregister is een middenschalig referentiebestand van de wegen in Vlaanderen. Het bevat alle wegen van Vlaanderen, met bijhorende attribuutgegevens.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=wegennet&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['AUTOSWEG', 'WEGGESCH', 'WEGEEN', 'ROT', 'SPECSIT', 'VERKPLEIN', 'OPAFOGKR', 'OPAFGGKR', 'PLLWEG', 'VENTWEG', 'INUITP', 'INUITD', 'VOETGANGERSZONE', 'WANDFIETS', 'TRAMWEG', 'DIENSTWEG', 'AARDEWEG', 'VEER', 'TYPENTG', 'LABELS'],
+      layers: {
+        'AUTOSWEG': {
+          queryable: true,
+          title: 'Autosnelweg',
+          abstract: 'Een "autosnelweg" heeft typisch twee gescheiden parallelle rijbanen met tegengestelde toegelaten rijrichtingen. Op een autosnelweg komen geen gelijkgrondse kruisingen voor. Kruisingen met andere wegen gebeuren steeds ofwel over bruggen of in tunnels.'
+        },
+        'WEGGESCH': {
+          queryable: true,
+          title: 'Weg met gescheiden rijbanen',
+          abstract: '"Een weg met gescheiden rijbanen die geen autosnelweg is" wordt gekenmerkt door de aanwezigheid van minstens twee rijbanen (onafhankelijk van het aantal rijstroken) die fysiek gescheiden zijn en tegengestelde toegelaten rijrichtingen hebben.'
+        },
+        'WEGEEN': {
+          queryable: true,
+          title: 'Weg met één rijbaan',
+          abstract: 'Wegsegmenten die behoren tot een hoofdcirculatiezone die gekenmerkt wordt door de aanwezigheid van slechts één circulatievak in de dwarsrichting.'
+        },
+        'ROT': {
+          queryable: true,
+          title: 'Rotonde',
+          abstract: 'Wegsegmenten die tot de rotonde behoren vormen een gesloten ringvormige structuur. Op deze wegsegmenten is enkel éénrichtingsverkeer toegelaten.'
+        },
+        'SPECSIT': {
+          queryable: true,
+          title: 'Speciale verkeerssituatie',
+          abstract: 'Wegsegmenten die behoren tot een min of meer cirkelvormige constructie die geen rotonde is.'
+        },
+        'VERKPLEIN': {
+          queryable: true,
+          title: 'Verkeersplein',
+          abstract: 'Wegsegmenten die worden opgenomen in gebieden waar het verkeer ongestructureerd verloopt. Het gaat typisch om marktpleinen, parkeerterreinen of terreinen met een andere functie dan een zuivere verkeersfunctie'
+        },
+        'OPAFOGKR': {
+          queryable: true,
+          title: 'Oprit of afrit behorende tot een nietgelijkgrondse kruising',
+          abstract: 'Een "op- of afrit, behorende tot een niet-gelijkgrondse kruising" verzorgt de verbinding tussen twee wegen die zich niet-gelijkgronds kruisen. Alle op- en afritten van autosnelwegen en verkeerswisselaars worden eveneens tot deze klasse gerekend.'
+        },
+        'OPAFGGKR': {
+          queryable: true,
+          title: 'Oprit of afrit  behorende tot een gelijkgrondse kruising',
+          abstract: 'Een "op- of afrit, behorende tot een gelijkgrondse kruising" verzorgt de verbinding tussen twee wegen die geen autosnelweg zijn. Zonder de op- of afrit bestaat er nog steeds een topologische verbinding tussen de wegsegmenten waarbij de op- of afrit hoort.'
+        },
+        'PLLWEG': {
+          queryable: true,
+          title: 'Parallelweg',
+          abstract: 'Een "parallelweg" is een op- of afrit waarvan de begin- en eindpositie verbonden is met dezelfde autosnelweg. Een "parallelweg" heeft een rechtstreekse verbinding of een verbinding via op- of afritten van een ander type met de bijhorende autosnelweg.'
+        },
+        'VENTWEG': {
+          queryable: true,
+          title: 'Ventweg',
+          abstract: 'Een "ventweg" loopt parallel aan een weg met een belangrijke verkeersfunctie die geen autosnelweg is. De weg biedt toegang tot minder belangrijke aanpalende wegen, bestemmingen of adressen en wordt van de hoofdweg gescheiden door kleine constructies.'
+        },
+        'INUITP': {
+          queryable: true,
+          title: 'Inrit of uitrit van een parking',
+          abstract: 'Een "in- of uitrit van een parking" is een weg die speciaal ontworpen is om een parkeerterrein of parkeergarage te bereiken of te verlaten.'
+        },
+        'INUITD': {
+          queryable: true,
+          title: 'Inrit of uitrit van een dienst',
+          abstract: 'Een "in- of uitrit van een dienst" is een weg die speciaal ontworpen is om een dienst (voorbeeld: luchthaven, station, ziekenhuis, brandweerkazerne, politie, openbare dienst, hotel, restaurant) te bereiken of te verlaten.'
+        },
+        'VOETGANGERSZONE': {
+          queryable: true,
+          title: 'Voetgangerszone',
+          abstract: 'Gebied met een wegennet dat speciaal ontworpen is voor gebruik door voetgangers (meestal gesitueerd in stedelijke gebieden). In voetgangerszones is enkel voetgangersverkeer toegelaten (uitzondering: prioritaire voertuigen en leveringen).'
+        },
+        'WANDFIETS': {
+          queryable: true,
+          title: 'Wandel- of fietsweg',
+          abstract: 'Op een "wandel- en/of fietsweg" is de verkeerstoegang beperkt tot voetgangers en/of fietsers. De fysieke kenmerken van een "wandel- en/of fietsweg" laten de toegang van andere voertuigen niet toe (smaller dan 2.5m).'
+        },
+        'TRAMWEG': {
+          queryable: true,
+          title: 'Tramweg',
+          abstract: 'Een "tramweg" is een weg die speciaal ontworpen is voor het tramverkeer. De fysieke kenmerken van een "tramweg" laten de toegang van andere voertuigen niet toe.'
+        },
+        'DIENSTWEG': {
+          queryable: true,
+          title: 'Dienstweg',
+          abstract: 'Een "tramweg" is een weg die speciaal ontworpen is voor het tramverkeer. De fysieke kenmerken van een "tramweg" laten de toegang van andere voertuigen niet toe.'
+        },
+        'AARDEWEG': {
+          queryable: true,
+          title: 'Aardeweg',
+          abstract: 'Een "aardeweg" is een weg zonder wegverharding die op zijn minst berijdbaar is voor bepaalde vierwielige motorvoertuigen (bv. terreinwagens, landbouwvoertuigen,...)'
+        },
+        'VEER': {
+          queryable: true,
+          title: 'Veer',
+          abstract: 'Een "veer" is bedoeld voor het transport van passagiers, voertuigen of vracht over het water en verbindt vaak twee of meerdere landwegen'
+        },
+        'TYPENTG': {
+          queryable: true,
+          title: 'Type weg niet gekend',
+          abstract: 'Wegtype is niet gekend'
+        },
+        'LABELS': {
+          queryable: false,
+          title: 'Straatnamen',
+          abstract: 'Straatnamen volgens CRAB'
+        }
+      }
+    }, {
+      id: 3208,
+      title: 'Administratieve eenheden',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Administratieve_Eenheden/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Vlaamse administratieve eenheden',
+      attribution: 'AIV',
+      pixelManipulations: ['traceGrayscalePixels'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['Refarr', 'Refprv', 'Refgew', 'RefgemGrens', 'RefgemBron', 'RefgemLabel'],
+      layers: {
+        'Refgem': {
+          queryable: true,
+          title: 'Gemeenten',
+          abstract: 'Ligging en afgrenzing van de vastgestelde territoria van gemeenten. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.'
+        },
+        'Refarr': {
+          queryable: true,
+          title: 'Arrondissementen - Grenzen',
+          abstract: 'Afgrenzing van bestuurlijke arrondissementen in Vlaanderen. Bestuurlijke arrondissementen vormen een administratieve indeling van de provincies. Het gaat om een groepering van een aantal gemeenten. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied met de begrenzing van Vlaamse bestuurlijke indelingen.'
+        },
+        'Refprv': {
+          queryable: true,
+          title: 'Provincies - Grenzen',
+          abstract: 'Afgrenzing van provincies in Vlaanderen. Provincies vormen een administratieve indeling van het Vlaams Gewest. De provincies vormen het bestuurlijke niveau tussen de gemeenten en arrondissementen enerzijds en het Vlaams Gewest anderzijds. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met bestuurlijke indelingen.'
+        },
+        'Refgew': {
+          queryable: true,
+          title: 'Gewest - Grens',
+          abstract: 'Grens van het Vlaams Gewest. Door het samenwerkingsverband GDI-Vlaanderen als voorlopig referentie gehanteerde geografische dataset van het grondgebied en de afgrenzing van het Vlaams Gewest'
+        },
+        'RefgemGrens': {
+          queryable: true,
+          title: 'Gemeenten - Grenzen',
+          abstract: 'Grenzen van de vastgestelde territoria van gemeenten. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.'
+        },
+        'RefgemBron': {
+          queryable: true,
+          title: 'Gemeenten - Grenzen - Bron Geometrie',
+          abstract: 'Informatie over de herkomst van de geometrische informatie van (een deel van) een gemeentegrens.'
+        },
+        'RefgemLabel': {
+          queryable: true,
+          title: 'Gemeenten - Namen',
+          abstract: 'Label met de naam van de gemeente. Gemeenten zijn de laagste bestuurlijke eenheden in België. Gemeenten zijn gegroepeerd in bestuurlijke arrondissementen en provincies. Door het samenwerkingsverband GDI-Vlaanderen als voorlopige referentie gehanteerde geografische dataset van het grondgebied van Vlaanderen met de begrenzing van de Vlaamse gemeenten met bijhorende identificerende informatie.'
+        }
+      }
+    }, {
+      id: 3209,
+      title: 'Orthofotowerkbestand Vlaanderen',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ofw/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Compilatie van de meest recente orthofotowerkbestanden voor Vlaanderen',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['OFW', 'OFW_vdc'],
+      layers: {
+        'OFW': {
+          queryable: false,
+          title: 'Orthofotowerkbestand',
+          abstract: 'Deze rasterlaag is een compilatie van de meest recente orthofotowerkbestanden die voor Vlaanderen  beschikbaar zijn. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OFW_vdc': {
+          queryable: true,
+          title: 'Vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        }
+      }
+    }, {
+      id: 3210,
+      title: 'Adrespunten Vlaanderen',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/Adressen/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007),
+      zoomRange: [6, 10],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Overzicht van in CRAB opgenomen adressen (huisnummers met bijhorende straat en gemeente) van Vlaanderen, met hun lokatie. Deze dataset is een bevraging van de CRAB-gegevens, bedoeld om tot een eenvoudige en vlot toegankelijke adressenlijst te komen.',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Adrespunten - CRAB&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['Adrespos'],
+      layers: {
+        'Adrespos': {
+          queryable: true,
+          title: 'CRAB - Adrespunt'
+        }
+      }
+    }, {
+      id: 3211,
+      title: 'Ortho Vl. 2013-2015 Grootschalig',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/ogw/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661238, 6712008),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Tijdsreeks van grootschalige orthofotomozaïeken met een resolutie van 10cm, gebiedsdekkend voor Vlaanderen',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      pixelManipulations: ['whiteTiles2transparent'],
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Luchtfoto Vlaanderen, winter 2013-2015 - kleur&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['OGWRGB13_15VL', 'OGWRGB13_15VL_vdc'],
+      layers: {
+        'OGWRGB13_15VL': {
+          queryable: false,
+          title: 'Orthofotomozaïek, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen',
+          abstract: 'Deze rasterlaag is een compilatie van de grootschalige orthofotomozaïeken (winteropnamen) die voor Vlaanderen in de periode 2013-2015 werden aangemaakt. De compilatie heeft een grondresolutie van 10cm.'
+        },
+        'OGWRGB13_15VL_vdc': {
+          queryable: true,
+          title: 'Vliegdagcontour, grootschalig, winteropnamen, kleur, 2013-2015, Vlaanderen'
+        }
+      }
+    }, {
+      id: 3212,
+      title: 'Snelheidsregimes en referentiepunten AWV',
+      url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(282692, 6565133, 655962, 6710236),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Snelheidsregimes&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      attribution: 'Agentschap Informatie Vlaanderen',
+      pixelManipulations: ['removePartialBlackTransparency', 'traceGrayscalePixels'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['awv:Snelheidsregimes', 'awv:Referentiepunten'],
+      layers: {
+        'awv:Snelheidsregimes': {
+          queryable: true,
+          title: 'Snelheidsregimes langs de genummerde wegen in beheer van AWV',
+          abstract: 'Snelheidsregimes zijn delen van een genummerde weg met een uniforme maximale snelheid. De snelheidsregimes zijn lineaire weergaves van een (deel van) de wegen met aanduiding van een uniforme maximum snelheid.'
+        },
+        'awv:Referentiepunten': {
+          queryable: true,
+          title: 'Km en hm referentiepunten',
+          abstract: 'Posities van de km en hm referentiepunten langs de Vlaamse autosnelwegen en gewestwegen met de bijbehorende kilometer-/ hectometeraanduidingen'
+        }
+      }
+    }, {
+      id: 3214,
+      title: 'Administrative Borders',
+      url: 'https://ccff02.minfin.fgov.be/geoservices/arcgis/services/INSPIRE/AU_wms/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Administrative borders for Belgium',
+      attribution: 'FPS Finances - General Administration of Patrimonial Documentation',
+      default_layers: ['5', '4', '3', '2', '1'],
+      layers: {
+        '1': {
+          title: 'Country Boundary'
+        },
+        '2': {
+          title: 'Region Boundary'
+        },
+        '3': {
+          title: 'Province Boundary'
+        },
+        '4': {
+          title: 'Arrondissement Boundary'
+        },
+        '5': {
+          title: 'Town Boundary'
+        },
+        '7': {
+          title: 'Country'
+        },
+        '8': {
+          title: 'Region'
+        },
+        '9': {
+          title: 'Province'
+        },
+        '10': {
+          title: 'Arrondissement'
+        },
+        '11': {
+          title: 'Town'
+        }
+      }
+    }, {
+      id: 3215,
+      title: 'GIPOD Actueel',
+      url: 'https://geoservices.informatievlaanderen.be/raadpleegdiensten/gipodpubliek/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(280525, 6557859, 661237, 6712007),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Overzicht van momenteel actief zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['ManOmlVndg', 'ManConVndg', 'ManIcoonVndg', 'WoOmlVndg', 'WoConVndg', 'WoIcoonVndg'],
+      layers: {
+        'ManOmlVndg': {
+          queryable: false,
+          title: 'Omleidingen van de manifestaties',
+          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.'
+        },
+        'ManConVndg': {
+          queryable: true,
+          title: 'Manifestaties contour',
+          abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'ManIcoonVndg': {
+          queryable: false,
+          title: 'Manifestaties icoon',
+          abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'WoOmlVndg': {
+          queryable: false,
+          title: 'Omleidingen van de werkopdrachten',
+          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.'
+        },
+        'WoConVndg': {
+          queryable: true,
+          title: 'Werkopdrachten contour',
+          abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
+        },
+        'WoIcoonVndg': {
+          queryable: false,
+          title: 'Werkopdrachten icoon',
+          abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
+        }
+      }
+    }, {
+      id: 3216,
+      title: 'Orthophotos 2016',
+      url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2016/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2016.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'ORTHO_2016',
+          abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2016 et le 1er novembre 2016. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2016 - Tuilage".'
+        }
+      }
+    }, {
+      id: 3217,
+      title: 'Réseau routier régional',
+      url: 'https://geoservices.wallonie.be/arcgis/services/MOBILITE/RES_ROUTIER_REGIONAL/MapServer/WmsServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(295477, 6347477, 740431, 6640886),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Consultation, recherche et identification des données relatives au Réseau routier régional wallon et aux bornes kilométriques.',
+      attribution: 'Service publique de Wallonie',
+      pixelManipulations: ['traceGrayscalePixels'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['1', '2', '3', '5', '6'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Nationales',
+          abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html'
+        },
+        '2': {
+          queryable: true,
+          title: 'Rings',
+          abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html'
+        },
+        '3': {
+          queryable: true,
+          title: 'Autoroutes',
+          abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/bdcb789c-4b02-4c0c-863a-98dac4ed0240.html'
+        },
+        '5': {
+          queryable: true,
+          title: 'Bornes kilométriques',
+          abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html'
+        },
+        '6': {
+          queryable: true,
+          title: 'Bornes hectométriques',
+          abstract: 'Pour plus d\'informations sur cette donnée, consultez http://geoportail.wallonie.be/catalogue/b1882436-3016-421e-9dfd-0326cca998f2.html'
+        }
+      }
+    }, {
+      id: 3220,
+      title: 'Verkeersborden Vlaanderen',
+      url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(279108, 6561687, 663162, 6713720),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Puntvoorstelling van de verkeersborden uit de toepassing Verkeersborden.Vlaanderen',
+      attribution: 'MOW Vlaanderen',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['awv:Verkeersborden.Vlaanderen_Borden'],
+      layers: {
+        'awv:Verkeersborden.Vlaanderen_Borden': {
+          title: 'Verkeersborden.Vlaanderen',
+          queryable: true
+        }
+      }
+    }, {
+      id: 3221,
+      title: 'Afgeleide snelheidsregimes',
+      url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geoserver/awv/ows',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(281625, 6555960, 664720, 6711205),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Kaart van de afgeleide snelheidsregimes op wegen gelegen in het Vlaams gewest. Het basis van het wegenbestand waarop de snelheidsregimes zijn geprojecteerd is steeds de laatste versie van het Wegenregister zoals gepubliceerd op de website van Informatie Vlaanderen. De opstellingen in de Verkeersborden.Vlaanderen databank dienen als basisbestand voor de afgeleide data. De kwaliteit van de afgeleide data hangt af van de correctheid van zowel het Wegenregister als de data is Verkeersborden.Vlaanderen.',
+      attribution: 'MOW Vlaanderen',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['awv:Afgeleide_snelheidsregimes'],
+      layers: {
+        'awv:Afgeleide_snelheidsregimes': {
+          title: 'Afgeleide snelheidsregimes',
+          queryable: true
+        }
+      }
+    }, {
+      id: 3222,
+      title: 'Brussels CIRB (FR)',
+      url: 'https://geoservices-urbis.irisnet.be/geoserver/ows',
+      crs: 'EPSG:31370',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Données de carte Bruxelloises',
+      attribution: 'Irisnet GIS',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['urbisFR'],
+      layers: {
+        'urbisFR': {
+          queryable: false,
+          title: 'Urbis Base Map FR',
+          abstract: 'This layer represents the base map in french.'
+        },
+        'urbisFRGray': {
+          queryable: false,
+          title: 'Urbis Base Map Gray FR',
+          abstract: 'This layer represents the gray base map in french.'
+        },
+        'urbis:LabeledStreetAxe': {
+          queryable: false,
+          title: 'Labeled Street Axe',
+          abstract: 'Labeled StreetAxe for OSIRIS, bug fix for the juxtaposition of street name on building'
+        },
+        'urbis:URB_A_ADPT': {
+          queryable: false,
+          title: 'Address points',
+          abstract: 'This layer is the localization of address points of the Brussels Region'
+        },
+        'urbis:URB_A_BU': {
+          queryable: true,
+          title: 'Buildings',
+          abstract: 'This layer represents the buildings of the Brussels Region'
+        },
+        'urbis:URB_A_MD': {
+          queryable: true,
+          title: 'Monitoring districts',
+          abstract: 'This layer reprensent the monitoring districts of the Brussels Region'
+        },
+        'urbis:URB_A_MU': {
+          queryable: true,
+          title: 'Municipalities',
+          abstract: 'This layer represents the municipalities of the Brussels Region'
+        },
+        'urbis:URB_A_MY_SA': {
+          queryable: false,
+          title: 'Street axes',
+          abstract: 'This layer represents the axes of the street of the Brussels Region'
+        },
+        'urbis:URB_A_MY_SS': {
+          queryable: false,
+          title: 'Street sections',
+          abstract: 'This layer represents the street sections of the Brussels Region'
+        },
+        'urbis:URB_A_MZ': {
+          queryable: true,
+          title: 'Municipal zips',
+          abstract: 'This layer is the zip of the municipality of the Brussels Region'
+        },
+        'urbis:URB_A_POpenLayers': {
+          queryable: true,
+          title: 'Police districts',
+          abstract: 'This layer is the police districts of the Brussels Region'
+        },
+        'urbis:URB_A_RE': {
+          queryable: false,
+          title: 'Region',
+          abstract: 'This layer is the Brussels Region'
+        },
+        'urbis:URB_A_SD': {
+          queryable: true,
+          title: 'Statistical districts',
+          abstract: 'This layer represents the limit of the statistical districts of the Brussels Region'
+        },
+        'urbis:URB_A_SN': {
+          queryable: false,
+          title: 'Street nodes',
+          abstract: 'This layer represents the street nodes. Each node is an intersection or an extremity of a street axe'
+        },
+        'urbis:URB_M_RTLINE': {
+          queryable: false,
+          title: 'Rail tracks',
+          abstract: 'This layer represents the rails tracks.'
+        },
+        'urbis:URB_M_SHAPE': {
+          queryable: true,
+          title: 'UrbisMap shapes',
+          abstract: 'This layer represents the shapes of UrbisMap.'
+        },
+        'urbis:URB_M_TONAME_LIN': {
+          queryable: true,
+          title: 'Toponymy',
+          abstract: 'This layer represents the toponymy of public places.'
+        },
+        'urbis:URB_M_ZIPOINT': {
+          queryable: true,
+          title: 'Points of interest',
+          abstract: 'This layer represents the point of zone of interest.'
+        },
+        'urbis:URB_T_LINE': {
+          queryable: false,
+          title: 'Urbis Topo Lines',
+          abstract: 'This layer represents the topo lines.'
+        },
+        'urbis:URB_T_POINT': {
+          queryable: true,
+          title: 'Urbis Topo Points',
+          abstract: 'This layer represents the topo points.'
+        },
+        'urbis:URB_A_SI_POINT_VW': {
+          queryable: false,
+          title: 'Street sides'
+        },
+        'urbis:MuNeighbour': {
+          queryable: true,
+          title: 'Neighbour Municipalities'
+        },
+        'urbis:Highways': {
+          queryable: false,
+          title: 'Highways'
+        }
+      }
+    }, {
+      id: 3223,
+      title: 'Brussels Ortho',
+      url: 'https://geoservices-urbis.irisnet.be/geoserver/ows',
+      crs: 'EPSG:31370',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Orthographic map of Brussels',
+      attribution: 'Irisnet GIS',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['Urbis:Ortho'],
+      layers: {
+        'Urbis:Ortho': {
+          queryable: false,
+          title: 'Urbis Ortho',
+          abstract: 'This layer always shows the most recent available orthographic images'
+        },
+        'Urbis:Ortho2019': {
+          queryable: false,
+          title: 'Ortho 2019',
+          abstract: 'Orthographic imagery for the year 2019 within the Brussels region'
+        },
+        'Urbis:Ortho2018': {
+          queryable: false,
+          title: 'Ortho 2018',
+          abstract: 'Orthographic imagery for the year 2018 within the Brussels region'
+        },
+        'Urbis:Ortho2017': {
+          queryable: false,
+          title: 'Ortho 2017',
+          abstract: 'Orthographic imagery for the year 2017 within the Brussels region'
+        },
+        'Urbis:Ortho2016': {
+          queryable: false,
+          title: 'Ortho 2016',
+          abstract: 'Orthographic imagery for the year 2016 within the Brussels region'
+        },
+        'Urbis:Ortho2015': {
+          queryable: false,
+          title: 'Ortho 2015',
+          abstract: 'Orthographic imagery for the year 2015 within the Brussels region'
+        },
+        'Urbis:Ortho2014': {
+          queryable: false,
+          title: 'Ortho 2014',
+          abstract: 'Orthographic imagery for the year 2014 within the Brussels region'
+        },
+        'Urbis:Ortho2012': {
+          queryable: false,
+          title: 'Ortho 2012',
+          abstract: 'Orthographic imagery for the year 2012 within the Brussels region'
+        },
+        'Urbis:Ortho2009': {
+          queryable: false,
+          title: 'Ortho 2009',
+          abstract: 'Orthographic imagery for the year 2009 within the Brussels region'
+        },
+        'Urbis:Ortho2004': {
+          queryable: false,
+          title: 'Ortho 2004',
+          abstract: 'Orthographic imagery for the year 2004 within the Brussels region'
+        }
+      }
+    }, {
+      id: 3224,
+      title: 'Brussels Road Hierarchy',
+      url: 'https://data.mobility.brussels/geoserver/bm_network/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Road hierarchy maintained by Brussels Mobility',
+      attribution: 'Brussels Mobility',
+      pixelManipulations: ['brusselsSwapColours'],
+      queryable: false,
+      default_layers: ['specialisation_vp'],
+      layers: {
+        'specialisation_vp': {
+          queryable: false,
+          title: 'Road hierarchy'
+        }
+      }
+    }, {
+      id: 3225,
+      title: 'Brussels Zone 30',
+      url: 'https://data.mobility.brussels/geoserver/bm_network/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Road speed limit data maintained by Brussels Mobility',
+      attribution: 'Brussels Mobility',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['Zones_30'],
+      layers: {
+        'Zones_30': {
+          queryable: true,
+          title: 'Road speeds'
+        }
+      }
+    }, {
+      id: 3226,
+      title: 'Brussels Low Emission Zone',
+      url: 'https://data.mobility.brussels/geoserver/bm_network/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Defines the contours of the low emission zone active in Brussels',
+      attribution: 'Brussels Mobility',
+      queryable: false,
+      default_layers: ['lez_zone'],
+      layers: {
+        'lez_zone': {
+          queryable: false,
+          title: 'Low Emission Zone'
+        }
+      }
+    }, {
+      id: 3227,
+      title: 'Verkeersborden Vlaanderen Visualisatie',
+      url: 'https://opendata.apps.mow.vlaanderen.be/opendata-geowebcache/service/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(279108, 6561687, 663162, 6713720),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Grafische voorstelling van de verkeersborden uit de toepassing Verkeersborden.Vlaanderen',
+      attribution: 'MOW Vlaanderen',
+      pixelManipulations: ['addTranslucentOverlay'],
+      queryable: false,
+      default_layers: ['verkeersborden'],
+      layers: {
+        'verkeersborden': {
+          title: 'Grafische voorstelling verkeersborden',
+          queryable: false
+        }
+      }
+    }, {
+      id: 3228,
+      title: 'Orthophotos Récentes',
+      url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_LAST/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Service de visualisation WMS référençant la dernière campagne disponible des images orthorectifiées couvrant le territoire de la Région Wallonne.',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'ORTHO',
+          abstract: 'Dernière campagne disponible d\'imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm. Leur but initial était de servir de base au contrôles liés à la mise en oeuvre de la Politique Agricole Commune (PAC). Quatre bandes spectrales sont disponibles (Rouge, Vert, Bleu et Infra-rouge).'
+        }
+      }
+    }, {
+      id: 3229,
+      title: 'Orthophotos 2017',
+      url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2017/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2017.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2017 et le 1er novembre 2017. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'ORTHO_2017',
+          abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2017 et le 1er novembre 2017. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2017 - Tuilage".'
+        }
+      }
+    }, {
+      id: 3230,
+      title: 'Orthophotos 2018',
+      url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2018/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2018.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2018 et le 1er novembre 2018. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'ORTHO_2018',
+          abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2018 et le 1er novembre 2018. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2018 - Tuilage".'
+        }
+      }
+    }, {
+      id: 3231,
+      title: 'Orthophotos 2019',
+      url: 'https://geoservices.wallonie.be/arcgis/services/IMAGERIE/ORTHO_2019/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(315258, 6348878, 719736, 6600131),
+      format: 'image/jpeg',
+      area: 'BE',
+      abstract: 'Service de visualisation INSPIRE permettant la visualisation de l\'image orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm pour l\'année 2019.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2019 et le 1er novembre 2019. Ce service affiche 3 des 4 bandes disponibles (rouge, vert et bleu) en couleurs naturelles.\nCe service n\'est pas tuilé.',
+      attribution: 'Service public de Wallonie',
+      pixelManipulations: ['whiteTiles2transparent'],
+      queryable: false,
+      default_layers: ['0'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'ORTHO_2019',
+          abstract: 'Imagerie orthorectifiée et mosaïquée couvrant l\'entièreté du territoire wallon à une résolution de 25 cm.\nLes prises de vue ont été effectuées verticalement entre le 10 juin 2019 et le 1er novembre 2019. Quatre bandes spectrales sont disponibles (rouge, vert, bleu et le proche infra-rouge).\nLe recouvrement longitudinal minimal des photos successives d’une même bande est de 60% avec une tolérance de 5%. D’autre part, le recouvrement latéral minimal entre bandes parallèles successives est de 30%, avec une tolérance de 5%. Les mailles sont de 2 km sur 2km.\nLes métadonnées des orthophotos (date et heure de prise de vue, angle solaire, etc.) sont disponibles sous forme de données attributaires dans la donnée "Orthophotos 2019 - Tuilage".'
+        }
+      }
+    }, {
+      id: 3232,
+      title: 'Ville 30/Stad 30',
+      url: 'https://data.mobility.brussels/geoserver/bm_network/wms',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(471578, 6579050, 499555, 6606337),
+      zoomRange: [3, 10],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Future speed limits in Brussels Mobility (green/blue: 30, orange: 50, pink: 70, black: 90/120)',
+      attribution: 'Brussels Mobility',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['ville30_detailed'],
+      layers: {
+        'ville30_detailed': {
+          queryable: true,
+          title: 'Road speeds'
+        }
+      }
+    }, {
+      id: 3233,
+      title: 'Cadastral Borders',
+      url: 'https://eservices.minfin.fgov.be/arcgis/services/R2C/OtherLimits/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134),
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Map of cadastral borders as they are defined at FPS Finances. This can often be used to find town borders.',
+      attribution: 'FPS Finances - General Administration of Patrimonial Documentation',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['1', '2', '5'],
+      layers: {
+        '1': {
+          queryable: false,
+          title: 'Cadastral Sections'
+        },
+        '2': {
+          queryable: true,
+          title: 'Cadastral Divisions'
+        },
+        '3': {
+          queryable: false,
+          title: 'Cadastral Blocks'
+        },
+        '4': {
+          queryable: false,
+          title: 'Administrative Stones'
+        },
+        '5': {
+          queryable: false,
+          title: 'Administrative Lines'
+        }
+      }
+    }, {
+      id: 5501,
+      title: 'Mapa basico Rio de Janeiro',
+      url: 'http://pgeo3.rio.rj.gov.br/arcgis/services/Basicos/mapa_basico_UTM/MapServer/WmsServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-4880972, -2646822, -4793898, -2599308),
+      format: 'image/png',
+      area: 'BR',
+      abstract: 'Mapa urbano básico da Cidade do Rio de Janeiro',
+      attribution: 'Cidade do Rio de Janeiro',
+      pixelManipulations: ['rioTransparent'],
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'],
+      layers: {
+        '0': {
+          queryable: false,
+          title: 'Limite do Estado do Rio de Janeiro',
+          abstract: 'Divisão Política do Estado do Rio de Janeiro'
+        },
+        '1': {
+          queryable: false,
+          title: 'relevo'
+        },
+        '2': {
+          queryable: false,
+          title: 'Quadras'
+        },
+        '3': {
+          queryable: true,
+          title: 'Logradouros - Ruas'
+        },
+        '4': {
+          queryable: false,
+          title: 'Praças'
+        },
+        '5': {
+          queryable: false,
+          title: 'Areas Protegidas'
+        },
+        '6': {
+          queryable: true,
+          title: 'Favelas'
+        },
+        '7': {
+          queryable: false,
+          title: 'Loteamentos Irregulares e Clandestinos'
+        },
+        '8': {
+          queryable: false,
+          title: 'edificações'
+        },
+        '9': {
+          queryable: false,
+          title: 'Hidrografia - Rios'
+        },
+        '10': {
+          queryable: false,
+          title: 'Limite de Bairros'
+        },
+        '11': {
+          queryable: false,
+          title: 'Limite de Regiões Administrativas - RA'
+        },
+        '12': {
+          queryable: false,
+          title: 'Áreas de Planejamento - AP'
+        },
+        '13': {
+          queryable: false,
+          title: 'número de porta'
+        },
+        '14': {
+          queryable: true,
+          title: 'principais logradouros'
+        },
+        '15': {
+          queryable: false,
+          title: 'Locais de Referência'
+        },
+        '16': {
+          queryable: false,
+          title: 'Escolas Municipais'
+        },
+        '17': {
+          queryable: false,
+          title: 'Unidades de Saúde Estaduais e Federais'
+        },
+        '18': {
+          queryable: false,
+          title: 'Unidades de Saúde Municipais'
+        },
+        '19': {
+          queryable: false,
+          title: 'Corpo de Bombeiros'
+        },
+        '20': {
+          queryable: false,
+          title: 'Delegacias Policiais'
+        },
+        '21': {
+          queryable: false,
+          title: 'Estações de Bonde'
+        },
+        '22': {
+          queryable: false,
+          title: 'Estações Hidroviárias'
+        },
+        '23': {
+          queryable: false,
+          title: 'Estações Ferroviárias'
+        },
+        '24': {
+          queryable: false,
+          title: 'Estações do Metrô'
+        },
+        '25': {
+          queryable: false,
+          title: 'Aeroportos',
+          abstract: 'principais aeroportos comerciais'
+        }
+      }
+    }, {
+      id: 96801,
+      title: 'Oman National Basemap (EN) Transparent with Major Landmarks',
+      url: 'https://nsdig2gapps.ncsi.gov.om/arcgis1/services/Geoportal/BaseMapTransparentLandmarksEN/MapServer/WmsServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(5147047, 1459394, 7435614, 3520164),
+      format: 'image/png',
+      area: 'OM',
+      abstract: 'National Basemap Transparent with Major Landmarks',
+      attribution: 'NCSI',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Name of Ocean',
+          abstract: 'Name of Ocean'
+        },
+        '2': {
+          queryable: true,
+          title: 'World Ocean',
+          abstract: 'World Ocean'
+        },
+        '3': {
+          queryable: true,
+          title: 'World Countries',
+          abstract: 'World Countries'
+        },
+        '5': {
+          queryable: true,
+          title: 'Country Boundary',
+          abstract: 'Country Boundary'
+        },
+        '6': {
+          queryable: true,
+          title: 'Governorate ',
+          abstract: 'Governorate '
+        },
+        '7': {
+          queryable: true,
+          title: 'Willayat',
+          abstract: 'Willayat'
+        },
+        '8': {
+          queryable: true,
+          title: 'Governorate Center',
+          abstract: 'Governorate Center'
+        },
+        '9': {
+          queryable: true,
+          title: 'Willayat Center',
+          abstract: 'Willayat Center'
+        },
+        '10': {
+          queryable: true,
+          title: 'Town Center',
+          abstract: 'Town Center'
+        },
+        '12': {
+          queryable: true,
+          title: 'Rock',
+          abstract: 'Rock'
+        },
+        '13': {
+          queryable: true,
+          title: 'Sand Dunes',
+          abstract: 'Sand Dunes'
+        },
+        '14': {
+          queryable: true,
+          title: 'Builtup Area',
+          abstract: 'Builtup Area'
+        },
+        '15': {
+          queryable: true,
+          title: 'Vegetation',
+          abstract: 'Vegetation'
+        },
+        '17': {
+          queryable: true,
+          title: 'Reservoir',
+          abstract: 'Reservoir'
+        },
+        '18': {
+          queryable: true,
+          title: 'Marsh Swamp',
+          abstract: 'Marsh Swamp'
+        },
+        '19': {
+          queryable: true,
+          title: 'Sabkha',
+          abstract: 'Sabkha'
+        },
+        '20': {
+          queryable: true,
+          title: 'Lake Pond',
+          abstract: 'Lake Pond'
+        },
+        '21': {
+          queryable: true,
+          title: 'Lagoon',
+          abstract: 'Lagoon'
+        },
+        '22': {
+          queryable: true,
+          title: 'Wadi Stream',
+          abstract: 'Wadi Stream'
+        },
+        '23': {
+          queryable: true,
+          title: 'Wadi Spread',
+          abstract: 'Wadi Spread'
+        },
+        '24': {
+          queryable: true,
+          title: 'Dam',
+          abstract: 'Dam'
+        },
+        '25': {
+          queryable: true,
+          title: 'Foreshore',
+          abstract: 'Foreshore'
+        },
+        '26': {
+          queryable: true,
+          title: 'Beach',
+          abstract: 'Beach'
+        },
+        '27': {
+          queryable: true,
+          title: 'Ditch',
+          abstract: 'Ditch'
+        },
+        '28': {
+          queryable: true,
+          title: 'Weir',
+          abstract: 'Weir'
+        },
+        '29': {
+          queryable: true,
+          title: 'Sluice Gate',
+          abstract: 'Sluice Gate'
+        },
+        '30': {
+          queryable: true,
+          title: 'Waterfall',
+          abstract: 'Waterfall'
+        },
+        '31': {
+          queryable: true,
+          title: 'Spring',
+          abstract: 'Spring'
+        },
+        '33': {
+          queryable: true,
+          title: 'Road Centre Lines',
+          abstract: 'Road Centre Lines'
+        },
+        '34': {
+          queryable: true,
+          title: 'Road Centre Lines',
+          abstract: 'Road Centre Lines'
+        },
+        '35': {
+          queryable: true,
+          title: 'Streets',
+          abstract: 'Streets'
+        },
+        '36': {
+          queryable: true,
+          title: 'Minor Roads',
+          abstract: 'Minor Roads'
+        },
+        '37': {
+          queryable: true,
+          title: 'Major Roads',
+          abstract: 'Major Roads'
+        },
+        '39': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'Amusement Parks'
+        },
+        '40': {
+          queryable: true,
+          title: 'Golf Courses',
+          abstract: 'Golf Courses'
+        },
+        '41': {
+          queryable: true,
+          title: 'Parks',
+          abstract: 'Parks'
+        },
+        '42': {
+          queryable: true,
+          title: 'Racing Tracks',
+          abstract: 'Racing Tracks'
+        },
+        '43': {
+          queryable: true,
+          title: 'Sports Fields',
+          abstract: 'Sports Fields'
+        },
+        '45': {
+          queryable: true,
+          title: 'Archeological Sites',
+          abstract: 'Archeological Sites'
+        },
+        '47': {
+          queryable: true,
+          title: 'Buildings',
+          abstract: 'Buildings'
+        },
+        '48': {
+          queryable: true,
+          title: 'Wall and Fences',
+          abstract: 'Wall and Fences'
+        },
+        '50': {
+          queryable: true,
+          title: 'Consulates',
+          abstract: 'Consulates'
+        },
+        '51': {
+          queryable: true,
+          title: 'International Missions',
+          abstract: 'International Missions'
+        },
+        '52': {
+          queryable: true,
+          title: 'Embassies',
+          abstract: 'Embassies'
+        },
+        '53': {
+          queryable: true,
+          title: 'Money Exchange',
+          abstract: 'Money Exchange'
+        },
+        '54': {
+          queryable: true,
+          title: 'Stock Exchange',
+          abstract: 'Stock Exchange'
+        },
+        '55': {
+          queryable: true,
+          title: 'Banks',
+          abstract: 'Banks'
+        },
+        '56': {
+          queryable: true,
+          title: 'Fuel Stations',
+          abstract: 'Fuel Stations'
+        },
+        '57': {
+          queryable: true,
+          title: 'Department Stores',
+          abstract: 'Department Stores'
+        },
+        '58': {
+          queryable: true,
+          title: 'Shopping Mall Locations',
+          abstract: 'Shopping Mall Locations'
+        },
+        '59': {
+          queryable: true,
+          title: 'Market Locations',
+          abstract: 'Market Locations'
+        },
+        '60': {
+          queryable: true,
+          title: 'Ambulance Station',
+          abstract: 'Ambulance Station'
+        },
+        '61': {
+          queryable: true,
+          title: 'Civil Defense Centers',
+          abstract: 'Civil Defense Centers'
+        },
+        '62': {
+          queryable: true,
+          title: 'Police Station',
+          abstract: 'Police Station'
+        },
+        '63': {
+          queryable: true,
+          title: 'Government Offices',
+          abstract: 'Government Offices'
+        },
+        '64': {
+          queryable: true,
+          title: 'College Locations',
+          abstract: 'College Locations'
+        },
+        '65': {
+          queryable: true,
+          title: 'Training Centers',
+          abstract: 'Training Centers'
+        },
+        '66': {
+          queryable: true,
+          title: 'University Locations',
+          abstract: 'University Locations'
+        },
+        '67': {
+          queryable: true,
+          title: 'School Locations',
+          abstract: 'School Locations'
+        },
+        '68': {
+          queryable: true,
+          title: 'Health Centers',
+          abstract: 'Health Centers'
+        },
+        '69': {
+          queryable: true,
+          title: 'Hospital Locations',
+          abstract: 'Hospital Locations'
+        },
+        '70': {
+          queryable: true,
+          title: 'Diagnostic Centers',
+          abstract: 'Diagnostic Centers'
+        },
+        '71': {
+          queryable: true,
+          title: 'Churches',
+          abstract: 'Churches'
+        },
+        '72': {
+          queryable: true,
+          title: 'Temples',
+          abstract: 'Temples'
+        },
+        '73': {
+          queryable: true,
+          title: 'Shrines',
+          abstract: 'Shrines'
+        },
+        '74': {
+          queryable: true,
+          title: 'Mosques',
+          abstract: 'Mosques'
+        },
+        '75': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'Amusement Parks'
+        },
+        '76': {
+          queryable: true,
+          title: 'Beach Location',
+          abstract: 'Beach Location'
+        },
+        '77': {
+          queryable: true,
+          title: 'Cinema Theaters',
+          abstract: 'Cinema Theaters'
+        },
+        '78': {
+          queryable: true,
+          title: 'Skating Centers',
+          abstract: 'Skating Centers'
+        },
+        '79': {
+          queryable: true,
+          title: 'Bowling Centers',
+          abstract: 'Bowling Centers'
+        },
+        '80': {
+          queryable: true,
+          title: 'Theaters',
+          abstract: 'Theaters'
+        },
+        '81': {
+          queryable: true,
+          title: 'Cultural Facilities',
+          abstract: 'Cultural Facilities'
+        },
+        '82': {
+          queryable: true,
+          title: 'Museums',
+          abstract: 'Museums'
+        },
+        '83': {
+          queryable: true,
+          title: 'Park Locations',
+          abstract: 'Park Locations'
+        },
+        '84': {
+          queryable: true,
+          title: 'Convention Centers',
+          abstract: 'Convention Centers'
+        },
+        '85': {
+          queryable: true,
+          title: 'Resturants',
+          abstract: 'Resturants'
+        },
+        '86': {
+          queryable: true,
+          title: 'Hotels',
+          abstract: 'Hotels'
+        },
+        '87': {
+          queryable: true,
+          title: 'Archeological Site Locations',
+          abstract: 'Archeological Site Locations'
+        },
+        '88': {
+          queryable: true,
+          title: 'FerryTerminals',
+          abstract: 'FerryTerminals'
+        },
+        '89': {
+          queryable: true,
+          title: 'Airport Locations',
+          abstract: 'Airport Locations'
+        },
+        '91': {
+          queryable: true,
+          title: 'Consulates',
+          abstract: 'Consulates'
+        },
+        '92': {
+          queryable: true,
+          title: 'International Missions',
+          abstract: 'International Missions'
+        },
+        '93': {
+          queryable: true,
+          title: 'Embassies',
+          abstract: 'Embassies'
+        },
+        '94': {
+          queryable: true,
+          title: 'Money Exchange',
+          abstract: 'Money Exchange'
+        },
+        '95': {
+          queryable: true,
+          title: 'Stock Exchange',
+          abstract: 'Stock Exchange'
+        },
+        '96': {
+          queryable: true,
+          title: 'Banks',
+          abstract: 'Banks'
+        },
+        '97': {
+          queryable: true,
+          title: 'Fuel Stations',
+          abstract: 'Fuel Stations'
+        },
+        '98': {
+          queryable: true,
+          title: 'Department Stores',
+          abstract: 'Department Stores'
+        },
+        '99': {
+          queryable: true,
+          title: 'Shopping Mall Locations',
+          abstract: 'Shopping Mall Locations'
+        },
+        '100': {
+          queryable: true,
+          title: 'Market Locations',
+          abstract: 'Market Locations'
+        },
+        '101': {
+          queryable: true,
+          title: 'Ambulance Station',
+          abstract: 'Ambulance Station'
+        },
+        '102': {
+          queryable: true,
+          title: 'Civil Defense Centers',
+          abstract: 'Civil Defense Centers'
+        },
+        '103': {
+          queryable: true,
+          title: 'Police Station',
+          abstract: 'Police Station'
+        },
+        '104': {
+          queryable: true,
+          title: 'Government Offices',
+          abstract: 'Government Offices'
+        },
+        '105': {
+          queryable: true,
+          title: 'College Locations',
+          abstract: 'College Locations'
+        },
+        '106': {
+          queryable: true,
+          title: 'Training Centers',
+          abstract: 'Training Centers'
+        },
+        '107': {
+          queryable: true,
+          title: 'University Locations',
+          abstract: 'University Locations'
+        },
+        '108': {
+          queryable: true,
+          title: 'School Locations',
+          abstract: 'School Locations'
+        },
+        '109': {
+          queryable: true,
+          title: 'Health Centers',
+          abstract: 'Health Centers'
+        },
+        '110': {
+          queryable: true,
+          title: 'Hospital Locations',
+          abstract: 'Hospital Locations'
+        },
+        '111': {
+          queryable: true,
+          title: 'Diagnostic Centers',
+          abstract: 'Diagnostic Centers'
+        },
+        '112': {
+          queryable: true,
+          title: 'Churches',
+          abstract: 'Churches'
+        },
+        '113': {
+          queryable: true,
+          title: 'Temples',
+          abstract: 'Temples'
+        },
+        '114': {
+          queryable: true,
+          title: 'Shrines',
+          abstract: 'Shrines'
+        },
+        '115': {
+          queryable: true,
+          title: 'Mosques',
+          abstract: 'Mosques'
+        },
+        '116': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'Amusement Parks'
+        },
+        '117': {
+          queryable: true,
+          title: 'Beach Location',
+          abstract: 'Beach Location'
+        },
+        '118': {
+          queryable: true,
+          title: 'Cinema Theaters',
+          abstract: 'Cinema Theaters'
+        },
+        '119': {
+          queryable: true,
+          title: 'Skating Centers',
+          abstract: 'Skating Centers'
+        },
+        '120': {
+          queryable: true,
+          title: 'Bowling Centers',
+          abstract: 'Bowling Centers'
+        },
+        '121': {
+          queryable: true,
+          title: 'Theaters',
+          abstract: 'Theaters'
+        },
+        '122': {
+          queryable: true,
+          title: 'Cultural Facilities',
+          abstract: 'Cultural Facilities'
+        },
+        '123': {
+          queryable: true,
+          title: 'Museums',
+          abstract: 'Museums'
+        },
+        '124': {
+          queryable: true,
+          title: 'Park Locations',
+          abstract: 'Park Locations'
+        },
+        '125': {
+          queryable: true,
+          title: 'Convention Centers',
+          abstract: 'Convention Centers'
+        },
+        '126': {
+          queryable: true,
+          title: 'Resturants',
+          abstract: 'Resturants'
+        },
+        '127': {
+          queryable: true,
+          title: 'Hotels',
+          abstract: 'Hotels'
+        },
+        '128': {
+          queryable: true,
+          title: 'Archeological Site Locations',
+          abstract: 'Archeological Site Locations'
+        },
+        '129': {
+          queryable: true,
+          title: 'FerryTerminals',
+          abstract: 'FerryTerminals'
+        },
+        '130': {
+          queryable: true,
+          title: 'Airport Locations',
+          abstract: 'Airport Locations'
+        }
+      }
+    }, {
+      id: 96802,
+      title: 'Oman National Basemap (AR) Transparent with Major Landmarks',
+      url: 'https://nsdig2gapps.ncsi.gov.om/arcgis1/services/Geoportal/BaseMapTransparentLandmarksAR/MapServer/WmsServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(5147047, 1459394, 7435614, 3520164),
+      format: 'image/png',
+      area: 'OM',
+      abstract: 'National Basemap Transparent with Major Landmarks',
+      attribution: 'NCSI',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'],
+      layers: {
+        '1': {
+          queryable: true,
+          title: 'Name of Ocean',
+          abstract: 'أسماء المحيطات'
+        },
+        '2': {
+          queryable: true,
+          title: 'World Ocean',
+          abstract: 'المحيطات'
+        },
+        '3': {
+          queryable: true,
+          title: 'World Countries',
+          abstract: 'دول العالم'
+        },
+        '5': {
+          queryable: true,
+          title: 'Country Boundary',
+          abstract: 'حدود السلطنة'
+        },
+        '6': {
+          queryable: true,
+          title: 'Governorate ',
+          abstract: 'المحافظات'
+        },
+        '7': {
+          queryable: true,
+          title: 'Willayat',
+          abstract: 'الولايات'
+        },
+        '8': {
+          queryable: true,
+          title: 'Governorate Center',
+          abstract: 'مركز المحافظة'
+        },
+        '9': {
+          queryable: true,
+          title: 'Willayat Center',
+          abstract: 'مركز الولاية'
+        },
+        '10': {
+          queryable: true,
+          title: 'Town Center',
+          abstract: 'مركز المدينة'
+        },
+        '12': {
+          queryable: true,
+          title: 'Rock',
+          abstract: 'تجمعات صخرية'
+        },
+        '13': {
+          queryable: true,
+          title: 'Sand Dunes',
+          abstract: 'الكثبان الرملية'
+        },
+        '14': {
+          queryable: true,
+          title: 'Builtup Area',
+          abstract: 'الإمتدادات العمرانية'
+        },
+        '15': {
+          queryable: true,
+          title: 'Vegetation',
+          abstract: 'الغطاء النباتي'
+        },
+        '17': {
+          queryable: true,
+          title: 'Reservoir',
+          abstract: 'خزانات المياه'
+        },
+        '18': {
+          queryable: true,
+          title: 'Marsh Swamp',
+          abstract: 'مستنقعات'
+        },
+        '19': {
+          queryable: true,
+          title: 'Sabkha',
+          abstract: 'السبخات'
+        },
+        '20': {
+          queryable: true,
+          title: 'Lake Pond',
+          abstract: 'برك المياه'
+        },
+        '21': {
+          queryable: true,
+          title: 'Lagoon',
+          abstract: 'بحيرات ملحية'
+        },
+        '22': {
+          queryable: true,
+          title: 'Wadi Stream',
+          abstract: 'مسارات الأودية'
+        },
+        '23': {
+          queryable: true,
+          title: 'Wadi Spread',
+          abstract: 'الأودية'
+        },
+        '24': {
+          queryable: true,
+          title: 'Dam',
+          abstract: 'سدود'
+        },
+        '25': {
+          queryable: true,
+          title: 'Foreshore',
+          abstract: 'حد الساحل'
+        },
+        '26': {
+          queryable: true,
+          title: 'Beach',
+          abstract: 'الشواطئ'
+        },
+        '27': {
+          queryable: true,
+          title: 'Ditch',
+          abstract: 'خنادق'
+        },
+        '28': {
+          queryable: true,
+          title: 'Weir',
+          abstract: 'مصدات المياه'
+        },
+        '29': {
+          queryable: true,
+          title: 'Sluice Gate',
+          abstract: 'بوابات التصريف'
+        },
+        '30': {
+          queryable: true,
+          title: 'Waterfall',
+          abstract: 'الشلالات'
+        },
+        '31': {
+          queryable: true,
+          title: 'Spring',
+          abstract: 'ينابيع'
+        },
+        '33': {
+          queryable: true,
+          title: 'Road Centre Lines',
+          abstract: 'خطوط منتصف الطرق'
+        },
+        '34': {
+          queryable: true,
+          title: 'Road Centre Lines',
+          abstract: 'خطوط منتصف الطرق'
+        },
+        '35': {
+          queryable: true,
+          title: 'Streets',
+          abstract: 'الشوارع'
+        },
+        '36': {
+          queryable: true,
+          title: 'Minor Roads',
+          abstract: 'الطرق الثانوية'
+        },
+        '37': {
+          queryable: true,
+          title: 'Major Roads',
+          abstract: 'الطرق الرئيسية'
+        },
+        '39': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'المتنزهات الترفيهية'
+        },
+        '40': {
+          queryable: true,
+          title: 'Golf Courses',
+          abstract: 'ملاعب الجولف'
+        },
+        '41': {
+          queryable: true,
+          title: 'Parks',
+          abstract: 'الحدائق'
+        },
+        '42': {
+          queryable: true,
+          title: 'Racing Tracks',
+          abstract: 'مضامير السباق'
+        },
+        '43': {
+          queryable: true,
+          title: 'Sports Fields',
+          abstract: 'الملاعب الرياضية'
+        },
+        '45': {
+          queryable: true,
+          title: 'Archeological Sites',
+          abstract: 'المواقع الأثرية'
+        },
+        '47': {
+          queryable: true,
+          title: 'Buildings',
+          abstract: 'المباني'
+        },
+        '48': {
+          queryable: true,
+          title: 'Wall and Fences',
+          abstract: 'الأسوار والأسيجة'
+        },
+        '50': {
+          queryable: true,
+          title: 'Consulates',
+          abstract: 'الهيئات الدبلوماسية'
+        },
+        '51': {
+          queryable: true,
+          title: 'International Missions',
+          abstract: 'السفارات'
+        },
+        '52': {
+          queryable: true,
+          title: 'Embassies',
+          abstract: 'القنصليات'
+        },
+        '53': {
+          queryable: true,
+          title: 'Money Exchange',
+          abstract: 'سوق الأوراق المالية'
+        },
+        '54': {
+          queryable: true,
+          title: 'Stock Exchange',
+          abstract: 'شركات الصرافة'
+        },
+        '55': {
+          queryable: true,
+          title: 'Banks',
+          abstract: 'البنوك'
+        },
+        '56': {
+          queryable: true,
+          title: 'Fuel Stations',
+          abstract: 'محطات الوقود'
+        },
+        '57': {
+          queryable: true,
+          title: 'Department Stores',
+          abstract: 'مواقع الاسواق'
+        },
+        '58': {
+          queryable: true,
+          title: 'Shopping Mall Locations',
+          abstract: 'المتاجر متعددة الأقسام'
+        },
+        '59': {
+          queryable: true,
+          title: 'Market Locations',
+          abstract: 'مواقع المراكز التجارية'
+        },
+        '60': {
+          queryable: true,
+          title: 'Ambulance Station',
+          abstract: 'مراكز الاسعاف'
+        },
+        '61': {
+          queryable: true,
+          title: 'Civil Defense Centers',
+          abstract: 'مراكز الدفاع المدني'
+        },
+        '62': {
+          queryable: true,
+          title: 'Police Station',
+          abstract: 'مراكز الشرطة'
+        },
+        '63': {
+          queryable: true,
+          title: 'Government Offices',
+          abstract: 'مواقع الجهات الحكومية'
+        },
+        '64': {
+          queryable: true,
+          title: 'College Locations',
+          abstract: 'مراكز التدريب والتأهيل'
+        },
+        '65': {
+          queryable: true,
+          title: 'Training Centers',
+          abstract: 'مواقع الكليات'
+        },
+        '66': {
+          queryable: true,
+          title: 'University Locations',
+          abstract: 'مواقع الجامعات'
+        },
+        '67': {
+          queryable: true,
+          title: 'School Locations',
+          abstract: 'مواقع المدارس'
+        },
+        '68': {
+          queryable: true,
+          title: 'Health Centers',
+          abstract: 'المراكز الصحية'
+        },
+        '69': {
+          queryable: true,
+          title: 'Hospital Locations',
+          abstract: 'مواقع المستشفيات'
+        },
+        '70': {
+          queryable: true,
+          title: 'Diagnostic Centers',
+          abstract: 'مراكز التشخيص الطبي'
+        },
+        '71': {
+          queryable: true,
+          title: 'Churches',
+          abstract: 'الأضرحة'
+        },
+        '72': {
+          queryable: true,
+          title: 'Temples',
+          abstract: 'الكنائس'
+        },
+        '73': {
+          queryable: true,
+          title: 'Shrines',
+          abstract: 'المعابد'
+        },
+        '74': {
+          queryable: true,
+          title: 'Mosques',
+          abstract: 'المساجد'
+        },
+        '75': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'المتنزهات الترفيهية'
+        },
+        '76': {
+          queryable: true,
+          title: 'Beach Location',
+          abstract: 'مواقع الشواطئ'
+        },
+        '77': {
+          queryable: true,
+          title: 'Cinema Theaters',
+          abstract: 'دور السينما'
+        },
+        '78': {
+          queryable: true,
+          title: 'Skating Centers',
+          abstract: 'مراكز التزلج'
+        },
+        '79': {
+          queryable: true,
+          title: 'Bowling Centers',
+          abstract: 'مراكز البولينج'
+        },
+        '80': {
+          queryable: true,
+          title: 'Theaters',
+          abstract: 'المسارح'
+        },
+        '81': {
+          queryable: true,
+          title: 'Cultural Facilities',
+          abstract: 'المواقع الثقافية'
+        },
+        '82': {
+          queryable: true,
+          title: 'Museums',
+          abstract: 'المتاحف'
+        },
+        '83': {
+          queryable: true,
+          title: 'Park Locations',
+          abstract: 'مواقع الحدائق'
+        },
+        '84': {
+          queryable: true,
+          title: 'Convention Centers',
+          abstract: 'مراكز المؤتمرات'
+        },
+        '85': {
+          queryable: true,
+          title: 'Resturants',
+          abstract: 'المطاعم'
+        },
+        '86': {
+          queryable: true,
+          title: 'Hotels',
+          abstract: 'الفنادق'
+        },
+        '87': {
+          queryable: true,
+          title: 'Archeological Site Locations',
+          abstract: 'المواقع الأثرية - النقاط'
+        },
+        '88': {
+          queryable: true,
+          title: 'FerryTerminals',
+          abstract: 'محطات العبارات'
+        },
+        '89': {
+          queryable: true,
+          title: 'Airport Locations',
+          abstract: 'المطارات'
+        },
+        '91': {
+          queryable: true,
+          title: 'Consulates',
+          abstract: 'الهيئات الدبلوماسية'
+        },
+        '92': {
+          queryable: true,
+          title: 'International Missions',
+          abstract: 'السفارات'
+        },
+        '93': {
+          queryable: true,
+          title: 'Embassies',
+          abstract: 'القنصليات'
+        },
+        '94': {
+          queryable: true,
+          title: 'Money Exchange',
+          abstract: 'سوق الأوراق المالية'
+        },
+        '95': {
+          queryable: true,
+          title: 'Stock Exchange',
+          abstract: 'شركات الصرافة'
+        },
+        '96': {
+          queryable: true,
+          title: 'Banks',
+          abstract: 'البنوك'
+        },
+        '97': {
+          queryable: true,
+          title: 'Fuel Stations',
+          abstract: 'محطات الوقود'
+        },
+        '98': {
+          queryable: true,
+          title: 'Department Stores',
+          abstract: 'مواقع الاسواق'
+        },
+        '99': {
+          queryable: true,
+          title: 'Shopping Mall Locations',
+          abstract: 'المتاجر متعددة الأقسام'
+        },
+        '100': {
+          queryable: true,
+          title: 'Market Locations',
+          abstract: 'مواقع المراكز التجارية'
+        },
+        '101': {
+          queryable: true,
+          title: 'Ambulance Station',
+          abstract: 'مراكز الاسعاف'
+        },
+        '102': {
+          queryable: true,
+          title: 'Civil Defense Centers',
+          abstract: 'مراكز الدفاع المدني'
+        },
+        '103': {
+          queryable: true,
+          title: 'Police Station',
+          abstract: 'مراكز الشرطة'
+        },
+        '104': {
+          queryable: true,
+          title: 'Government Offices',
+          abstract: 'مواقع الجهات الحكومية'
+        },
+        '105': {
+          queryable: true,
+          title: 'College Locations',
+          abstract: 'مراكز التدريب والتأهيل'
+        },
+        '106': {
+          queryable: true,
+          title: 'Training Centers',
+          abstract: 'مواقع الكليات'
+        },
+        '107': {
+          queryable: true,
+          title: 'University Locations',
+          abstract: 'مواقع الجامعات'
+        },
+        '108': {
+          queryable: true,
+          title: 'School Locations',
+          abstract: 'مواقع المدارس'
+        },
+        '109': {
+          queryable: true,
+          title: 'Health Centers',
+          abstract: 'المراكز الصحية'
+        },
+        '110': {
+          queryable: true,
+          title: 'Hospital Locations',
+          abstract: 'مواقع المستشفيات'
+        },
+        '111': {
+          queryable: true,
+          title: 'Diagnostic Centers',
+          abstract: 'مراكز التشخيص الطبي'
+        },
+        '112': {
+          queryable: true,
+          title: 'Churches',
+          abstract: 'الأضرحة'
+        },
+        '113': {
+          queryable: true,
+          title: 'Temples',
+          abstract: 'الكنائس'
+        },
+        '114': {
+          queryable: true,
+          title: 'Shrines',
+          abstract: 'المعابد'
+        },
+        '115': {
+          queryable: true,
+          title: 'Mosques',
+          abstract: 'المساجد'
+        },
+        '116': {
+          queryable: true,
+          title: 'Amusement Parks',
+          abstract: 'المتنزهات الترفيهية'
+        },
+        '117': {
+          queryable: true,
+          title: 'Beach Location',
+          abstract: 'مواقع الشواطئ'
+        },
+        '118': {
+          queryable: true,
+          title: 'Cinema Theaters',
+          abstract: 'دور السينما'
+        },
+        '119': {
+          queryable: true,
+          title: 'Skating Centers',
+          abstract: 'مراكز التزلج'
+        },
+        '120': {
+          queryable: true,
+          title: 'Bowling Centers',
+          abstract: 'مراكز البولينج'
+        },
+        '121': {
+          queryable: true,
+          title: 'Theaters',
+          abstract: 'المسارح'
+        },
+        '122': {
+          queryable: true,
+          title: 'Cultural Facilities',
+          abstract: 'المواقع الثقافية'
+        },
+        '123': {
+          queryable: true,
+          title: 'Museums',
+          abstract: 'المتاحف'
+        },
+        '124': {
+          queryable: true,
+          title: 'Park Locations',
+          abstract: 'مواقع الحدائق'
+        },
+        '125': {
+          queryable: true,
+          title: 'Convention Centers',
+          abstract: 'مراكز المؤتمرات'
+        },
+        '126': {
+          queryable: true,
+          title: 'Resturants',
+          abstract: 'المطاعم'
+        },
+        '127': {
+          queryable: true,
+          title: 'Hotels',
+          abstract: 'الفنادق'
+        },
+        '128': {
+          queryable: true,
+          title: 'Archeological Site Locations',
+          abstract: 'المواقع الأثرية - النقاط'
+        },
+        '129': {
+          queryable: true,
+          title: 'FerryTerminals',
+          abstract: 'محطات العبارات'
+        },
+        '130': {
+          queryable: true,
+          title: 'Airport Locations',
+          abstract: 'المطارات'
+        }
+      }
+    }
   ];
   // Turn list into easy to query object with map id as key
   var maps = {};
@@ -781,7 +4250,7 @@ function init(e) {
               queryWindowOriginalContent.innerHTML = body.innerHTML;
               setBorders(queryWindowOriginalContent)
               queryWindowContent.innerHTML = body.innerHTML;
-              maps[mapId].query_filters.forEach(function(func) {
+              maps[mapId].query_filters.forEach((func) => {
                 func(queryWindowContent, maps[mapId]);
               });
               queryWindow.style.display = 'block';
@@ -1065,6 +4534,7 @@ function init(e) {
     if (!version) {
       Settings.set('version', scriptVersion);
     } else if (version !== scriptVersion) {
+      var versions = Object.keys(translations.en.update).map((version) => version.replace('v', '').replaceAll('_', '.'));
       if (versions.indexOf(version) === -1) {
         // The version has been tampered with if we arrive here, just set to current version
         log('The version number seems to have been tampered with? Ignoring and resetting');
@@ -1686,7 +5156,7 @@ function init(e) {
     if (map.getExternalUrl) {
       externalLink = createIconButton('fa-external-link-square', I18n.t('openmaps.external_link_tooltip'));
       externalLink.addEventListener('click', function() {
-        window.open(map.getExternalUrl(), '_blank');
+        window.open(map.getExternalUrl(W.map.getExtent()), '_blank');
       });
       container.appendChild(externalLink);
     }
