@@ -181,7 +181,7 @@ function init(e) {
         v3_1_15: '- Fix for upcoming WME version',
         v3_1_16: '- Move Virginia map to new hosting location (US)',
         v3_1_17: '- Added aerial imagery of Pennsylvania (US)\n- Tennessee map bounding box correction (US)',
-        v3_1_18: '- NAIP+ -afbeeldingen toegevoegd voor Amerikaanse territoria, Alaska en Hawaii'
+        v3_1_18: '- Added NAIP+ imagery for US territories, Alaska, and Hawaii'
       }
     },
     nl: {
@@ -294,7 +294,7 @@ function init(e) {
         v3_1_15: '- Verbetering voor toekomstige versie van WME',
         v3_1_16: '- Verplaats de kaart van Virginia naar de nieuwe server (US)',
         v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie aan de begrenzing van de kaart van Tennessee',
-        v3_1_18: '- '
+        v3_1_18: '- NAIP+ -afbeeldingen toegevoegd voor Amerikaanse territoria, Alaska en Hawaii'
       }
     },
     fr: {
