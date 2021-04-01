@@ -1128,7 +1128,7 @@ function init(e) {
       title: 'USDA NAIP+ Alaska',
       url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
       crs: 'EPSG:3857',
-      bbox: new OpenLayers.Bounds(-19286101.779900, 64.372300, -164.497300, 11577829.962500),
+      bbox: new OpenLayers.Bounds(-19286101.779900, 7243172.8003, -14447821.3384, 11577829.962500),
       format: 'image/png',
       area: 'US',
       abstract: 'USDA NAIP+ Imagery of Alaska',
