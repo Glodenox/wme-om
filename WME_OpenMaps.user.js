@@ -181,7 +181,7 @@ function init(e) {
         v3_1_15: '- Fix for upcoming WME version',
         v3_1_16: '- Move Virginia map to new hosting location (US)',
         v3_1_17: '- Added aerial imagery of Pennsylvania (US)\n- Tennessee map bounding box correction (US)',
-        v3_1_18: '- Added NAIP+ imagery for US territories, Alaska, and Hawaii'
+        v3_1_18: '- Added NAIP+ imagery for US territories, Alaska, and Hawaii\n- Added gray pixel tracing for Oman maps'
       }
     },
     nl: {
@@ -294,7 +294,7 @@ function init(e) {
         v3_1_15: '- Verbetering voor toekomstige versie van WME',
         v3_1_16: '- Verplaats de kaart van Virginia naar de nieuwe server (US)',
         v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie aan de begrenzing van de kaart van Tennessee',
-        v3_1_18: '- NAIP+ -afbeeldingen toegevoegd voor Amerikaanse territoria, Alaska en Hawaii'
+        v3_1_18: '- NAIP+-beelden toegevoegd voor Amerikaans grondgebied, Alaska en Hawaii\n- Overtrekken van grijze pixels toegevoegd bij kaarten van Oman'
       }
     },
     fr: {
@@ -2794,6 +2794,7 @@ function init(e) {
       area: 'OM',
       abstract: 'National Basemap Transparent with Major Landmarks',
       attribution: 'NCSI',
+      pixelManipulations: ['traceGrayscalePixels'],
       queryable: true,
       query_filters: [ applyAllTransformations ],
       default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'],
@@ -3414,6 +3415,7 @@ function init(e) {
       area: 'OM',
       abstract: 'National Basemap Transparent with Major Landmarks',
       attribution: 'NCSI',
+      pixelManipulations: ['traceGrayscalePixels'],
       queryable: true,
       query_filters: [ applyAllTransformations ],
       default_layers: ['1', '2', '3', '5', '6', '7', '8', '9', '10', '12', '13', '14', '15', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '33', '34', '35', '36', '37', '39', '40', '41', '42', '43', '45', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130'],
