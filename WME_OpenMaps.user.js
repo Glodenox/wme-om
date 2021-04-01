@@ -20,10 +20,11 @@
 // @connect     gismaps.vdem.virginia.gov
 // @connect     tnmap.tn.gov
 // @connect     apps.pasda.psu.edu
+// @connect     services.nationalmap.gov
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.1.17
+// @version     3.1.18
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -179,7 +180,8 @@ function init(e) {
         v3_1_14: '- WV Leaves Off layers updated (US)',
         v3_1_15: '- Fix for upcoming WME version',
         v3_1_16: '- Move Virginia map to new hosting location (US)',
-        v3_1_17: '- Added aerial imagery of Pennsylvania (US)\n- Tennessee map bounding box correction (US)'
+        v3_1_17: '- Added aerial imagery of Pennsylvania (US)\n- Tennessee map bounding box correction (US)',
+        v3_1_18: '- Added NAIP+ imagery for US territories, Alaska, and Hawaii'
       }
     },
     nl: {
@@ -292,6 +294,7 @@ function init(e) {
         v3_1_15: '- Verbetering voor toekomstige versie van WME',
         v3_1_16: '- Verplaats de kaart van Virginia naar de nieuwe server (US)',
         v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie aan de begrenzing van de kaart van Tennessee',
+        v3_1_18: '- NAIP+ -afbeeldingen toegevoegd voor Amerikaanse territoria, Alaska en Hawaii'
       }
     },
     fr: {
@@ -1004,6 +1007,139 @@ function init(e) {
           queryable: true,
           title: 'Image',
           abstract: 'PEMA_AdamsCounty_Mosaic2018_JP2'
+        }
+      }
+    }, {
+      id: 107,
+      title: 'USDA NAIP+ Puerto Rico',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-7564809.546900, 2021769.548200, -7260089.090000, 2098810.714500),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of Puerto Rico',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['1'],
+      layers: {
+        '1': {
+          queryable: false,
+          title: 'USDA NAIP+ Puerto Rico',
+          abstract: 'USDA NAIP+ Imagery of the Puerto Rico'
+        }
+      }
+    }, {
+      id: 108,
+      title: 'USDA NAIP+ Virgin Islands',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-7244426.130500, 1997158.772200, -7185312.764700, 2087618.019400),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of Virgin Islands',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['5'],
+      layers: {
+        '5': {
+          queryable: false,
+          title: 'USDA NAIP+ Virgin Islands',
+          abstract: 'USDA NAIP+ Imagery of the Virgin Islands'
+        }
+      }
+    }, {
+      id: 109,
+      title: 'USDA NAIP+ Hawaii',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-17886629.271748, 1962375.845708, -17014941.401184, 2656631.730218),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of Hawaii',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['9'],
+      layers: {
+        '9': {
+          queryable: false,
+          title: 'USDA NAIP+ Hawaii',
+          abstract: 'USDA NAIP+ Imagery of the Hawaii'
+        }
+      }
+    }, {
+      id: 110,
+      title: 'USDA NAIP+ American Samoa',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-19019119.342400, -1617574.302800, -18858159.613500, -1590635.151000),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of American Samoa',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['13'],
+      layers: {
+        '13': {
+          queryable: false,
+          title: 'USDA NAIP+ American Samoa',
+          abstract: 'USDA NAIP+ Imagery of the American Samoa'
+        }
+      }
+    }, {
+      id: 111,
+      title: 'USDA NAIP+ Guam/Northern Mariana Islands',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(16091135.375000, 1478686.747300, 16266591.087100, 2347309.714000),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of Guam/Northern Mariana Islands',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['17'],
+      layers: {
+        '17': {
+          queryable: false,
+          title: 'USDA NAIP+ Guam/Northern Mariana Islands',
+          abstract: 'USDA NAIP+ Imagery of the Guam/Northern Mariana Islands'
+        }
+      }
+    }, {
+      id: 112,
+      title: 'USDA NAIP+ St. John',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-7214222.731800, 2068959.120800, -7195178.325400, 2081789.011200),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of St. John',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['21'],
+      layers: {
+        '21': {
+          queryable: false,
+          title: 'USDA NAIP+ St. John',
+          abstract: 'USDA NAIP+ Imagery of the St. John'
+        }
+      }
+    }, {
+      id: 113,
+      title: 'USDA NAIP+ Alaska',
+      url: 'https://services.nationalmap.gov/arcgis/services/USGSNAIPPlus/MapServer/WMSServer',
+      crs: 'EPSG:3857',
+      bbox: new OpenLayers.Bounds(-19286101.779900, 7243172.8003, -14447821.3384, 11577829.962500),
+      format: 'image/png',
+      area: 'US',
+      abstract: 'USDA NAIP+ Imagery of Alaska',
+      attribution: 'USDA',
+      queryable: false,
+      default_layers: ['29'],
+      layers: {
+        '29': {
+          queryable: false,
+          title: 'USDA NAIP+ Alaska',
+          abstract: 'USDA NAIP+ Imagery of the Alaska'
         }
       }
     }, {
