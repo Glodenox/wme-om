@@ -4724,16 +4724,17 @@ function init(e) {
       return group;
     } else {
       var layerItem = document.createElement('li');
-      var layerToggle = document.createElement('wz-checkbox');
-      layerToggle.id = 'layer-switcher-' + normalizedName;
-      layerToggle.textContent = name;
-      layerItem.appendChild(layerToggle);
+      layerItem.innerHTML = `<wz-checkbox id="layer-switcher-${normalizedName}" value="off" checked="">${name}</wz-checkbox>`;
+      var layerToggle = layerItem.querySelector('wz-checkbox');
+      layerToggle.checked = false;
       parentGroup.querySelector('ul').appendChild(layerItem);
-      parentGroup.querySelector('wz-toggle-switch').addEventListener('click', function(e) {
-        layerToggle.disabled = !e.target.checked;
-        toggleCallback && toggleCallback(layerToggle.checked && e.target.checked);
+      var parentSwitch = parentGroup.querySelector('wz-toggle-switch');
+      var parentObserver = new MutationObserver(() => {
+        layerToggle.disabled = !parentSwitch.hasAttribute('checked');
+        toggleCallback && toggleCallback(layerToggle.checked && parentSwitch.hasAttribute('checked'));
       });
-      layerToggle.addEventListener('click', e => toggleCallback(e.target.checked));
+      parentObserver.observe(parentSwitch, { attributes: true, attributeFilter: ['checked'] });
+      layerToggle.addEventListener('click', e => toggleCallback(e.target.checked && parentSwitch.hasAttribute('checked')));
       layerToggle.checked = checked;
       return layerItem;
     }
