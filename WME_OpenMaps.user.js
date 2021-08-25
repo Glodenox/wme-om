@@ -183,7 +183,8 @@ function init(e) {
         v3_1_16: '- Move Virginia map to new hosting location (US)',
         v3_1_17: '- Added aerial imagery of Pennsylvania (US)\n- Tennessee map bounding box correction (US)',
         v3_1_18: '- Added NAIP+ imagery for US territories, Alaska, and Hawaii\n- Added gray pixel tracing for Oman maps',
-        v3_1_19: '- Fixed Luchtfoto (NL) by using PDOK directly'
+        v3_1_19: '- Fixed Luchtfoto (NL) by using PDOK directly',
+        v3_1_20: '- Adjustments for WME v2.83'
       }
     },
     nl: {
@@ -297,7 +298,8 @@ function init(e) {
         v3_1_16: '- Verplaats de kaart van Virginia naar de nieuwe server (US)',
         v3_1_17: '- Luchtfoto\'s van Pennsylvania toegevoegd (US)\n- Correctie aan de begrenzing van de kaart van Tennessee',
         v3_1_18: '- NAIP+-beelden toegevoegd voor Amerikaans grondgebied, Alaska en Hawaii\n- Overtrekken van grijze pixels toegevoegd bij kaarten van Oman',
-        v3_1_19: '- Luchtfoto (NL) hersteld door PDOK rechtstreeks op te roepen'
+        v3_1_19: '- Luchtfoto (NL) hersteld door PDOK rechtstreeks op te roepen',
+        v3_1_20: '- Aanpassingen voor WME v2.83'
       }
     },
     fr: {
