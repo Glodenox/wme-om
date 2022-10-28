@@ -5664,6 +5664,7 @@ input.open-maps-opacity-slider {
   border-radius: 8px;
   margin-top: 2px;
   padding: 8px;
+  width: 100%;
   background-color: #eee;
 }
 
