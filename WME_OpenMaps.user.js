@@ -4232,6 +4232,7 @@ function init(e) {
     saveMapState();
   });
   handleList.className = 'result-list';
+  handleList.style = 'padding-left: 0px';
   tab.appendChild(handleList);
 
   // Select box to add new Open Maps maps
@@ -5607,10 +5608,12 @@ function init(e) {
 }
 
 #sidebar #sidepanel-openMaps .result-list .result {
+  list-style-type: none;
   border-radius: 6px;
   border: 1px solid #ccc;
   padding: 10px 20px;
   cursor: default;
+  background-color: #fff;
 }
 
 .open-maps-maximum-layers {
@@ -5670,6 +5673,7 @@ input.open-maps-opacity-slider {
 
 #sidepanel-openMaps .maps-menu-item > div.edit-panel > p {
   font-weight: bold;
+  padding-left: 0px;
   margin: 10px;
 }
 
@@ -5687,8 +5691,9 @@ input.open-maps-opacity-slider {
 
 #sidepanel-openMaps .title {
   cursor: default;
-  border-top: 2px solid transparent;
   border-width: 2px 0 0 0;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 `;
   }
