@@ -189,7 +189,8 @@ function init(e) {
         v3_1_22: '- WV Leaves Off layers updated (US)',
         v3_1_23: '- Updated for new WME layout',
         v3_1_24: '- Added North Carolina NC One Map (US)',
-        v3_1_25: '- Migrated Flanders map services to new endpoint (BE)\n- Updated PDOK Luchtbeelden (NL)'
+        v3_1_25: '- Migrated Flanders map services to new endpoint (BE)\n- Updated PDOK Luchtbeelden (NL)',
+        v3_1_26: '- Updated for new WME version'
       }
     },
     nl: {
@@ -309,7 +310,8 @@ function init(e) {
         v3_1_22: '- WV Leaves Off laag updates',
         v3_1_23: '- Aanpassingen voor nieuwe lay-out WME',
         v3_1_24: '- North Carolina NC One Map toegevoegd (US)',
-        v3_1_25: '- Migratie Vlaamse kaartdiensten naar nieuwe website (BE)\n- PDOK Luchtbeelden bijgewerkt (NL)'
+        v3_1_25: '- Migratie Vlaamse kaartdiensten naar nieuwe website (BE)\n- PDOK Luchtbeelden bijgewerkt (NL)',
+        v3_1_26: '- Aanpassingen voor nieuwe lay-out WME'
       }
     },
     fr: {
