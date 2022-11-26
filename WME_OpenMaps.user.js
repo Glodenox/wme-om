@@ -25,7 +25,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.1.26
+// @version     3.2.1
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -190,7 +190,8 @@ function init(e) {
         v3_1_23: '- Updated for new WME layout',
         v3_1_24: '- Added North Carolina NC One Map (US)',
         v3_1_25: '- Migrated Flanders map services to new endpoint (BE)\n- Updated PDOK Luchtbeelden (NL)',
-        v3_1_26: '- Updated for new WME version'
+        v3_1_26: '- Updated for new WME version',
+        v3_2_1: '- Adjust layout for new WME'
       }
     },
     nl: {
@@ -311,7 +312,8 @@ function init(e) {
         v3_1_23: '- Aanpassingen voor nieuwe lay-out WME',
         v3_1_24: '- North Carolina NC One Map toegevoegd (US)',
         v3_1_25: '- Migratie Vlaamse kaartdiensten naar nieuwe website (BE)\n- PDOK Luchtbeelden bijgewerkt (NL)',
-        v3_1_26: '- Aanpassingen voor nieuwe lay-out WME'
+        v3_1_26: '- Aanpassingen voor nieuwe lay-out WME',
+        v3_2_1: '- Layout aanpassen voor nieuwe WME'
       }
     },
     fr: {
@@ -4213,7 +4215,8 @@ function init(e) {
   var title = document.createElement('h4');
   title.textContent = I18n.t('openmaps.maps_title');
   tab.appendChild(title);
-  var handleList = document.createElement('ul');
+  var handleList = document.createElement('div');
+  handleList.className = 'openmaps-map-list';
   sortable(handleList, {
     forcePlaceholderSize: true,
     placeholderClass: 'result',
@@ -4221,7 +4224,7 @@ function init(e) {
   })[0].addEventListener('sortupdate', function(e) {
     var movedHandle = handles.splice(e.detail.oldElementIndex, 1)[0];
     handles.splice(e.detail.elementIndex, 0, movedHandle);
-    var layerGroups = omGroup.querySelectorAll('ul li');
+    var layerGroups = omGroup.querySelectorAll('div.result-list wz-card');
     if (e.detail.elementIndex == layerGroups.length-1) {
       layerGroups[e.detail.oldElementIndex].parentNode.appendChild(layerGroups[e.detail.oldElementIndex]);
     } else {
@@ -4233,8 +4236,6 @@ function init(e) {
     }
     saveMapState();
   });
-  handleList.className = 'result-list';
-  handleList.style = 'padding-left: 0px';
   tab.appendChild(handleList);
 
   // Select box to add new Open Maps maps
@@ -5169,10 +5170,10 @@ function init(e) {
     this.hidden = (options && options.hidden ? true : false);
     this.transparent = (options && !options.transparent || map.format == 'image/jpeg' ? false : true);
     this.improveMap = (options && options.improveMap != undefined ? options.improveMap : true);
-    var container = document.createElement('li');
-    var layerContainer = document.createElement('ul');
-    var title = document.createElement('p');
-    var description = document.createElement('p');
+    var container = document.createElement('wz-card');
+    var layerContainer = document.createElement('div');
+    var title = document.createElement('div');
+    var description = document.createElement('div');
     var editContainer = document.createElement('div');
     var remove, visibility, query, edit, externalLink, error, info;
     var loadedTiles = 0;
@@ -5321,46 +5322,21 @@ function init(e) {
       saveMapState();
     };
 
-    remove = createIconButton('fa-times', I18n.t('openmaps.remove_layer'));
-    remove.addEventListener('click', function(e) {
-      if (self.layer != null) {
-        W.map.removeLayer(self.layer);
-      }
-      Tooltips.remove(remove);
-      layerToggler.parentNode.removeChild(layerToggler);
-      handles.splice(handles.indexOf(self), 1);
-      container.parentNode.removeChild(container);
-      saveMapState();
-    });
-    container.appendChild(remove);
-    edit = createIconButton('fa-pencil', I18n.t('openmaps.edit_layer'));
-    edit.addEventListener('click', function() {
-      editContainer.style.display = (editContainer.style.display == 'none' ? 'block' : 'none');
-    });
-    container.appendChild(edit);
-    visibility = createIconButton((self.hidden ? 'fa-eye-slash' : 'fa-eye'), I18n.t('openmaps.hideshow_layer'));
-    visibility.addEventListener('click', function() {
-      self.hidden = self.layer.getVisibility();
-      self.layer.setVisibility(!self.hidden);
-      layerToggler.querySelector('wz-checkbox').checked = !self.hidden;
-      saveMapState();
-    });
-    visibility.addEventListener('mouseenter', function() {
-      visibility.classList.toggle('fa-eye', self.hidden);
-      visibility.classList.toggle('fa-eye-slash', !self.hidden);
-    });
-    visibility.addEventListener('mouseleave', function() {
-      visibility.classList.toggle('fa-eye', !self.hidden);
-      visibility.classList.toggle('fa-eye-slash', self.hidden);
-    });
-    container.appendChild(visibility);
-    if (map.getExternalUrl) {
-      externalLink = createIconButton('fa-external-link-square', I18n.t('openmaps.external_link_tooltip'));
-      externalLink.addEventListener('click', function() {
-        window.open(map.getExternalUrl(W.map.getExtent()), '_blank');
-      });
-      container.appendChild(externalLink);
-    }
+    var buttons = document.createElement('div');
+    buttons.className = 'buttons';
+    var handleContainer = document.createElement('div');
+    handleContainer.innerHTML = '<i class="fa fa-reorder"></i>';
+    buttons.appendChild(handleContainer);
+
+    error = createIconButton('fa-exclamation-triangle');
+    error.style.color = 'red';
+    error.style.display = 'none';
+    error.addEventListener('click', this.clearError);
+    buttons.appendChild(error);
+
+    info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'), true);
+    buttons.appendChild(info);
+
     if (map.queryable) {
       query = createIconButton('fa-hand-pointer-o', I18n.t('openmaps.query_layer'));
       query.addEventListener('click', function() {
@@ -5386,18 +5362,54 @@ function init(e) {
           getFeatureInfoControl.deactivate();
         }
       });
-      container.appendChild(query);
+      buttons.appendChild(query);
     }
-    info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'), true);
-    container.appendChild(info);
-    error = createIconButton('fa-exclamation-triangle');
-    error.style.color = 'red';
-    error.style.display = 'none';
-    error.addEventListener('click', this.clearError);
-    container.appendChild(error);
-    var handleIcon = document.createElement('span');
-    handleIcon.className = 'fa fa-reorder';
-    container.appendChild(handleIcon);
+
+    if (map.getExternalUrl) {
+      externalLink = createIconButton('fa-external-link-square', I18n.t('openmaps.external_link_tooltip'));
+      externalLink.addEventListener('click', function() {
+        window.open(map.getExternalUrl(W.map.getExtent()), '_blank');
+      });
+      buttons.appendChild(externalLink);
+    }
+
+    visibility = createIconButton((self.hidden ? 'fa-eye-slash' : 'fa-eye'), I18n.t('openmaps.hideshow_layer'));
+    visibility.addEventListener('click', function() {
+      self.hidden = self.layer.getVisibility();
+      self.layer.setVisibility(!self.hidden);
+      layerToggler.querySelector('wz-checkbox').checked = !self.hidden;
+      saveMapState();
+    });
+    visibility.addEventListener('mouseenter', function() {
+      visibility.classList.toggle('fa-eye', self.hidden);
+      visibility.classList.toggle('fa-eye-slash', !self.hidden);
+    });
+    visibility.addEventListener('mouseleave', function() {
+      visibility.classList.toggle('fa-eye', !self.hidden);
+      visibility.classList.toggle('fa-eye-slash', self.hidden);
+    });
+    buttons.appendChild(visibility);
+
+    edit = createIconButton('fa-pencil', I18n.t('openmaps.edit_layer'));
+    edit.addEventListener('click', function() {
+      editContainer.style.display = (editContainer.style.display == 'none' ? 'block' : 'none');
+    });
+    buttons.appendChild(edit);
+
+    remove = createIconButton('fa-times', I18n.t('openmaps.remove_layer'));
+    remove.addEventListener('click', function(e) {
+      if (self.layer != null) {
+        W.map.removeLayer(self.layer);
+      }
+      Tooltips.remove(remove);
+      layerToggler.parentNode.removeChild(layerToggler);
+      handles.splice(handles.indexOf(self), 1);
+      container.parentNode.removeChild(container);
+      saveMapState();
+    });
+    buttons.appendChild(remove);
+    container.appendChild(buttons);
+
     title.className = 'title';
     title.textContent = map.title;
     title.addEventListener('click', (event) => {
@@ -5445,8 +5457,7 @@ function init(e) {
     }
     var opacityLabel = document.createElement('div');
     opacityLabel.textContent = I18n.t('openmaps.opacity_label') + ':';
-    opacityLabel.style.marginLeft = '35px';
-    opacityLabel.style.color = '#4c4c4c';
+    opacityLabel.style.marginLeft = '30px';
     Tooltips.add(opacityLabel, I18n.t('openmaps.opacity_label_tooltip'));
     var opacitySlider = document.createElement('input');
     opacitySlider.className = 'open-maps-opacity-slider';
@@ -5466,14 +5477,35 @@ function init(e) {
       var mapLayersTitle = document.createElement('p');
       mapLayersTitle.textContent = I18n.t('openmaps.map_layers_title') + ':';
       editContainer.appendChild(mapLayersTitle);
-      layerContainer.className = 'result-list';
+      layerContainer.className = 'openmaps-map-list';
       self.mapLayers.forEach(function(layerItem) {
         var mapLayer = map.layers[layerItem.name];
-        var item = document.createElement('li');
-        item.className = 'result';
-        var layerHandleIcon = document.createElement('span');
+        var item = document.createElement('wz-card');
+        item.className = 'result maps-menu-item list-item-card';
+        var buttonContainer = document.createElement('div');
+        buttonContainer.className = 'buttons';
+        var layerHandleIcon = document.createElement('div');
+        layerHandleIcon.innerHTML = '<i class="fa fa-reorder"></i>';
+        buttonContainer.appendChild(layerHandleIcon);
         var layerTitle = document.createElement('p');
-        var layerDescription = document.createElement('p');
+        var layerDescription = document.createElement('div');
+        if (mapLayer.queryable) {
+          var layerQuery = document.createElement('span');
+          layerQuery = createIconButton('fa-hand-pointer-o');
+          layerQuery.addEventListener('click', function() {
+            this.style.color = 'blue';
+            getFeatureInfoControl.params = {
+              url: map.url,
+              id: map.id,
+              layers: layerItem.name,
+              callback: function() {
+                layerQuery.style.color = '';
+              }
+            };
+            getFeatureInfoControl.activate();
+          });
+          buttonContainer.appendChild(layerQuery);
+        }
         var visibility = document.createElement('span');
         visibility = createIconButton((layerItem.visible ? 'fa-eye' : 'fa-eye-slash'), I18n.t('openmaps.hideshow_layer'));
         visibility.addEventListener('mouseenter', function() {
@@ -5491,26 +5523,8 @@ function init(e) {
           layerRedrawNeeded = true;
           self.updateLayers.call(self);
         });
-        item.appendChild(visibility);
-        if (mapLayer.queryable) {
-          var layerQuery = document.createElement('span');
-          layerQuery = createIconButton('fa-hand-pointer-o');
-          layerQuery.addEventListener('click', function() {
-            this.style.color = 'blue';
-            getFeatureInfoControl.params = {
-              url: map.url,
-              id: map.id,
-              layers: layerItem.name,
-              callback: function() {
-                layerQuery.style.color = '';
-              }
-            };
-            getFeatureInfoControl.activate();
-          });
-          item.appendChild(layerQuery);
-        }
-        layerHandleIcon.className = 'fa fa-reorder';
-        item.appendChild(layerHandleIcon);
+        buttonContainer.appendChild(visibility);
+        item.appendChild(buttonContainer);
         layerTitle.className = 'title';
         layerTitle.style.cursor = 'default';
         layerTitle.style.color = (layerItem.visible ? '' : '#999');
@@ -5538,7 +5552,7 @@ function init(e) {
     }
     editContainer.style.display = 'none';
     container.appendChild(editContainer);
-    container.className = 'result maps-menu-item';
+    container.className = 'result maps-menu-item list-item-card';
     handleList.appendChild(container);
     sortable(handleList); // refresh HTML5Sortable
     sortable(layerContainer, {
@@ -5565,6 +5579,12 @@ function init(e) {
     styleElement.textContent = `
 #sidepanel-openMaps h4 {
   margin-bottom: 5px;
+}
+
+#sidepanel-openMaps .openmaps-map-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 #sidepanel-openMaps select {
@@ -5609,15 +5629,6 @@ function init(e) {
   user-select: text;
 }
 
-#sidebar #sidepanel-openMaps .result-list .result {
-  list-style-type: none;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  cursor: default;
-  background-color: #fff;
-}
-
 .open-maps-maximum-layers {
   border-radius: 8px;
   padding: 8px;
@@ -5634,7 +5645,7 @@ function init(e) {
   border: none;
   background: none;
   padding: 4px;
-  float: right;
+  font-size: 14px;
   cursor: pointer;
   height: auto;
   outline: none;
@@ -5648,13 +5659,14 @@ function init(e) {
 
 #sidepanel-openMaps .fa-reorder {
   cursor: move;
+  font-size: 20px;
 }
 
 input.open-maps-opacity-slider {
   vertical-align: middle;
   display: inline;
   margin-left: 8px;
-  width: 80px;
+  width: 100px;
 }
 
 #sidepanel-openMaps .additional-info {
@@ -5663,6 +5675,19 @@ input.open-maps-opacity-slider {
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
+
+}
+
+#sidepanel-openMaps .maps-menu-item {
+  cursor: default;
+}
+
+#sidepanel-openMaps .maps-menu-item > .buttons {
+  display: flex;
+}
+
+#sidepanel-openMaps .maps-menu-item > .buttons > div:first-child {
+  flex-grow: 1;
 }
 
 #sidepanel-openMaps .maps-menu-item > div.edit-panel {
@@ -5671,6 +5696,7 @@ input.open-maps-opacity-slider {
   padding: 8px;
   width: 100%;
   background-color: #eee;
+  font-size: 14px;
 }
 
 #sidepanel-openMaps .maps-menu-item > div.edit-panel > p {
@@ -5696,6 +5722,7 @@ input.open-maps-opacity-slider {
   border-width: 2px 0 0 0;
   margin-bottom: 0;
   font-weight: bold;
+  font-size: 14px;
 }
 `;
   }
