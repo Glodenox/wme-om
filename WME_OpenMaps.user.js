@@ -25,7 +25,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.1
+// @version     3.2.2
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -191,7 +191,8 @@ function init(e) {
         v3_1_24: '- Added North Carolina NC One Map (US)',
         v3_1_25: '- Migrated Flanders map services to new endpoint (BE)\n- Updated PDOK Luchtbeelden (NL)',
         v3_1_26: '- Updated for new WME version',
-        v3_2_1: '- Adjust layout for new WME'
+        v3_2_1: '- Adjust layout for new WME',
+        v3_2_2: '- WV Leaves Off layers updated (US)'
       }
     },
     nl: {
@@ -313,7 +314,8 @@ function init(e) {
         v3_1_24: '- North Carolina NC One Map toegevoegd (US)',
         v3_1_25: '- Migratie Vlaamse kaartdiensten naar nieuwe website (BE)\n- PDOK Luchtbeelden bijgewerkt (NL)',
         v3_1_26: '- Aanpassingen voor nieuwe lay-out WME',
-        v3_2_1: '- Layout aanpassen voor nieuwe WME'
+        v3_2_1: '- Layout aanpassen voor nieuwe WME',
+        v3_2_2: '- WV Leaves Off laag updates'
       }
     },
     fr: {
@@ -408,283 +410,293 @@ function init(e) {
       attribution: 'West Virginia University',
       pixelManipulations: ['whiteTiles2transparent'],
       queryable: false,
-      default_layers: ['0', '1', '3', '6', '7', '8', '10', '13', '14', '16', '20', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '57', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69'],
+      default_layers: ['1', '4', '6', '9', '11', '15', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '41', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71'],
       layers: {
-        '0': {
-          queryable: true,
-          title: 'Upshur_2016',
-          abstract: ''
-        },
         '1': {
           queryable: true,
-          title: 'Kanawha_2017',
+          title: ' Wyoming_2018 ',
           abstract: ''
         },
-        '3': {
+        '4': {
           queryable: true,
-          title: 'Wyoming_2018',
+          title: ' Ritchie_2018 ',
           abstract: ''
         },
         '6': {
           queryable: true,
-          title: 'Ritchie_2018',
+          title: ' Nicholas_2018 ',
           abstract: ''
         },
-        '7': {
+        '9': {
           queryable: true,
-          title: 'Raleigh_2018',
+          title: ' Monroe_2018 ',
           abstract: ''
         },
-        '8': {
+        '11': {
           queryable: true,
-          title: 'Randolph_2018',
+          title: ' McDowell_2018 ',
           abstract: ''
         },
-        '10': {
+        '15': {
           queryable: true,
-          title: 'Nicholas_2018',
+          title: ' Mason_2018 ',
           abstract: ''
         },
-        '13': {
+        '18': {
           queryable: true,
-          title: 'Morgan_2018',
+          title: ' Logan_2018 ',
           abstract: ''
         },
-        '14': {
+        '19': {
           queryable: true,
-          title: 'Monroe_2018',
-          abstract: ''
-        },
-        '16': {
-          queryable: true,
-          title: 'McDowell_2018',
+          title: ' Lincoln_2018 ',
           abstract: ''
         },
         '20': {
           queryable: true,
-          title: 'Mason_2018',
+          title: ' Hardy_2018 ',
+          abstract: ''
+        },
+        '21': {
+          queryable: true,
+          title: ' Barbour_2018 ',
+          abstract: ''
+        },
+        '22': {
+          queryable: true,
+          title: ' Tucker_2019 ',
           abstract: ''
         },
         '23': {
           queryable: true,
-          title: 'Marshall_2019',
+          title: ' Gilmer_2019 ',
           abstract: ''
         },
         '24': {
           queryable: true,
-          title: 'Logan_2018',
+          title: ' Clay_2019 ',
           abstract: ''
         },
         '25': {
           queryable: true,
-          title: 'Lincoln_2018',
+          title: ' Braxton_2019 ',
           abstract: ''
         },
         '26': {
           queryable: true,
-          title: 'Hardy_2018',
+          title: ' Mineral_2019 ',
           abstract: ''
         },
         '27': {
           queryable: true,
-          title: 'Hampshire_2018',
+          title: ' Hancock_2019 ',
           abstract: ''
         },
         '28': {
           queryable: true,
-          title: 'Brooke_2018',
+          title: ' Grant_2019 ',
           abstract: ''
         },
         '29': {
           queryable: true,
-          title: 'Barbour_2018',
+          title: ' Taylor_2020 ',
           abstract: ''
         },
         '30': {
           queryable: true,
-          title: 'Tucker_2019',
+          title: ' Pleasants_2020 ',
           abstract: ''
         },
         '31': {
           queryable: true,
-          title: 'Roane_2019',
+          title: ' Marion_2020 ',
           abstract: ''
         },
         '32': {
           queryable: true,
-          title: 'Pocahontas_2019',
+          title: ' Summers_2020 ',
           abstract: ''
         },
         '33': {
           queryable: true,
-          title: 'Ohio_2019',
+          title: ' Wirt_Wood_2020 ',
           abstract: ''
         },
         '34': {
           queryable: true,
-          title: 'Jackson_2019',
+          title: ' Webster_2020 ',
           abstract: ''
         },
         '35': {
           queryable: true,
-          title: 'Gilmer_2019',
+          title: ' Mingo_2020 ',
           abstract: ''
         },
         '36': {
           queryable: true,
-          title: 'Clay_2019',
+          title: ' Boone_2020 ',
           abstract: ''
         },
         '37': {
           queryable: true,
-          title: 'Calhoun_2019',
+          title: ' Greenbrier_2020 ',
           abstract: ''
         },
         '38': {
           queryable: true,
-          title: 'Braxton_2019',
+          title: ' Fayette_2020 ',
           abstract: ''
         },
         '39': {
           queryable: true,
-          title: 'Mineral_2019',
-          abstract: ''
-        },
-        '40': {
-          queryable: true,
-          title: 'Hancock_2019',
+          title: ' Preston_2020 ',
           abstract: ''
         },
         '41': {
           queryable: true,
-          title: 'Grant_2019',
-          abstract: ''
-        },
-        '42': {
-          queryable: true,
-          title: 'Taylor_2020',
-          abstract: ''
-        },
-        '43': {
-          queryable: true,
-          title: 'Pleasants_2020',
+          title: ' Mercer_2021 ',
           abstract: ''
         },
         '44': {
           queryable: true,
-          title: 'Marion_2020',
+          title: ' Tyler_2021 ',
           abstract: ''
         },
         '45': {
           queryable: true,
-          title: 'Lewis_2020',
+          title: ' Putnam_2021 ',
           abstract: ''
         },
         '46': {
           queryable: true,
-          title: 'Jefferson_2020',
+          title: ' Pendleton_2021 ',
           abstract: ''
         },
         '47': {
           queryable: true,
-          title: 'Summers_2020',
+          title: ' Wayne_2021 ',
           abstract: ''
         },
         '48': {
           queryable: true,
-          title: 'Wirt_Wood_2020',
+          title: ' Cabell_2021 ',
           abstract: ''
         },
         '49': {
           queryable: true,
-          title: 'Webster_2020',
+          title: ' Wirt_2022 ',
           abstract: ''
         },
         '50': {
           queryable: true,
-          title: 'Mingo_2020',
+          title: ' Wetzel_2022 ',
           abstract: ''
         },
         '51': {
           queryable: true,
-          title: 'Boone_2020',
+          title: ' Upshur_2022 ',
           abstract: ''
         },
         '52': {
           queryable: true,
-          title: 'Greenbrier_2020',
+          title: ' Roane_2022 ',
           abstract: ''
         },
         '53': {
           queryable: true,
-          title: 'Fayette_2020',
+          title: ' Randolph_2022 ',
           abstract: ''
         },
         '54': {
           queryable: true,
-          title: 'Berkeley_2020',
+          title: ' Raleigh_2022 ',
           abstract: ''
         },
         '55': {
           queryable: true,
-          title: 'Preston_2020',
+          title: ' Putnam_2022 ',
+          abstract: ''
+        },
+        '56': {
+          queryable: true,
+          title: ' Pocahontas_2022 ',
           abstract: ''
         },
         '57': {
           queryable: true,
-          title: 'Mercer_2021',
+          title: ' Ohio_2022 ',
+          abstract: ''
+        },
+        '58': {
+          queryable: true,
+          title: ' Morgan_2022 ',
+          abstract: ''
+        },
+        '59': {
+          queryable: true,
+          title: ' Monongalia_2022 ',
           abstract: ''
         },
         '60': {
           queryable: true,
-          title: 'Wetzel_2021',
+          title: ' Marshall_2022 ',
           abstract: ''
         },
         '61': {
           queryable: true,
-          title: 'Tyler_2021',
+          title: ' Lewis_2022 ',
           abstract: ''
         },
         '62': {
           queryable: true,
-          title: 'Putnam_2021',
+          title: ' Jefferson_2022 ',
           abstract: ''
         },
         '63': {
           queryable: true,
-          title: 'Monongalia_2021',
+          title: ' Kanawha_2022 ',
           abstract: ''
         },
         '64': {
           queryable: true,
-          title: 'Doddridge_2021',
+          title: ' Jackson_2022 ',
           abstract: ''
         },
         '65': {
           queryable: true,
-          title: 'Pendleton_2021',
+          title: ' Harrison_2022 ',
           abstract: ''
         },
         '66': {
           queryable: true,
-          title: 'Wayne_2021',
+          title: ' Hampshire_2022 ',
           abstract: ''
         },
         '67': {
           queryable: true,
-          title: 'Harrison_2021',
+          title: ' Doddridge_2022 ',
           abstract: ''
         },
         '68': {
           queryable: true,
-          title: 'Cabell_2021',
+          title: ' Calhoun_2022 ',
           abstract: ''
         },
         '69': {
           queryable: true,
-          title: 'CountiesImagery_Year',
-          abstract: '	'
+          title: ' Brooke_2022 ',
+          abstract: ''
         },
+        '70': {
+          queryable: true,
+          title: ' Berkeley_2022 ',
+          abstract: ''
+        },
+        '71': {
+          queryable: true,
+          title: ' CountiesImagery_Year ',
+          abstract: ''
+        }
       }
     }, {
       id: 102,
