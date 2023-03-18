@@ -1191,7 +1191,7 @@ function init(e) {
       bbox: new OpenLayers.Bounds(-9380032, 3987998, -8393463, 4382184),
       format: 'image/png',
       area: 'US',
-      abstract: 'Most recent aerial imagery from Virginia NC OneMap',
+      abstract: 'Most recent aerial imagery from NC OneMap',
       attribution: 'NC OneMap', // https://www.nconemap.gov/pages/terms
       queryable: false,
       default_layers: ['0'],
