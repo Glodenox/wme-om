@@ -31,7 +31,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.8
+// @version     3.2.9
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -170,7 +170,8 @@ async function onWmeReady() {
         v3_2_5: '- Migrate to new Waze API for creating tabs',
         v3_2_6: '- WV Leaves Off layers updated (US)',
         v3_2_7: '- PICC map layers updated (BE)',
-        v3_2_8: '- WV Leaves Off layers updated (US)'
+        v3_2_8: '- WV Leaves Off layers updated (US)',
+        v3_2_9: '- Cadastral borders map replaced (BE)'
       }
     },
     nl: {
@@ -299,7 +300,8 @@ async function onWmeReady() {
         v3_2_5: '- Maak gebruik van de nieuwe Waze API om tabs aan te maken',
         v3_2_6: '- WV Leaves Off laag updates',
         v3_2_7: '- PICC kaartlagen aangepast (BE)',
-        v3_2_8: '- WV Leaves Off laag updates'
+        v3_2_8: '- WV Leaves Off laag updates',
+        v3_2_9: '- Cadastral borders map vervangen (BE)'
       }
     },
     fr: {
@@ -1506,19 +1508,19 @@ async function onWmeReady() {
         },
         '21': {
           queryable: true,
-          title: 'Construction: ouvremprise'
+          title: 'Construction: emprise d\'ouvrage d\'art'
         },
         '22': {
           queryable: true,
-          title: 'Construction: batiemprise'
+          title: 'Construction: emprise du batiment'
         },
         '23': {
           queryable: true,
-          title: 'Construction: ouvrbord'
+          title: 'Construction: ouvrage d\'art: bord'
         },
         '24': {
           queryable: true,
-          title: 'Construction: batibord'
+          title: 'Construction: bord du batiment'
         },
         '26': {
           queryable: true,
@@ -2107,49 +2109,6 @@ async function onWmeReady() {
         }
       }
     }, {
-      id: 3214,
-      title: 'Administrative Borders',
-      url: 'https://ccff02.minfin.fgov.be/geoservices/arcgis/services/INSPIRE/AU_wms/MapServer/WMSServer',
-      crs: 'EPSG:3857',
-      bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134),
-      format: 'image/png',
-      area: 'BE',
-      abstract: 'Administrative borders for Belgium',
-      attribution: 'FPS Finances - General Administration of Patrimonial Documentation',
-      default_layers: ['5', '4', '3', '2', '1'],
-      layers: {
-        '1': {
-          title: 'Country Boundary'
-        },
-        '2': {
-          title: 'Region Boundary'
-        },
-        '3': {
-          title: 'Province Boundary'
-        },
-        '4': {
-          title: 'Arrondissement Boundary'
-        },
-        '5': {
-          title: 'Town Boundary'
-        },
-        '7': {
-          title: 'Country'
-        },
-        '8': {
-          title: 'Region'
-        },
-        '9': {
-          title: 'Province'
-        },
-        '10': {
-          title: 'Arrondissement'
-        },
-        '11': {
-          title: 'Town'
-        }
-      }
-    }, {
       id: 3215,
       title: 'GIPOD Actueel',
       url: 'https://geo.api.vlaanderen.be/gipodpubliek/wms',
@@ -2663,9 +2622,9 @@ async function onWmeReady() {
         }
       }
     }, {
-      id: 3233,
+      id: 3234,
       title: 'Cadastral Borders',
-      url: 'https://eservices.minfin.fgov.be/arcgis/services/R2C/OtherLimits/MapServer/WMSServer',
+      url: 'https://ccff02.minfin.fgov.be/geoservices/arcgis/services/WMS/Cadastral_Layers/MapServer/WmsServer',
       crs: 'EPSG:3857',
       bbox: new OpenLayers.Bounds(282900, 714838, 5509968, 6711134),
       format: 'image/png',
@@ -2674,27 +2633,77 @@ async function onWmeReady() {
       attribution: 'FPS Finances - General Administration of Patrimonial Documentation',
       queryable: true,
       query_filters: [ applyAllTransformations ],
-      default_layers: ['1', '2', '5'],
+      default_layers: [ 'Regional_building', 'Cadastral_building', 'Cadastral_parcel', 'Polder_wateringue_zone', 'Address', 'Property_stone', 'Cadastral_block', 'Cadastral_section', 'Cadastral_division', 'Municipality', 'District', 'Province', 'Region', 'Country' ],
       layers: {
-        '1': {
-          queryable: false,
-          title: 'Cadastral Sections'
-        },
-        '2': {
+        'Regional_building': {
           queryable: true,
-          title: 'Cadastral Divisions'
+          title: 'Regional building',
+          abstract: 'A regional building is a building managed by the Region.It comes from large-scale referentials (GRB for Flanders, Urbis for Brussel and PICC for Wallonia).'
         },
-        '3': {
-          queryable: false,
-          title: 'Cadastral Blocks'
+        'Cadastral_building': {
+          queryable: true,
+          title: 'Cadastral building',
+          abstract: 'A cadastral building is a building whose GAPD (via the commune, the citizen, the site visit,...) has established that it has been put into service. A building has been put into service from the moment it is used according to its destination'
         },
-        '4': {
-          queryable: false,
-          title: 'Administrative Stones'
+        'Cadastral_parcel': {
+          queryable: true,
+          title: 'Cadastral parcel',
+          abstract: 'A part of the Belgian territory, geographically defined and identified by the GAPD on the cadastral parcel plan, which corresponds to the surface area of one or more patrimonial cadastral parcels'
         },
-        '5': {
-          queryable: false,
-          title: 'Administrative Lines'
+        'Polder_wateringue_zone': {
+          queryable: true,
+          title: 'Polder wateringue zone',
+          abstract: 'Polder and wateringue zone'
+        },
+        'Address': {
+          queryable: true,
+          title: 'Address',
+          abstract: 'Police number of BestAdress'
+        },
+        'Property_stone': {
+          queryable: true,
+          title: 'Property stone',
+          abstract: 'Property stone that have been placed to delimit a parcel'
+        },
+        'Cadastral_block': {
+          queryable: true,
+          title: 'Cadastral block',
+          abstract: 'A cadastral parcel block is a set of adjacent parcels delimited by the public domain or by municipal boundaries'
+        },
+        'Cadastral_section': {
+          queryable: true,
+          title: 'Cadastral section',
+          abstract: 'The cadastral sections  are divisions or parts of cadastral divisions'
+        },
+        'Cadastral_division': {
+          queryable: true,
+          title: 'Cadastral division',
+          abstract: 'The cadastral divisions correspond with cadastral zones consisting of municipalities or parts of municipalities'
+        },
+        'Municipality': {
+          queryable: true,
+          title: 'Municipality',
+          abstract: 'The boundaries of the municipalities are administrative units based on the administrative boundaries who delimit of the administrative entities at different hierarchical levels, in particular the municipalities, the districts, the provinces, the regions and the country'
+        },
+        'District': {
+          queryable: true,
+          title: 'District',
+          abstract: 'The boundaries of the districts are administrative units based on the administrative boundaries who delimit the administrative entities on different hierarchical levels, particular the municipalities, the districts, the provinces, the regions and the country'
+        },
+        'Province': {
+          queryable: true,
+          title: 'Province',
+          abstract: 'The boundaries of the provinces are administrative units based on the administrative boundaries who gives the delimitation of the administrative entities at different hierarchical levels, in particular the municipalities, the districts, the provinces, the regions and the country'
+        },
+        'Region': {
+          queryable: true,
+          title: 'Region',
+          abstract: 'The boundaries of the regions are administrative units based on the administrative boundaries who delimit of the administrative entities at different hierarchical levels, in particular the municipalities, the districts, the provinces, the regions and the country'
+        },
+        'Country': {
+          queryable: true,
+          title: 'Country',
+          abstract: 'The national borders are administrative units based on the administrative boundaries who delimit of the administrative entities at different hierarchical levels, in particular the municipalities, the districts, the provinces, the regions and the country'
         }
       }
     }, {
