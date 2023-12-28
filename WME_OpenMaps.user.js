@@ -5580,6 +5580,10 @@ async function onWmeReady() {
   position: absolute;
 }
 
+.open-maps-query-window .hidden {
+  display: none;
+}
+
 .open-maps-query-window-button-left, .open-maps-query-window-button-right {
   cursor: pointer;
 }
