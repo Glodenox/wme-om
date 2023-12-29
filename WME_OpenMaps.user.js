@@ -41,6 +41,11 @@
 var styleElement;
 
 async function onWmeReady() {
+  if (typeof OpenLayers == 'undefined') {
+    log('WME Ready, but OpenLayers is still undefined');
+    setTimeout(onWmeReady, 300);
+    return;
+  }
   // set up language string
   var translations = {
     en: {
