@@ -1772,8 +1772,48 @@ async function onWmeReady() {
       getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
       queryable: true,
       query_filters: [ applyAllTransformations ],
-      default_layers: ['OMWRGB18VL', 'OMWRGB18VL_VDC'],
+      default_layers: ['OMWRGB22VL', 'OMWRGB22VL_VDC'],
       layers: {
+        'OMWRGB22VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2022',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2022 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB22VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2022, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB21VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2021',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2021 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB21VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2021, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB20VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2020',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2020 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB20VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2020, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
+        'OMWRGB19VL': {
+          queryable: false,
+          title: 'Winteropnamen, 2019',
+          abstract: 'Deze rasterlaag is een compilatie van de orthofotomozaïeken (winteropnamen) die voor Vlaanderen in 2019 werden aangemaakt. De compilatie heeft een grondresolutie van 25cm.'
+        },
+        'OMWRGB19VL_VDC': {
+          queryable: true,
+          title: 'Winteropnamen, 2019, vliegdagcontour',
+          abstract: 'Vectorlaag die voor ieder deel van het bijhorende product de opnamedatum weergeeft.'
+        },
         'OMWRGB18VL': {
           queryable: false,
           title: 'Winteropnamen, 2018',
