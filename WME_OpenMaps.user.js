@@ -5354,29 +5354,31 @@ async function onWmeReady() {
     var totalTiles = 0;
     var layerRedrawNeeded = false; // flag to set when a layer was made visibile/invisible
     // Deal with layers within map
-    var layerKeys = Object.keys(map.layers);
-    if (options && options.layers) {
-      options.layers.forEach(function(oldLayer) { // Necessary if the map no longer contains certain layers that were still stored
-        if (layerKeys.indexOf(oldLayer.name) != -1) {
-          self.mapLayers.push(oldLayer);
-          // Remove layer from map layers
-          layerKeys.splice(layerKeys.indexOf(oldLayer.name), 1);
-        }
-      });
-      var noLayersLeft = layerKeys.length == 0;
-      layerKeys.forEach(function(layerKey) { // Add any new layers at the end of the checkboxes
-        self.mapLayers.push({
-          name: layerKey,
-          visible: noLayersLeft ? (map.default_layers.indexOf(layerKey) != -1) : false
+    if (map.layers) {
+      var layerKeys = Object.keys(map.layers);
+      if (options && options.layers) {
+        options.layers.forEach(function(oldLayer) { // Necessary if the map no longer contains certain layers that were still stored
+          if (layerKeys.indexOf(oldLayer.name) != -1) {
+            self.mapLayers.push(oldLayer);
+            // Remove layer from map layers
+            layerKeys.splice(layerKeys.indexOf(oldLayer.name), 1);
+          }
         });
-      });
-    } else { // Nothing found, apply its default layer(s)
-      layerKeys.forEach(function(layerKey) {
-        self.mapLayers.push({
-          name: layerKey,
-          visible: (map.default_layers.indexOf(layerKey) != -1)
+        var noLayersLeft = layerKeys.length == 0;
+        layerKeys.forEach(function(layerKey) { // Add any new layers at the end of the checkboxes
+          self.mapLayers.push({
+            name: layerKey,
+            visible: noLayersLeft ? (map.default_layers.indexOf(layerKey) != -1) : false
+          });
         });
-      });
+      } else { // Nothing found, apply its default layer(s)
+        layerKeys.forEach(function(layerKey) {
+          self.mapLayers.push({
+            name: layerKey,
+            visible: (map.default_layers.indexOf(layerKey) != -1)
+          });
+        });
+      }
     }
     var layerToggler = createLayerToggler(omGroup, !this.hidden, map.title, function(visible) {
       if (self.layer) {
@@ -5428,21 +5430,41 @@ async function onWmeReady() {
       }
       if (visibleLayers && visibleLayers.length == 0 && this.layer && map.type == 'WMS') { // Hide map as it has no more layers
         this.layer.setVisibility(false);
-      } else if (visibleLayers.length > 0 && !this.layer) { // Add map that received layers
-        var params = {
-          layers: visibleLayers.join(),
-          transparent: self.transparent,
-          format: map.format
+      } else if (map.type == 'WMS' && visibleLayers.length > 0 && !this.layer || map.type == 'WMTS' && !this.layer) { // Add map that received layers
+        if (map.type == 'WMS') {
+          this.layer = new OpenLayers.Layer.WMS(map.title, map.url, {
+            layers: visibleLayers.join(),
+            transparent: self.transparent,
+            format: map.format
+          }, {
+            transitionEffect: 'resize',
+            attribution: map.attribution,
+            isBaseLayer: false,
+            projection: new OpenLayers.Projection(map.crs),
+            tileSize: (map.tile_size ? new OpenLayers.Size(map.tile_size, map.tile_size) : new OpenLayers.Size(512, 512)),
+            tileOptions: {crossOriginKeyword: 'anonymous'}
+          });
+        } else if (map.type == 'WMTS') {
+          this.layer = new OpenLayers.Layer.WMTS({
+            name: map.title,
+            url: map.url,
+            layer: map.layer,
+            style: map.style,
+            matrixSet: map.matrixSetId,
+            tileOrigin: map.tileOrigin || undefined,
+            //tileFullExtent: map.tileFullExtent || undefined,
+            matrixIds: map.matrixIds || undefined,
+            serverResolutions: map.serverResolutions || undefined,
+            format: map.format,
+            zoomOffset: map.zoomOffset || 0,
+            projection: new OpenLayers.Projection(map.crs),
+            transitionEffect: 'resize',
+            attribution: map.attribution,
+            isBaseLayer: false,
+            projection: new OpenLayers.Projection(map.crs),
+            tileSize: (map.tile_size ? new OpenLayers.Size(map.tile_size, map.tile_size) : new OpenLayers.Size(512, 512))
+          });
         };
-        var options = {
-          transitionEffect: 'resize',
-          attribution: map.attribution,
-          isBaseLayer: false
-        };
-        options.projection = new OpenLayers.Projection(map.crs);
-        options.tileSize = (map.tile_size ? new OpenLayers.Size(map.tile_size, map.tile_size) : new OpenLayers.Size(512, 512));
-        options.tileOptions = {crossOriginKeyword: 'anonymous'};
-        this.layer = new OpenLayers.Layer.WMS(map.title, map.url, params, options);
         this.layer.setOpacity(this.opacity / 100);
         this.layer.setVisibility(!this.hidden && !this.outOfArea);
 
@@ -5511,7 +5533,7 @@ async function onWmeReady() {
     info = createIconButton('fa-info-circle', I18n.t('openmaps.layer_out_of_range'), true);
     buttons.appendChild(info);
 
-    if (map.queryable) {
+    if (map.type == 'WMS' && map.queryable) {
       query = createIconButton('fa-hand-pointer-o', I18n.t('openmaps.query_layer'));
       query.addEventListener('click', function() {
         if (!getFeatureInfoControl.active) {
