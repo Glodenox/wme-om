@@ -5897,7 +5897,7 @@ input.open-maps-opacity-slider {
 
 #sidepanel-openMaps .title {
   cursor: default;
-  border-width: 2px 0 0 0;
+  border-top: 2px solid transparent;
   margin-bottom: 0;
   font-weight: bold;
   font-size: 14px;
