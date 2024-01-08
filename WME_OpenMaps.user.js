@@ -12,6 +12,7 @@
 // @connect     wallonie.be
 // @connect     geo.api.vlaanderen.be
 // @connect     opendata.apps.mow.vlaanderen.be
+// @connect     geoserver.gis.cloud.mow.vlaanderen.be
 // @connect     www.mercator.vlaanderen.be
 // @connect     irisnet.be
 // @connect     data.mobility.brussels
@@ -39,6 +40,7 @@
 /* global W, I18n, sortable, OpenLayers, Proj4js, $ */
 
 var styleElement;
+OpenMaps = {};
 
 async function onWmeReady() {
   if (typeof OpenLayers == 'undefined') {
@@ -2859,6 +2861,16 @@ async function onWmeReady() {
         }
       }
     }, {
+      id: 3236,
+      type: 'WFS',
+      url: 'https://geoserver.gis.cloud.mow.vlaanderen.be/geoserver/beleid/laadpunten_public/wfs',
+      crs: 'EPSG:31370',
+      bbox: [2.519999, 50.639999, 5.940002, 51.510003],
+      title: 'Laadpunten Vlaanderen',
+      area: 'BE',
+      abstract: 'Overzicht van laadpunten in Vlaanderen',
+      markerIcon: ''
+    }, {
       id: 5501,
       title: 'Mapa basico Rio de Janeiro',
       type: 'WMS',
@@ -4366,10 +4378,131 @@ async function onWmeReady() {
   // Amersfoort / RD New -- Netherlands - Holland - Dutch
   proj4js.defs["EPSG:28992"] = "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.4171,50.3319,465.5524,1.9342,-1.6677,9.1019,4.0725 +units=m +no_defs";
 
-  var proj4jsProjections = {};
-  Object.keys(proj4js.defs).forEach(def => proj4jsProjections[def] = new proj4js.Proj(def));
-  OpenLayers.Projection.addTransform("EPSG:900913", "EPSG:31370", (point, source, dest) => proj4js.transform(proj4jsProjections[source], proj4jsProjections[dest], point));
-  OpenLayers.Projection.addTransform("EPSG:900913", "EPSG:28992", (point, source, dest) => proj4js.transform(proj4jsProjections[source], proj4jsProjections[dest], point));
+  let googleProjection = new proj4js.Proj("EPSG:900913");
+  [
+    "EPSG:31370",
+    "EPSG:28992"
+  ].forEach(projection => {
+    OpenLayers.Projection.addTransform("EPSG:900913", projection, (point) => proj4js.transform(googleProjection, new proj4js.Proj(projection), point));
+    OpenLayers.Projection.addTransform(projection, "EPSG:900913", (point) => proj4js.transform(new proj4js.Proj(projection), googleProjection, point));
+  });
+
+  // Add custom WFS layer
+  OpenMaps.WFSLayer = OpenLayers.Class(OpenLayers.Layer.Vector, { // TODO: probably add an implementation with OpenLayers.Layer.Markers as well
+    isBaseLayer: false,
+    url: null,
+    extent: null,
+    crs: null,
+    loadedArea: null,
+    markerIcon: "",
+    styleMap: new OpenLayers.StyleMap({
+      "default": new OpenLayers.Style({
+        fillColor: '#cccccc',
+        fillOpacity: 1,
+        fontColor: '#111111',
+        fontWeight: 'bold',
+        strokeColor: '#ffffff',
+        strokeOpacity: 1,
+        strokeWidth: 2,
+        pointRadius: 12,
+        fontFamily: 'FontAwesome',
+        label: '${markerIcon}', // Default to star
+        title: '${title}'
+      }, {
+        context: {
+          markerIcon: (feature) => feature.layer.markerIcon || '',
+          title: (feature) => feature.attributes?.uitbater
+        }
+      }),
+      'highlight': new OpenLayers.Style({
+        pointRadius: 14,
+        strokeColor: '#eeeeee'
+      }),
+      'select': new OpenLayers.Style({
+        pointRadius: 14,
+        strokeColor: '#dddddd',
+        fillColor: '#bbbbbb'
+      }),
+      'highlightselected': new OpenLayers.Style({
+        pointRadius: 14,
+        strokeColor: '#eeeeee',
+        fillColor: '#bbbbbb'
+      })
+    }),
+    initialize: function(name, url, extent, crs, options) {
+      options = options || {};
+      this.uniqueName = name.replaceAll(' ', '-').toLowerCase();
+      this.url = url;
+      this.extent = extent;
+      this.maxExtent = extent;
+      this.dataCRS = crs;
+      this.markerIcon = options?.markerIcon;
+      OpenLayers.Layer.Vector.prototype.initialize.apply(this, [name, options]);
+    },
+    addFeatures: function(features) {
+      features.forEach(feature => {
+        let _wmeObject = {
+          isDeleted: () => false,
+          setSelected: (state) => console.log(state, feature),
+          isNew: () => false,
+          getType: () => null,
+          getID: () => -1,
+          arePropertiesEditable: () => false,
+          arePropertiesSuggestible: () => false,
+          isGeometryEditable: () => false,
+          isGeometrySuggestible: () => false
+        };
+        feature.attributes._wmeObject = _wmeObject; // Fake data needed to allow Waze event triggering (old style)
+        feature.attributes.wazeFeature = { // Fake data needed to allow Waze event triggering (new style)
+          _wmeObject: _wmeObject
+        };
+      });
+      OpenLayers.Layer.Vector.prototype.addFeatures.apply(this, [ features ]);
+    },
+    moveTo: function(bounds, zoomChanged, dragging) {
+      OpenLayers.Layer.Vector.prototype.moveTo.apply(this, arguments);
+      if (!dragging && (this.loadedArea == null || !this.loadedArea.containsBounds(bounds))) {
+        this.loadedArea = bounds.scale(1.5);
+        let dataProjection = new OpenLayers.Projection(this.dataCRS);
+        let requestArea = this.loadedArea.clone().transform(W.map.getProjectionObject(), dataProjection);
+        let searchParams = new URLSearchParams({
+          service: "WFS",
+          request: "GetFeature",
+          version: "2.0.0",
+          typeNames: "beleid:laadpunten_public",
+          bbox: requestArea.toBBOX(),
+          srsName: this.dataCRS,
+          outputFormat: "application/json",
+          count: 500
+        });
+        GM_xmlhttpRequest({
+          method: 'GET',
+          responseType: 'json',
+          url: this.url + '?' + searchParams.toString(),
+          timeout: 10000,
+          context: this.layer,
+          onload: (response) => {
+            let geoJSONFeatures = response.response;
+            if (geoJSONFeatures.features.length >= 300) {
+              // TODO: limit reached, request to zoom in further
+              console.log('300 features returned, zoom in further to get new data')
+              return;
+            }
+            let newFeatures = (new OpenLayers.Format.GeoJSON()).read(geoJSONFeatures);
+            newFeatures.forEach(feature => {
+              feature.geometry.transform(dataProjection, W.map.getProjectionObject());
+              feature.bounds.transform(dataProjection, W.map.getProjectionObject());
+            });
+            this.removeAllFeatures();
+            this.addFeatures(newFeatures);
+          },
+          onerror: (response) => console.log('Error getting features', response),
+          ontimeout: (response) => console.log('Timeout getting features', response)
+        });
+      }
+    },
+    CLASS_NAME: "OpenMaps.WFSLayer"
+  });
 
   // List of map handles
   var handles = [];
@@ -4602,7 +4735,6 @@ async function onWmeReady() {
         queryWindowOriginalContent.removeChild(queryWindowOriginalContent.firstChild);
       }
       queryWindow.style.display = 'block';
-      console.log('Retrieving feature info at ', queryUrl);
       GM_xmlhttpRequest({
         method: 'GET',
         headers: {
@@ -5430,7 +5562,7 @@ async function onWmeReady() {
       }
       if (visibleLayers && visibleLayers.length == 0 && this.layer && map.type == 'WMS') { // Hide map as it has no more layers
         this.layer.setVisibility(false);
-      } else if (map.type == 'WMS' && visibleLayers.length > 0 && !this.layer || map.type == 'WMTS' && !this.layer) { // Add map that received layers
+      } else if (map.type == 'WMS' && visibleLayers.length > 0 && !this.layer || (map.type != 'WMS' && !this.layer)) { // Add map that received layers
         if (map.type == 'WMS') {
           this.layer = new OpenLayers.Layer.WMS(map.title, map.url, {
             layers: visibleLayers.join(),
@@ -5464,7 +5596,16 @@ async function onWmeReady() {
             projection: new OpenLayers.Projection(map.crs),
             tileSize: (map.tile_size ? new OpenLayers.Size(map.tile_size, map.tile_size) : new OpenLayers.Size(512, 512))
           });
-        };
+        } else if (map.type == 'WFS') {
+          this.layer = new OpenMaps.WFSLayer(map.title, map.url, this.area, map.crs, {
+            markerIcon: map.markerIcon
+          });
+          console.log(this.layer, map.markerIcon);
+          let layerContainer =  W.selectionManager.selectionMediator.getRootContainerLayer() || W.selectionManager.getRootContainerLayer();
+          layerContainer.layers.push(this.layer);
+          layerContainer.collectRoots();
+          (W.selectionManager.selectionMediator._layers || W.selectionManager.selectableLayers).push(this.layer);
+        }
         this.layer.setOpacity(this.opacity / 100);
         this.layer.setVisibility(!this.hidden && !this.outOfArea);
 
