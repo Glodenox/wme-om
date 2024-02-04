@@ -4324,6 +4324,13 @@ async function onWmeReady() {
     };
   })();
 
+  var IDGenerator = (function() {
+    let counter = 0;
+    return {
+      getNext: () => 'openmaps-' + counter++
+    }
+  })();
+
   checkVersion();
 
   // Adjust map tile reload attempts (by default set to 0). This also makes OpenLayers attempt to load tiles a second time in other layers
@@ -4388,13 +4395,14 @@ async function onWmeReady() {
   });
 
   // Add custom WFS layer
-  OpenMaps.WFSLayer = OpenLayers.Class(OpenLayers.Layer.Vector, { // TODO: probably add an implementation with OpenLayers.Layer.Markers as well
+  OpenMaps.WFSLayer = OpenLayers.Class(OpenLayers.Layer.Vector, {
     isBaseLayer: false,
     url: null,
     extent: null,
     crs: null,
     loadedArea: null,
     markerIcon: "",
+    featureMapping: new Map(),
     styleMap: new OpenLayers.StyleMap({
       "default": new OpenLayers.Style({
         fillColor: '#cccccc',
@@ -4441,23 +4449,36 @@ async function onWmeReady() {
     },
     addFeatures: function(features) {
       features.forEach(feature => {
-        let _wmeObject = {
-          isDeleted: () => false,
-          setSelected: (state) => console.log(state, feature),
-          isNew: () => false,
-          getType: () => null,
-          getID: () => -1,
-          arePropertiesEditable: () => false,
-          arePropertiesSuggestible: () => false,
-          isGeometryEditable: () => false,
-          isGeometrySuggestible: () => false
+        // Fake data needed to allow Waze event triggering
+        let featureId = IDGenerator.getNext();
+        feature.attributes.wazeFeature = {
+          featureType: null,
+          id: featureId,
+          _wmeObject: {
+            isDeleted: () => false,
+            getID: () => featureId,
+            getType: () => null,
+            setSelected: (state) => {
+              console.log(state, feature);
+              if (state) {
+                document.getElementById('panel-container').innerHTML = '<div class="open-maps-panel"><span><a class="close-panel"/></span><h6>' + feature.attributes?.uitbater + '</h6></div>';
+              } else {
+                document.getElementById('panel-container').innerHTML = '';
+              }
+            },
+            arePropertiesEditable: () => false,
+            arePropertiesSuggestible: () => false,
+            isGeometryEditable: () => false,
+            isGeometrySuggestible: () => false
+          }
         };
-        feature.attributes._wmeObject = _wmeObject; // Fake data needed to allow Waze event triggering (old style)
-        feature.attributes.wazeFeature = { // Fake data needed to allow Waze event triggering (new style)
-          _wmeObject: _wmeObject
-        };
+        //feature.id = feature.attributes.wazeFeature.id;
+        this.featureMapping.set(featureId, feature);
       });
       OpenLayers.Layer.Vector.prototype.addFeatures.apply(this, [ features ]);
+    },
+    getWazeFeature: function(id) {
+      return this.featureMapping.get(id);
     },
     moveTo: function(bounds, zoomChanged, dragging) {
       OpenLayers.Layer.Vector.prototype.moveTo.apply(this, arguments);
@@ -4551,7 +4572,7 @@ async function onWmeReady() {
     }
     if (e.detail.elementIndex >= 0 && e.detail.elementIndex < handles.length) { // sanity check
       var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayerByName('satellite_imagery'));
-      W.map.getOLMap().setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + e.detail.elementIndex + 1);
+      W.map.getWazeMap().setLayerIndex(movedHandle.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + e.detail.elementIndex + 1);
     }
     saveMapState();
   });
@@ -5601,10 +5622,10 @@ async function onWmeReady() {
             markerIcon: map.markerIcon
           });
           console.log(this.layer, map.markerIcon);
-          let layerContainer =  W.selectionManager.selectionMediator.getRootContainerLayer() || W.selectionManager.getRootContainerLayer();
+          let layerContainer =  W.selectionManager.getWebMapSelectionManager().getRootContainerLayer();
           layerContainer.layers.push(this.layer);
           layerContainer.collectRoots();
-          (W.selectionManager.selectionMediator._layers || W.selectionManager.selectableLayers).push(this.layer);
+          W.selectionManager.getWebMapSelectionManager().getSelectableLayers().push(this.layer);
         }
         this.layer.setOpacity(this.opacity / 100);
         this.layer.setVisibility(!this.hidden && !this.outOfArea);
@@ -5646,7 +5667,7 @@ async function onWmeReady() {
         });
         W.map.addLayer(this.layer);
         var aerialImageryIndex = W.map.getLayerIndex(W.map.getLayerByName('satellite_imagery'));
-        W.map.getOLMap().setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
+        W.map.getWazeMap().setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
         this.layer.events.register('visibilitychanged', null, function() {
           self.updateVisibility();
         });
@@ -6064,6 +6085,24 @@ input.open-maps-opacity-slider {
   margin-bottom: 0;
   font-weight: bold;
   font-size: 14px;
+}
+
+#panel-container .open-maps-panel {
+  max-height: 80vh;
+  border-radius: 5px;
+  margin-bottom: 55px;
+  margin-left: 15px;
+  overflow: hidden;
+  width: 320px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+#panel-container .open-maps-panel h6 {
+  color: #354148;
+  margin: 0;
 }
 `;
   }
