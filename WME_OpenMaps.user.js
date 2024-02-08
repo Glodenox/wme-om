@@ -12,6 +12,7 @@
 // @connect     wallonie.be
 // @connect     geo.api.vlaanderen.be
 // @connect     opendata.apps.mow.vlaanderen.be
+// @connect     geoserver.gis.cloud.mow.vlaanderen.be
 // @connect     www.mercator.vlaanderen.be
 // @connect     irisnet.be
 // @connect     data.mobility.brussels
@@ -177,7 +178,8 @@ async function onWmeReady() {
         v3_2_7: '- PICC map layers updated (BE)',
         v3_2_8: '- WV Leaves Off layers updated (US)',
         v3_2_9: '- Cadastral borders map replaced (BE)',
-        v3_2_10: '- Fixed spacing issue in query window results\n- Added VLAIO map (BE)'
+        v3_2_10: '- Fixed spacing issue in query window results\n- Added VLAIO map (BE)',
+        v3_2_11: '- Added Publieke oplaadpunten map (BE)'
       }
     },
     nl: {
@@ -308,7 +310,8 @@ async function onWmeReady() {
         v3_2_7: '- PICC kaartlagen aangepast (BE)',
         v3_2_8: '- WV Leaves Off laag updates',
         v3_2_9: '- Cadastral borders map vervangen (BE)',
-        v3_2_10: '- Probleem met witruimte opgelost in query scherm\n- VLAIO kaart toegevoegd (BE)'
+        v3_2_10: '- Probleem met witruimte opgelost in query scherm\n- VLAIO kaart toegevoegd (BE)',
+        v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)'
       }
     },
     fr: {
