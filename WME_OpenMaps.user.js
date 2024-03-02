@@ -179,7 +179,8 @@ async function onWmeReady() {
         v3_2_8: '- WV Leaves Off layers updated (US)',
         v3_2_9: '- Cadastral borders map replaced (BE)',
         v3_2_10: '- Fixed spacing issue in query window results\n- Added VLAIO map (BE)',
-        v3_2_11: '- Added Publieke oplaadpunten map (BE)'
+        v3_2_11: '- Added Publieke oplaadpunten map (BE)',
+        v3_2_12: '- Take into account the Additional imagery map layers'
       }
     },
     nl: {
@@ -311,7 +312,8 @@ async function onWmeReady() {
         v3_2_8: '- WV Leaves Off laag updates',
         v3_2_9: '- Cadastral borders map vervangen (BE)',
         v3_2_10: '- Probleem met witruimte opgelost in query scherm\n- VLAIO kaart toegevoegd (BE)',
-        v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)'
+        v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)',
+        v3_2_12: '- Hou rekening met het extra beeldmateriaal'
       }
     },
     fr: {
