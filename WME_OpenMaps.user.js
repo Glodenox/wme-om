@@ -32,7 +32,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.13
+// @version     3.2.14
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -181,7 +181,8 @@ async function onWmeReady() {
         v3_2_10: '- Fixed spacing issue in query window results\n- Added VLAIO map (BE)',
         v3_2_11: '- Added Publieke oplaadpunten map (BE)',
         v3_2_12: '- Take into account the Additional imagery map layers',
-        v3_2_13: '- Replace Adrespunten map with Adressenregister (BE)\n- Fix Maximumsnelheden query results (NL)'
+        v3_2_13: '- Replace Adrespunten map with Adressenregister (BE)\n- Fix Maximumsnelheden query results (NL)',
+        v3_2_14: '- Fix Nationaal Wegen Bestand map and removed duplicate Hectopunten map (NL)'
       }
     },
     nl: {
@@ -315,7 +316,8 @@ async function onWmeReady() {
         v3_2_10: '- Probleem met witruimte opgelost in query scherm\n- VLAIO kaart toegevoegd (BE)',
         v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)',
         v3_2_12: '- Hou rekening met het extra beeldmateriaal',
-        v3_2_13: '- Adrespunten kaart vervangen met het Adressenregister (BE)\n- Opvragen van data uit Maximumsnelhedenkaart opgelost (NL)'
+        v3_2_13: '- Adrespunten kaart vervangen met het Adressenregister (BE)\n- Opvragen van data uit Maximumsnelhedenkaart opgelost (NL)',
+        v3_2_14: '- Nationaal Wegen Bestand kaart hersteld en dubbele Hectopuntenkaart verwijderd (NL)'
       }
     },
     fr: {
@@ -1228,28 +1230,29 @@ async function onWmeReady() {
       }
     }, {
       id: 3105,
-      title: 'Hectopunten Rijkswaterstaat',
+      title: 'Nationaal Wegen Bestand',
       type: 'WMS',
-      url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
+      url: 'https://service.pdok.nl/rws/nwbwegen/wms/v1_0',
       crs: 'EPSG:3857',
       bbox: [3.000000, 50.740995, 7.000000, 53.000000],
       zoomRange: [14, 22],
       format: 'image/png',
       area: 'NL',
-      abstract: 'Het NWB-Wegen is een digitaal geografisch bestand van nagenoeg alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer. Dus ook losliggende voet- en fietspaden en onverharde wegen zijn, indien voorzien van een straatnaam, in het NWB-Wegen opgenomen. Indien een weg gescheiden rijbanen heeft, wat vooral het geval is bij Rijkswegen, worden deze als aparte wegvakken in het bestand verwerkt. In totaal beslaat het NWB-Wegen ongeveer 145.000 kilometer gedigitaliseerde wegvakken (in aantal +/-825000). Het NWB-Wegen wordt 4 keer per jaar geactualiseerd.',
+      abstract: 'Deze dataset bevat alleen de wegvakken en hectometerpunten. Het Nationaal Wegen Bestand - Wegen is een digitaal geografisch bestand van alle wegen in Nederland. Opgenomen zijn alle wegen die worden beheerd door wegbeheerders als het Rijk, provincies, gemeenten en waterschappen, echter alleen voor zover deze zijn voorzien van een straatnaam of nummer',
       attribution: 'PDOK',
-      pixelManipulations: ['removePartialBlackTransparency', 'traceGrayscalePixels'],
       queryable: true,
       query_filters: [ applyAllTransformations ],
       default_layers: ['hectopunten', 'wegvakken'],
       layers: {
         'hectopunten': {
           queryable: true,
-          title: 'NWB Wegen hectopunten'
+          title: 'NWB Wegen hectopunten',
+          abstract: 'Deze laag bevat de hectopunten uit het Nationaal Wegen Bestand (NWB) en geeft gedetailleerde informatie per hectopunt zoals hectometrering, afstand, zijde en hectoletter weer.'
         },
         'wegvakken': {
           queryable: true,
-          title: 'NWB Wegen wegvakken'
+          title: 'NWB Wegen wegvakken',
+          abstract: 'Deze laag bevat de wegvakken uit het Nationaal Wegen bestand (NWB) en geeft gedetailleerde informatie per wegvak zoals straatnaam, wegnummer, routenummer, wegbeheerder, huisnummers, enz. weer.'
         }
       }
     }, {
@@ -1392,27 +1395,6 @@ async function onWmeReady() {
         'max_snelheden_advies': {
           title: 'Adviessnelheden per wegvak',
           abstract: 'De wegkenmerkendatabase voor snelheden bevat ook de adviessnelheden dat geldt voor een bepaald wegvak of een deel daarvan.\nNu zijn alleen adviessnelheden voor de rijkswegen opgenomen in het bestand, maar in de toekomst wordt dit uitgebreid met de adviessnelheden voor het onderliggend wegennet.',
-          queryable: true
-        }
-      }
-    }, {
-      id: 3109,
-      title: 'Nationaal Wegen Bestand',
-      type: 'WMS',
-      url: 'https://geodata.nationaalgeoregister.nl/nwbwegen/wms',
-      crs: 'EPSG:3857',
-      bbox: [3.197329, 7.255724, 58.960412, 53.611001],
-      format: 'image/png',
-      area: 'NL',
-      abstract: 'Nationaal Wegen Bestand met alle gegevens van de Nederlandse wegen',
-      attribution: 'Nationaal Wegen Bestand',
-      pixelManipulations: ['removePartialTransparency'],
-      queryable: true,
-      query_filters: [ applyAllTransformations ],
-      default_layers: ['wegvakken'],
-      layers: {
-        'wegvakken': {
-          title: 'Nationaal Wegen Bestand Wegvakken',
           queryable: true
         }
       }
@@ -4781,9 +4763,8 @@ async function onWmeReady() {
   function reorderTableRows(body, map) {
     var propertyOrder = {
       '3101': [ 'openbare ruimte', 'huisnummer', 'huisletter', 'woonplaats' ],
-      '3105': [ 'stt naam', 'gme naam' ],
+      '3105': [ 'sttNaam', 'gmeNaam', 'wegnummer' ],
       '3108': [ 'maxshd', 'betrwbheid', 'stt naam' ],
-      '3109': [ 'stt naam', 'wpsnaamnen' ],
       '3202': [ 'OpnDatum' ],
       '3206': [ 'OpnDatum' ],
       '3207': [ 'linksStraatnaam', 'rechtsStraatnaam', 'lblMorfologie', 'lblBeheerder', 'lblOrganisatie' ],
