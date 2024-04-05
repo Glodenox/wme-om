@@ -32,7 +32,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.12
+// @version     3.2.13
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -180,7 +180,8 @@ async function onWmeReady() {
         v3_2_9: '- Cadastral borders map replaced (BE)',
         v3_2_10: '- Fixed spacing issue in query window results\n- Added VLAIO map (BE)',
         v3_2_11: '- Added Publieke oplaadpunten map (BE)',
-        v3_2_12: '- Take into account the Additional imagery map layers'
+        v3_2_12: '- Take into account the Additional imagery map layers',
+        v3_2_13: '- Replace Adrespunten map with Adressenregister (BE)\n- Fix Maximumsnelheden query results (NL)'
       }
     },
     nl: {
@@ -313,7 +314,8 @@ async function onWmeReady() {
         v3_2_9: '- Cadastral borders map vervangen (BE)',
         v3_2_10: '- Probleem met witruimte opgelost in query scherm\n- VLAIO kaart toegevoegd (BE)',
         v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)',
-        v3_2_12: '- Hou rekening met het extra beeldmateriaal'
+        v3_2_12: '- Hou rekening met het extra beeldmateriaal',
+        v3_2_13: '- Adrespunten kaart vervangen met het Adressenregister (BE)\n- Opvragen van data uit Maximumsnelhedenkaart opgelost (NL)'
       }
     },
     fr: {
@@ -2117,27 +2119,6 @@ async function onWmeReady() {
         }
       }
     }, {
-      id: 3210,
-      title: 'Adrespunten Vlaanderen',
-      type: 'WMS',
-      url: 'https://geo.api.vlaanderen.be/Adressen/wms',
-      crs: 'EPSG:3857',
-      bbox: [2.519999, 50.639999, 5.939993, 51.509997],
-      zoomRange: [18, 22],
-      format: 'image/png',
-      area: 'BE',
-      abstract: 'Overzicht van in CRAB opgenomen adressen (huisnummers met bijhorende straat en gemeente) van Vlaanderen, met hun lokatie. Deze dataset is een bevraging van de CRAB-gegevens, bedoeld om tot een eenvoudige en vlot toegankelijke adressenlijst te komen.',
-      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Geopunt-kaart_app&kaart=Adrespunten - CRAB&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
-      queryable: true,
-      query_filters: [ applyAllTransformations ],
-      default_layers: ['Adrespos'],
-      layers: {
-        'Adrespos': {
-          queryable: true,
-          title: 'CRAB - Adrespunt'
-        }
-      }
-    }, {
       id: 3211,
       title: 'Ortho Vl. 2013-2015 Grootschalig',
       type: 'WMS',
@@ -2872,7 +2853,7 @@ async function onWmeReady() {
       format: 'image/png',
       area: 'BE',
       abstract: 'Laadpunten voor elektrische voertuigen in Vlaanderen',
-      attribution: 'Laadpunten voor elektrische voertuigen',
+      attribution: 'MOW Vlaanderen',
       queryable: true,
       query_filters: [ applyAllTransformations ],
       default_layers: ['laadpunten_public'],
@@ -2880,6 +2861,41 @@ async function onWmeReady() {
         'laadpunten_public': {
           queryable: true,
           title: 'Publieke laadpunten'
+        }
+      }
+    }, {
+      id: 3237,
+      title: 'Adressenregister Vlaanderen',
+      url: 'https://geo.api.vlaanderen.be/Adressenregister/wms',
+      crs: 'EPSG:3857',
+      bbox: [2.52, 50.64, 5.94, 51.51],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'In het adressenregister zijn alle adressen in Vlaanderen opgeslagen samen met één of meer puntgeometrieën. De adresgegevens worden beheerd door de gemeenten zoals bepaald in het CRAB-decreet.',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['A_VOORGESTELD', 'A_INGEBRUIK'],
+      layers: {
+        'A_VOORGESTELD': {
+          queryable: true,
+          title: 'Voorgestelde adressen',
+          abstract: 'Het adres werd voorgesteld (bv. door de dienst Ruimtelijke Ordening) maar nog niet goedgekeurd door de gemeenteraad'
+        },
+        'A_INGEBRUIK': {
+          queryable: true,
+          title: 'Adressen in gebruik',
+          abstract: 'Het adres werd formeel goedgekeurd door de gemeenteraad en/of wordt actief gebruikt voor adressering'
+        },
+        'A_GEHISTOREERD': {
+          queryable: true,
+          title: 'Gehistoreerde adressen',
+          abstract: 'Het adres werd formeel opgeheven door de gemeenteraad'
+        },
+        'A_AFGEKEURD': {
+          queryable: true,
+          title: 'Afgekeurde adressen',
+          abstract: 'Het adres werd formeel afgekeurd door de gemeenteraad'
         }
       }
     }, {
@@ -4568,7 +4584,7 @@ async function onWmeReady() {
     'click': function(e) {
       getFeatureInfoControl.deactivate();
       getFeatureInfoControl.params.callback();
-      var queryUrl = getFeatureInfoControl.params.url + '?SERVICE=WMS&REQUEST=GetFeatureInfo&BBOX=' + W.map.getExtent().toBBOX() +
+      var queryUrl = getFeatureInfoControl.params.url + '?SERVICE=WMS&REQUEST=GetFeatureInfo&STYLES=&BBOX=' + W.map.getExtent().toBBOX() +
           '&LAYERS=' + getFeatureInfoControl.params.layers + '&QUERY_LAYERS=' + getFeatureInfoControl.params.layers +
           '&HEIGHT=' + W.map.getSize().h + '&WIDTH=' + W.map.getSize().w +
           '&VERSION=1.3.0&CRS=EPSG:3857&I=' + e.xy.x + '&J=' + e.xy.y + '&INFO_FORMAT=text/html';
@@ -4766,7 +4782,7 @@ async function onWmeReady() {
     var propertyOrder = {
       '3101': [ 'openbare ruimte', 'huisnummer', 'huisletter', 'woonplaats' ],
       '3105': [ 'stt naam', 'gme naam' ],
-      '3108': [ 'HDE SHT' ],
+      '3108': [ 'maxshd', 'betrwbheid', 'stt naam' ],
       '3109': [ 'stt naam', 'wpsnaamnen' ],
       '3202': [ 'OpnDatum' ],
       '3206': [ 'OpnDatum' ],
@@ -4778,6 +4794,7 @@ async function onWmeReady() {
       '3217': [ 'NOM ROUTE', 'NUMERO ROUTE', 'TYPE DESC', 'SOUS TYPE DESC' ],
       '3220': [ 'bordcode' ],
       '3221': [ 'Snelheid' ],
+      '3237': [ 'VolledigAdres', 'AdresStatus' ],
       '5501': [ 'COMPLETO' ]
     };
     if (!propertyOrder[map.id]) {
