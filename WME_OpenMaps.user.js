@@ -32,7 +32,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.14
+// @version     3.2.15
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -182,7 +182,8 @@ async function onWmeReady() {
         v3_2_11: '- Added Publieke oplaadpunten map (BE)',
         v3_2_12: '- Take into account the Additional imagery map layers',
         v3_2_13: '- Replace Adrespunten map with Adressenregister (BE)\n- Fix Maximumsnelheden query results (NL)',
-        v3_2_14: '- Fix Nationaal Wegen Bestand map and removed duplicate Hectopunten map (NL)'
+        v3_2_14: '- Fix Nationaal Wegen Bestand map and removed duplicate Hectopunten map (NL)',
+        v3_2_15: '- Migrate GIPOD to new endpoint with extra map layers (BE)'
       }
     },
     nl: {
@@ -317,7 +318,8 @@ async function onWmeReady() {
         v3_2_11: '- Publieke oplaadpunten kaart toegevoegd (BE)',
         v3_2_12: '- Hou rekening met het extra beeldmateriaal',
         v3_2_13: '- Adrespunten kaart vervangen met het Adressenregister (BE)\n- Opvragen van data uit Maximumsnelhedenkaart opgelost (NL)',
-        v3_2_14: '- Nationaal Wegen Bestand kaart hersteld en dubbele Hectopuntenkaart verwijderd (NL)'
+        v3_2_14: '- Nationaal Wegen Bestand kaart hersteld en dubbele Hectopuntenkaart verwijderd (NL)',
+        v3_2_15: '- Migreer GIPOD naar nieuwe locatie met extra kaartlagen (BE)'
       }
     },
     fr: {
@@ -1700,53 +1702,6 @@ async function onWmeReady() {
         }
       }
     }, {
-      id: 3205,
-      title: 'GIPOD Nu + 1 maand',
-      type: 'WMS',
-      url: 'https://geo.api.vlaanderen.be/gipodpubliek/wms',
-      crs: 'EPSG:3857',
-      bbox: [2.519999, 50.639999, 5.939993, 51.509997],
-      format: 'image/png',
-      area: 'BE',
-      abstract: 'Overzicht van alle concreet geplande en in uitvoering zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder, voor de komende maand.',
-      attribution: 'Agentschap Informatie Vlaanderen',
-      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
-      queryable: true,
-      query_filters: [ applyAllTransformations ],
-      default_layers: ['ManOml', 'ManCon', 'ManIcoon', 'WoOml', 'WoCon', 'WoIcoon'],
-      layers: {
-        'ManOml': {
-          queryable: false,
-          title: 'Omleidingen van de manifestaties',
-          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.'
-        },
-        'ManCon': {
-          queryable: true,
-          title: 'Manifestaties contour',
-          abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'ManIcoon': {
-          queryable: false,
-          title: 'Manifestaties icoon',
-          abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'WoOml': {
-          queryable: false,
-          title: 'Omleidingen van de werkopdrachten',
-          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.'
-        },
-        'WoCon': {
-          queryable: true,
-          title: 'Werkopdrachten contour',
-          abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'WoIcoon': {
-          queryable: false,
-          title: 'Werkopdrachten icoon',
-          abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
-        }
-      }
-    }, {
       id: 3206,
       title: 'Ortho Vlaanderen Tijdsreeksen',
       type: 'WMS',
@@ -2153,53 +2108,6 @@ async function onWmeReady() {
           queryable: true,
           title: 'Km en hm referentiepunten',
           abstract: 'Posities van de km en hm referentiepunten langs de Vlaamse autosnelwegen en gewestwegen met de bijbehorende kilometer-/ hectometeraanduidingen'
-        }
-      }
-    }, {
-      id: 3215,
-      title: 'GIPOD Actueel',
-      type: 'WMS',
-      url: 'https://geo.api.vlaanderen.be/gipodpubliek/wms',
-      crs: 'EPSG:3857',
-      bbox: [2.519999, 50.639999, 5.939993, 51.509997],
-      format: 'image/png',
-      area: 'BE',
-      abstract: 'Overzicht van momenteel actief zijnde werken, manifestaties en andere innames op het openbaar domein met hun bijhorende omleidingen en verwachte hinder.',
-      attribution: 'Agentschap Informatie Vlaanderen',
-      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
-      queryable: true,
-      query_filters: [ applyAllTransformations ],
-      default_layers: ['ManOmlVndg', 'ManConVndg', 'ManIcoonVndg', 'WoOmlVndg', 'WoConVndg', 'WoIcoonVndg'],
-      layers: {
-        'ManOmlVndg': {
-          queryable: false,
-          title: 'Omleidingen van de manifestaties',
-          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij manifestaties en andere innames op het openbaar domein, voor de komende maand.'
-        },
-        'ManConVndg': {
-          queryable: true,
-          title: 'Manifestaties contour',
-          abstract: 'Deze laag geeft een overzicht met contouren van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'ManIcoonVndg': {
-          queryable: false,
-          title: 'Manifestaties icoon',
-          abstract: 'Deze laag geeft een overzicht met iconen van alle manifestaties en andere innames op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'WoOmlVndg': {
-          queryable: false,
-          title: 'Omleidingen van de werkopdrachten',
-          abstract: 'Deze laag geeft een overzicht van alle omleidingen, horend bij werkopdrachten op het openbaar domein, voor de komende maand.'
-        },
-        'WoConVndg': {
-          queryable: true,
-          title: 'Werkopdrachten contour',
-          abstract: 'Deze laag geeft een overzicht met contouren van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
-        },
-        'WoIcoonVndg': {
-          queryable: false,
-          title: 'Werkopdrachten icoon',
-          abstract: 'Deze laag geeft een overzicht met iconen van alle werkopdrachten op het openbaar domein en de verwachte hinder voor de komende maand.'
         }
       }
     }, {
@@ -2878,6 +2786,120 @@ async function onWmeReady() {
           queryable: true,
           title: 'Afgekeurde adressen',
           abstract: 'Het adres werd formeel afgekeurd door de gemeenteraad'
+        }
+      }
+    }, {
+      id: 3238,
+      title: 'GIPOD Actueel',
+      type: 'WMS',
+      url: 'https://geo.api.vlaanderen.be/GIPOD/wms',
+      crs: 'EPSG:3857',
+      bbox: [2.52, 50.64, 5.94, 51.51],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Overzicht van mobiliteitshinder vandaag. Meer kaartlagen (grondwerken, werken, evenementen) zijn beschikbaar in de instellingen',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['GIPOD_MOBHINDER_VNDG', 'GIPOD_MOBHINDER_VNDG_ICOON'],
+      layers: {
+        'GIPOD_MOBHINDER_VNDG': {
+          queryable: true,
+          title: 'Mobiliteitshinder vandaag',
+          abstract: 'GIPOD mobiliteitshinder op het openbaar domein vandaag'
+        },
+        'GIPOD_MOBHINDER_VNDG_ICOON': {
+          queryable: true,
+          title: 'Mobiliteitshinder vandaag (icoon)',
+          abstract: 'GIPOD mobiliteitshinder op het openbaar domein vandaag (icoon)'
+        },
+        'GIPOD_GRONDWERK_VNDG': {
+          queryable: true,
+          title: 'Grondwerken vandaag',
+          abstract: 'GIPOD grondwerken op het openbaar domein vandaag'
+        },
+        'GIPOD_GRONDWERK_VNDG_ICOON': {
+          queryable: true,
+          title: 'Grondwerken vandaag (icoon)',
+          abstract: 'GIPOD grondwerken op het openbaar domein vandaag (icoon)'
+        },
+        'GIPOD_WERK_VNDG': {
+          queryable: true,
+          title: 'Werken vandaag',
+          abstract: 'GIPOD werken op het openbaar domein vandaag'
+        },
+        'GIPOD_WERK_VNDG_ICOON': {
+          queryable: true,
+          title: 'Werken vandaag (icoon)',
+          abstract: 'GIPOD werken op het openbaar domein vandaag (icoon)'
+        },
+        'GIPOD_EVENEMENT_VNDG': {
+          queryable: true,
+          title: 'Evenementen vandaag',
+          abstract: 'GIPOD evenementen op het openbaar domein vandaag'
+        },
+        'GIPOD_EVENEMENT_VNDG_ICOON': {
+          queryable: true,
+          title: 'Evenementen vandaag (icoon)',
+          abstract: 'GIPOD evenementen op het openbaar domein vandaag (icoon)'
+        }
+      }
+    }, {
+      id: 3239,
+      title: 'GIPOD Komende Maand',
+      type: 'WMS',
+      url: 'https://geo.api.vlaanderen.be/GIPOD/wms',
+      crs: 'EPSG:3857',
+      bbox: [2.52, 50.64, 5.94, 51.51],
+      format: 'image/png',
+      area: 'BE',
+      abstract: 'Overzicht van mobiliteitshinder komende maand. Meer kaartlagen (grondwerken, werken, evenementen) zijn beschikbaar in de instellingen',
+      attribution: 'Agentschap Informatie Vlaanderen',
+      getExternalUrl: (extent) => 'http://www.geopunt.be/kaart?app=Hinder_in_kaart_app&extent=' + extent.left + ',' + extent.right + ',' + extent.bottom + ',' + extent.top,
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['GIPOD_MOBHINDER_MAAND', 'GIPOD_MOBHINDER_MAAND_ICOON'],
+      layers: {
+        'GIPOD_MOBHINDER_MAAND': {
+          queryable: true,
+          title: 'Mobiliteitshinder komende maand',
+          abstract: 'GIPOD mobiliteitshinder op het openbaar domein komende maand'
+        },
+        'GIPOD_MOBHINDER_MAAND_ICOON': {
+          queryable: true,
+          title: 'Mobiliteitshinder komende maand (icoon)',
+          abstract: 'GIPOD mobiliteitshinder op het openbaar domein komende maand (icoon)'
+        },
+        'GIPOD_GRONDWERK_MAAND': {
+          queryable: true,
+          title: 'Grondwerken komende maand',
+          abstract: 'GIPOD grondwerken op het openbaar domein komende maand'
+        },
+        'GIPOD_GRONDWERK_MAAND_ICOON': {
+          queryable: true,
+          title: 'Grondwerken komende maand (icoon)',
+          abstract: 'GIPOD grondwerken op het openbaar domein komende maand (icoon)'
+        },
+        'GIPOD_WERK_MAAND': {
+          queryable: true,
+          title: 'Werken komende maand',
+          abstract: 'GIPOD werken op het openbaar domein komende maand'
+        },
+        'GIPOD_WERK_MAAND_ICOON': {
+          queryable: true,
+          title: 'Werken komende maand (icoon)',
+          abstract: 'GIPOD werken op het openbaar domein komende maand (icoon)'
+        },
+        'GIPOD_EVENEMENT_MAAND': {
+          queryable: true,
+          title: 'Evenementen komende maand',
+          abstract: 'GIPOD evenementen op het openbaar domein komende maand'
+        },
+        'GIPOD_EVENEMENT_MAAND_ICOON': {
+          queryable: true,
+          title: 'Evenementen komende maand (icoon)',
+          abstract: 'GIPOD evenementen op het openbaar domein komende maand (icoon)'
         }
       }
     }, {
@@ -4776,6 +4798,8 @@ async function onWmeReady() {
       '3220': [ 'bordcode' ],
       '3221': [ 'Snelheid' ],
       '3237': [ 'VolledigAdres', 'AdresStatus' ],
+      '3238': [ 'HindranceDescription', 'HindranceStart', 'HindranceEnd', 'HindranceStatus', 'Consequences' ],
+      '3239': [ 'HindranceDescription', 'HindranceStart', 'HindranceEnd', 'HindranceStatus', 'Consequences' ],
       '5501': [ 'COMPLETO' ]
     };
     if (!propertyOrder[map.id]) {
