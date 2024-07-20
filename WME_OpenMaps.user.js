@@ -35,19 +35,16 @@
 // @supportURL  https://github.com/Glodenox/wme-om/issues
 // @version     3.2.17
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
+// @require     https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js
+// @require     https://cdn.jsdelivr.net/npm/proj4@2.11.0/dist/proj4.min.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
 
-/* global W, I18n, sortable, OpenLayers, Proj4js, $ */
+/* global W, I18n, sortable, OpenLayers, proj4, turf, $ */
 
-var styleElement;
+var styleElement, wmeSDK;
 
 async function onWmeReady() {
-  if (typeof OpenLayers == 'undefined') {
-    log('WME Ready, but OpenLayers is still undefined');
-    setTimeout(onWmeReady, 300);
-    return;
-  }
   //#region Set up translations
   var translations = {
     en: {
@@ -4692,24 +4689,16 @@ async function onWmeReady() {
   }
   //#endregion
 
-  // Adjust map tile reload attempts (by default set to 0). This also makes OpenLayers attempt to load tiles a second time in other layers
-  OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
-
   // List of map handles
   var handles = [];
 
   //#region Create tab and layer group
-  var tab = await (async function() {
-    const {tabLabel, tabPane} = W.userscripts.registerSidebarTab('openMaps');
+  let {tabLabel, tabPane} = await wmeSDK.Sidebar.registerScriptTab('wme-openmaps');
 
-    tabLabel.innerHTML = '<span class="fa"></span>';
-    tabLabel.title = I18n.t('openmaps.tab_title');
-    tabPane.id = 'sidepanel-openMaps';
-
-    await W.userscripts.waitForElementConnected(tabPane);
-
-    return Promise.resolve(tabPane);
-  })();
+  tabLabel.innerHTML = '<span class="fa"></span>';
+  tabLabel.title = I18n.t('openmaps.tab_title');
+  tabPane.id = 'sidepanel-openMaps';
+  var tab = tabPane;
 
   // New map layer drawer group
   var omGroup = createLayerToggler(null, true, 'Open Maps', null);
@@ -4764,6 +4753,7 @@ async function onWmeReady() {
   var addMapSelect = document.createElement('select');
   addMapSelect.className = 'form-control';
   updateMapSelector();
+  // NOTE: Map move/pan events might be useful to add to SDK, as these are often triggers to check something
   W.map.events.register('moveend', null, updateMapSelector);
   addMapSelect.addEventListener('change', function() {
     if (addMapSelect.selectedIndex != 0) {
@@ -4840,6 +4830,7 @@ async function onWmeReady() {
     }
   });
   mapObserver.observe(document.getElementById('map'), { attributes: true, attributeFilter: ['class'] });
+
   var queryWindowSwitch = document.createElement('span');
   queryWindowSwitch.className = 'fa fa-fw fa-2x fa-retweet open-maps-query-window-button-left';
   queryWindowSwitch.dataset.placement = 'right';
@@ -4914,6 +4905,7 @@ async function onWmeReady() {
   querySymbol.className = 'fa fa-exclamation-triangle fa-4x';
   querySymbol.style.float = 'left';
   querySymbol.style.margin = '0 15px 30px';
+  // NOTE: OpenLayers.Control can't really be added to SDK
   var getFeatureInfoControl = new OpenLayers.Control({
     id: 'GetFeatureInfoControl',
     eventListeners: {
@@ -4930,10 +4922,10 @@ async function onWmeReady() {
     'click': function(e) {
       getFeatureInfoControl.deactivate();
       getFeatureInfoControl.params.callback();
-      var queryUrl = getFeatureInfoControl.params.url + '?SERVICE=WMS&REQUEST=GetFeatureInfo&STYLES=&BBOX=' + W.map.getExtent().toBBOX() +
-          '&LAYERS=' + getFeatureInfoControl.params.layers + '&QUERY_LAYERS=' + getFeatureInfoControl.params.layers +
-          '&HEIGHT=' + W.map.getSize().h + '&WIDTH=' + W.map.getSize().w +
-          '&VERSION=1.3.0&CRS=EPSG:3857&I=' + e.xy.x + '&J=' + e.xy.y + '&INFO_FORMAT=text/html';
+      let controlParams = getFeatureInfoControl.params;
+      let bbox = wmeSDK.Map.getMapExtent();
+      let viewport = wmeSDK.Map.getMapViewportElement();
+      var queryUrl = `${controlParams.url}?SERVICE=WMS&REQUEST=GetFeatureInfo&STYLES=&BBOX=${bbox.left},${bbox.bottom},${bbox.right},${bbox.top}&LAYERS=${controlParams.layers}&QUERY_LAYERS=${controlParams.layers}&HEIGHT=${viewport.clientHeight}&WIDTH=${viewport.clientWidth}&VERSION=1.3.0&CRS=EPSG:3857&I=${e.xy.x}&J=${e.xy.y}&INFO_FORMAT=text/html`;
       var mapId = getFeatureInfoControl.params.id;
       queryWindowLoading.style.display = 'block';
       while (queryWindowContent.firstChild) {
@@ -5273,7 +5265,7 @@ async function onWmeReady() {
       groupChildren.className = 'collapsible-GROUP_' + normalizedName;
       group.appendChild(groupChildren);
       document.querySelector('.list-unstyled.togglers').appendChild(group);
-      groupCaret.addEventListener('click', function(e) {
+      groupCaret.addEventListener('click', function() {
         groupCaret.classList.toggle('upside-down');
         groupChildren.classList.toggle('collapse-layer-switcher-group');
       });
@@ -5299,11 +5291,13 @@ async function onWmeReady() {
 
   function updateMapSelector() {
     var localMaps = [];
-    let dataProjection = new OpenLayers.Projection('EPSG:4326');
+
     // TODO: decrease calculations by checking whether anything has changed instead of always refilling the select
+    let mapBBOX = wmeSDK.Map.getMapExtent();
+    let mapExtent = turf.bboxPolygon([mapBBOX.left, mapBBOX.bottom, mapBBOX.right, mapBBOX.top]);
+    mapExtent.geometry.coordinates[0] = mapExtent.geometry.coordinates[0].map(coordinate => proj4(proj4("EPSG:900913"), proj4("EPSG:4326"), coordinate));
     maps.forEach((map) => {
-      let bounds = (new OpenLayers.Bounds(map.bbox)).transform(dataProjection, W.map.getProjectionObject());
-      if (bounds.intersectsBounds(W.map.getExtent())) {
+      if (turf.booleanIntersects(turf.bboxPolygon(map.bbox), mapExtent)) {
         localMaps.push(map);
       }
     });
@@ -5648,6 +5642,7 @@ async function onWmeReady() {
     this.mapId = map.id;
     this.mapLayers = [];
     this.opacity = (options && options.opacity ? options.opacity : "100");
+    // TODO: Ignoring this OpenLayers use for now, as it's a solved problem already
     this.area = (new OpenLayers.Bounds(map.bbox)).transform(new OpenLayers.Projection('EPSG:4326'), W.map.getProjectionObject());
     this.outOfArea = !this.area.intersectsBounds(W.map.getExtent());
     this.hidden = (options && options.hidden ? true : false);
@@ -5723,7 +5718,7 @@ async function onWmeReady() {
     this.updateVisibility = function() {
       title.style.color = (self.layer && self.layer.getVisibility() ? '' : '#999');
       description.style.color = (self.layer && self.layer.getVisibility() ? '' : '#999');
-      var zoom = W.map.getZoom();
+      var zoom = wmeSDK.Map.getZoomLevel();
       info.style.display = (self.layer && self.layer.getVisibility() && map.zoomRange && (zoom < map.zoomRange[0] || zoom > map.zoomRange[1]) ? 'inline' : 'none');
       visibility.style.color = (self.outOfArea ? '#999' : '');
       visibility.style.cursor = (self.outOfArea ? 'default' : 'pointer');
@@ -5758,7 +5753,7 @@ async function onWmeReady() {
         if (map.zoomRange) {
           this.layer.events.register('moveend', null, function(obj) {
             if (obj.zoomChanged) {
-              var zoom = W.map.getZoom();
+              var zoom = wmeSDK.Map.getZoomLevel();
               info.style.display = (zoom < map.zoomRange[0] || zoom > map.zoomRange[1] ? 'inline' : 'none');
             }
           });
@@ -5790,6 +5785,7 @@ async function onWmeReady() {
             manipulateTile(evt, map.pixelManipulations);
           }
         });
+        // NOTE: can't use WME SDK here as we're adding a WMS map layer
         W.map.addLayer(this.layer);
         var aerialImageryIndex = Math.max.apply(null, W.map.layers.map(layer => layer.project == 'earthengine-legacy' ? W.map.getLayerIndex(layer) : 0));
         W.map.getOLMap().setLayerIndex(this.layer, (aerialImageryIndex >= 0 ? aerialImageryIndex : 0) + handles.length + 1);
@@ -5851,7 +5847,7 @@ async function onWmeReady() {
     if (map.getExternalUrl) {
       externalLink = createIconButton('fa-external-link-square', I18n.t('openmaps.external_link_tooltip'));
       externalLink.addEventListener('click', function() {
-        window.open(map.getExternalUrl(W.map.getExtent()), '_blank');
+        window.open(map.getExternalUrl(wmeSDK.Map.getMapExtent()), '_blank');
       });
       buttons.appendChild(externalLink);
     }
@@ -6229,23 +6225,28 @@ function log(message) {
   }
 }
 
+//#region Add extra projections to proj4
+/*proj4.defs([
+  ["EPSG:31370", "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +towgs84=-106.869,52.2978,-103.724,0.3366,-0.457,1.8422,-1.2747 +units=m +no_defs"],
+  ["EPSG:28992", "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.4171,50.3319,465.5524,1.9342,-1.6677,9.1019,4.0725 +units=m +no_defs"]
+];*/
+//#endregion
+
 function onWmeInitialized() {
-  if (W.userscripts?.state?.isReady) {
-    log('W is ready and in "wme-ready" state. Proceeding with initialization.');
+  wmeSDK = getWmeSdk({scriptId: "wme-openmaps"});
+  if (wmeSDK.State.isReady) {
+    log('WME is ready and in "wme-ready" state. Proceeding with initialization.');
     onWmeReady();
   } else {
-    log('W is ready, but not in "wme-ready" state. Adding event listener.');
+    log('WME is ready, but not in "wme-ready" state. Adding event listener.');
     document.addEventListener('wme-ready', onWmeReady, { once: true });
   }
 }
 
-function bootstrap() {
-  if (!W) {
-    log('W is not available. Adding event listener.');
-    document.addEventListener('wme-initialized', onWmeInitialized, { once: true });
-  } else {
+(() => {
+  if (window.getWmeSdk) {
     onWmeInitialized();
+  } else {
+    document.addEventListener("wme-initialized", onWmeInitialized, { once: true });
   }
-}
-
-bootstrap();
+})();
