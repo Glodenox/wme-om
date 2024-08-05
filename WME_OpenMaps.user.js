@@ -187,7 +187,7 @@ async function onWmeReady() {
         v3_2_14: '- Fix Nationaal Wegen Bestand map and removed duplicate Hectopunten map (NL)',
         v3_2_15: '- Migrate GIPOD to new endpoint with extra map layers (BE)',
         v3_2_16: '- Block duplicate map adding (to be supported in the future)\n- Migrate and update Weggegevens and Kadastrale Kaart map layers (NL)',
-        v3_2_17: '- Added maps for Croatia (HR)'
+        v3_2_17: '- Added maps for Croatia (HR)',
         v3_2_18: '- Fix Brussels Ortho map location (BE)'
       }
     },
@@ -328,7 +328,7 @@ async function onWmeReady() {
         v3_2_14: '- Nationaal Wegen Bestand kaart hersteld en dubbele Hectopuntenkaart verwijderd (NL)',
         v3_2_15: '- Migreer GIPOD naar nieuwe locatie met extra kaartlagen (BE)',
         v3_2_16: '- Blokkeer het dupliceren van een kaartlaag (in de toekomst te ondersteunen)\n- Migreer en update Weggegevens en Kadastrale Kaart kaartlagen (NL)',
-        v3_2_17: '- Kaarten toegevoegd voor Kroatië (HR)'
+        v3_2_17: '- Kaarten toegevoegd voor Kroatië (HR)',
         v3_2_18: '- Herstel Brussels Ortho kaart (BE)'
       }
     },
