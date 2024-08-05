@@ -33,7 +33,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.17
+// @version     3.2.18
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -188,6 +188,7 @@ async function onWmeReady() {
         v3_2_15: '- Migrate GIPOD to new endpoint with extra map layers (BE)',
         v3_2_16: '- Block duplicate map adding (to be supported in the future)\n- Migrate and update Weggegevens and Kadastrale Kaart map layers (NL)',
         v3_2_17: '- Added maps for Croatia (HR)'
+        v3_2_18: '- Fix Brussels Ortho map location (BE)'
       }
     },
     nl: {
@@ -328,6 +329,7 @@ async function onWmeReady() {
         v3_2_15: '- Migreer GIPOD naar nieuwe locatie met extra kaartlagen (BE)',
         v3_2_16: '- Blokkeer het dupliceren van een kaartlaag (in de toekomst te ondersteunen)\n- Migreer en update Weggegevens en Kadastrale Kaart kaartlagen (NL)',
         v3_2_17: '- Kaarten toegevoegd voor Kroatië (HR)'
+        v3_2_18: '- Herstel Brussels Ortho kaart (BE)'
       }
     },
     fr: {
@@ -2419,7 +2421,7 @@ async function onWmeReady() {
       id: 3223,
       title: 'Brussels Ortho',
       type: 'WMS',
-      url: 'https://geoservices-urbis.irisnet.be/geoserver/ows',
+      url: 'https://geoservices-urbis.irisnet.be/geoserver/urbisgrid/ows',
       crs: 'EPSG:31370',
       bbox: [4.236257, 50.760569, 4.487579, 50.915368],
       format: 'image/png',
@@ -2428,54 +2430,114 @@ async function onWmeReady() {
       attribution: 'Irisnet GIS',
       pixelManipulations: ['whiteTiles2transparent'],
       queryable: false,
-      default_layers: ['Urbis:Ortho'],
+      default_layers: ['Ortho'],
       layers: {
-        'Urbis:Ortho': {
+        'Ortho': {
           queryable: false,
-          title: 'Urbis Ortho',
+          title: 'Latest Ortho',
           abstract: 'This layer always shows the most recent available orthographic images'
         },
-        'Urbis:Ortho2019': {
+        'Ortho2023Nir': {
+          queryable: false,
+          title: 'Ortho 2023 Near Infrared',
+          abstract: 'NI (Near Infrared) orthophotos for the year 2023 within the Brussels region'
+        },
+        'Ortho2023': {
+          queryable: false,
+          title: 'Ortho 2023',
+          abstract: 'Orthographic imagery for the year 2023 within the Brussels region'
+        },
+        'Ortho2022Ns': {
+          queryable: false,
+          title: 'Ortho 2022 North-South',
+          abstract: 'Orthographic imagery for the year 2022 from a flight on an north-south axis within the Brussels region'
+        },
+        'Ortho2022NirNs': {
+          queryable: false,
+          title: 'Ortho 2022 Near Infrared North-South',
+          abstract: 'Orthographic imagery for the year 2022 from a flight on an north-south axis within the Brussels region'
+        },
+        'Ortho2022NirEo': {
+          queryable: false,
+          title: 'Ortho 2022 Near Infrared',
+          abstract: 'NI (Near Infrared) orthophotos for the year 2022 from a flight on an east-west axis within the Brussels region'
+        },
+        'Ortho2022Eo': {
+          queryable: false,
+          title: 'Ortho 2022 East-West',
+          abstract: 'Orthographic imagery for the year 2022 from a flight on an east-west axis within the Brussels region'
+        },
+        'Ortho2021Ns': {
+          queryable: false,
+          title: 'Ortho 2021 North-South',
+          abstract: 'Orthographic imagery for the year 2021 from a flight on an north-south axis within the Brussels region'
+        },
+        'Ortho2021NirNs': {
+          queryable: false,
+          title: 'Ortho 2021 Near Infrared North-South',
+          abstract: 'Orthographic imagery for the year 2021 from a flight on an north-south axis within the Brussels region'
+        },
+        'Ortho2021NirEo': {
+          queryable: false,
+          title: 'Ortho 2021 Near Infrared',
+          abstract: 'NI (Near Infrared) orthophotos for the year 2021 from a flight on an east-west axis within the Brussels region'
+        },
+        'Ortho2021Eo': {
+          queryable: false,
+          title: 'Ortho 2021 East-West',
+          abstract: 'Orthographic imagery for the year 2021 from a flight on an east-west axis within the Brussels region'
+        },
+        'Ortho2020Nir': {
+          queryable: false,
+          title: 'Ortho 2020 Near Infrared',
+          abstract: 'NI (Near Infrared) orthophotos for the year 2020 within the Brussels region'
+        },
+        'Ortho2020': {
+          queryable: false,
+          title: 'Ortho 2020',
+          abstract: 'Orthographic imagery for the year 2020 within the Brussels region'
+        },
+        'Ortho2019': {
           queryable: false,
           title: 'Ortho 2019',
           abstract: 'Orthographic imagery for the year 2019 within the Brussels region'
         },
-        'Urbis:Ortho2018': {
+        'Ortho2018': {
           queryable: false,
           title: 'Ortho 2018',
           abstract: 'Orthographic imagery for the year 2018 within the Brussels region'
         },
-        'Urbis:Ortho2017': {
+        'Ortho2017': {
           queryable: false,
           title: 'Ortho 2017',
           abstract: 'Orthographic imagery for the year 2017 within the Brussels region'
         },
-        'Urbis:Ortho2016': {
+        'Ortho2016': {
           queryable: false,
           title: 'Ortho 2016',
           abstract: 'Orthographic imagery for the year 2016 within the Brussels region'
         },
-        'Urbis:Ortho2015': {
+        'Ortho2015': {
           queryable: false,
           title: 'Ortho 2015',
           abstract: 'Orthographic imagery for the year 2015 within the Brussels region'
         },
-        'Urbis:Ortho2014': {
+        'Ortho2014': {
           queryable: false,
           title: 'Ortho 2014',
           abstract: 'Orthographic imagery for the year 2014 within the Brussels region'
         },
-        'Urbis:Ortho2012': {
+        'Ortho2012': {
           queryable: false,
           title: 'Ortho 2012',
           abstract: 'Orthographic imagery for the year 2012 within the Brussels region'
         },
-        'Urbis:Ortho2009': {
+        'Ortho2009': {
           queryable: false,
           title: 'Ortho 2009',
           abstract: 'Orthographic imagery for the year 2009 within the Brussels region'
         },
-        'Urbis:Ortho2004': {
+        'Ortho2004': {
           queryable: false,
           title: 'Ortho 2004',
           abstract: 'Orthographic imagery for the year 2004 within the Brussels region'
