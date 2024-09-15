@@ -191,7 +191,7 @@ async function onWmeReady() {
         v3_2_18: '- Fix Brussels Ortho map location (BE)',
         v3_2_19: '- Prepare for changes in WME beta',
         v3_2_20: '- Fix map retrieval breakage due to unexpected changes',
-        v3_2_21: '- Fix WV Leaves off and USGS NAIP+ layers'
+        v3_2_21: '- Fix WV Leaves off and USGS NAIP+ layers (US)'
       }
     },
     nl: {
@@ -335,7 +335,7 @@ async function onWmeReady() {
         v3_2_18: '- Herstel Brussels Ortho kaart (BE)',
         v3_2_19: '- Voorbereiding voor wijzigingen in WME beta',
         v3_2_20: '- Fix map retrieval breakage due to unexpected changes',
-        v3_2_21: '- Fix WV Leaves off and USGS NAIP+ layers'
+        v3_2_21: '- Fix WV Leaves off and USGS NAIP+ layers (US)'
       }
     },
     fr: {
