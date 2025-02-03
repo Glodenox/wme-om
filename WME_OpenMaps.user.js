@@ -37,8 +37,6 @@
 // @version     3.2.26
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
-// @downloadURL https://update.greasyfork.org/scripts/13334/WME%20OpenMaps.user.js
-// @updateURL https://update.greasyfork.org/scripts/13334/WME%20OpenMaps.meta.js
 // ==/UserScript==
 
 /* global W, I18n, sortable, OpenLayers, Proj4js, $ */
