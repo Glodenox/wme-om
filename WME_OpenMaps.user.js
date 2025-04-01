@@ -199,7 +199,7 @@ async function onWmeReady() {
         v3_2_24: '- WV Leaves Off layers updated (US)',
         v3_2_25: '- IndianaMap updated (US)',
         v3_2_26: '- IndianaMap updated (US)\n- WV Leaves Off layers updated (US)',
-        v3_2_26: '- Updated Yearly Orthomaps (BE and NL)'
+        v3_2_27: '- Updated Yearly Orthomaps (BE and NL)'
       }
     },
     nl: {
@@ -350,7 +350,7 @@ async function onWmeReady() {
         v3_2_24: '- WV Leaves Off laag updates (US)',
         v3_2_25: '- IndianaMap updates (US)',
         v3_2_26: '- IndianaMap updates (US)\n- WV Leaves Off laag updates (US)',
-        v3_2_26: '- Update van de jaarlijkse orthografische kaarten (BE en NL)'
+        v3_2_27: '- Update van de jaarlijkse orthografische kaarten (BE en NL)'
       }
     },
     fr: {
