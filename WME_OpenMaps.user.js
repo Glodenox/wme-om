@@ -32,10 +32,11 @@
 // @connect     geoportal.dgu.hr
 // @connect     di-ingov.img.arcgis.com
 // @connect     mdgeodata.md.gov
+// @connect     wmts1.geoportail.lu
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.29
+// @version     3.2.30
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -202,7 +203,8 @@ async function onWmeReady() {
         v3_2_26: '- IndianaMap updated (US)\n- WV Leaves Off layers updated (US)',
         v3_2_27: '- Updated Yearly Orthomaps (BE and NL)',
         v3_2_28: '- Fixed CIRB map (BE)',
-        v3_2_29: '- Added Maryland iMAP (US)'
+        v3_2_29: '- Added Maryland iMAP (US)',
+        v3_2_30: '- Added Luxembourg maps (LU)'
       }
     },
     nl: {
@@ -355,7 +357,8 @@ async function onWmeReady() {
         v3_2_26: '- IndianaMap updates (US)\n- WV Leaves Off laag updates (US)',
         v3_2_27: '- Update van de jaarlijkse orthografische kaarten (BE en NL)',
         v3_2_28: '- CIRB kaart hersteld (BE)',
-        v3_2_29: '- Maryland iMAP toegevoegd (US)'
+        v3_2_29: '- Maryland iMAP toegevoegd (US)',
+        v3_2_30: '- Kaarten Luxemburg toegevoegd (LU)'
       }
     },
     fr: {
@@ -3066,6 +3069,180 @@ async function onWmeReady() {
           title: 'Aeroportos',
           abstract: 'principais aeroportos comerciais'
         }
+      }
+    },
+    {
+      id: 35201,
+      title: 'Orthophotos Luxembourg',
+      type: 'WMS',
+      url: 'https://wmts1.geoportail.lu/opendata/service',
+      crs: 'EPSG:3857',
+      bbox: [5.71, 49.43, 6.55, 50.19],
+      format: 'image/jpeg',
+      area: 'LU',
+      abstract: 'Orthophotos de Luxembourg par l\'Administration du cadastre et de la topographie du Grand-Duché du Luxembourg',
+      attribution: 'Cadastre et topographie Grand-Duché du Luxembourg',
+      queryable: false,
+      default_layers: ['ortho_latest'],
+      layers: {
+        'ortho_latest': {
+          queryable: false,
+          title: 'Dernières Photographies aériennes orthorectifiées',
+        },
+        'ortho_2025_winter': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiesé 2025 hiver',
+        },
+        'ortho_2023': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2023',
+        },
+        'ortho_2022': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2022',
+        },
+        'ortho_2021': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2021',
+        },
+        'ortho_2020': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2020',
+        },
+        'ortho_2019_winter': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2019 hiver',
+        },
+        'ortho_2019_luref': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2019 en LUREF',
+        },
+        'ortho_2019': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2019',
+        },
+        'ortho_2018': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2018',
+        },
+        'ortho_2017': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2017',
+        },
+        'ortho_2016': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2016',
+        },
+        'ortho_2013': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2013',
+        },
+        'ortho_irc': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées infrarouges 2010',
+        },
+        'ortho_2010': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2010',
+        },
+        'ortho_2007': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2007',
+        },
+        'ortho_2004': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2004',
+        },
+        'ortho_2001': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 2001',
+        },
+        'ortho_1967': {
+          queryable: false,
+          title: 'Photographies aériennes orthorectifiées 1967',
+        }
+      }
+    },
+    {
+      id: 35202,
+      title: 'BD-Adresses Luxembourg',
+      type: 'WMS',
+      url: 'https://wmts1.geoportail.lu/opendata/service',
+      crs: 'EPSG:3857',
+      bbox: [5.71, 49.43, 6.55, 50.19],
+      format: 'image/png',
+      area: 'LU',
+      abstract: 'La BD-Adresses est un sous-ensemble des adresses figurant dans le registre national des localités et des rues, enrichi par des coordonnées géographiques.',
+      attribution: 'Cadastre et topographie Grand-Duché du Luxembourg',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['addresses'],
+      layers: {
+        'addresses': {
+          queryable: true,
+          title: 'Points adresse',
+        }
+      }
+    },
+    {
+      id: 35203,
+      title: 'Cadastre Luxembourg',
+      type: 'WMS',
+      url: 'https://wmts1.geoportail.lu/opendata/service',
+      crs: 'EPSG:3857',
+      bbox: [5.71, 49.43, 6.55, 50.19],
+      format: 'image/png',
+      area: 'LU',
+      abstract: 'The BD-L-GeoBase is the official reference for geographic vector data produced by the Administration du Cadastre et de la Topographie for the entire territory of the Grand Duchy of Luxembourg.',
+      attribution: 'Cadastre et topographie Grand-Duché du Luxembourg',
+      queryable: true,
+      query_filters: [ applyAllTransformations ],
+      default_layers: ['parcels', 'parcels_labels', 'buildings', 'toponymes', 'cadastre'],
+      layers: {
+        'parcels': {
+          queryable: true,
+          title: 'Parcelles cadastrales',
+        },
+        'parcels_labels': {
+          queryable: false,
+          title: 'Numéros parcellaires',
+        },
+        'buildings': {
+          queryable: false,
+          title: 'Bâtiments du plan cadastral',
+        },
+        'toponymes': {
+          queryable: false,
+          title: 'Toponymes cadastraux',
+        },
+        'cadastre': {
+          queryable: false,
+          title: 'Plan cadastral complet',
+        },
+      }
+    },
+    {
+      id: 35204,
+      title: 'Réseau Routier Luxembourg',
+      type: 'WMS',
+      url: 'https://wmts1.geoportail.lu/opendata/service',
+      crs: 'EPSG:3857',
+      bbox: [5.71, 49.43, 6.55, 50.19],
+      format: 'image/png',
+      area: 'LU',
+      abstract: 'Le réseau routier et les noms de rue.',
+      attribution: 'Cadastre et topographie Grand-Duché du Luxembourg',
+      queryable: false,
+      default_layers: ['reseau_routier', 'road_names'],
+      layers: {
+        'reseau_routier': {
+          queryable: false,
+          title: 'Réseau routier',
+        },
+        'road_names': {
+          queryable: false,
+          title: 'Noms de rue',
+        },
       }
     },
     {
