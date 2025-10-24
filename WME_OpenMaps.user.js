@@ -36,7 +36,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.33
+// @version     3.2.34
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -207,7 +207,8 @@ async function onWmeReady() {
         v3_2_30: '- Added Luxembourg maps (LU)',
         v3_2_31: '- Fixed Brussels maps (BE)',
         v3_2_32: '- WV Leaves Off layers updated (US)',
-        v3_2_33: '- Fixed Luchtfoto 2025 map layers (NL)'
+        v3_2_33: '- Fixed Luchtfoto 2025 map layers (NL)',
+        v3_2_34: '- Fixed broken map layer reordering'
       }
     },
     nl: {
@@ -364,7 +365,8 @@ async function onWmeReady() {
         v3_2_30: '- Kaarten Luxemburg toegevoegd (LU)',
         v3_2_31: '- Brusselse kaarten hersteld (BE)',
         v3_2_32: '- WV Leaves Off laag updates (US)',
-        v3_2_33: '- Luchtfoto 2025 kaartlagen hersteld (NL)'
+        v3_2_33: '- Luchtfoto 2025 kaartlagen hersteld (NL)',
+        v3_2_34: '- Rangschikken van kaartlagen hersteld'
       }
     },
     fr: {
@@ -4887,7 +4889,7 @@ async function onWmeReady() {
   })[0].addEventListener('sortupdate', function(e) {
     var movedHandle = handles.splice(e.detail.oldElementIndex, 1)[0];
     handles.splice(e.detail.elementIndex, 0, movedHandle);
-    var layerGroups = omGroup.querySelectorAll('div.result-list wz-card');
+    var layerGroups = handleList.childNodes;
     if (e.detail.elementIndex == layerGroups.length-1) {
       layerGroups[e.detail.oldElementIndex].parentNode.appendChild(layerGroups[e.detail.oldElementIndex]);
     } else {
@@ -5099,7 +5101,7 @@ async function onWmeReady() {
             }
             // While probably not 100% waterproof, at least this should counter most XSS vectors
             var unwantedNodes = response.responseXML.querySelectorAll('javascript,iframe,frameset,applet,embed,object,style');
-            for (var i = 0; i < unwantedNodes.length; i++) {
+            for (let i = 0; i < unwantedNodes.length; i++) {
               unwantedNodes[i].parentNode.removeChild(unwantedNodes[i]);
             }
             var body = response.responseXML.querySelector('body');
@@ -5173,21 +5175,21 @@ async function onWmeReady() {
 
   function removeUnsafeAttributes(node) {
     if (node.nodeType == Node.ELEMENT_NODE) {
-      for (var i = 0; i < node.attributes.length; i++) {
+      for (let i = 0; i < node.attributes.length; i++) {
         var attrName = node.attributes[i].name.toLowerCase();
         if (attrName.startsWith('on') || attrName == 'style' || attrName == 'class' || (attrName == 'href' && node.attributes[i].value.trim().toLowerCase().startsWith('javascript:'))) {
           node.removeAttribute(attrName);
         }
       }
     }
-    for (var i = 0; i < node.childNodes.length; i++) {
+    for (let i = 0; i < node.childNodes.length; i++) {
       removeUnsafeAttributes(node.childNodes[i]);
     }
   }
 
   function setBorders(body) {
     var tables = body.querySelectorAll('table');
-    for (var i = 0; i < tables.length; i++) {
+    for (let i = 0; i < tables.length; i++) {
       tables[i].border = '1';
     }
   }
@@ -5195,7 +5197,7 @@ async function onWmeReady() {
   // Turn the columns of the table into rows to make the table go from horizontal to vertical
   function transposeTables(body) {
     var tables = body.querySelectorAll('table');
-    for (var i = 0; i < tables.length; i++) {
+    for (let i = 0; i < tables.length; i++) {
       var newTable = transposeTable(tables[i]);
       tables[i].parentNode.insertBefore(newTable, tables[i]);
       tables[i].parentNode.removeChild(tables[i]);
@@ -5222,13 +5224,13 @@ async function onWmeReady() {
       newTable.appendChild(tableHead);
       var tableBody = document.createElement('tbody');
       var firstRow = table.querySelector('tr');
-      for (var i = 0; i < firstRow.childNodes.length; i++) {
+      for (let i = 0; i < firstRow.childNodes.length; i++) {
         if (firstRow.childNodes[i].nodeType == 1) { // Element nodes only
           tableBody.appendChild(document.createElement('tr'));
         }
       }
       var rows = table.querySelectorAll('tr');
-      for (var i = 0; i < rows.length; i++) {
+      for (let i = 0; i < rows.length; i++) {
         distributeColumnsOverRows(rows[i].childNodes, tableBody);
       }
       newTable.appendChild(tableBody);
@@ -5236,7 +5238,7 @@ async function onWmeReady() {
     }
     function distributeColumnsOverRows(columns, tbody) {
       var skippedCols = 0;
-      for (var i = 0; i < columns.length; i++) {
+      for (let i = 0; i < columns.length; i++) {
         if (columns[i].nodeType == 1) { // Element nodes only
           var cell = document.createElement('td');
           cell.textContent = columns[i].textContent;
@@ -5251,7 +5253,7 @@ async function onWmeReady() {
   // Remove table rows with an empty or null value
   function cleanTableRows(body) {
     var rows = body.querySelectorAll('table tr');
-    for (var i = 0; i < rows.length; i++) {
+    for (let i = 0; i < rows.length; i++) {
       cleanRow(rows[i]);
     }
     function cleanRow(row) {
@@ -6092,7 +6094,6 @@ async function onWmeReady() {
     }
     var opacityLabel = document.createElement('div');
     opacityLabel.textContent = I18n.t('openmaps.opacity_label') + ':';
-    opacityLabel.style.marginLeft = '30px';
     Tooltips.add(opacityLabel, I18n.t('openmaps.opacity_label_tooltip'));
     var opacitySlider = document.createElement('input');
     opacitySlider.className = 'open-maps-opacity-slider';
@@ -6156,7 +6157,7 @@ async function onWmeReady() {
           layerTitle.style.color = (layerItem.visible ? '' : '#999');
           layerDescription.style.color = (layerItem.visible ? '' : '#999');
           layerRedrawNeeded = true;
-          self.updateLayers.call(self);
+          self.updateLayers(self);
         });
         buttonContainer.appendChild(visibility);
         item.appendChild(buttonContainer);
@@ -6201,7 +6202,7 @@ async function onWmeReady() {
       }
       self.mapLayers.splice(e.detail.elementIndex, 0, self.mapLayers.splice(e.detail.oldElementIndex, 1)[0]);
       layerRedrawNeeded = self.mapLayers[e.detail.elementIndex].visible; // Only redraw if it was a visible layer
-      self.updateLayers.call(self);
+      self.updateLayers(self);
     });
 
     this.updateLayers();
@@ -6345,16 +6346,14 @@ input.open-maps-opacity-slider {
   margin: 10px;
 }
 
-#sidepanel-openMaps .maps-menu-item div.edit-panel wz-checkbox {
-  margin-left: 5px;
-}
-#sidepanel-openMaps .maps-menu-item .edit-panel .result-list {
+#sidepanel-openMaps .maps-menu-item .edit-panel .openmaps-map-list {
   overflow-y: scroll;
-  max-height: 15em;
+  max-height: 25vh;
 }
 
-#sidepanel-openMaps .maps-menu-item .edit-panel .result-list .result {
-  padding: 5px;
+#sidepanel-openMaps .maps-menu-item .edit-panel .openmaps-map-list .result {
+  --wz-card-padding: 6px;
+  padding-right: 2px;
 }
 
 #sidepanel-openMaps .title {
