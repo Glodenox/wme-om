@@ -36,7 +36,7 @@
 // @connect     *
 // @icon        data:image/png;base64,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
 // @supportURL  https://github.com/Glodenox/wme-om/issues
-// @version     3.2.39
+// @version     3.2.40
 // @require     https://bowercdn.net/c/html.sortable-0.4.4/dist/html.sortable.js
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
@@ -213,7 +213,8 @@ async function onWmeReady() {
         v3_2_36: '- Add Orthophotos 2024 map (BE)\n- Limit default BAG objects shown (NL)',
         v3_2_37: '- Fix PICC map layer order (BE)',
         v3_2_38: '- Fix Open Maps after WME update',
-        v3_2_39: '- Fix map querying on 1440p+ monitors\n- Add 2026 map layer for Luchtbeelden (PDOK) (NL)'
+        v3_2_39: '- Fix map querying on 1440p+ monitors\n- Add 2026 map layer for Luchtbeelden (PDOK) (NL)',
+        v3_2_39: '- Fix layer addition after WME update'
       }
     },
     nl: {
@@ -376,7 +377,8 @@ async function onWmeReady() {
         v3_2_36: '- Orthophotos 2024 kaart toegevoegd (BE)\n- Toon standaard alleen verblijfsobjecten in BAG (NL)',
         v3_2_37: '- Volgorde van kaartlagen PICC hersteld (BE)',
         v3_2_38: '- Open Maps herstellen na WME update',
-        v3_2_39: '- Herstel het queryen van de kaart op 1440p+ beelschermen\n- Voeg 2026 kaartlaag toe in Luchtbeelden (PDOK) (NL)'
+        v3_2_39: '- Herstel het queryen van de kaart op 1440p+ beelschermen\n- Voeg 2026 kaartlaag toe in Luchtbeelden (PDOK) (NL)',
+        v3_2_39: '- Herstel toevoeging van kaartlagen na update van WME'
       }
     },
     fr: {
@@ -5449,20 +5451,21 @@ async function onWmeReady() {
     var normalizedName = name.toLowerCase().replace(/\s/g, '');
     if (parentGroup == null) {
       var group = document.createElement('li');
-      group.className = 'group';
+      group.className = 'group-openMaps';
+      var groupChildrenContainer = document.createElement('div');
       var groupChildren = document.createElement('ul');
       var groupToggler = document.createElement('div');
-      groupToggler.className = 'layer-switcher-toggler-tree-category';
+      groupToggler.className = 'tree-category';
+      var groupSwitch = document.createElement('wz-button');
+      groupSwitch.setAttribute('color', 'clear-icon');
+      groupSwitch.setAttribute('size', 'xs');
+      groupSwitch.setAttribute('type', 'button');
       var groupCaret = document.createElement('i');
-      groupCaret.className = 'toggle-category w-icon w-icon-caret-down';
+      groupCaret.className = 'w-icon w-icon-caret-down';
       if (!checked) {
         groupCaret.classList.add('upside-down');
       }
-      groupCaret.dataset.groupId = 'GROUP_' + normalizedName;
-      groupToggler.appendChild(groupCaret);
-      var groupSwitch = document.createElement('wz-toggle-switch');
-      groupSwitch.className = 'layer-switcher-group_' + normalizedName;
-      groupSwitch.id = 'layer-switcher-group_' + normalizedName;
+      groupSwitch.appendChild(groupCaret);
       groupToggler.appendChild(groupSwitch);
       var groupSwitchLabel = document.createElement('label');
       groupSwitchLabel.className = 'label-text';
@@ -5470,12 +5473,14 @@ async function onWmeReady() {
       groupSwitchLabel.textContent = name;
       groupToggler.appendChild(groupSwitchLabel);
       group.appendChild(groupToggler);
-      groupChildren.className = 'collapsible-GROUP_' + normalizedName;
-      group.appendChild(groupChildren);
-      document.querySelector('.list-unstyled.togglers').appendChild(group);
-      groupCaret.addEventListener('click', function(e) {
+      groupChildrenContainer.className = 'collapsible-group';
+      groupChildrenContainer.appendChild(groupChildren);
+      group.appendChild(groupChildrenContainer);
+      document.querySelector('#layer-switcher-region .list-unstyled').appendChild(group);
+      groupSwitch.addEventListener('click', function(e) {
+        console.log("groupSwitch clicked");
         groupCaret.classList.toggle('upside-down');
-        groupChildren.classList.toggle('collapse-layer-switcher-group');
+        groupChildrenContainer.classList.toggle('collapsed');
       });
       groupSwitch.checked = checked;
       return group;
@@ -5485,13 +5490,8 @@ async function onWmeReady() {
       var layerToggle = layerItem.querySelector('wz-checkbox');
       layerToggle.checked = false;
       parentGroup.querySelector('ul').appendChild(layerItem);
-      var parentSwitch = parentGroup.querySelector('wz-toggle-switch');
-      var parentObserver = new MutationObserver(() => {
-        layerToggle.disabled = !parentSwitch.hasAttribute('checked');
-        toggleCallback && toggleCallback(layerToggle.checked && parentSwitch.hasAttribute('checked'));
-      });
-      parentObserver.observe(parentSwitch, { attributes: true, attributeFilter: ['checked'] });
-      layerToggle.addEventListener('click', e => toggleCallback(e.target.checked && parentSwitch.hasAttribute('checked')));
+      var parentSwitch = parentGroup.querySelector('wz-button');
+      layerToggle.addEventListener('click', e => toggleCallback(e.target.checked));
       layerToggle.checked = checked;
       return layerItem;
     }
@@ -6417,6 +6417,59 @@ input.open-maps-opacity-slider {
   margin-bottom: 0;
   font-weight: bold;
   font-size: 14px;
+}
+
+#layer-switcher-region .group-openMaps {
+  border-bottom: 1px solid var(--separator_default);
+  padding: var(--space-xxxs) var(--space-always-s) var(--space-xxxs) var(--space-always-xs);
+}
+
+#layer-switcher-region .group-openMaps .tree-category {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  position: relative;
+}
+
+#layer-switcher-region .group-openMaps .tree-category .w-icon {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  transition: transform 250ms;
+  vertical-align: text-top;
+}
+
+#layer-switcher-region .group-openMaps .tree-category label {
+  font-family: "Rubik","Waze Boing","Waze Boing HB light",sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--content_p1);
+  cursor: pointer;
+  margin: 0;
+  vertical-align: sub;
+}
+
+#layer-switcher-region .group-openMaps .collapsible-group {
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms;
+}
+
+#layer-switcher-region .group-openMaps .collapsible-group.collapsed {
+  grid-template-rows: 0fr;
+}
+
+#layer-switcher-region .group-openMaps .collapsible-group.collapsed ul {
+  padding-bottom: 0;
+}
+
+#layer-switcher-region .group-openMaps .collapsible-group ul {
+  padding-bottom: var(--space-xs);
+  transition: padding-bottom 300ms;
+  min-height: 0;
 }
 `;
   }
