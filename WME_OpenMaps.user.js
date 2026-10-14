@@ -215,7 +215,7 @@ async function onWmeReady() {
         v3_2_38: '- Fix Open Maps after WME update',
         v3_2_39: '- Fix map querying on 1440p+ monitors\n- Add 2026 map layer for Luchtbeelden (PDOK) (NL)',
         v3_2_39: '- Fix layer addition after WME update',
-        v3_2_40: '- WV Leaves Off layers updated (US)'
+        v3_2_41: '- WV Leaves Off layers updated (US)'
       }
     },
     nl: {
@@ -380,7 +380,7 @@ async function onWmeReady() {
         v3_2_38: '- Open Maps herstellen na WME update',
         v3_2_39: '- Herstel het queryen van de kaart op 1440p+ beelschermen\n- Voeg 2026 kaartlaag toe in Luchtbeelden (PDOK) (NL)',
         v3_2_39: '- Herstel toevoeging van kaartlagen na update van WME',
-        v3_2_40: '- WV Leaves Off layers updated (US)'
+        v3_2_41: '- WV Leaves Off layers updated (US)'
       }
     },
     fr: {
