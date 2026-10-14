@@ -539,7 +539,7 @@ async function onWmeReady() {
         '74': { queryable: true, title: 'Doddridge_2026', abstract: '' },
         '75': { queryable: true, title: 'Braxton_2026', abstract: '' },
         '76': { queryable: true, title: 'Berkeley_2026', abstract: '' },
-        '77': { queryable: true, title: 'CountiesImagery_Year', abstract: '' },
+        '77': { queryable: true, title: 'CountiesImagery_Year', abstract: '' }
       }
     },
     {
